@@ -9,10 +9,12 @@
 class Connection
 {
     static public $con;
+    public $host;
     function __construct()
     {
+        $this->host = $_SERVER['HTTP_HOST'];
         try{
-            self::$con = new PDO('mysql:host=127.0.0.1;dbname=aadhamedina;charset=utf8', 'root' , '');
+            self::$con = new PDO('mysql:host='.$this->host.';dbname=aadhamedina;charset=utf8', 'root' , '');
             self::$con->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
         }catch (Exception $e){
             echo $e->getMessage();
