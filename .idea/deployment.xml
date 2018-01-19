@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" serverName="talShemesh" persistUploadOnCheckin="false">
+  <component name="PublishConfigData" serverName="talShemesh" uploadOnCheckin="9813fc24-3e29-4061-97fe-e4588492f633">
     <serverData>
       <paths name="talShemesh">
         <serverdata>
@@ -15,5 +15,6 @@
         </serverdata>
       </paths>
     </serverData>
+    <option name="myUploadOnCheckinName" value="talShemesh" />
   </component>
 </project>

@@ -5,28 +5,17 @@
  * Date: 17/12/2017
  * Time: 00:16
  */
-
+require_once 'hosts.php';
 class Connection
 {
     static public $con;
     public $host;
     function __construct()
     {
-        define('DB_CONNECTION','mysql');
-        define('DB_HOST','mysql');
-        define('DB_PORT','3306');
-        define('DB_DATABASE','aadhamedina');
-        if($_SERVER['HTTP_HOST'] == 'localhost'){
-            $this->host = $_SERVER['HTTP_HOST'];
-            define('DB_USERNAME','root');
-            define('DB_PASSWORD','');
-        }else{
-            $this->host = 'localhost:3306';
-            define('DB_USERNAME','haimt');
-            define('DB_PASSWORD','957846213Ha');
-        }
+
+
         try{
-            self::$con = new PDO('mysql:host='.$this->host.';dbname='.DB_DATABASE.';charset=utf8', DB_USERNAME , DB_PASSWORD);
+            self::$con = new PDO('mysql:host=localhost:3306;dbname='.DB_DATABASE.';charset=utf8', DB_USERNAME , DB_PASSWORD);
             self::$con->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
         }catch (Exception $e){
             echo $e->getMessage();
