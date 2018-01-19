@@ -1,30 +1,739 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dcaee23b-8a9f-4e1d-bdb2-91f529ade547" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Generated_files.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Generated_files.xml" />
+    <list default="true" id="dcaee23b-8a9f-4e1d-bdb2-91f529ade547" name="Default" comment="ready for uploading to server">
+      <change beforePath="" afterPath="$PROJECT_DIR$/dbManager/node_modules/browserslist/browser.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/dbManager/node_modules/browserslist/error.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/dbManager/node_modules/browserslist/node.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-overscroll-behavior.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/document-scrollingelement.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/font-family-system-ui.js" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/babel-cli/package.json" afterPath="$PROJECT_DIR$/dbManager/node_modules/babel-cli/package.json" />
-      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/babel-preset-env/package.json" afterPath="$PROJECT_DIR$/dbManager/node_modules/babel-preset-env/package.json" />
-      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/electron-releases/.env.example" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/electron-releases/.travis.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/electron-releases/index.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/electron-releases/package.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/electron-releases/readme.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/electron-releases/script/build.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/electron-releases/script/release.sh" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/electron-releases/test/index.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dbManager/tpl/cms/cms.php" afterPath="$PROJECT_DIR$/dbManager/tpl/cms/cms.php" />
-      <change beforePath="$PROJECT_DIR$/node_modules/angular/LICENSE.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/node_modules/angular/README.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/node_modules/angular/angular-csp.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/node_modules/angular/angular.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/node_modules/angular/angular.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/node_modules/angular/angular.min.js.gzip" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/node_modules/angular/angular.min.js.map" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/node_modules/angular/bower.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/node_modules/angular/index.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/node_modules/angular/package.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/class/connection.php" afterPath="$PROJECT_DIR$/class/connection.php" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/browserslist/CHANGELOG.md" afterPath="$PROJECT_DIR$/dbManager/node_modules/browserslist/CHANGELOG.md" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/browserslist/README.md" afterPath="$PROJECT_DIR$/dbManager/node_modules/browserslist/README.md" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/browserslist/index.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/browserslist/index.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/browserslist/package.json" afterPath="$PROJECT_DIR$/dbManager/node_modules/browserslist/package.json" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/CHANGELOG.md" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/CHANGELOG.md" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/agents.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/agents.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/browserVersions.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/browserVersions.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/aac.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/aac.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/ac3-ec3.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/ac3-ec3.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/addeventlistener.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/addeventlistener.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/alternate-stylesheet.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/alternate-stylesheet.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/ambient-light.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/ambient-light.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/apng.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/apng.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/arrow-functions.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/arrow-functions.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/asmjs.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/asmjs.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/async-functions.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/async-functions.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/atob-btoa.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/atob-btoa.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/audio-api.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/audio-api.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/audio.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/audio.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/audiotracks.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/audiotracks.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/autofocus.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/autofocus.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/aux-click.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/aux-click.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/background-attachment.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/background-attachment.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/background-img-opts.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/background-img-opts.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/background-position-x-y.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/background-position-x-y.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/background-repeat-round-space.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/background-repeat-round-space.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/battery-status.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/battery-status.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/beacon.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/beacon.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/beforeafterprint.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/beforeafterprint.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/blobbuilder.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/blobbuilder.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/bloburls.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/bloburls.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/border-image.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/border-image.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/border-radius.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/border-radius.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/broadcastchannel.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/broadcastchannel.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/brotli.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/brotli.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/calc.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/calc.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/canvas-blending.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/canvas-blending.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/canvas-text.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/canvas-text.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/canvas.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/canvas.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/ch-unit.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/ch-unit.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/chacha20-poly1305.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/chacha20-poly1305.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/channel-messaging.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/channel-messaging.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/childnode-remove.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/childnode-remove.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/classlist.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/classlist.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/client-hints-dpr-width-viewport.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/client-hints-dpr-width-viewport.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/clipboard.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/clipboard.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/comparedocumentposition.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/comparedocumentposition.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/console-basic.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/console-basic.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/console-time.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/console-time.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/const.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/const.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/constraint-validation.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/constraint-validation.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/contenteditable.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/contenteditable.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/contentsecuritypolicy.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/contentsecuritypolicy.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/contentsecuritypolicy2.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/contentsecuritypolicy2.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/cors.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/cors.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/credential-management.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/credential-management.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/cryptography.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/cryptography.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-all.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-all.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-animation.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-animation.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-any-link.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-any-link.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-appearance.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-appearance.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-apply-rule.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-apply-rule.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-at-counter-style.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-at-counter-style.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-backdrop-filter.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-backdrop-filter.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-background-offsets.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-background-offsets.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-backgroundblendmode.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-backgroundblendmode.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-boxdecorationbreak.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-boxdecorationbreak.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-boxshadow.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-boxshadow.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-canvas.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-canvas.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-caret-color.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-caret-color.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-case-insensitive.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-case-insensitive.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-clip-path.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-clip-path.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-conic-gradients.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-conic-gradients.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-containment.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-containment.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-counters.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-counters.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-crisp-edges.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-crisp-edges.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-cross-fade.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-cross-fade.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-default-pseudo.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-default-pseudo.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-descendant-gtgt.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-descendant-gtgt.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-deviceadaptation.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-deviceadaptation.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-dir-pseudo.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-dir-pseudo.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-display-contents.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-display-contents.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-element-function.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-element-function.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-exclusions.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-exclusions.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-featurequeries.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-featurequeries.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-filter-function.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-filter-function.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-filters.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-filters.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-first-letter.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-first-letter.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-first-line.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-first-line.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-fixed.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-fixed.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-focus-ring.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-focus-ring.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-focus-within.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-focus-within.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-font-rendering-controls.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-font-rendering-controls.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-font-stretch.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-font-stretch.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-gencontent.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-gencontent.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-gradients.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-gradients.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-grid.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-grid.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-hanging-punctuation.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-hanging-punctuation.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-has.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-has.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-hyphenate.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-hyphenate.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-hyphens.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-hyphens.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-image-orientation.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-image-orientation.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-image-set.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-image-set.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-in-out-of-range.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-in-out-of-range.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-indeterminate-pseudo.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-indeterminate-pseudo.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-initial-letter.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-initial-letter.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-initial-value.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-initial-value.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-letter-spacing.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-letter-spacing.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-line-clamp.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-line-clamp.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-logical-props.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-logical-props.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-marker-pseudo.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-marker-pseudo.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-masks.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-masks.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-matches-pseudo.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-matches-pseudo.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-media-interaction.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-media-interaction.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-media-resolution.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-media-resolution.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-media-scripting.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-media-scripting.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-mediaqueries.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-mediaqueries.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-mixblendmode.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-mixblendmode.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-motion-paths.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-motion-paths.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-namespaces.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-namespaces.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-not-sel-list.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-not-sel-list.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-nth-child-of.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-nth-child-of.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-opacity.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-opacity.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-optional-pseudo.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-optional-pseudo.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-overflow-anchor.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-overflow-anchor.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-page-break.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-page-break.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-paged-media.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-paged-media.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-placeholder-shown.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-placeholder-shown.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-placeholder.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-placeholder.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-read-only-write.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-read-only-write.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-rebeccapurple.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-rebeccapurple.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-reflections.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-reflections.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-regions.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-regions.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-repeating-gradients.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-repeating-gradients.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-resize.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-resize.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-revert-value.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-revert-value.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-rrggbbaa.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-rrggbbaa.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-scroll-behavior.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-scroll-behavior.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-scrollbar.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-scrollbar.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-sel2.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-sel2.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-sel3.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-sel3.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-selection.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-selection.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-shapes.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-shapes.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-snappoints.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-snappoints.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-sticky.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-sticky.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-supports-api.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-supports-api.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-table.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-table.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-text-align-last.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-text-align-last.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-text-indent.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-text-indent.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-text-justify.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-text-justify.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-text-orientation.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-text-orientation.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-text-spacing.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-text-spacing.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-textshadow.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-textshadow.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-touch-action-2.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-touch-action-2.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-touch-action.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-touch-action.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-transitions.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-transitions.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-unicode-bidi.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-unicode-bidi.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-unset-value.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-unset-value.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-variables.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-variables.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-widows-orphans.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-widows-orphans.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-writing-mode.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-writing-mode.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-zoom.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css-zoom.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css3-attr.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css3-attr.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css3-boxsizing.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css3-boxsizing.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css3-colors.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css3-colors.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css3-cursors-grab.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css3-cursors-grab.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css3-cursors-newer.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css3-cursors-newer.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css3-cursors.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css3-cursors.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css3-tabsize.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/css3-tabsize.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/currentcolor.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/currentcolor.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/custom-elements.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/custom-elements.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/custom-elementsv1.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/custom-elementsv1.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/customevent.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/customevent.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/datalist.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/datalist.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/dataset.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/dataset.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/datauri.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/datauri.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/details.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/details.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/deviceorientation.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/deviceorientation.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/devicepixelratio.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/devicepixelratio.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/dialog.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/dialog.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/dispatchevent.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/dispatchevent.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/document-currentscript.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/document-currentscript.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/document-evaluate-xpath.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/document-evaluate-xpath.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/document-execcommand.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/document-execcommand.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/documenthead.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/documenthead.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/dom-manip-convenience.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/dom-manip-convenience.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/dom-range.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/dom-range.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/domcontentloaded.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/domcontentloaded.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/domfocusin-domfocusout-events.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/domfocusin-domfocusout-events.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/dommatrix.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/dommatrix.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/download.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/download.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/dragndrop.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/dragndrop.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/element-closest.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/element-closest.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/element-from-point.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/element-from-point.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/eme.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/eme.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/eot.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/eot.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/es5.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/es5.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/es6-class.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/es6-class.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/es6-generators.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/es6-generators.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/es6-module-dynamic-import.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/es6-module-dynamic-import.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/es6-module-nomodule.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/es6-module-nomodule.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/es6-module.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/es6-module.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/es6-number.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/es6-number.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/es6-string-includes.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/es6-string-includes.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/eventsource.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/eventsource.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/fetch.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/fetch.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/fieldset-disabled.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/fieldset-disabled.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/fileapi.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/fileapi.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/filereader.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/filereader.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/filereadersync.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/filereadersync.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/filesystem.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/filesystem.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/flac.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/flac.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/flexbox.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/flexbox.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/flow-root.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/flow-root.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/focusin-focusout-events.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/focusin-focusout-events.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/font-feature.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/font-feature.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/font-kerning.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/font-kerning.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/font-loading.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/font-loading.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/font-size-adjust.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/font-size-adjust.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/font-smooth.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/font-smooth.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/font-unicode-range.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/font-unicode-range.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/font-variant-alternates.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/font-variant-alternates.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/font-variant-east-asian.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/font-variant-east-asian.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/fontface.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/fontface.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/form-attribute.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/form-attribute.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/form-submit-attributes.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/form-submit-attributes.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/form-validation.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/form-validation.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/forms.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/forms.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/fullscreen.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/fullscreen.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/gamepad.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/gamepad.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/geolocation.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/geolocation.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/getboundingclientrect.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/getboundingclientrect.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/getcomputedstyle.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/getcomputedstyle.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/getelementsbyclassname.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/getelementsbyclassname.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/getrandomvalues.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/getrandomvalues.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/hardwareconcurrency.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/hardwareconcurrency.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/hashchange.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/hashchange.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/heif.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/heif.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/hevc.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/hevc.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/hidden.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/hidden.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/high-resolution-time.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/high-resolution-time.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/history.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/history.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/html-media-capture.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/html-media-capture.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/html5semantic.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/html5semantic.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/http-live-streaming.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/http-live-streaming.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/http2.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/http2.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/iframe-sandbox.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/iframe-sandbox.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/iframe-seamless.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/iframe-seamless.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/iframe-srcdoc.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/iframe-srcdoc.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/imagecapture.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/imagecapture.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/ime.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/ime.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/img-naturalwidth-naturalheight.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/img-naturalwidth-naturalheight.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/imports.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/imports.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/indeterminate-checkbox.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/indeterminate-checkbox.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/indexeddb.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/indexeddb.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/indexeddb2.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/indexeddb2.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/inline-block.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/inline-block.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/innertext.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/innertext.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/input-autocomplete-onoff.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/input-autocomplete-onoff.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/input-color.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/input-color.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/input-datetime.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/input-datetime.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/input-email-tel-url.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/input-email-tel-url.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/input-event.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/input-event.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/input-file-accept.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/input-file-accept.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/input-file-directory.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/input-file-directory.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/input-file-multiple.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/input-file-multiple.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/input-inputmode.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/input-inputmode.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/input-minlength.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/input-minlength.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/input-number.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/input-number.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/input-pattern.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/input-pattern.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/input-placeholder.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/input-placeholder.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/input-range.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/input-range.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/input-search.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/input-search.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/input-selection.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/input-selection.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/insert-adjacent.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/insert-adjacent.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/insertadjacenthtml.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/insertadjacenthtml.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/internationalization.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/internationalization.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/intersectionobserver.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/intersectionobserver.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/intrinsic-width.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/intrinsic-width.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/jpeg2000.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/jpeg2000.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/jpegxr.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/jpegxr.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/json.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/json.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/kerning-pairs-ligatures.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/kerning-pairs-ligatures.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/keyboardevent-charcode.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/keyboardevent-charcode.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/keyboardevent-code.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/keyboardevent-code.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/keyboardevent-getmodifierstate.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/keyboardevent-getmodifierstate.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/keyboardevent-key.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/keyboardevent-key.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/keyboardevent-location.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/keyboardevent-location.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/keyboardevent-which.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/keyboardevent-which.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/lazyload.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/lazyload.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/let.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/let.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/link-icon-png.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/link-icon-png.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/link-icon-svg.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/link-icon-svg.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/link-rel-dns-prefetch.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/link-rel-dns-prefetch.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/link-rel-preconnect.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/link-rel-preconnect.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/link-rel-prefetch.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/link-rel-prefetch.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/link-rel-preload.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/link-rel-preload.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/link-rel-prerender.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/link-rel-prerender.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/localecompare.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/localecompare.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/matchesselector.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/matchesselector.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/matchmedia.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/matchmedia.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/mathml.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/mathml.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/maxlength.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/maxlength.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/media-attribute.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/media-attribute.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/media-fragments.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/media-fragments.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/media-session-api.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/media-session-api.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/mediacapture-fromelement.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/mediacapture-fromelement.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/mediarecorder.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/mediarecorder.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/mediasource.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/mediasource.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/menu.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/menu.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/meter.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/meter.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/midi.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/midi.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/minmaxwh.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/minmaxwh.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/mp3.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/mp3.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/mpeg-dash.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/mpeg-dash.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/mpeg4.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/mpeg4.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/multibackgrounds.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/multibackgrounds.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/multicolumn.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/multicolumn.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/mutation-events.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/mutation-events.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/mutationobserver.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/mutationobserver.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/namevalue-storage.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/namevalue-storage.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/nav-timing.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/nav-timing.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/netinfo.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/netinfo.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/node-contains.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/node-contains.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/node-parentelement.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/node-parentelement.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/notifications.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/notifications.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/object-fit.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/object-fit.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/object-observe.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/object-observe.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/object-values.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/object-values.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/objectrtc.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/objectrtc.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/offline-apps.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/offline-apps.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/offscreencanvas.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/offscreencanvas.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/ogg-vorbis.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/ogg-vorbis.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/ogv.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/ogv.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/ol-reversed.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/ol-reversed.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/once-event-listener.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/once-event-listener.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/online-status.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/online-status.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/opus.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/opus.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/outline.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/outline.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/pad-start-end.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/pad-start-end.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/page-transition-events.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/page-transition-events.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/pagevisibility.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/pagevisibility.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/passive-event-listener.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/passive-event-listener.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/path2d.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/path2d.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/payment-request.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/payment-request.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/permissions-api.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/permissions-api.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/picture.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/picture.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/ping.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/ping.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/png-alpha.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/png-alpha.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/pointer-events.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/pointer-events.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/pointer.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/pointer.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/pointerlock.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/pointerlock.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/progress.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/progress.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/promises.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/promises.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/proximity.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/proximity.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/proxy.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/proxy.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/publickeypinning.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/publickeypinning.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/push-api.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/push-api.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/queryselector.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/queryselector.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/readonly-attr.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/readonly-attr.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/referrer-policy.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/referrer-policy.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/registerprotocolhandler.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/registerprotocolhandler.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/rel-noopener.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/rel-noopener.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/rel-noreferrer.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/rel-noreferrer.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/rellist.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/rellist.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/rem.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/rem.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/requestanimationframe.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/requestanimationframe.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/requestidlecallback.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/requestidlecallback.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/resizeobserver.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/resizeobserver.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/resource-timing.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/resource-timing.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/rest-parameters.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/rest-parameters.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/rtcpeerconnection.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/rtcpeerconnection.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/ruby.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/ruby.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/run-in.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/run-in.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/same-site-cookie-attribute.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/same-site-cookie-attribute.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/screen-orientation.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/screen-orientation.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/script-async.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/script-async.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/script-defer.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/script-defer.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/scrollintoview.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/scrollintoview.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/scrollintoviewifneeded.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/scrollintoviewifneeded.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/sdch.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/sdch.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/selection-api.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/selection-api.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/serviceworkers.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/serviceworkers.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/setimmediate.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/setimmediate.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/sha-2.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/sha-2.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/shadowdom.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/shadowdom.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/shadowdomv1.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/shadowdomv1.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/sharedworkers.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/sharedworkers.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/sni.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/sni.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/spdy.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/spdy.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/speech-recognition.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/speech-recognition.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/speech-synthesis.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/speech-synthesis.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/spellcheck-attribute.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/spellcheck-attribute.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/sql-storage.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/sql-storage.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/srcset.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/srcset.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/stopimmediatepropagation.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/stopimmediatepropagation.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/stream.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/stream.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/streams.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/streams.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/stricttransportsecurity.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/stricttransportsecurity.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/style-scoped.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/style-scoped.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/subresource-integrity.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/subresource-integrity.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/svg-css.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/svg-css.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/svg-filters.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/svg-filters.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/svg-fonts.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/svg-fonts.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/svg-fragment.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/svg-fragment.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/svg-html.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/svg-html.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/svg-html5.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/svg-html5.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/svg-img.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/svg-img.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/svg-smil.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/svg-smil.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/svg.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/svg.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/tabindex-attr.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/tabindex-attr.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/template-literals.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/template-literals.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/template.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/template.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/testfeat.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/testfeat.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/text-decoration.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/text-decoration.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/text-emphasis.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/text-emphasis.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/text-overflow.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/text-overflow.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/text-size-adjust.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/text-size-adjust.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/text-stroke.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/text-stroke.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/textcontent.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/textcontent.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/textencoder.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/textencoder.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/tls1-1.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/tls1-1.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/tls1-2.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/tls1-2.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/tls1-3.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/tls1-3.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/token-binding.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/token-binding.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/touch.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/touch.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/transforms2d.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/transforms2d.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/transforms3d.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/transforms3d.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/ttf.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/ttf.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/typedarrays.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/typedarrays.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/u2f.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/u2f.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/unhandledrejection.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/unhandledrejection.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/upgradeinsecurerequests.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/upgradeinsecurerequests.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/url.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/url.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/urlsearchparams.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/urlsearchparams.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/use-strict.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/use-strict.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/user-select-none.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/user-select-none.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/user-timing.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/user-timing.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/variable-fonts.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/variable-fonts.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/vibration.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/vibration.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/video.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/video.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/videotracks.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/videotracks.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/viewport-units.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/viewport-units.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/wai-aria.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/wai-aria.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/wasm.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/wasm.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/wav.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/wav.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/wbr-element.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/wbr-element.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/web-animation.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/web-animation.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/web-app-manifest.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/web-app-manifest.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/web-bluetooth.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/web-bluetooth.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/web-share.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/web-share.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/webgl.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/webgl.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/webgl2.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/webgl2.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/webm.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/webm.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/webp.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/webp.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/websockets.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/websockets.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/webusb.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/webusb.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/webvr.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/webvr.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/webvtt.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/webvtt.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/webworkers.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/webworkers.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/will-change.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/will-change.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/woff.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/woff.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/woff2.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/woff2.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/word-break.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/word-break.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/wordwrap.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/wordwrap.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/x-doc-messaging.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/x-doc-messaging.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/x-frame-options.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/x-frame-options.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/xhr2.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/xhr2.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/xhtml.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/xhtml.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/xhtmlsmil.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/xhtmlsmil.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/xml-serializer.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/features/xml-serializer.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/AD.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/AD.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/AE.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/AE.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/AF.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/AF.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/AG.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/AG.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/AI.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/AI.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/AL.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/AL.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/AM.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/AM.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/AO.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/AO.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/AR.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/AR.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/AS.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/AS.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/AT.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/AT.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/AU.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/AU.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/AW.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/AW.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/AX.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/AX.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/AZ.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/AZ.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/BA.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/BA.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/BB.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/BB.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/BD.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/BD.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/BE.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/BE.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/BF.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/BF.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/BG.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/BG.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/BH.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/BH.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/BI.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/BI.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/BJ.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/BJ.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/BM.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/BM.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/BN.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/BN.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/BO.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/BO.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/BR.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/BR.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/BS.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/BS.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/BT.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/BT.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/BW.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/BW.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/BY.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/BY.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/BZ.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/BZ.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/CA.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/CA.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/CD.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/CD.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/CF.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/CF.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/CG.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/CG.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/CH.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/CH.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/CI.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/CI.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/CK.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/CK.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/CL.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/CL.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/CM.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/CM.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/CN.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/CN.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/CO.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/CO.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/CR.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/CR.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/CU.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/CU.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/CV.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/CV.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/CX.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/CX.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/CY.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/CY.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/CZ.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/CZ.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/DE.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/DE.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/DJ.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/DJ.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/DK.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/DK.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/DM.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/DM.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/DO.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/DO.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/DZ.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/DZ.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/EC.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/EC.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/EE.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/EE.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/EG.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/EG.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/ER.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/ER.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/ES.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/ES.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/ET.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/ET.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/FI.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/FI.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/FJ.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/FJ.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/FK.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/FK.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/FM.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/FM.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/FO.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/FO.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/FR.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/FR.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/GA.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/GA.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/GB.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/GB.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/GD.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/GD.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/GE.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/GE.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/GF.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/GF.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/GG.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/GG.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/GH.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/GH.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/GI.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/GI.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/GL.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/GL.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/GM.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/GM.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/GN.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/GN.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/GP.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/GP.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/GQ.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/GQ.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/GR.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/GR.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/GT.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/GT.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/GU.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/GU.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/GW.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/GW.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/GY.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/GY.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/HK.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/HK.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/HN.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/HN.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/HR.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/HR.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/HT.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/HT.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/HU.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/HU.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/ID.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/ID.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/IE.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/IE.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/IL.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/IL.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/IM.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/IM.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/IN.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/IN.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/IQ.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/IQ.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/IR.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/IR.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/IS.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/IS.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/IT.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/IT.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/JE.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/JE.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/JM.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/JM.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/JO.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/JO.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/JP.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/JP.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/KE.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/KE.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/KG.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/KG.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/KH.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/KH.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/KI.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/KI.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/KM.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/KM.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/KN.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/KN.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/KP.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/KP.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/KR.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/KR.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/KW.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/KW.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/KY.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/KY.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/KZ.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/KZ.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/LA.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/LA.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/LB.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/LB.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/LC.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/LC.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/LI.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/LI.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/LK.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/LK.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/LR.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/LR.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/LS.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/LS.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/LT.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/LT.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/LU.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/LU.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/LV.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/LV.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/LY.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/LY.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/MA.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/MA.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/MC.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/MC.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/MD.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/MD.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/ME.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/ME.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/MG.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/MG.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/MH.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/MH.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/MK.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/MK.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/ML.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/ML.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/MM.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/MM.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/MN.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/MN.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/MO.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/MO.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/MP.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/MP.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/MQ.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/MQ.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/MR.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/MR.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/MS.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/MS.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/MT.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/MT.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/MU.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/MU.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/MV.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/MV.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/MW.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/MW.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/MX.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/MX.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/MY.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/MY.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/MZ.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/MZ.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/NA.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/NA.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/NC.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/NC.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/NE.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/NE.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/NF.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/NF.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/NG.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/NG.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/NI.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/NI.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/NL.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/NL.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/NO.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/NO.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/NP.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/NP.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/NR.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/NR.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/NU.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/NU.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/NZ.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/NZ.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/OM.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/OM.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/PA.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/PA.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/PE.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/PE.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/PF.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/PF.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/PG.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/PG.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/PH.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/PH.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/PK.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/PK.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/PL.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/PL.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/PM.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/PM.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/PN.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/PN.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/PR.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/PR.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/PS.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/PS.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/PT.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/PT.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/PW.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/PW.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/PY.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/PY.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/QA.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/QA.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/RE.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/RE.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/RO.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/RO.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/RS.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/RS.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/RU.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/RU.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/RW.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/RW.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/SA.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/SA.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/SB.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/SB.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/SC.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/SC.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/SD.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/SD.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/SE.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/SE.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/SG.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/SG.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/SH.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/SH.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/SI.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/SI.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/SK.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/SK.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/SL.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/SL.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/SM.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/SM.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/SN.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/SN.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/SO.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/SO.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/SR.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/SR.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/ST.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/ST.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/SV.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/SV.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/SY.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/SY.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/SZ.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/SZ.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/TC.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/TC.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/TD.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/TD.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/TG.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/TG.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/TH.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/TH.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/TJ.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/TJ.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/TK.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/TK.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/TL.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/TL.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/TM.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/TM.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/TN.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/TN.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/TO.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/TO.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/TR.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/TR.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/TT.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/TT.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/TV.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/TV.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/TW.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/TW.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/TZ.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/TZ.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/UA.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/UA.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/UG.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/UG.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/US.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/US.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/UY.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/UY.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/UZ.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/UZ.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/VA.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/VA.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/VC.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/VC.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/VE.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/VE.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/VG.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/VG.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/VI.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/VI.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/VN.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/VN.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/VU.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/VU.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/WF.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/WF.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/WS.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/WS.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/YE.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/YE.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/YT.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/YT.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/ZA.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/ZA.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/ZM.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/ZM.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/ZW.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/ZW.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/alt-af.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/alt-af.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/alt-an.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/alt-an.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/alt-as.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/alt-as.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/alt-eu.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/alt-eu.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/alt-na.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/alt-na.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/alt-oc.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/alt-oc.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/alt-sa.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/alt-sa.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/alt-ww.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/data/regions/alt-ww.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/package.json" afterPath="$PROJECT_DIR$/dbManager/node_modules/caniuse-lite/package.json" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/commander/CHANGELOG.md" afterPath="$PROJECT_DIR$/dbManager/node_modules/commander/CHANGELOG.md" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/commander/index.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/commander/index.js" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/commander/package.json" afterPath="$PROJECT_DIR$/dbManager/node_modules/commander/package.json" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/commander/typings/index.d.ts" afterPath="$PROJECT_DIR$/dbManager/node_modules/commander/typings/index.d.ts" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/electron-to-chromium/package.json" afterPath="$PROJECT_DIR$/dbManager/node_modules/electron-to-chromium/package.json" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/semver/README.md" afterPath="$PROJECT_DIR$/dbManager/node_modules/semver/README.md" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/semver/bin/semver" afterPath="$PROJECT_DIR$/dbManager/node_modules/semver/bin/semver" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/semver/package.json" afterPath="$PROJECT_DIR$/dbManager/node_modules/semver/package.json" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/semver/range.bnf" afterPath="$PROJECT_DIR$/dbManager/node_modules/semver/range.bnf" />
+      <change beforePath="$PROJECT_DIR$/dbManager/node_modules/semver/semver.js" afterPath="$PROJECT_DIR$/dbManager/node_modules/semver/semver.js" />
     </list>
     <ignored path=".idea/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -98,7 +807,7 @@
       <file leaf-file-name="DB.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/class/DB.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2904">
+            <state relative-caret-position="2688">
               <caret line="137" column="0" lean-forward="false" selection-start-line="137" selection-start-column="0" selection-end-line="137" selection-end-column="0" />
               <folding>
                 <element signature="e#37#115#0#PHP" expanded="false" />
@@ -141,6 +850,16 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="connection.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/class/connection.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="312">
+              <caret line="18" column="30" lean-forward="true" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="commenters.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dbManager/tpl/cms/commenters.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -154,7 +873,7 @@
       <file leaf-file-name="comments.template.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dbManager/tpl/cms/comments/comments.template.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3600">
+            <state relative-caret-position="564">
               <caret line="150" column="27" lean-forward="false" selection-start-line="150" selection-start-column="27" selection-end-line="150" selection-end-column="27" />
               <folding />
             </state>
@@ -171,11 +890,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="cms.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="cms.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dbManager/tpl/cms/cms.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="248">
-              <caret line="162" column="51" lean-forward="false" selection-start-line="162" selection-start-column="51" selection-end-line="162" selection-end-column="51" />
+            <state relative-caret-position="2432">
+              <caret line="151" column="29" lean-forward="false" selection-start-line="151" selection-start-column="29" selection-end-line="151" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -186,16 +905,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="744">
               <caret line="31" column="19" lean-forward="false" selection-start-line="31" selection-start-column="19" selection-end-line="31" selection-end-column="19" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="bootstrap.min.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dbManager/css/bootstrap.min.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="103416">
-              <caret line="4309" column="1" lean-forward="false" selection-start-line="4309" selection-start-column="1" selection-end-line="4309" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -343,7 +1052,6 @@
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/dbManager/tpl/login/formLogin.php" />
         <option value="$PROJECT_DIR$/dbManager/tpl/login/tpl/login_and_reg/login.php" />
-        <option value="$PROJECT_DIR$/class/connection.php" />
         <option value="$PROJECT_DIR$/titles.php" />
         <option value="$PROJECT_DIR$/dbManager/ng.js" />
         <option value="$PROJECT_DIR$/dbManager/tpl/cms/pages/titles.html" />
@@ -358,6 +1066,7 @@
         <option value="$PROJECT_DIR$/dbManager/tpl/cms/comments/comments.template.html" />
         <option value="$PROJECT_DIR$/dbManager/css/default.css" />
         <option value="$PROJECT_DIR$/dbManager/tpl/cms/cms.php" />
+        <option value="$PROJECT_DIR$/class/connection.php" />
       </list>
     </option>
   </component>
@@ -519,20 +1228,6 @@
               <item name="styles" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="_css" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
-            <path>
-              <item name="aad-hamediaLogin_cms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="bcb0276e:PhpExternalLibrariesNodePatcher$PatchedExternalLibrariesNode" />
-            </path>
-            <path>
-              <item name="aad-hamediaLogin_cms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="bcb0276e:PhpExternalLibrariesNodePatcher$PatchedExternalLibrariesNode" />
-              <item name="angular" type="70bed36:NamedLibraryElementNode" />
-            </path>
-            <path>
-              <item name="aad-hamediaLogin_cms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="bcb0276e:PhpExternalLibrariesNodePatcher$PatchedExternalLibrariesNode" />
-              <item name="summernote-bs4" type="70bed36:NamedLibraryElementNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -644,7 +1339,7 @@
       <workItem from="1516353109360" duration="23249000" />
       <workItem from="1516387337696" duration="822000" />
       <workItem from="1516390381110" duration="756000" />
-      <workItem from="1516391451414" duration="207000" />
+      <workItem from="1516391451414" duration="1326000" />
     </task>
     <task id="LOCAL-00001" summary="project start">
       <created>1516383693831</created>
@@ -660,11 +1355,25 @@
       <option name="project" value="LOCAL" />
       <updated>1516384685498</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="test 3">
+      <created>1516391700602</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1516391700602</updated>
+    </task>
+    <task id="LOCAL-00004" summary="ready for uploading to server">
+      <created>1516392448966</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1516392448966</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="402303000" />
+    <option name="totallyTimeSpent" value="403422000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -677,6 +1386,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32826087" sideWeight="0.49573562" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19296375" sideWeight="0.49342105" order="0" side_tool="false" content_ui="combo" />
@@ -687,7 +1397,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.325" sideWeight="0.4914712" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3347826" sideWeight="0.48933902" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3347826" sideWeight="0.48933902" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17397882" sideWeight="0.5065789" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -762,7 +1472,9 @@
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
     <MESSAGE value="project start" />
-    <option name="LAST_COMMIT_MESSAGE" value="project start" />
+    <MESSAGE value="test 3" />
+    <MESSAGE value="ready for uploading to server" />
+    <option name="LAST_COMMIT_MESSAGE" value="ready for uploading to server" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -926,13 +1638,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/class/connection.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="18" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dbManager/node_modules/ansi-styles/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-432">
@@ -1027,22 +1732,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dbManager/tpl/cms/comments/comments.template.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3600">
-          <caret line="150" column="27" lean-forward="false" selection-start-line="150" selection-start-column="27" selection-end-line="150" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dbManager/directives/pagination.template.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="15" lean-forward="false" selection-start-line="0" selection-start-column="15" selection-end-line="0" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dbManager/css/default.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6792">
@@ -1061,9 +1750,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/dbManager/tpl/cms/cms.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2432">
+          <caret line="151" column="29" lean-forward="false" selection-start-line="151" selection-start-column="29" selection-end-line="151" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/class/DB.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2904">
+        <state relative-caret-position="2688">
           <caret line="137" column="0" lean-forward="false" selection-start-line="137" selection-start-column="0" selection-end-line="137" selection-end-column="0" />
           <folding>
             <element signature="e#37#115#0#PHP" expanded="false" />
@@ -1105,10 +1802,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dbManager/tpl/cms/cms.php">
+    <entry file="file://$PROJECT_DIR$/dbManager/tpl/cms/comments/comments.template.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="162" column="51" lean-forward="false" selection-start-line="162" selection-start-column="51" selection-end-line="162" selection-end-column="51" />
+        <state relative-caret-position="564">
+          <caret line="150" column="27" lean-forward="false" selection-start-line="150" selection-start-column="27" selection-end-line="150" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dbManager/directives/pagination.template.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="15" lean-forward="false" selection-start-line="0" selection-start-column="15" selection-end-line="0" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/class/connection.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="18" column="30" lean-forward="true" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
           <folding />
         </state>
       </provider>

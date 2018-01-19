@@ -12,7 +12,7 @@ class Connection
     public $host;
     function __construct()
     {
-        $this->host = $_SERVER['HTTP_HOST'];
+        $this->host = $_SERVER['HTTP_HOST'].':3306';
         try{
             self::$con = new PDO('mysql:host='.$this->host.';dbname=aadhamedina;charset=utf8', 'root' , '');
             self::$con->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
