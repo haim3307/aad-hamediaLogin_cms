@@ -1,0 +1,363 @@
+/*
+Created on : 05/02/2017, 05:27:12
+Author     : HT
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --mainC: linear-gradient(to bottom, rgba(169, 3, 41, 1) 0%, rgba(143, 2, 34, 1) 44%, rgba(109, 0, 25, 1) 100%);
+  --secondC: linear-gradient(to bottom, rgba(238, 238, 238, 1) 0%, rgba(204, 204, 204, 1) 100%);
+}
+
+$mainColor: -webkit-linear-gradient(top, rgba(169, 3, 41, 1) 0%, rgba(143, 2, 34, 1) 44%, rgba(109, 0, 25, 1) 100%);
+$secondColor: -webkit-linear-gradient(top, rgba(238, 238, 238, 0.9) 0%, rgba(204, 204, 204, 0.5) 100%);
+body {
+  display: flex;
+  margin: 0;
+  direction: rtl;
+  font-family: alef, arial;
+
+}
+
+.sideAds {
+  width: 130px;
+  height: 689px;
+  margin-top: 10px;
+  background: var(--secondC);
+  display: block;
+  .exitButton {
+    display: none;
+    a {
+      color: black;
+    }
+  }
+}
+
+@media(max-width: 1300px) {
+  .sideAds {
+    display: none;
+  }
+}
+
+.leftWing1 {
+  order: 3;
+  /*           display: flex;*/
+  flex-flow: column;
+  height: 689px;
+  position: fixed;
+  left: 0;
+  top: 90px;
+  opacity: 0;
+  z-index: 10;
+  .sideAds {
+    direction: ltr;
+  }
+}
+
+.rightWing1 {
+  order: 1;
+  /*           display: flex;*/
+  flex-flow: column;
+  height: 689px;
+  position: fixed;
+  right: 0;
+  top: 90px;
+  z-index: 10;
+  opacity: 0;
+
+}
+
+ul,li {
+  list-style: none;
+}
+
+.flex-container {
+  order: 2;
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+  max-width: 1100px;
+  background: linear-gradient(to bottom, rgba(238, 238, 238, 1) 0%, rgba(204, 204, 204, 1) 100%);
+  box-shadow: 0 0 20px 1px;
+}
+/*mainNav*/
+@import "mainNav";
+/*!mainNav*/
+
+.menuBanner {
+  margin-top: 10px;
+  .menuBannerImg {
+    height: 100%;
+    width: 100%
+  }
+  .exitButton {
+    height: 40px;
+    width: 40px;
+    margin: 10px;
+    font-size: 25pt;
+    text-align: center;
+    color: white;
+    position: absolute;
+    a {
+      color: white;
+      text-decoration: none;
+    }
+  }
+}
+
+a.title {
+  order: 4;
+  padding: 5px;
+  display: flex;
+  flex: 1 1 100%;
+  height: 40px;
+  justify-content: center;
+  text-decoration: none;
+  font-family: alef, Arial, Helvetica, sans-serif;
+  font-size: 20pt;
+  background: linear-gradient(to bottom, rgba(169, 3, 41, 1) 0%, rgba(143, 2, 34, 1) 44%, rgba(109, 0, 25, 1) 100%);
+  color: white;
+}
+
+nav.sortTool {
+  order: 0;
+  display: none;
+  flex-flow: row;
+  height: 70px;
+  border-bottom-left-radius: 10%;
+  border-bottom-right-radius: 10%;
+  background: linear-gradient(to bottom, rgba(96, 108, 136, 1) 0%, rgba(63, 76, 107, 1) 100%);
+  justify-content: center;
+  align-items: center;
+}
+
+div.sortButton {
+  border: 4px red solid;
+  width: 50px;
+  height: 40px;
+  background: saddlebrown;
+  margin: 0 10px 0 10px;
+}
+
+.dateOfPublish {
+  display: flex;
+  text-align: center;
+  font-weight: bolder;
+  background: var(--secondC);
+  height: 50px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  font-size: 20pt;
+}
+
+main.main {
+  display: flex;
+  flex-flow: column;
+  order: 4;
+  flex: 1;
+  margin: 0;
+  padding: 0;
+  min-height: 1000px;
+}
+
+.news-container {
+  display: flex;
+  flex-flow: column;
+  direction: rtl;
+  background: -webkit-linear-gradient(top, rgba(238, 238, 238, 1) 0%, rgba(204, 204, 204, 1) 100%);
+}
+
+a.overlay1 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 8;
+}
+
+
+.grid-news-item{
+  display: grid;
+  grid-template-areas:
+          'artAuth artAuth'
+          'artDate artDate'
+          'artTitle artTitle'
+          'postImage postImage'
+          'postDesc postDesc'
+          'postActions postActions'
+          'postComments postComments'
+  ;
+  grid-template-rows: 50px 50px 50px 1fr auto;
+  background-color: whitesmoke;
+  border: 1px solid #3f4c6b;
+  border-radius: 3px;
+  margin: 10px auto;
+  padding: 20px 0;
+  .addComment{
+    display: flex;
+  }
+  .postDesc{
+    grid-area: postDesc;
+  }
+  a.toArt{
+    grid-area: postImage;
+    overflow: hidden;
+
+  }
+  img{
+    width: 100%;
+  }
+  .artAuth{
+    grid-area: artAuth;
+    i{
+      padding-left: 10px;
+    }
+  }
+  .artAuth,.artDate{
+    color:#005cbf;
+  }
+
+  .artDate{
+    grid-area: artDate;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+  }
+  .artTitle{grid-area: artTitle}
+  .postActions{
+    display: flex;
+    justify-content: space-between;
+    grid-area: postActions;
+    padding: 20px 0;
+  }
+  .postAction{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .postComments{
+    grid-area: postComments;
+  }
+  @media (min-width: 810px) {
+    //min-height: 700px;
+    margin: 30px auto 50px auto;
+    padding: 50px;
+    grid-template-rows: 80px 50px 500px;
+    grid-template-areas:
+          'artAuth artDate'
+          'artTitle artTitle'
+          'postImage postImage'
+          'postDesc postDesc'
+          'postActions postActions'
+          'postComments postComments';
+  }
+}
+
+
+/*----------------------------old-homepage-report-items--------------*/
+@import 'oldHomePage';
+/*----------------------------end-of-homepage-report-items--------------*/
+/*best item*/
+
+@import "bestTitlesItem";
+
+/*!best item*/
+
+
+.smalltitle {
+  display: none;
+}
+
+footer {
+  order: 8;
+  max-height: 100px;
+  margin: 0;
+  text-align: center;
+  background: linear-gradient(to bottom, rgba(169, 3, 41, 1) 0%, rgba(143, 2, 34, 1) 44%, rgba(109, 0, 25, 1) 100%);
+  color: white;
+}
+
+.mainSlide {
+  display: flex;
+  width: 100%;
+}
+.rightColSlide {
+  flex: 1;
+  order: 1;
+  width: 10%;
+}
+
+.leftColSlide {
+  flex: 1;
+  order: 3;
+}
+
+.smallreportImg {
+  height: 100px;
+}
+
+.threecol {
+  display: flex;
+}
+
+.mainCol {
+  order: 2;
+  flex: 1 1 70%;
+  .double-col {
+    flex-flow: row;
+  }
+}
+
+.rightCol {
+  order: 1;
+  flex: 1 0 20%;
+}
+
+.leftCol {
+  order: 3;
+  flex: 1 0 20%;
+}
+
+
+@media (max-width: 900px) {
+
+  .allReportsWrapper {
+    flex-flow: column;
+    min-width: 96%;
+  }
+  .reportItem {
+    flex: 1 1 100%;
+    min-height: 450px;
+  }
+  .itemWrapper {
+    min-width: 95px;
+    min-height: inherit;
+  }
+
+  nav.main {
+    display: flex;
+    flex-flow: row;
+    flex: 1 1 100%;
+    /*border: 8px solid blue;*/
+    height: 400px;
+    justify-content: center;
+  }
+}
+
+/*-----------------new grid items-------------------*/
+
+.news-section > ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  transition: all 0.7s;
+}
+
+@media(min-width: 810px) {
+}

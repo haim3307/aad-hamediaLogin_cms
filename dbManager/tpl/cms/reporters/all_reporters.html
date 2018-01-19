@@ -1,0 +1,135 @@
+
+<link rel="stylesheet" href="../../../css/bootstrap.min.css">
+<style>
+    .comments-row{
+        margin-bottom: 30px;
+    }
+    .comment-age{
+        font-size: 12px;
+    }
+    .comment-well{
+        margin-top: 10px;
+    }
+    .btn-default{
+        color: #676a6c;
+        border: 1px #eee solid;
+    }
+    .btn-default:hover{
+        color: #676a6c;
+        border: 1px #eee solid;
+        background-color: #f3f3f4;
+    }
+</style>
+<div class="somePage overflow-content">
+    <header class="d-flex justify-content-between">
+        <h4 class="page_title">כל הכתבים</h4>
+        <div  class="align-self-center">
+            <select ng-change="crud.updateReptsQuan(crud.commQuan,this);" class="custom-select" ng-model="crud.commQuan" name="" id="selectCommQuan">
+                <option value="5">5 רשומות לדף</option>
+                <option value="10">10 רשומות לדף</option>
+                <option value="25">25 רשומות לדף</option>
+                <option value="50">50 רשומות לדף</option>
+            </select>
+        </div>
+        <button class="btn btn-primary ">הוסף כתב</button>
+
+    </header>
+    <div class="content-inner padding-20">
+        <div class="row search-row">
+            <div class="col-md-12">
+                <div class="input-group">
+                    <input type="text" ng-model="searchComments" class="form-control search-field" id="inputAmount" placeholder="Search">
+                    <span class="input-group-btn">
+                    <button class="btn btn-default go" ng-click="crud.goSearch1(this,searchComments)">חפש!</button>
+                </span>
+                </div>
+            </div>
+        </div>
+        <div class="row p-1">
+            <div class="col-12" ng-show="pagination">
+                <pagination></pagination>
+            </div>
+        </div>
+        <div class="row comments-row" style="height: 80vh;" ng-if="commArr.length < 1 && !searchMode"><h2 class="display-4 text-center">אין תגובות זמינות</h2></div>
+        <div class="row comments-row d-flex justify-content-center align-items-center" style="height: 50vh; flex-flow: column;" ng-hide="loaded">
+            <img src="assets/giphy.gif" alt="">
+            <h4>טוען רשימה..</h4>
+        </div>
+        <div class="row comments-row d-flex justify-content-center align-items-center flex-column" style="height: 50vh;" ng-show="resultNum == 0">
+            <h4>לא נמצאו תוצאות עבור..</h4>
+        </div>
+        <div class="row comments-row d-flex justify-content-center align-items-center flex-column" ng-show="resultNum > 0 && searchMode">
+            <h4> נמצאו {{resultNum}} תוצאות</h4>
+        </div>
+
+        <div class="row comments-row" ng-if="commArr.length > 0" ng-repeat="comment in commArr" style="margin-bottom: 50px;">
+            <div class="col-12 col-sm-2 col-lg-2">
+                <div ng-if="comment.profile_img" class="rounded-circle" style="overflow: hidden; width: 120%;">
+                    <img width="150%" height="150%"  ng-src="assets/img/profiles/{{comment.profile_img}}" alt="">
+                </div>
+                <img ng-if="!comment.profile_img" class="rounded-circle" src="https://dummyimage.com/120x120/1ab394/d0d2e8&text=70x70" alt="">
+            </div>
+            <div class="col-12 col-sm-10 col-lg-10">
+                <div class="row">
+                    <div class="col-md-9">
+                        <style>
+                            .grid-reporter-qprofile{
+                                display: grid;
+                                grid-template-columns: 1fr 1fr;
+                                grid-gap: 20px;
+                            }
+                            .grid-reporter-qprofile i{
+                                padding: 10px;
+                            }
+                        </style>
+                        <div class="card card-body bg-faded comment-well grid-reporter-qprofile">
+                            <!--h4>{{comment.id}}</h4-->
+                            <h4><i class="fa fa-user" aria-hidden="true"></i>{{comment['first_name'] + ' ' + comment['last_name']}}</h4>
+                            <p><i class="fa fa-info"></i> <span>{{comment.age}}</span> </p>
+                            <p><i class="fa fa-2x fa-map-marker"></i><span>{{comment.city}} </span></p>
+                            <p><i class="fa fa-mobile" aria-hidden="true"></i><span>{{comment.private_phone}}</span></p>
+                            <p><i class="fa fa-envelope" aria-hidden="true"></i>{{comment.email}}</p>
+                            <p><i class="fa fa-calendar" aria-hidden="true"></i>{{comment.join_date | longDate}} </p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="clearfix">
+                            <div class="pull-left">
+                                <div class="comment-age badge badge-success p-2" ng-if="comment.activated == 1">פעיל</div>
+                                <div class="comment-age badge badge-danger p-2" ng-if="comment.activated == -1">חסום</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row p-4">
+                    <div>
+                        <a ng-click="" class="btn btn-success" role="button">
+                            <i class="fa fa-address-card-o" aria-hidden="true"></i>
+                            <span class="text-white">הצג</span>
+                        </a>
+                        <a ng-click="" class="btn btn-warning" role="button">
+                            <span class="fa fa-edit"></span>
+                            <span class="text-white">ערוך</span>
+                        </a>
+                        <a ng-click="" class="btn btn-danger" role="button">
+                            <span class="fa fa-remove"></span>
+                            <span class="text-white">מחק</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <style>
+            .page-item{cursor: pointer;}
+
+        </style>
+        <!--ng-if="pagesLen > 5"-->
+        <div class="row p-1">
+            <div class="col-12" ng-show="pagination">
+                <pagination></pagination>
+            </div>
+        </div>
+    </div>
+</div>

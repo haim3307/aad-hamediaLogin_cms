@@ -1,0 +1,85 @@
+<div class="overflow-content">
+    <div class="categoryEdit card card-body"
+         ng-repeat="category in titlesCategories">
+        <h2>{{category}}</h2>
+        <div class="form-group d-flex">
+            <input type="text" placeholder="חפש מאמר" class="form-control" ng-keyup="quickArtSearch($event)">
+            <input type="button" value="הוסף מאמר" class="btn btn-success">
+        </div>
+        <div style="background-color: #eeeeee; min-height: 500px;">
+            <nav>
+                <ul class="nav nav-tabs" role="tablist">
+                    <li class="nav-item" ng-click="tab = 'search'">
+                        <a class="nav-link active" role="tab" data-toggle="tab">
+                            <i class="fa fa-search"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item" ng-click="tab = 'selected'">
+                        <a class="nav-link" role="tab" data-toggle="tab"><i class="fa fa-bars"></i></a>
+                    </li>
+                    <li class="nav-item" ng-click="tab = 'preview'">
+                        <a class="nav-link" role="tab" data-toggle="tab"><i class="fa fa-rocket"></i></a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="selectedList" ng-show="tab === 'selected'">
+                <div>
+                    <ul id="sortable{{category}}" class="sortable p-0">
+                        <li class="ui-state-default list-group-item d-flex flex-column" ng-repeat="selected in selectedArts[category]" id="{{selected[0]}}">
+                            <i class="fa fa-sort"></i>
+                            <strong style="padding: 10px">{{selected[0]}}</strong>
+
+                            <span>{{selected[1].title}}</span>
+                            <i class="fa fa-trash align-self-end" ng-click="deleteCateArt(selected[0],category,selected[1].cat_id)"></i>
+                        </li>
+                    </ul>
+
+                </div>
+
+            </div>
+            <div class="quickResults" ng-show="tab === 'search'">
+                תוצאות מהירות:
+                <div class="resItem list-group-item" ng-repeat="res in quickResults" ng-click="addToList(res,category)">
+                    <span>{{res.title}}</span>
+                </div>
+            </div>
+            <div ng-show="tab === 'preview'">
+                <div class="grid-best-items">
+                    <li ng-repeat="selected in selectedArts[category]" class="bestTitlesItem">
+                        <div> <img ng-src="../_img/report/postFront/{{ selected[1]['frontImg']}}"></div>
+
+                        <div class="bestTitlesItemDes">
+                            <a href="PoliticsPage.html" class="overlay1"></a>
+                            <div class="topinfo">
+                                <div class="socialShare">
+                                    <div>
+                                        <a href="#"><img src="../_img/layout/googlesmall.svg"></a>
+                                    </div>
+
+
+                                    <div>
+                                        <a href="#"><img src="../_img/layout/facebook.svg"></a>
+                                    </div>
+                                    <div>
+                                        <a href="#"><img src="../_img/layout/twitersmall.svg"></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bottominfo">
+                                <div class="binfoTitle">{{selected[1].title}}</div>
+                                <div class="bdate"> {{selected[1].reporterName}} | 14:20 | 26/11/2016</div>
+                            </div>
+                        </div>
+
+                    </li>
+                </div>
+            </div>
+        </div>
+        <div class="actions">
+            <button class="btn btn-primary" ng-click="sendSelectedCates(category)">שמור</button>
+        </div>
+    </div>
+</div>
+<!--
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+-->

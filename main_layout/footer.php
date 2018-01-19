@@ -1,0 +1,1 @@
+Copyright HTProjects <?= date("Y"); ?> &copy;

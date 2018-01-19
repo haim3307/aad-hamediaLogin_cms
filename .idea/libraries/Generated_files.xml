@@ -1,0 +1,33 @@
+<component name="libraryTable">
+  <library name="Generated files" type="javaScript">
+    <properties>
+      <sourceFilesUrls>
+        <item url="file://$PROJECT_DIR$/dist/dbManager/lib/http_cdnjs.cloudflare.com_ajax_libs_angular-ui-router_1.0.3_angular-ui-router.js" />
+        <item url="file://$PROJECT_DIR$/dist/dbManager/lib/http_cdnjs.cloudflare.com_ajax_libs_angular.js_1.6.7_angular.js" />
+        <item url="file://$PROJECT_DIR$/dist/dbManager/lib/http_cdnjs.cloudflare.com_ajax_libs_angular.js_1.6.8_angular.js" />
+        <item url="file://$PROJECT_DIR$/dist/dbManager/lib/http_cdnjs.cloudflare.com_ajax_libs_popper.js_1.12.3_umd_popper.js" />
+        <item url="file://$PROJECT_DIR$/dist/dbManager/lib/http_cdnjs.cloudflare.com_ajax_libs_summernote_0.8.8_summernote-bs4.js" />
+        <item url="file://$PROJECT_DIR$/dist/dbManager/lib/http_cdnjs.cloudflare.com_ajax_libs_toastr.js_latest_js_toastr.min.js" />
+        <item url="file://$PROJECT_DIR$/dist/dbManager/lib/http_code.jquery.com_ui_1.12.1_jquery-ui.js" />
+        <item url="file://$PROJECT_DIR$/dist/dbManager/lib/http_maxcdn.bootstrapcdn.com_bootstrap_4.0.0-beta.2_js_bootstrap.js" />
+        <item url="file://$PROJECT_DIR$/dist/dbManager/lib/ng-file-model.js" />
+        <item url="file://$PROJECT_DIR$/dist/dbManager/ng.js" />
+        <item url="file://$PROJECT_DIR$/dist/dbManager/services.js" />
+      </sourceFilesUrls>
+    </properties>
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/dist/dbManager/lib/http_cdnjs.cloudflare.com_ajax_libs_angular-ui-router_1.0.3_angular-ui-router.js" />
+      <root url="file://$PROJECT_DIR$/dist/dbManager/lib/http_cdnjs.cloudflare.com_ajax_libs_angular.js_1.6.7_angular.js" />
+      <root url="file://$PROJECT_DIR$/dist/dbManager/lib/http_cdnjs.cloudflare.com_ajax_libs_angular.js_1.6.8_angular.js" />
+      <root url="file://$PROJECT_DIR$/dist/dbManager/lib/http_cdnjs.cloudflare.com_ajax_libs_popper.js_1.12.3_umd_popper.js" />
+      <root url="file://$PROJECT_DIR$/dist/dbManager/lib/http_cdnjs.cloudflare.com_ajax_libs_summernote_0.8.8_summernote-bs4.js" />
+      <root url="file://$PROJECT_DIR$/dist/dbManager/lib/http_cdnjs.cloudflare.com_ajax_libs_toastr.js_latest_js_toastr.min.js" />
+      <root url="file://$PROJECT_DIR$/dist/dbManager/lib/http_code.jquery.com_ui_1.12.1_jquery-ui.js" />
+      <root url="file://$PROJECT_DIR$/dist/dbManager/lib/http_maxcdn.bootstrapcdn.com_bootstrap_4.0.0-beta.2_js_bootstrap.js" />
+      <root url="file://$PROJECT_DIR$/dist/dbManager/lib/ng-file-model.js" />
+      <root url="file://$PROJECT_DIR$/dist/dbManager/ng.js" />
+      <root url="file://$PROJECT_DIR$/dist/dbManager/services.js" />
+    </CLASSES>
+    <SOURCES />
+  </library>
+</component>

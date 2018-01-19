@@ -1,0 +1,68 @@
+<div class="overflow-content" id="settingsPage">
+
+<header>
+    <h3 class="page_title">הגדרות כלליות</h3>
+</header>
+<div class="content-inner">
+    <div class="row">
+        <div class="col-md-6">
+            <form action="">
+                <div class="settings-row">
+                    <h4>שם האתר</h4>
+                    <p>כותרת זו תוצג תמיד בפינה הימנית העליונה בתפריט הניווט</p>
+                    <div class="form-group">
+                        <input type="text" id="input" class="form-control" required title="">
+                    </div>
+                </div>
+                <div class="settings-row">
+                    <h4>פוסטים על כל דף</h4>
+                    <p>קבע את מספר הפוסטים המוצגים באינדקס של הבלוג.</p>
+                    <div class="form-group">
+                        <input type="number" id="input2" class="form-control small-input" required title=""
+                        value="10" min="5" max="">
+                    </div>
+                </div>
+                <div class="settings-row">
+                    <h4>מצב תחזוקה</h4>
+                    <p>הפנה את כל הנכנסים לדף המתנה</p>
+                    <div class="form-check">
+                        <style>
+                            .custom-control {
+                                padding-right: 1.5rem;
+                                padding-left: 0;
+                                margin: 0;
+                            }
+                            .custom-control-indicator {
+                                right: 0;
+                                left: unset;
+                            }
+                        </style>
+                        <label class="custom-control custom-checkbox" style="">
+                            <input type="checkbox" class="custom-control-input" value="">
+                            <span class="custom-control-indicator"></span>
+                            <span class="custom-control-description"> האתר תחת בנייה</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="settings-row">
+                    <h4>מנע תגובות</h4>
+                    <p>חסום או אפשר ממשתמשים לפרסם תגובות</p>
+                    <select class="form-control small-input" name="com_prevent">
+                        <option value="1">פעיל</option>
+                        <option value="0">חסום</option>
+                    </select>
+                </div>
+                <div class="settings-row">
+                    <h4>הצגת תגיות</h4>
+                    <p>חסום או אפשר הצגת תגיות בכל הפוסטים בבלוג</p>
+                    <select class="form-control small-input" name="com_prevent">
+                        <option value="1">פעיל</option>
+                        <option value="0">חסום</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">שמור הגדרות</button>
+            </form>
+        </div>
+    </div>
+</div>
+</div>

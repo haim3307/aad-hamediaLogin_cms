@@ -1,0 +1,117 @@
+<div class="overflow-content">
+    <div class="row">
+        <div class="col-12 col-xl-6">
+            <div class="admin-content-con">
+                <header class="d-flex justify-content-between">
+                    <h5>מגיבים</h5>
+                    <button class="btn btn-primary" role="button">צור מאמר חדש</button>
+                </header>
+                <table id="commenterTable" class="table table-hover table-bordered">
+                    <thead>
+                    <tr>
+                        <td class="d-none d-xl-table-cell">#</td>
+                        <td>שם מלא</td>
+                        <td>אמייל</td>
+                        <td>סטטוס</td>
+                        <td class="createdTD">נוצר</td>
+                        <td>פעולות</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <style>
+                        @media (min-width: 1200px) {
+                            .art_titles{
+                                white-space: nowrap;
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                                width: 15em;
+                            }
+                        }
+                        @media (min-width: 1200px) and (max-width: 1400px) {
+                            .createdTD{
+                                display: none !important;
+                            }
+                        }
+                        /*#commenterTable tr td{
+                            padding: 0 !important;
+                        }*/
+
+                    </style>
+                    <tr ng-repeat="commenter in crud.commentersList | limitTo:5">
+                        <td class="d-none d-xl-table-cell">{{commenter.id}}</td>
+                        <td>{{commenter.fname}}</td>
+                        <td>{{commenter.email}}</td>
+                        <td>
+                            <span ng-if="commenter.status == 1" class="badge badge-success">פעיל</span>
+                            <span ng-if="commenter.status == 0" class="badge badge-danger">ממתין</span>
+
+                        </td>
+                        <td class="createdTD">{{commenter.created | longDate}}</td>
+                        <td>
+                            <button type="button" class="btn btn-danger disabled" id="delete3"  ng-click="crud.delete(this)">מחק</button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div class="d-flex justify-content-end"><a ui-sref="CMS.commenters" class="text-link">לכל המגיבים</a></div>
+            </div>
+        </div>
+        <div class="col-12 col-xl-6">
+            <div class="admin-content-con">
+                <header>
+                    <h5>תגובות</h5>
+                </header>
+                <div class="overflow-content" style="height: 50vh;">
+                    <div class="comment-head-dash clearfix" ng-repeat="comment in homeComm | limitTo:4">
+                        <div class="commenter-name-dash pull-right">{{comment.commenter}}</div>
+                        <div class="days-dash pull-left">{{comment.addedDate | myDate}}</div>
+                        <p class="comment-dash clearfix">
+                            {{comment.content}}
+                        </p>
+                        <small class="comment-date-dash"> {{comment.addedDate | myDate}} </small>
+                        <hr>
+                        <div class="d-flex justify-content-end">
+                            <a ui-sref="CMS.approved" class="text-link" id="">לכל התגובות</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="admin-content-con">
+                <header class="d-flex justify-content-between">
+                    <h5>מאמרים</h5>
+                    <button class="btn btn-primary" role="button">צור מאמר חדש</button>
+                </header>
+                <table class="table table-hover table-striped">
+                    <thead>
+                    <tr>
+                        <td>כותרת</td>
+                        <td>תגובות</td>
+                        <td>תאריך</td>
+                        <td>פעולות</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="article in crud.artList">
+                        <td><div class="art_titles">{{article.title}}</div></td>
+                        <td> {{article.commentsNum}}</td>
+                        <td>{{article.addedDate | myDate}}</td>
+                        <td>
+                            <button type="button" class="btn btn-primary" ng-click="crud.expand(this)">צפה</button>
+                            <button type="button" class="btn btn-warning" ng-click="crud.update(this)">ערוך</button>
+                            <button type="button" class="btn btn-danger disabled" id="delete"  ng-click="crud.delete(this)">מחק</button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div class="d-flex justify-content-end">
+                    <a ui-sref="CMS.articles" class="text-link">לכל המאמרים</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

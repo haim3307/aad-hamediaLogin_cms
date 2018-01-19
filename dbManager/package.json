@@ -1,0 +1,16 @@
+{
+  "name": "dbManager",
+  "version": "0.0.1",
+  "dependencies": {
+    "angular": "^1.6.7",
+    "angular-route": "^1.6.6",
+    "ng-file-model": "0.0.5"
+  },
+  "jshint.options": {
+    "esversion": 6
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1"
+  }
+}

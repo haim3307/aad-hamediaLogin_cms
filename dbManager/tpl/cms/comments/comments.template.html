@@ -1,0 +1,157 @@
+<link rel="stylesheet" href="../../../css/bootstrap.min.css">
+<style>
+    .comments-row {
+        margin-bottom: 30px;
+    }
+
+    .comment-age {
+        font-size: 12px;
+    }
+
+    .comment-well {
+        margin-top: 10px;
+    }
+
+    .btn-default {
+        color: #676a6c;
+        border: 1px #eee solid;
+    }
+
+    .btn-default:hover {
+        color: #676a6c;
+        border: 1px #eee solid;
+        background-color: #f3f3f4;
+    }
+
+    @media (max-width: 810px) {
+        .headerNG {
+            flex-direction: column;
+        }
+
+        .headerNG >*{
+            margin-bottom: 10px;
+        }
+    }
+</style>
+<div class="somePage overflow-content">
+    <header class="d-flex justify-content-between headerNG">
+        <h4 class="page_title" ng-if="page != 'pending' && page != 'allComments'">תגובות <span
+                ng-if="page == 'unapproved'">לא</span> מאושרות</h4>
+        <h4 class="page_title" ng-if="page == 'pending' && page != 'allComments'">תגובות ממתינות</h4>
+        <h4 class="page_title" ng-if="page == 'allComments'">כל התגובות</h4>
+        <div class="align-self-center">
+            <select ng-change="crud.updateCommQuan(crud.commQuan,this);" class="custom-select" ng-model="crud.commQuan"
+                    name="" id="selectCommQuan">
+                <option value="5">5 תגובות לדף</option>
+                <option value="10">10 תגובות לדף</option>
+                <option value="25">25 תגובות לדף</option>
+                <option value="50">50 תגובות לדף</option>
+                <option value="75">75 תגובות לדף</option>
+                <option value="100">100 תגובות לדף</option>
+            </select>
+        </div>
+        <button class="btn btn-primary ">צור מאמר חדש</button>
+
+    </header>
+    <div class="content-inner padding-20">
+        <div class="row search-row">
+            <div class="col-md-12">
+                <div class="input-group">
+                    <input type="text" ng-model="searchComments" class="form-control search-field" id="inputAmount"
+                           placeholder="Search">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default go" ng-click="crud.goSearch(this,searchComments)">חפש!</button>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="row p-1">
+            <div class="col-12" ng-show="pagination">
+                <pagination></pagination>
+            </div>
+        </div>
+        <div class="row comments-row" style="height: 80vh;" ng-if="commArr.length < 1 && !searchMode"><h2
+                class="display-4 text-center">אין תגובות זמינות</h2></div>
+        <div class="row comments-row d-flex justify-content-center align-items-center flex-column" style="height: 50vh;"
+             ng-hide="loaded">
+            <img src="assets/giphy.gif" alt="">
+            <h4>טוען תגובות..</h4>
+        </div>
+        <div class="row comments-row d-flex justify-content-center align-items-center flex-column" style="height: 50vh;"
+             ng-show="resultNum == 0">
+            <h4>לא נמצאו תוצאות עבור..</h4>
+        </div>
+        <div class="row comments-row d-flex justify-content-center align-items-center flex-column"
+             ng-show="resultNum > 0 && searchMode">
+            <h4> נמצאו {{resultNum}} תוצאות</h4>
+        </div>
+
+        <div class="row comments-row" ng-if="commArr.length > 0" ng-repeat="comment in commArr"
+             style="margin-bottom: 50px;">
+            <div class="col-12 col-sm-2 col-lg-2">
+                <img class="rounded-circle" src="https://dummyimage.com/70x70/1ab394/d0d2e8&text=70x70" alt="">
+            </div>
+            <div class="col-12 col-sm-10 col-lg-10">
+                <div class="row">
+                    <div class="col-md-9">
+                        <h4>{{comment.id}}</h4>
+                        <strong>{{comment.commenter}}</strong> <strong>פרסם תגובה על </strong>
+                        <strong> {{comment.title}} </strong>
+                        <p>
+                            <small>{{comment.addedDate | myDate}}</small>
+                        </p>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="clearfix">
+                            <div class="pull-left">
+                                <div class="comment-age badge badge-success p-2" ng-if="comment.activated == 1">מאושר
+                                </div>
+                                <div class="comment-age badge badge-danger p-2" ng-if="comment.activated == -1">חסום
+                                </div>
+                                <div class="comment-age badge badge-warning p-2" ng-if="comment.activated == 0">ממתין
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card card-body bg-faded comment-well">
+                    <p>
+                        {{comment.content}}
+                    </p>
+                </div>
+                <div class="clearfix">
+                    <div class="pull-left">
+                        <a ng-click="crud.changeCommStatus(this ,-1,comment.id,comment.addedDate)"
+                           ng-if="page != 'approved'" class="btn btn-default" role="button">
+                            <span class="fa fa-thumbs-up"></span>
+                            <span>אשר</span>
+                        </a>
+                        <a ng-click="crud.changeCommStatus(this ,1,comment.id,comment.addedDate)"
+                           ng-if="page !== 'unapproved'" class="btn btn-default" role="button">
+                            <span class="fa fa-thumbs-down"></span>
+                            <span>סרב</span>
+                        </a>
+                        <a ng-click="crud.deleteComm(this , comment.id,comment.addedDate, comment.activated, $index+1)"
+                           class="btn btn-default" role="button">
+                            <span class="fa fa-remove"></span>
+                            <span>מחק</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <style>
+            .page-item {
+                cursor: pointer;
+            }
+
+        </style>
+        <!--ng-if="pagesLen > 5"-->
+        <div class="row p-1">
+            <div class="col-12 p-0" ng-show="pagination">
+                <pagination></pagination>
+            </div>
+        </div>
+    </div>
+</div>
