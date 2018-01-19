@@ -159,7 +159,7 @@ session_start();
             </ui-view>
             <footer class="row" id="admin-footer">
                 <div style="flex:1;">
-                    <div class="pull-left">Copyright &copy; 2017</div>
+                    <div class="pull-left">Copyright &copy; <?= date("Y"); ?></div>
                     <div class="pull-right">מערכת "עד המדינה"</div>
                 </div>
             </footer>
