@@ -361,3 +361,81 @@ footer {
 
 @media(min-width: 810px) {
 }
+/*frontRegister_page*/
+.m-auto-0{
+  margin: 0 auto;
+}
+.all-centered-lis>li,.all-centered-lis>div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.regLev {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 20px;
+  width: 70%;
+}
+#regLev1{
+  height: 500px;
+  grid-gap: 0;
+  display: flex;
+  flex-direction: column;
+
+  .inputNote{
+    grid-row: span 1;
+  }
+  input{
+    height: 50px;
+    margin-top: 10px;
+  }
+}
+#regLev2{
+  height: 500px;
+  input[type="submit"]{
+    height: 40px;
+    margin-left: 15px;
+  }
+}
+#regLev3{
+  grid-template-columns: 1fr 1fr;
+  h2{
+    grid-column: span 2;
+
+  }
+  textarea{
+    grid-column: span 2;
+
+  }
+  input[type="submit"]{
+    height: 40px;
+    grid-column: span 2;
+  }
+}
+.front_reg_form{
+
+}
+.regLevelsBar{
+  display: flex;
+  width: 70%;
+  height: 70px;
+  align-items: center;
+  li{
+    margin-left: 20px;
+    height: 3em;
+    width: 3em;
+    background-color: #eeeeee;
+    border-radius: 100%;
+    &.active{
+      background-color: #8f0222;
+      color: white;
+    }
+  }
+}
+
+.alert-span{
+  color: red;
+}
+/*!frontRegister_page*/

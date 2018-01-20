@@ -226,6 +226,7 @@ class CRUD{
     }
     deleteComm (scope, id, date, status, index) {
         console.log(index);
+        console.log(id);
         this.$http.post('../class/DB.php', {
             act: 'delete-comm',
             'comm-id': id,
@@ -238,22 +239,7 @@ class CRUD{
             });
             this[this['page'] + 'Comm'].push(res.data);
             scope.totalLen--;
-
-            /*
-            //console.log('resultArray: ',res.data);
-            this[this['page']+'Comm'] = res.data;
-            console.log(this['page']+'Comm',this[this['page']+'Comm']);
-            console.log(scope.totalLen);
-            scope.totalLen--;
-            console.log(scope.totalLen);
-            scope.pagesLen = Math.ceil((scope.totalLen)/5);
-            scope.rangeArr = scope.crud.range(scope.pagesLen);
-            console.log(scope.pagesLen);
-            console.log(scope.totalLen);
-*/
-            //scope.$apply();
             console.log(res.data);
-            //limit-id+1
         });
     }
     expand (scope) {
@@ -341,7 +327,8 @@ class CRUD{
         scope.article.editMode = !scope.article.editMode;
     }
     delete (scope) {
-        var _self = this;
+    	console.log(scope.article.id);
+    	console.log('hi');
         $.ajax({
             method: 'POST',
             url: '../class/DB.php',
@@ -352,7 +339,7 @@ class CRUD{
             success: (res) => {
                 console.log(res);
                 if (res === 'deleted') {
-                    _self.artList = _self.artList.filter(art => art.id != scope.article.id);
+									this.artList = this.artList.filter(art => art.id != scope.article.id);
                     scope.$apply();
                 }
             }
@@ -398,7 +385,7 @@ class CRUD{
             //['check_'+field]: val
             this.$http({
                 method: 'post',
-                url: '../class/register.php',
+                url: '../class/Register.php',
                 data: 'check_'+field+'='+val,
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded'

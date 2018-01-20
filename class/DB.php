@@ -1,5 +1,5 @@
 <?php
-require_once 'connection.php';
+require_once 'Connection.php';
 /**
  * Created by PhpStorm.
  * User: HT
@@ -133,7 +133,7 @@ class titlesTraffic extends Connection
         }
         return isset($_GET['list']) ? ["artArr" => $query->fetchAll(PDO::FETCH_ASSOC), "artLen" => isset($artsLen) ? $artsLen : 0, "artsQuan" => self::$feedPostsNum] : $query;
     }
-//SELECT c.name ,AVG(p.price) avg_price FROM categories c JOIN products p ON c.id = p.categorie_id GROUP BY p.categorie_id
+    //SELECT c.name ,AVG(p.price) avg_price FROM categories c JOIN products p ON c.id = p.categorie_id GROUP BY p.categorie_id
 
     function get_commenters()
     {
@@ -289,8 +289,8 @@ class titlesTraffic extends Connection
 
     function delete_art($id)
     {
-        $stmt = parent::query('DELETE FROM articles WHERE id = :id', $id);
-        echo $stmt->fetch() ? 'deleted' : 'errorOfDelete';
+        $stmt = parent::query('DELETE FROM articles WHERE id = :id', [':id'=>$id]);
+        echo $stmt->rowCount() ? 'deleted' : 'errorOfDelete';
     }
 
     function update_artFront($id, $title, $content, $img, $oldImg)

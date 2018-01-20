@@ -284,6 +284,7 @@ var CRUD = function () {
             var _this9 = this;
 
             console.log(index);
+            console.log(id);
             this.$http.post('../class/DB.php', {
                 act: 'delete-comm',
                 'comm-id': id,
@@ -296,22 +297,7 @@ var CRUD = function () {
                 });
                 _this9[_this9['page'] + 'Comm'].push(res.data);
                 scope.totalLen--;
-
-                /*
-                //console.log('resultArray: ',res.data);
-                this[this['page']+'Comm'] = res.data;
-                console.log(this['page']+'Comm',this[this['page']+'Comm']);
-                console.log(scope.totalLen);
-                scope.totalLen--;
-                console.log(scope.totalLen);
-                scope.pagesLen = Math.ceil((scope.totalLen)/5);
-                scope.rangeArr = scope.crud.range(scope.pagesLen);
-                console.log(scope.pagesLen);
-                console.log(scope.totalLen);
-                */
-                //scope.$apply();
                 console.log(res.data);
-                //limit-id+1
             });
         }
     }, {
@@ -404,7 +390,10 @@ var CRUD = function () {
     }, {
         key: 'delete',
         value: function _delete(scope) {
-            var _self = this;
+            var _this10 = this;
+
+            console.log(scope.article.id);
+            console.log('hi');
             $.ajax({
                 method: 'POST',
                 url: '../class/DB.php',
@@ -415,7 +404,7 @@ var CRUD = function () {
                 success: function success(res) {
                     console.log(res);
                     if (res === 'deleted') {
-                        _self.artList = _self.artList.filter(function (art) {
+                        _this10.artList = _this10.artList.filter(function (art) {
                             return art.id != scope.article.id;
                         });
                         scope.$apply();
@@ -426,11 +415,11 @@ var CRUD = function () {
     }, {
         key: 'getArtById',
         value: function getArtById(scope, id) {
-            var _this10 = this;
+            var _this11 = this;
 
             this.$http.get('../class/DB.php?act=get-art-by-id&art-id=' + id + '&full-art=1').then(function (res) {
                 if (res.data != "null") {
-                    _this10.editedArt = res.data;
+                    _this11.editedArt = res.data;
                     console.log(res.data);
                     $('#summerNote').summernote('code', res.data['full-art']);
                     scope.applyArt();
@@ -443,7 +432,7 @@ var CRUD = function () {
     }, {
         key: 'changeArtStatus',
         value: function changeArtStatus(artId, status) {
-            var _this11 = this;
+            var _this12 = this;
 
             console.log('go');
             console.log(status == 1 ? 0 : 1);
@@ -453,7 +442,7 @@ var CRUD = function () {
                 art_status: status == 1 ? 0 : 1
             }).then(function (res) {
                 if (res.data == 'true') {
-                    _this11.editedArt.activated = status == 1 ? 0 : 1;
+                    _this12.editedArt.activated = status == 1 ? 0 : 1;
                     toastr["success"]('סטטוס המאמר : מפורסם');
                 } else {
                     toastr["error"]('עדכון הסטטוס נכשל');
@@ -465,7 +454,7 @@ var CRUD = function () {
     }, {
         key: 'checkAvailability',
         value: function checkAvailability(field, check, val) {
-            var _this12 = this;
+            var _this13 = this;
 
             console.log(check);
             if (check.$valid) {
@@ -473,15 +462,15 @@ var CRUD = function () {
                 //['check_'+field]: val
                 this.$http({
                     method: 'post',
-                    url: '../class/register.php',
+                    url: '../class/Register.php',
                     data: 'check_' + field + '=' + val,
                     headers: {
                         'Content-Type': 'application/x-www-form-urlencoded'
                     }
                 }).then(function (res) {
                     console.log(res);
-                    if (field == 'email') _this12.emailAvailability = res.data == '0';
-                    if (field == 'uname') _this12.unameAvailability = res.data == '0';
+                    if (field == 'email') _this13.emailAvailability = res.data == '0';
+                    if (field == 'uname') _this13.unameAvailability = res.data == '0';
                 });
             }
         }

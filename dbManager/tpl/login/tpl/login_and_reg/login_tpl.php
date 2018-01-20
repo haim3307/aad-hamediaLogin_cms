@@ -2,7 +2,7 @@
     if(isset($_POST['login']) && isset($_POST['user_name']) && isset($_POST['user_pass'])){
         $user_name = $_POST['user_name'];
         $user_pass = $_POST['user_pass'];
-        require 'tpl/login/formLogin.php';
+        require '../../../../class/formLogin.php';
         $users = new Forms();
         if(!empty($user_name) && !empty($user_pass)){
             $data = $users->getUser($user_name,$user_pass);

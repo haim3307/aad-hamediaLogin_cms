@@ -10,7 +10,7 @@ function login()
     if (!isset($_POST['user_pass'])) {
         return;
     }
-    require_once 'class/connection.php';
+    require_once 'class/Connection.php';
     $uname = $_POST['user_name'];
     $upass = $_POST['user_pass'];
     $stmt = Connection::query(
@@ -52,7 +52,10 @@ if (isset($_GET['act']) && $_GET['act'] === 'logout') {
         <div class="title"><a href="index.php" class="title"> דף הבית</a></div>
         <div class="dateOfPublish">היום</div>
         <section class="uploadPost">
-
+            <div class="profileFrame">
+                <img src="" alt="">
+            </div>
+            <textarea name="" id="" style="display: block;width: 100%;"></textarea>
         </section>
         <div class="allReportsWrapperBig">
             <div class="allReportsWrapperL"></div>
@@ -74,14 +77,14 @@ if (isset($_GET['act']) && $_GET['act'] === 'logout') {
                             </div>
 
                             <h4 class="artTitle"><?= $row['title'] ?></h4>
-                            <a class="toArt" href="article.php?artId=<?= $row['id'] ?>">
+                            <a class="toArt" href="main_pages/article.php?artId=<?= $row['id'] ?>">
                                 <img src="_img/report/postFront/<?= (isset($row['frontImg']) ? $row['frontImg'] : 'BIBI.jpg'); ?>"
                                      alt="">
                             </a>
                             <div class="postDesc">
                                 <p>
                                     <?= $row['description'] ?>
-                                    <span><a href="article.php?artId=<?= $row['id'] ?>">המשך לקרוא..</a></span>
+                                    <span><a href="main_pages/article.php?artId=<?= $row['id'] ?>">המשך לקרוא..</a></span>
                                 </p>
                             </div>
                             <div class="postActions d-flex">
@@ -97,16 +100,6 @@ if (isset($_GET['act']) && $_GET['act'] === 'logout') {
                                     <span>שתף</span>
                                 </div>
                             </div>
-
-                            <!--                            <div class="postComments">
-                                                            <div class="postComment">
-
-                                                            </div>
-                                                            <div class="addComment">
-                                                                <div class="profile"><i class="fa fa-user-circle" style="font-size: 2.5em; margin-left: 10px"></i></div>
-                                                                <textarea placeholder="כתוב תגובה.." style="overflow:auto;resize:none;width: 100%; display: block" name="" id="" rows="3"></textarea>
-                                                            </div>
-                                                        </div>-->
 
                         </div>
 

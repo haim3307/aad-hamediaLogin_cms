@@ -1,5 +1,5 @@
 <?php
-require_once 'class/DB.php';
+require_once '../class/DB.php';
 //echo '<pre>';
 //print_r($_GET);
 $article = $artObj->getArticle((int)$_GET['artId'], null);
@@ -10,7 +10,7 @@ $path = 'articles/html/' . $article['article'];
 <!doctype html>
 <html lang="en">
 <head>
-    <?php include 'main_layout/head.php' ?>
+    <?php include '../main_layout/head.php' ?>
     <style>
         .artPage {
             display: grid;
@@ -85,7 +85,7 @@ $path = 'articles/html/' . $article['article'];
         @media (max-width: 810px) {
             .page{
                 background: linear-gradient(to left, #ECE9E6, #FFFFFF);
-                min-height: 3000px;
+                min-height: 1000px;
             }
             .artPage {
                 display: flex;
@@ -135,57 +135,59 @@ $path = 'articles/html/' . $article['article'];
 <body>
 
 <div class="flex-container">
-    <?php include 'main_layout/header.php' ?>
-    <article class="artPage">
-        <main class="page">
-            <div class="shareTo">
-                <div class="reportername">
-                    <h2>08.01.17 | חיים טרגנו | 23:04</h2></div>
-                <div class="social">
-                    <img class="likebutton" src="_img/layout/googlep.jpg">
-                    <img class="likebutton" src="_img/layout/Facebook.jpg">
-                    <img class="likebutton" src="_img/layout/Twiter.jpg">
+    <?php include '../main_layout/header.php' ?>
+    <main>
+        <article class="artPage">
+            <main class="page">
+                <div class="shareTo">
+                    <div class="reportername">
+                        <h2>08.01.17 | חיים טרגנו | 23:04</h2></div>
+                    <div class="social">
+                        <img class="likebutton" src="../_img/layout/googlep.jpg">
+                        <img class="likebutton" src="../_img/layout/Facebook.jpg">
+                        <img class="likebutton" src="../_img/layout/Twiter.jpg">
+                    </div>
                 </div>
-            </div>
-            <div style="min-height: 1000px;">
-                <article>
-                    <h1><?= $article['title'] ?></h1>
-                    <?php include_once "$path" ?>
+                <div style="min-height: 1000px;">
+                    <article>
+                        <h1><?= $article['title'] ?></h1>
+                        <?php include_once "../$path" ?>
 
-                </article>
-            </div>
-            <div class="mobileToSimulars">
-                <
-            </div>
-            <div class="comments">
-
-            </div>
-        </main>
-        <aside>
-
-
-            <section class="report-suggestions">
-                <div class="resizeSimulars">
-                    x
+                    </article>
                 </div>
-                <div class="report-suggestions-title">כתבות דומות</div>
-                <div class="col-best-items">
-                    <?php while ($item = $simularArts->fetch_assoc()): ?>
-                        <?php include 'includes/bestItem.include.php' ?>
-                    <?php endwhile; ?>
+                <div class="mobileToSimulars">
+                    <
                 </div>
-                <div class="resizeSimulars">
-                    x
+                <div class="comments">
+
                 </div>
+            </main>
+            <aside>
 
 
-            </section>
+                <section class="report-suggestions">
+                    <div class="resizeSimulars">
+                        x
+                    </div>
+                    <div class="report-suggestions-title">כתבות דומות</div>
+                    <div class="col-best-items">
+                        <?php while ($item = $simularArts->fetch(PDO::FETCH_ASSOC)): ?>
+                            <?php include '../includes/bestItem.include.php' ?>
+                        <?php endwhile; ?>
+                    </div>
+                    <div class="resizeSimulars">
+                        x
+                    </div>
 
 
-        </aside>
+                </section>
 
-    </article>
-    <footer> Copyright HTProjects 2017 &copy;</footer>
+
+            </aside>
+
+        </article>
+    </main>
+    <footer><?php include '../main_layout/footer.php'?></footer>
     <script>
 			$('.mobileToSimulars').on('click', function () {
 				$('.report-suggestions').addClass('aligned');

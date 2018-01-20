@@ -15,7 +15,7 @@ if (isset($_POST['register'])) {
     if (validateMust()) {
         echo 'true2';
 
-        require_once '../class/register.php';
+        require_once '../class/Register.php';
         $regRequest = new Register();
         $id = $regRequest->insertReg($_POST['user_name'], $_POST['email'], $_POST['user_pass']);
 

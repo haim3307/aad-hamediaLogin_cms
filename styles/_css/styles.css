@@ -93,10 +93,15 @@ ul, li {
       */
       grid-area: logoNI; }
       .nMenu .logoN .logoNI img {
-        max-width: 100%; }
+        max-width: 100%;
+        width: auto;
+        height: 52px; }
         @media (min-width: 950px) {
           .nMenu .logoN .logoNI img {
             transform: scaleY(1.2) translateY(7px); } }
+        @media (max-width: 650px) {
+          .nMenu .logoN .logoNI img {
+            height: 10vw; } }
     @media (max-width: 900px) {
       .nMenu .logoN {
         grid-template-columns: 1fr 2fr 1fr;
@@ -150,7 +155,7 @@ ul, li {
         flex: 1 0 60%;
         position: fixed;
         width: 100%;
-        height: 100%;
+        height: 92%;
         z-index: 9997; }
         .nMenu .navButtons > li a {
           justify-content: flex-start;
@@ -169,6 +174,9 @@ ul, li {
   .f-nav .logoN {
     height: auto;
     max-width: 422px; }
+    @media (max-width: 950px) {
+      .f-nav .logoN {
+        max-width: unset; } }
   .f-nav .logoNI img {
     max-width: 100%;
     transform: scaleY(1) translateY(0px) !important; }
@@ -676,5 +684,67 @@ footer {
   padding: 0;
   margin: 0;
   transition: all 0.7s; }
+
+/*frontRegister_page*/
+.m-auto-0 {
+  margin: 0 auto; }
+
+.all-centered-lis > li, .all-centered-lis > div {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.regLev {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 20px;
+  width: 70%; }
+
+#regLev1 {
+  height: 500px;
+  grid-gap: 0;
+  display: flex;
+  flex-direction: column; }
+  #regLev1 .inputNote {
+    grid-row: span 1; }
+  #regLev1 input {
+    height: 50px;
+    margin-top: 10px; }
+
+#regLev2 {
+  height: 500px; }
+  #regLev2 input[type="submit"] {
+    height: 40px;
+    margin-left: 15px; }
+
+#regLev3 {
+  grid-template-columns: 1fr 1fr; }
+  #regLev3 h2 {
+    grid-column: span 2; }
+  #regLev3 textarea {
+    grid-column: span 2; }
+  #regLev3 input[type="submit"] {
+    height: 40px;
+    grid-column: span 2; }
+
+.regLevelsBar {
+  display: flex;
+  width: 70%;
+  height: 70px;
+  align-items: center; }
+  .regLevelsBar li {
+    margin-left: 20px;
+    height: 3em;
+    width: 3em;
+    background-color: #eeeeee;
+    border-radius: 100%; }
+    .regLevelsBar li.active {
+      background-color: #8f0222;
+      color: white; }
+
+.alert-span {
+  color: red; }
+
+/*!frontRegister_page*/
 
 /*# sourceMappingURL=styles.css.map */

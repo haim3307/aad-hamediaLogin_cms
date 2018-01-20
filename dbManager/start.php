@@ -45,7 +45,7 @@ if(isset($_POST['login']) && isset($_POST['user_remember'])){
         </style>
         <div id="allForm" class="innerForm">
             <?php
-                require 'tpl/login/tpl/login_and_reg/login.php';
+                require 'tpl/login/tpl/login_and_reg/login_tpl.php';
             ?>
         </div>
     </div>

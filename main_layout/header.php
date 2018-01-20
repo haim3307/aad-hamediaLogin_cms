@@ -3,12 +3,12 @@
         <div class="mobileB">
             <i class="fa fa-bars" style="color: white; font-size: 2em;" aria-hidden="true"></i>
         </div>
-        <div class="logoNI"><img src="_img/layout/logo3.png"></div>
+        <div class="logoNI"><img src="<?= DOMAIN ?>_img/layout/logo3.png"></div>
     </div>
     <ul class="navButtons">
 
-        <li><a href="index.php">דף הבית</a></li>
-        <li><a href="titles.php"> כותרות </a></li>
+        <li><a href="<?= DOMAIN ?>">דף הבית</a></li>
+        <li><a href="<?= DOMAIN ?>main_pages/titles.php"> כותרות </a></li>
         <li><a href="#"> פוליטיקה </a></li>
         <li><a href="#"> כלכלה </a></li>
         <li><a href="#"> טכנולוגיה </a></li>
@@ -62,17 +62,21 @@
         <input type="text" name="user_pass" class="logInput" placeholder="סיסמא">
         <input type="submit" name="site_login" id="submitLogin" value="התחבר">
     </form>
+    <div class="toRegister" style="padding: 0 20px;">
+        <span>עדיין לא רשום?</span>
+        <a href="<?= DOMAIN ?>main_pages/register_page.php">לחץ כאן</a>
+    </div>
 </div>
 <?php else:?>
     <div class="userNav" style="float: left; text-align: left; padding: 20px">
         <div> שלום  <strong><?= $_SESSION['front_user_name'] ?></strong></div>
-        <a href="index.php?act=logout">התנתק</a>
+        <a href="<?= DOMAIN ?>index.php?act=logout">התנתק</a>
     </div>
 <?php endif;?>
 
 <div class="menuBanner">
     <div class="exitButton"><a href="#">X</a></div>
-    <img class="menuBannerImg" src="_img/layout/menuBanner.png">
+    <img class="menuBannerImg" src="<?= DOMAIN ?>_img/layout/menuBanner.png">
 </div>
 <marquee class="minutesReports" scrollamount="5" onmouseover="this.stop()" onmouseout="this.start()">2017 !ברוכים הבאים
     ל-עד המדינה
