@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once 'class/DB.php';
 $con = new titlesTraffic();
 $arts = $con->get_articles();
@@ -32,7 +33,6 @@ if (isset($_POST['site_login'])) {
     login();
 }
 if (isset($_GET['act']) && $_GET['act'] === 'logout') {
-    session_start();
     session_destroy();
     header('location:index.php');
 }
@@ -115,16 +115,38 @@ if (isset($_GET['act']) && $_GET['act'] === 'logout') {
 
                         $.ajax({
                             method: 'POST',
-                            url: 'class/Social_web',
+                            url: 'class/Social_web.php',
                             data: {
                             	act: 'new_post',
                                 content: postContent
                             }
                         }).done(function (res) {
                             console.log(res);
-                            let post = {};
+                            let post = JSON.parse(res);
+                            $('#postsFeed').prepend(`
+                           <div class="grid-news-item">
+                            ${post.id}
+                                <p class="artAuth">
+                                    <i style="float: right;" class="far fa-user-circle fa-3x"></i>
+                                    <strong style="float: right;">${post.author}</strong>
 
-                            $('#postsFeed').append(post);
+                                </p>
+                                <div class="artDate">
+                                    <div style="display: flex; align-items: center;">
+                                        <i style="padding: 7px;" class="far fa-clock"></i>
+                                            ${post.addedDate}
+                                    </div>
+                                </div>
+
+                                <h4 class="artTitle"> ${post.title} </h4>
+                                    <a class="toArt" href="article.php?artId=${post.id}"><img src="_img/report/postFront/${post.frontImg || 'BIBI.jpg'}" alt=""></a>
+                                <div class="postActions d-flex">
+                                    <div class="cool postAction"><i class="fas fa-thumbs-up fa-2x" style="padding-left: 10px;"></i><span>אהבתי</span></div>
+                                    <div class="speak postAction"><i class="fas fa-comment fa-2x" style="padding-left: 10px;"></i><span>הגב</span></div>
+                                    <div class="share postAction"><i class="fas fa-share fa-2x" style="padding-left: 10px;"></i><span>שתף</span></div>
+                                </div>
+                            </div>
+                            `);
                             /*
                             *  <div class="grid-news-item">
                                 ${post.id}
