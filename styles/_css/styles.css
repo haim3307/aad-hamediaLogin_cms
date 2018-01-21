@@ -12,7 +12,6 @@ Author     : HT
   --secondC: linear-gradient(to bottom, #eeeeee 0%, #cccccc 100%); }
 
 body {
-  display: flex;
   margin: 0;
   direction: rtl;
   font-family: alef, arial; }
@@ -689,7 +688,7 @@ footer {
 .m-auto-0 {
   margin: 0 auto; }
 
-.all-centered-lis > li, .all-centered-lis > div {
+.all-centered-lis > li, .all-centered-lis > div, .all-centered {
   display: flex;
   justify-content: center;
   align-items: center; }
@@ -698,7 +697,10 @@ footer {
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 20px;
-  width: 70%; }
+  padding: 10px; }
+  @media (min-width: 700px) {
+    .regLev {
+      width: 70%; } }
 
 #regLev1 {
   height: 500px;

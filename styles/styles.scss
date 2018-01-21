@@ -17,7 +17,7 @@ Author     : HT
 $mainColor: -webkit-linear-gradient(top, rgba(169, 3, 41, 1) 0%, rgba(143, 2, 34, 1) 44%, rgba(109, 0, 25, 1) 100%);
 $secondColor: -webkit-linear-gradient(top, rgba(238, 238, 238, 0.9) 0%, rgba(204, 204, 204, 0.5) 100%);
 body {
-  display: flex;
+  //display: flex;
   margin: 0;
   direction: rtl;
   font-family: alef, arial;
@@ -365,7 +365,7 @@ footer {
 .m-auto-0{
   margin: 0 auto;
 }
-.all-centered-lis>li,.all-centered-lis>div{
+.all-centered-lis>li,.all-centered-lis>div,.all-centered{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -376,7 +376,11 @@ footer {
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 20px;
-  width: 70%;
+  padding: 10px;
+  @media (min-width: 700px) {
+    width: 70%;
+
+  }
 }
 #regLev1{
   height: 500px;

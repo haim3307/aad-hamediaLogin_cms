@@ -8,6 +8,7 @@
 require_once 'Connection.php';
 class Forms extends Connection
 {
+    const MAX_FILE_SIZE = 1024*1024*20;
     function __construct()
     {
         parent::__construct();
@@ -16,7 +17,7 @@ class Forms extends Connection
     static function check_image($input_n){
         $ex = ['png','jpeg','jpg','gif','bmp'];
         if(isset($_FILES[$input_n]['error']) && $_FILES[$input_n]['error'] == 0){
-            if(isset($_FILES[$input_n]['size']) && $_FILES[$input_n]['size'] <= MAX_FILE_SIZE){
+            if(isset($_FILES[$input_n]['size']) && $_FILES[$input_n]['size'] <= self::MAX_FILE_SIZE){
                 if(isset($_FILES[$input_n]['name'])){
                     $file_info = pathinfo($_FILES[$input_n]['name']);
                     if( in_array(strtolower($file_info['extension']),$ex)){
