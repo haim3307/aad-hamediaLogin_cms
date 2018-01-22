@@ -352,6 +352,14 @@ a.overlay1 {
   border-radius: 3px;
   margin: 10px auto;
   padding: 20px 0; }
+  .grid-news-item.addedPost {
+    display: none;
+    opacity: 0;
+    transition: 0.8s opacity; }
+  .grid-news-item.fadeInPost {
+    display: block;
+    opacity: 1;
+    transition: 0.8s opacity; }
   .grid-news-item .addComment {
     display: flex; }
   .grid-news-item .postDesc {
@@ -390,125 +398,10 @@ a.overlay1 {
     .grid-news-item {
       margin: 30px auto 50px auto;
       padding: 50px;
-      grid-template-rows: 80px 50px 500px;
+      grid-template-rows: 80px 50px;
       grid-template-areas: 'artAuth artDate' 'artTitle artTitle' 'postImage postImage' 'postDesc postDesc' 'postActions postActions' 'postComments postComments'; } }
 
 /*----------------------------old-homepage-report-items--------------*/
-.allReportsWrapperBig {
-  display: flex;
-  margin: 0 auto; }
-
-.allReportsWrapperL {
-  width: 0;
-  order: 3; }
-
-.allReportsWrapper {
-  display: flex;
-  flex-flow: row wrap;
-  padding: 0;
-  margin: 15px 5px 5px 5px;
-  flex: 1 1 70%; }
-
-.allReportsWrapperR {
-  width: 0; }
-
-.reportItem {
-  position: relative;
-  display: flex;
-  flex-flow: column;
-  height: 350px;
-  margin: 7px 7px 7px 7px;
-  flex: 1 1 30%;
-  border-radius: 10px; }
-  .reportItem img {
-    flex: 1;
-    width: 100%;
-    height: 100%; }
-  .reportItem:hover .categorySticker {
-    width: 100%;
-    height: 15%;
-    background: linear-gradient(to bottom, #a90329 0%, #8f0222 50%, #6d0019 100%);
-    text-align: center;
-    font-size: 17pt;
-    color: white; }
-  .reportItem:hover .shortInfo {
-    height: 45%;
-    width: 100%;
-    transition: all 0.6s;
-    background: linear-gradient(to bottom, #a90329 0%, #8f0222 50%, #6d0019 100%);
-    font-size: 12pt;
-    border-radius: 0; }
-
-.itemWrapper {
-  display: flex;
-  position: absolute;
-  height: 100%;
-  width: 100%; }
-
-.categorySticker {
-  position: absolute;
-  align-self: flex-start;
-  direction: rtl;
-  width: 30%;
-  height: 20%;
-  opacity: 0.9;
-  text-align: right;
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 100%;
-  font-size: 15pt;
-  font-family: alef, arial;
-  transition: all 0.6s; }
-
-#redR {
-  background: linear-gradient(to bottom, #a90329 0%, #8f0222 50%, #6d0019 100%);
-  color: white;
-  border-top: 8px solid #a90304;
-  font-size: 18pt; }
-
-#blueR {
-  background: linear-gradient(to bottom, #499bea 0%, #207ce5 100%);
-  border-top: 8px solid #499bea;
-  color: white; }
-
-#oliveR {
-  background: linear-gradient(to bottom, #a4b357 0%, #75890c 100%);
-  color: white;
-  border-top: 8px solid #a4b357; }
-
-#yellowR {
-  background: linear-gradient(to bottom, #ffd65e 0%, #febf04 100%);
-  color: black;
-  border-top: 8px solid #ffd65e;
-  font-size: 13pt; }
-
-.shortInfo {
-  display: flex;
-  flex-flow: column;
-  height: 37%;
-  transition: all 0.5s;
-  direction: rtl;
-  text-align: right;
-  opacity: 0.8;
-  font-size: 11pt;
-  width: 100%;
-  align-self: flex-end;
-  border-radius: 40px 40px 0 0; }
-  .shortInfo .desctitle {
-    margin-top: 7px;
-    text-align: center;
-    width: 90%;
-    align-self: center;
-    flex: 1 1 50%;
-    font-family: alef, arial;
-    font-size: 13pt; }
-  .shortInfo .author {
-    margin-top: 7px;
-    font-size: 12pt;
-    flex: 1 1 50%;
-    text-align: center;
-    align-self: center;
-    font-family: alef, arial; }
-
 /*----------------------------end-of-homepage-report-items--------------*/
 /*best item*/
 .bestTitles {

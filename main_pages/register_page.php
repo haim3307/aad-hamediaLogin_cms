@@ -231,8 +231,8 @@ if(isset($_POST['reg_level_3']) && isset($_SESSION['user_id'])){
 
                 .inputDnD .form-control-file:hover:before {
                     border-style: solid;
-                    -webkit-box-shadow: inset 0px 0px 0px 0.25em currentColor;
-                    box-shadow: inset 0px 0px 0px 0.25em currentColor;
+                    -webkit-box-shadow: inset 0 0 0 0.25em currentColor;
+                    box-shadow: inset 0 0 0 0.25em currentColor;
                 }
 
                 .warningsInput {

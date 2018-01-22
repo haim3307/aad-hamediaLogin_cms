@@ -198,6 +198,18 @@ a.overlay1 {
   border-radius: 3px;
   margin: 10px auto;
   padding: 20px 0;
+  &.addedPost{
+    display: none;
+    opacity: 0;
+    transition: 0.8s opacity;
+  }
+  &.fadeInPost{
+    display: block;
+    opacity: 1;
+    transition: 0.8s opacity;
+  }
+
+
   .addComment{
     display: flex;
   }
@@ -248,7 +260,7 @@ a.overlay1 {
     //min-height: 700px;
     margin: 30px auto 50px auto;
     padding: 50px;
-    grid-template-rows: 80px 50px 500px;
+    grid-template-rows: 80px 50px;
     grid-template-areas:
           'artAuth artDate'
           'artTitle artTitle'
@@ -261,9 +273,10 @@ a.overlay1 {
 
 
 /*----------------------------old-homepage-report-items--------------*/
-@import 'oldHomePage';
+//@import 'oldHomePage';
 /*----------------------------end-of-homepage-report-items--------------*/
 /*best item*/
+
 
 @import "bestTitlesItem";
 

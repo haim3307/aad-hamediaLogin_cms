@@ -62,9 +62,15 @@
         <input type="text" name="user_pass" class="logInput" placeholder="סיסמא">
         <input type="submit" name="site_login" id="submitLogin" value="התחבר">
     </form>
-    <div class="toRegister" style="padding: 0 20px;">
-        <span>עדיין לא רשום?</span>
-        <a href="<?= DOMAIN ?>main_pages/register_page.php">לחץ כאן</a>
+    <div class="forgotPass" style="direction: rtl;">
+    </div>
+    <div class="toRegister" style="padding: 0 20px; display: flex; justify-content: space-between; flex-direction:row-reverse ">
+        <a href="<?= DOMAIN ?>settings/forgot-password.php">שכחתי את הסיסמא</a>
+
+        <div>
+            <span>עדיין לא רשום?</span>
+            <a href="<?= DOMAIN ?>main_pages/register_page.php">לחץ כאן</a>
+        </div>
     </div>
 </div>
 <?php else:?>
@@ -76,7 +82,7 @@
 
 <div class="menuBanner">
     <div class="exitButton"><a href="#">X</a></div>
-    <img class="menuBannerImg" src="<?= DOMAIN ?>_img/layout/menuBanner.png">
+    <img class="menuBannerImg" style="max-height: 200px" src="<?= DOMAIN ?>_img/layout/menuBanner.png">
 </div>
 <marquee class="minutesReports" scrollamount="5" onmouseover="this.stop()" onmouseout="this.start()">2017 !ברוכים הבאים
     ל-עד המדינה
