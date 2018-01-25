@@ -370,7 +370,8 @@ a.overlay1 {
   .grid-news-item img {
     width: 100%; }
   .grid-news-item .artAuth {
-    grid-area: artAuth; }
+    grid-area: artAuth;
+    display: flex; }
     .grid-news-item .artAuth i {
       padding-left: 10px; }
   .grid-news-item .artAuth, .grid-news-item .artDate {

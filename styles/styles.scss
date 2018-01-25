@@ -226,6 +226,7 @@ a.overlay1 {
   }
   .artAuth{
     grid-area: artAuth;
+    display: flex;
     i{
       padding-left: 10px;
     }

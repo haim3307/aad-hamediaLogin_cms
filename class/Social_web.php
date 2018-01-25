@@ -43,8 +43,12 @@ class Social_web extends Connection
     {
         $limit = 5;
         $start = (int)$page * $limit;
-        $q = self::connect()->query("SELECT * FROM posts ORDER BY added_date DESC LIMIT $start,$limit");
-        return isset($_GET['list'])&& $_GET['list'] == 'posts'?$q->fetchAll(PDO::FETCH_ASSOC):$q;
+        $q = self::connect()->query("SELECT p.*,f.profile_img FROM posts p LEFT JOIN front_users f ON p.uid = f.id ORDER BY added_date DESC LIMIT $start,$limit");
+        return $q->fetchAll(PDO::FETCH_ASSOC);
+    }
+    static function delete_post($post_id){
+        $q = self::query("DELETE FROM posts WHERE id =:post_id",[':post_id'=>((int)$post_id)]);
+        return $q && $q->rowCount()?'deleted':'error';
     }
 }
 
@@ -64,11 +68,11 @@ if (isset($_POST['act'])) {
 
 }
 if(isset($_GET['act'])){
-    session_start();
+    Social_web::set_session();
     if (isset($_SESSION['front_user_id'])) {
         switch ($_GET['act']) {
-            case 'get-posts':
-                echo json_encode(Social_web::get_posts($_GET['feed-page']));
+            case 'get_posts':
+                echo json_encode(Social_web::get_posts($_GET['feed_page']));
                 break;
         }
     }
