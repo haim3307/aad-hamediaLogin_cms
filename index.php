@@ -80,7 +80,7 @@ if (isset($_GET['act']) && $_GET['act'] === 'logout') {
             <div class="row post">
                 <div class="profileFrame all-centered">
                     <?php if(isset($_SESSION['front_profile_img']) && !empty($_SESSION['front_profile_img'])): ?>
-                        <img src="_img/users/profiles/<?= $_SESSION['front_profile_img']; ?>" alt="">
+                        <img src="_img/users/profiles/<?= $_SESSION['front_profile_img']; ?>" alt="<?= $_SESSION['front_user_name']; ?>">
                     <?php else: ?>
                         <i style="float: right;" class="far fa-user-circle fa-3x"></i>
                     <?php endif; ?>
