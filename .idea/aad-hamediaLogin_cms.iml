@@ -11,5 +11,6 @@
     <orderEntry type="library" name="angular" level="application" />
     <orderEntry type="library" name="jquery-ui" level="application" />
     <orderEntry type="library" name="toastr" level="application" />
+    <orderEntry type="library" name="jquery" level="application" />
   </component>
 </module>

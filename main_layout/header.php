@@ -1,3 +1,15 @@
+<?php
+
+if (isset($_POST['site_login'])) {
+    Login::login();
+}else{
+    Login::set_session();
+}
+if (isset($_GET['act']) && $_GET['act'] === 'logout') {
+    $out = Login::logout();
+    header('location:index.php');
+}
+?>
 <nav class="nMenu">
     <div class="logoN">
         <div class="mobileB">

@@ -1,6 +1,7 @@
 <?php
 $_GET['asArray'] = 1;
 require_once '../class/DB.php';
+require_once '../class/Login.php';
 $artsObj = new titlesTraffic();
 $pageArticles = $artsObj->get_title_page_articles();
 $res = $artsObj::$con->query("SELECT category_name FROM title_page");
