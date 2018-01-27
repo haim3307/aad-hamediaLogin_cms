@@ -126,7 +126,7 @@ class Register extends Forms
             $user = [
                 ':user_name'=>$newUN,
                 ':email' =>$newUE,
-                ':password' => $newUP
+                ':password' => password_hash($newUP,PASSWORD_BCRYPT)
             ];
             if(self::query('INSERT INTO front_users(name, password, email) VALUES(:user_name,:password,:email)',$user)){
                 $_SESSION['user_id'] = self::connect()->lastInsertId();

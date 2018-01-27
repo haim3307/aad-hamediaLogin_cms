@@ -179,8 +179,13 @@ a.overlay1 {
   height: 100%;
   z-index: 8;
 }
-
-
+post-item::shadow.fadeInPost{
+  opacity: 1;
+  transition: 0.8s opacity;
+}
+post-item::shadow{
+  opacity: 0;
+}
 .grid-news-item{
   display: grid;
   grid-template-areas:
@@ -191,25 +196,13 @@ a.overlay1 {
           'postDesc postDesc'
           'postActions postActions'
           'postComments postComments'
-  ;
+;
   grid-template-rows: 50px 50px 50px 1fr auto;
   background-color: whitesmoke;
   border: 1px solid #3f4c6b;
   border-radius: 3px;
   margin: 10px auto;
   padding: 20px 0;
-  &.addedPost{
-    display: none;
-    opacity: 0;
-    transition: 0.8s opacity;
-  }
-  &.fadeInPost{
-    display: block;
-    opacity: 1;
-    transition: 0.8s opacity;
-  }
-
-
   .addComment{
     display: flex;
   }
@@ -241,7 +234,7 @@ a.overlay1 {
     justify-content: flex-end;
     align-items: flex-start;
   }
-  .artTitle{grid-area: artTitle}
+  .artTitle{grid-area: artTitle }
   .postActions{
     display: flex;
     justify-content: space-between;
@@ -261,14 +254,15 @@ a.overlay1 {
     //min-height: 700px;
     margin: 30px auto 50px auto;
     padding: 50px;
-    grid-template-rows: 80px 50px;
+    grid-template-rows: minmax(115px,auto) 50px;
+
     grid-template-areas:
-          'artAuth artDate'
-          'artTitle artTitle'
-          'postImage postImage'
-          'postDesc postDesc'
-          'postActions postActions'
-          'postComments postComments';
+            'artAuth artDate'
+            'artTitle artTitle'
+            'postImage postImage'
+            'postDesc postDesc'
+            'postActions postActions'
+            'postComments postComments';
   }
 }
 

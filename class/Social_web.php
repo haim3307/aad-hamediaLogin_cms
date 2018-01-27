@@ -27,12 +27,11 @@ class Social_web extends Connection
 
 
             ]
-
-
         );
         if ($insert->rowCount()) {
-            $post_q = self::connect()->query('SELECT * FROM posts WHERE id=' . self::connect()->lastInsertId());
+            $post_q = self::connect()->query('SELECT p.* ,f.profile_img FROM posts p LEFT JOIN front_users f ON p.uid = f.id WHERE p.id=' . self::connect()->lastInsertId());
             if ($post = $post_q->fetch(PDO::FETCH_ASSOC)) {
+                $post['title'] = htmlentities($post['title']);
                 return $post;
             }
         } else var_dump($insert);
@@ -44,11 +43,32 @@ class Social_web extends Connection
         $limit = 5;
         $start = (int)$page * $limit;
         $q = self::connect()->query("SELECT p.*,f.profile_img FROM posts p LEFT JOIN front_users f ON p.uid = f.id ORDER BY added_date DESC LIMIT $start,$limit");
-        return $q->fetchAll(PDO::FETCH_ASSOC);
+        if($q){
+            $res = [];
+            while ($row = $q->fetch(PDO::FETCH_ASSOC)){
+                $row['title'] = htmlspecialchars($row['title']);
+                $res[] = $row;
+            }
+        }
+
+        return isset($res)?$res:[];
     }
     static function delete_post($post_id){
         $q = self::query("DELETE FROM posts WHERE id =:post_id",[':post_id'=>((int)$post_id)]);
         return $q && $q->rowCount()?'deleted':'error';
+    }
+    static function is_following($follower_id,$user_id){
+        $q = self::query('SELECT fid FROM followers WHERE uid=:uid AND fid=:fid', [':uid' => $user_id, ':fid' => $follower_id]);
+        return $q?$q->fetch():false;
+    }
+    static function follow($follower_id,$user_id){
+        $is_following = self::is_following($follower_id,$user_id);
+        if (!($is_following)) {
+            return self::query('INSERT INTO followers VALUES(\'\', :uid,:fid)', [':uid' => $user_id, 'fid' => $follower_id]);
+
+        } else {
+            return !self::query('DELETE FROM followers WHERE uid=:uid AND fid=:fid', [':uid' => $user_id, 'fid' => $follower_id]);
+        }
     }
 }
 
