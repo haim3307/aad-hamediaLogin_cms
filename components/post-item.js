@@ -5,6 +5,8 @@ class PostItem extends HTMLElement{
 		this._complete = 0;
 		this.mainUserId = this.getAttribute('main-user-id');
 		this.show = this.getAttribute('post-show');
+		let spt = this.getAttribute('show-posted-to');
+		this.showPostedTo = spt?spt:false;
 		this.post = {
 			id: this.getAttribute('post-id'),
 			title: this.getAttribute('title'),
@@ -13,9 +15,10 @@ class PostItem extends HTMLElement{
 			uid: this.getAttribute('user-id'),
 			profile_img: this.getAttribute('profile-img'),
 			front_img: this.getAttribute('front-img'),
-
+			posted_to: this.getAttribute('posted-to'),
+			posted_to_name: this.getAttribute('posted-to-name'),
 		};
-
+		console.log(typeof this.getAttribute('posted-to'));
 	}
 	get complete(){
 		return this._complete;
@@ -69,6 +72,23 @@ class PostItem extends HTMLElement{
 							}
 							</div>
 							<strong style="margin-top: 25px;">${post.author}</strong>
+							${this.showPostedTo?
+								`
+								<span style="margin-top: 25px; margin-right: 10px;">
+											<span><i class="fa fa-angle-left"></i></span>
+											<span>
+												<a href="${post.posted_to && post.posted_to != 'null'?'index.php?app-page=profile&username='+post.posted_to_name:'index.php'}">
+												${post.posted_to != this.mainUserId
+													?
+													post.posted_to && post.posted_to != 'null'?post.posted_to_name:'פיד'
+													:
+													'הציר שלי'
+												}
+												</a>
+											</span>
+								</span>
+								`:''
+							}
 					</div>
 
 					<div class="artDate">

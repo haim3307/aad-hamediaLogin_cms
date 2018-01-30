@@ -39,7 +39,11 @@ class AadFeed extends Social_web
         switch ($action){
             case 'get_posts':
                 if(isset($this->request->feed_page)){
-                    $this->reply(self::get_posts($this->request->feed_page));
+                    if(!isset($this->request->posted_by))
+                        $posts = self::get_posts($this->request->feed_page);
+                    else
+                        $posts = self::get_posts($this->request->feed_page,$this->request->posted_by);
+                    $this->reply($posts);
                 }
                 break;
             case 'delete_post':

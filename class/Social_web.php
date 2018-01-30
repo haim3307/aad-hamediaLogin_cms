@@ -9,7 +9,7 @@ require_once 'Connection.php';
 
 class Social_web extends Connection
 {
-    static function add_new_post($content)
+    static function add_new_post($content,$posted_to = null)
     {
 
         $content = htmlentities($content);
@@ -24,12 +24,16 @@ class Social_web extends Connection
                 ':activated' => 1,
                 ':official' => 0,
                 ':uid' => $_SESSION['front_user_id']
-
-
             ]
         );
+        $last_id = self::connect()->lastInsertId();
+        if($posted_to){
+           $insert1 = self::query('INSERT INTO posted(by,to,po_id) VALUES(:by,:to,:po_id)',
+               [':by'=>$_SESSION['front_user_id'] , ':to'=>$posted_to,':po_id'=>$last_id]
+           );
+        }
         if ($insert->rowCount()) {
-            $post_q = self::connect()->query('SELECT p.* ,f.profile_img FROM posts p LEFT JOIN front_users f ON p.uid = f.id WHERE p.id=' . self::connect()->lastInsertId());
+            $post_q = self::connect()->query('SELECT p.* ,f.profile_img FROM posts p LEFT JOIN front_users f ON p.uid = f.id WHERE p.id=' . $last_id);
             if ($post = $post_q->fetch(PDO::FETCH_ASSOC)) {
                 $post['title'] = htmlentities($post['title']);
                 return $post;
@@ -38,11 +42,23 @@ class Social_web extends Connection
         return false;
     }
 
-    static function get_posts($page)
+    static function get_posts($page,$user_id = null)
     {
         $limit = 5;
         $start = (int)$page * $limit;
-        $q = self::connect()->query("SELECT p.*,f.profile_img FROM posts p LEFT JOIN front_users f ON p.uid = f.id ORDER BY added_date DESC LIMIT $start,$limit");
+        if(!isset($user_id)){
+            $q = self::connect()->query("SELECT p.*,f.profile_img FROM posts p LEFT JOIN front_users f ON p.uid = f.id ORDER BY added_date DESC LIMIT $start,$limit");
+        }else{
+            $q = self::connect()->query(
+            "SELECT p.*,fu.name,fu.profile_img,f.name _to,po.to 
+            FROM posted po LEFT JOIN front_users f ON po.to = f.id
+            RIGHT JOIN posts p ON po.po_id = p.id 
+            LEFT JOIN front_users fu ON p.uid = fu.id 
+            WHERE p.uid =  $user_id
+            ORDER BY added_date DESC LIMIT $start,$limit"
+            );
+
+        }
         if($q){
             $res = [];
             while ($row = $q->fetch(PDO::FETCH_ASSOC)){

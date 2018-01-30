@@ -30,7 +30,7 @@ if($q2 = $con->query("SELECT u.name,u.id FROM followers f JOIN front_users u ON 
             </h1>
             <ul>
                 <?php foreach ($following_list as $following):?>
-                <li><?= $following['name']; ?></li>
+                <li><a href="index.php?app-page=profile&username=<?= $following['name']; ?>"><?= $following['name']; ?></a></li>
                 <?php endforeach; ?>
             </ul>
         </div>
@@ -39,7 +39,7 @@ if($q2 = $con->query("SELECT u.name,u.id FROM followers f JOIN front_users u ON 
             <h1>עוקבים אחרייך</h1>
             <ul>
                 <?php foreach ($followed_by_list as $followed_by):?>
-                    <li><?= $followed_by['name']; ?></li>
+                    <li><a href="index.php?app-page=profile&username=<?= $followed_by['name']; ?>"><?= $followed_by['name']; ?></a></li>
                 <?php endforeach; ?>
             </ul>
         </div>
