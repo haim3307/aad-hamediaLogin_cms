@@ -57,10 +57,17 @@ class AadFeed extends Social_web
                     }
                 }
                 break;
+            case 'add_post':
+                $to_id = isset($this->request->to_id)?$this->request->to_id:null;
+                $this->reply(self::add_new_post($this->request->content,$to_id));
+                break;
             case 'follow':
                 $user_id = $this->request->uid;
                 $follower_id = $_SESSION['front_user_id'];
                 $this->reply(self::follow($follower_id,$user_id)?'true':'false');
+                break;
+            case 'like_post':
+                $this->reply(self::like_post($this->request->post_id));
         }
         // get the action
         /*

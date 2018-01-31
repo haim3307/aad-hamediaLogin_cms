@@ -71,33 +71,11 @@ if ($follower_id = (int)Login::isLoggedIn()) {
         }
     </script>
 <?php endif; ?>
-<form action="" method="post">
-    <textarea name="postbody" id="" rows="8" cols="80"></textarea>
-    <p/>
-    <input type="submit" name="post">
-</form>
+<?php include 'social_app/components/publish_post.php'?>
 <div id="postsFeed">
 
 <?php foreach ($user_posts as $post): ?>
-        <post-item
-                post-id="<?= $post['id'] ?>"
-                main-user-id="<?= isset($_SESSION['front_user_id'])?$_SESSION['front_user_id']:'undefined' ?>"
-                title="<?= $post['title']; ?>"
-                author="<?= $post['author']; ?>"
-                added-date="<?= $post['added_date']; ?>"
-                user-id="<?= $post['uid']; ?>"
-                profile-img="<?= $post['profile_img']; ?>"
-                front-img="<?= $post['front_img']; ?>"
-                post-show="true"
-                posted-to="<?= $post['to'] ?>"
-                posted-to-name="<?= $post['_to'] ?>"
-                show-posted-to = "true"
-        ></post-item>
-<?php
-/*echo '<pre style="direction: ltr;">';
-var_dump($post);
-echo '</pre>';
-*/?>
+    <?php include 'social_app/components/post_item_instance.php'; ?>
 <?php endforeach; ?>
 </div>
 <script>

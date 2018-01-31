@@ -2,7 +2,9 @@
 class PostItem extends HTMLElement{
 	constructor(){
 		super();
+/*
 		this._complete = 0;
+*/
 		this.mainUserId = this.getAttribute('main-user-id');
 		this.show = this.getAttribute('post-show');
 		let spt = this.getAttribute('show-posted-to');
@@ -17,8 +19,12 @@ class PostItem extends HTMLElement{
 			front_img: this.getAttribute('front-img'),
 			posted_to: this.getAttribute('posted-to'),
 			posted_to_name: this.getAttribute('posted-to-name'),
+			liked_post: this.getAttribute('posted-liked'),
 		};
 		console.log(typeof this.getAttribute('posted-to'));
+		console.log(this.post.posted_to,this.post.uid);
+		console.log(this.getAttribute('posted-to') === this.getAttribute('user-id'));
+		console.log(this.post.liked_post);
 	}
 	get complete(){
 		return this._complete;
@@ -26,8 +32,14 @@ class PostItem extends HTMLElement{
 	set complete(val){
 		this._complete = val;
 	}
+	get post_liked(){
+		return this.getAttribute('post_liked');
+	}
+	set post_liked(val){
+		return this.setAttribute('post_liked',val);
+	}
 	static get observedAttributes(){
-		return ['complete'];
+		return ['posted-liked'];
 	}
 	attributeChangedCallback(name, oldVal, newVal){
 		console.log(name);
@@ -41,7 +53,12 @@ class PostItem extends HTMLElement{
 				}else {
 					this.style.display = 'none';
 				}
+				break;
+			case 'posted-liked':
+				console.log('liked-change');
+
 		}
+
 	}
 	connectedCallback(){
 		const post = this.post;
@@ -105,7 +122,9 @@ class PostItem extends HTMLElement{
 					</a>
 					`:''}
 					<div class="postActions d-flex">
-							<div class="cool postAction"><i class="fas fa-thumbs-up fa-2x" style="padding-left: 10px;"></i><span>אהבתי</span></div>
+							<div class="cool postAction"><i class="fas fa-thumbs-up fa-2x 
+							${post.liked_post && post.liked_post != 'null' && post.liked_post != 'undefined'
+							?'liked':'unliked'}" style="padding-left: 10px;"></i><span>אהבתי</span></div>
 							<div class="speak postAction"><i class="fas fa-comment fa-2x" style="padding-left: 10px;"></i><span>הגב</span></div>
 							<div class="share postAction"><i class="fas fa-share fa-2x" style="padding-left: 10px;"></i><span>שתף</span></div>
 					</div>
@@ -118,7 +137,28 @@ class PostItem extends HTMLElement{
 		$(this).find('.modifyPost').on('click',function () {
 			PS.toggleEditPostPop(post);
 		});
+		$(this).find('.cool i').on('click',function () {
+			$.ajax({
+				url: 'api/index.php',
+				method: 'post',
+				data: {
+					'action':'like_post',
+					'post_id': post.id,
+					'already_liked':post.liked_post
+				}
+			}).then((res)=>{
+				if(res === 'liked'){
+					this.post_liked = '1';
+					$(this).addClass('liked');
+				}else if('unliked'){
+					this.post_liked = '';
+					$(this).removeClass('liked');
 
+				}
+				//$(this).css('transform','rotate(0deg)');
+
+			});
+		});
 	}
 }
 window.customElements.define('post-item', PostItem);

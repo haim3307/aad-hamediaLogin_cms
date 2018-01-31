@@ -80,7 +80,14 @@ switch ($app_page){
             background-color: #eeeeee;
             margin-bottom: 5px;
         }
+        post-item .cool i{
+            transition: 0.7s all;
+        }
+        post-item .cool i.liked{
+            color: blue;
+            transform: rotate(-20deg) translateY(-10px);
 
+        }
     </style>
 </head>
 
@@ -136,7 +143,6 @@ switch ($app_page){
         }
 
         ?>
-        <script src="<?= DOMAIN ?>components/post-item.js"></script>
         <style>
 
             #editPostPop {
@@ -165,6 +171,7 @@ switch ($app_page){
             }
 
         </style>
+        <script src="<?= DOMAIN ?>social_app/components/post-item.js"></script>
 
         <script>
 let mainUserId = <?= isset($_SESSION['front_user_id']) ? $_SESSION['front_user_id'] : 'undefined' ?>;
@@ -224,19 +231,24 @@ class PostService {
 const PS = new PostService();
 
 function postTpl(post) {
+/*
 	console.log(post);
+*/
 	return $(`
         <post-item
            post-id="${post.id}"
            main-user-id="${mainUserId}"
            title="${post.title}"
-           author="${post.author}"
            added-date="${post.added_date}"
            user-id="${post.uid}"
+           author="${post.name}"
            profile-img="${post.profile_img}"
            front-img="${post.front_img}"
            posted-to="${post.to}"
            posted-to-name="${post._to}"
+           posted-liked="${post.liked}"
+           likes = "${post.likes}"
+           likers-list = "${post.likers_list}"
            ${page === 'profile'?
 			'show-posted-to = "true"'
 			:
@@ -267,36 +279,7 @@ function editPostTpl(post) {
   `;
 }
 
-$('#publishPostI').on('click', function () {
-    let postContent = $('#postContent').val();
-    let postImage = $('#post_image').val();
-    if(!postImage){
-		postImage = '';
-    }
-    if (postContent && postContent.length < 700) {
 
-        $.ajax({
-            method: 'POST',
-            url: 'class/Social_web.php',
-			enctype: 'multipart/form-data',
-			data: {
-                act: 'new_post',
-                content: postContent,
-                post_image: postImage
-            }
-        }).done(function (res) {
-            console.log('add_post:', res);
-            let post = JSON.parse(res);
-            const $post = postTpl(post);
-            const $feed = $('#postsFeed');
-            $feed.prepend($post);
-            PS.fadeInPost($post);
-            $('#postContent')[0].value = '';
-
-        });
-
-    }
-});
 
 function pushPosts(posts) {
     for (let post of posts) {
