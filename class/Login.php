@@ -26,11 +26,11 @@ class Login extends Connection
         if (isset($username)) $userId = parent::query('SELECT id FROM front_users WHERE name=:username',
             [':username' => $username])->fetchAll()[0]['id'];
         if (isset($userId) && ($if_there = parent::query(
-                'SELECT token FROM login_tokens WHERE uid=:uid',[':uid'=>$userId])) && $if_there->rowCount() < 5) {
+                'SELECT token FROM login_tokens WHERE uid=:uid',[':uid'=>$userId])) && $if_there->rowCount() <= 1) {
             $token = self::generate_token();
             parent::query('INSERT INTO login_tokens VALUES(\'\',:token,:user_id)', [':token' => sha1($token), ':user_id' => $userId]);
-            setcookie("SNID", $token, time() + 60 * 60 * 24 * 7, '/aad-hamediaLogin_cms', NULL, NULL, true);
-            setcookie("SNID_", 1, time() + 60 * 60 * 24 * 3, '/aad-hamediaLogin_cms', NULL, NULL, true);
+            setcookie("SNID", $token, time() + 60 * 60 * 24 * 7, DOMAIN, NULL, NULL, true);
+            setcookie("SNID_", 1, time() + 60 * 60 * 24 * 3, DOMAIN, NULL, NULL, true);
             return true;
         }else{
             return false;

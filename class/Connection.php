@@ -6,6 +6,12 @@
  * Time: 00:16
  */
 require_once 'hosts.php';
+$root = realpath($_SERVER["DOCUMENT_ROOT"]);
+if($_SERVER['HTTP_HOST'] === 'localhost'){
+    $root.= '/aad-hamediaLogin_cms';
+}
+require_once $root.'/includes/domain.php';
+
 class Connection
 {
     static public $con;

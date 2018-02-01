@@ -6,26 +6,29 @@
  * Time: 12:13
  */
 require_once 'Connection.php';
-require_once '../includes/domain.php';
-function logout()
-{
-    /*        if(isset($_POST['confirm'])){        }*/
+class Logout extends Connection {
+    static function kill_cookies(){
+        setcookie('SNID', '1', time() - 3600, DOMAIN);
+        setcookie('SNID_', '1', time() - 3600, DOMAIN);
+        setcookie(session_name(), '1', time() - 3600, DOMAIN);
+    }
+    static  function execute()
+    {
+        /*        if(isset($_POST['confirm'])){        }*/
 
     if (isset($_POST['alldevices'])) {
-        Connection::query('DELETE FROM login_tokens WHERE uid=:userid', [':userid' => Login::isLoggedIn()]);
+    self::query('DELETE FROM login_tokens WHERE uid=:userid', [':userid' => Login::isLoggedIn()]);
     } else {
         if (isset($_COOKIE['SNID'])) {
             echo '1';
-            $q = Connection::query('DELETE FROM login_tokens WHERE token=:token', [':token' => sha1($_COOKIE['SNID'])]);
+            $q = self::query('DELETE FROM login_tokens WHERE token=:token', [':token' => sha1($_COOKIE['SNID'])]);
         }
 
     }
-    setcookie('SNID', '1', time() - 3600, '/aad-hamediaLogin_cms');
-    setcookie('SNID_', '1', time() - 3600, '/aad-hamediaLogin_cms');
-    setcookie(session_name(), '1', time() - 3600);
-
-    session_start();
+    self::kill_cookies();
+    parent::set_session();
     session_destroy();
-    header('location:'.DOMAIN);
+    //header('location:'.DOMAIN);
+    }
 }
-if(isset($_POST['logout'])) logout();
+if(isset($_POST['logout'])) Logout::execute();
