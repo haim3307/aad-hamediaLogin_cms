@@ -43,7 +43,7 @@ class Connection
             if($_SERVER['HTTP_HOST'] == 'localhost'){
                 $path='/aad-hamediaLogin_cms';
             }
-            session_set_cookie_params(60*60*24*7,$path);
+            session_set_cookie_params(null,$path);
             session_start();
         }
     }

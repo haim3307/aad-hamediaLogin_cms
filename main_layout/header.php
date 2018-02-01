@@ -1,8 +1,8 @@
 <?php
 
 if (isset($_POST['site_login'])) {
-    if(Login::login()) header('location:'.$_SERVER['PHP_SELF']);
-
+    //if(Login::login()) header('location:'.$_SERVER['PHP_SELF']);
+    Login::login();
 }else{
     Login::set_session();
 }
@@ -85,10 +85,54 @@ if (isset($_POST['site_login'])) {
 <?php else:?>
     <div class="userNav" style="float: left; text-align: left; padding: 20px">
         <div> שלום  <strong><?= $_SESSION['front_user_name'] ?></strong></div>
-        <form action="<?= DOMAIN.'class/logout.php' ?>" method="post">
+        <style>
+            #logoutMenu{
+                display: none;
+                position: absolute;
+                left: 0;
+                top:30px;
+                background-color: #fff;
+            }
+            #logoutMTrigger a{
+                text-decoration: none;
+            }
+            #logoutMTrigger a{
+                text-decoration: none;
+            }
+            #logoutMenu {
+                list-style: none;
+            }
+            #logoutMenu li{
+                padding: 10px 2px;
+                text-align: center;
+            }
+            #logoutMenu li:hover{
+                background-color: silver;
+                color: white;
+            }
+            #logoutMenu input{
+            }
+
+        </style>
+        <form id="logoutForm" action="<?= DOMAIN.'class/Logout.php' ?>" method="post" style="position: relative;">
             <input type="submit" name="logout" id="logoutI" style="display: none;">
             <label for="logoutI"><a>התנתק</a></label>
+            <i class="fa fa-angle-down" id="logoutMTrigger">
+
+            </i>
+            <span id="logoutMenu" style="width: 200px">
+                <ul>
+                    <li><input type="radio" id="alldevicesN" name="alldevices" value="0"><label for="alldevicesN">ממכשיר זה</label></li>
+                    <li><label for="alldevicesY"><input type="radio" id="alldevicesY" name="alldevices" value="1">מכל המכשירים</label></li>
+
+                </ul>
+            </span>
         </form>
+        <script>
+            $('#logoutMTrigger').on('click',function () {
+                $(this).siblings('#logoutMenu').slideToggle(100);
+			});
+        </script>
     </div>
 <?php endif;?>
 

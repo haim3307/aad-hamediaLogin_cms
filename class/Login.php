@@ -26,7 +26,9 @@ class Login extends Connection
         if (isset($username)) $userId = parent::query('SELECT id FROM front_users WHERE name=:username',
             [':username' => $username])->fetchAll()[0]['id'];
         if (isset($userId) && ($if_there = parent::query(
-                'SELECT token FROM login_tokens WHERE uid=:uid',[':uid'=>$userId])) && $if_there->rowCount() <= 1) {
+                'SELECT token FROM login_tokens WHERE uid=:uid',[':uid'=>$userId])) && $if_there->rowCount() <= 2) {
+            //var_dump($if_there);
+            var_dump($if_there->rowCount());
             $token = self::generate_token();
             parent::query('INSERT INTO login_tokens VALUES(\'\',:token,:user_id)', [':token' => sha1($token), ':user_id' => $userId]);
             setcookie("SNID", $token, time() + 60 * 60 * 24 * 7, DOMAIN, NULL, NULL, true);
@@ -39,7 +41,7 @@ class Login extends Connection
 
     static function isLoggedIn()
     {
-        if (isset($_COOKIE['SNID'])) {
+        if (isset($_COOKIE['SNID']) && !isset($_SESSION['loggedInBlog'])) {
             if ($query = parent::query(
                 'SELECT uid FROM login_tokens WHERE token=:token',
                 [':token' => sha1($_COOKIE['SNID'])])->fetch(PDO::FETCH_ASSOC)
@@ -52,6 +54,8 @@ class Login extends Connection
                 }
                 return $userId;
             }
+        }else if(isset($_SESSION['front_user_id'])){
+            return $_SESSION['front_user_id'];
         }
         return false;
     }

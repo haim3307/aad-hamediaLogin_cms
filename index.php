@@ -125,7 +125,7 @@ switch ($app_page){
         </header>
         <hr>
         <hr>
-
+        <?php if(Login::isLoggedIn()): ?>
         <?php
         switch ($app_page) {
             case 'home':
@@ -141,8 +141,11 @@ switch ($app_page){
                 include 'social_app/home.php';
                 break;
         }
-
+        else:
+            include 'social_app/home.php';
         ?>
+        <?php endif; ?>
+
         <style>
 
             #editPostPop {
@@ -174,145 +177,146 @@ switch ($app_page){
         <script src="<?= DOMAIN ?>social_app/components/post-item.js"></script>
 
         <script>
-let mainUserId = <?= isset($_SESSION['front_user_id']) ? $_SESSION['front_user_id'] : 'undefined' ?>;
+        let mainUserId = <?= isset($_SESSION['front_user_id']) ? $_SESSION['front_user_id'] : 'undefined' ?>;
 
-class PostService {
-    deleteListener() {
-        $('.deletePost').on('click', AskToDeletePost);
-    }
-
-    askToDeletePost(id) {
-        $.ajax({
-            method: "POST",
-            url: "api/index.php?action=delete_post",
-            data: {
-                post_id: id
+        class PostService {
+            deleteListener() {
+                $('.deletePost').on('click', AskToDeletePost);
             }
-        }).then((res) => {
-            if (res === 'deleted') this.deletePost(id);
-        });
-    }
 
-    deletePost(id) {
-        const $post = $(`*[post-id="${id}"]`);
-        this.fadeOutPost($post);
-        $post.remove();
-    }
+            askToDeletePost(id) {
+                $.ajax({
+                    method: "POST",
+                    url: "api/index.php?action=delete_post",
+                    data: {
+                        post_id: id
+                    }
+                }).then((res) => {
+                    if (res === 'deleted') this.deletePost(id);
+                });
+            }
 
-    editPost(e) {
+            deletePost(id) {
+                const $post = $(`*[post-id="${id}"]`);
+                this.fadeOutPost($post);
+                $post.remove();
+            }
 
-    }
+            editPost(e) {
 
-    askToEditPost() {
-        let edited = $(e.target).siblings('#editedContent').val();
-        console.log(edited);
-    }
+            }
 
-    toggleEditPostPop(post) {
-        let html = editPostTpl(post);
-        const existElement = $('#editPostPop');
-        const $editedTpl = $(html);
-        if (!existElement.next().length) {
-            $('#postsFeed').prepend($editedTpl);
-        } else {
-            existElement[0].outerHTML = html;
+            askToEditPost() {
+                let edited = $(e.target).siblings('#editedContent').val();
+                console.log(edited);
+            }
+
+            toggleEditPostPop(post) {
+                let html = editPostTpl(post);
+                const existElement = $('#editPostPop');
+                const $editedTpl = $(html);
+                if (!existElement.next().length) {
+                    $('#postsFeed').prepend($editedTpl);
+                } else {
+                    existElement[0].outerHTML = html;
+                }
+            }
+
+            fadeInPost($post) {
+                return $post.children('.grid-news-item').hide().fadeIn(1000);
+            }
+
+            fadeOutPost($post) {
+                return $post.children('.grid-news-item').fadeOut(1000);
+            }
         }
-    }
 
-    fadeInPost($post) {
-        return $post.children('.grid-news-item').hide().fadeIn(1000);
-    }
+        const PS = new PostService();
 
-    fadeOutPost($post) {
-        return $post.children('.grid-news-item').fadeOut(1000);
-    }
-}
+        function postTpl(post) {
+        /*
+            console.log(post);
+        */
+            return $(`
+                <post-item
+                   post-id="${post.id}"
+                   main-user-id="${mainUserId}"
+                   title="${post.title}"
+                   added-date="${post.added_date}"
+                   user-id="${post.uid}"
+                   author="${post.name}"
+                   profile-img="${post.profile_img}"
+                   front-img="${post.front_img}"
+                   posted-to="${post.to}"
+                   posted-to-name="${post._to}"
+                   posted-liked="${post.liked}"
+                   likes = "${post.likes}"
+                   likers-list = "${post.likers_list}"
+                   ${page === 'profile'?
+                    'show-posted-to = "true"'
+                    :
+                    ``
+                    }
 
-const PS = new PostService();
-
-function postTpl(post) {
-/*
-	console.log(post);
-*/
-	return $(`
-        <post-item
-           post-id="${post.id}"
-           main-user-id="${mainUserId}"
-           title="${post.title}"
-           added-date="${post.added_date}"
-           user-id="${post.uid}"
-           author="${post.name}"
-           profile-img="${post.profile_img}"
-           front-img="${post.front_img}"
-           posted-to="${post.to}"
-           posted-to-name="${post._to}"
-           posted-liked="${post.liked}"
-           likes = "${post.likes}"
-           likers-list = "${post.likers_list}"
-           ${page === 'profile'?
-			'show-posted-to = "true"'
-			:
-            ``
-			}
-
-        ></post-item>
+                ></post-item>
 
 
 
-        `);
-}
+                `);
+        }
 
-function editPostTpl(post) {
-    return `
-    <div id="editPostPop">
-        <div style="display: flex; height: 80%;">
-            <div id="editorProfileImg all-centered" style="float: right; width: 30%;">
-                <img src="_img/users/profiles/${post.profile_img}" style="width: auto; height: 30%; overflow: hidden;" alt="">
+        function editPostTpl(post) {
+            return `
+            <div id="editPostPop">
+                <div style="display: flex; height: 80%;">
+                    <div id="editorProfileImg all-centered" style="float: right; width: 30%;">
+                        <img src="_img/users/profiles/${post.profile_img}" style="width: auto; height: 30%; overflow: hidden;" alt="">
+                    </div>
+                    <textarea id="editedContent" style="float: right;  flex: 1 1 0; display: block;">
+                        ${post.title}
+                    </textarea>
+                </div>
+
+                <input type="button" value="שמור" onclick="PostService.askToEditPost(event)">
             </div>
-            <textarea id="editedContent" style="float: right;  flex: 1 1 0; display: block;">
-                ${post.title}
-            </textarea>
-        </div>
-
-        <input type="button" value="שמור" onclick="PostService.askToEditPost(event)">
-    </div>
-  `;
-}
+          `;
+        }
 
 
 
-function pushPosts(posts) {
-    for (let post of posts) {
-        let $post = postTpl(post);
-        $('#postsFeed').append($post);
-        PS.fadeInPost($post);
-    }
-}
+        function pushPosts(posts) {
+            for (let post of posts) {
+                let $post = postTpl(post);
+                $('#postsFeed').append($post);
+                PS.fadeInPost($post);
+            }
+        }
 
-let PostH = $('.grid-news-item').height();
-let scrollFlag = 1;
-postPage = 1;
-$(window).scroll(function () {
-    if (scrollFlag && $(window).scrollTop() + $(window).height() >= $(document).height() - (PostH * 3)) {
-        console.log("load posts!");
-        scrollFlag = 0;
-        let q = postsQuery();
-        console.log(q);
-        $.ajax(q).then(function (res) {
-            console.log(res);
-            let posts = res;
-            console.log(posts);
-            if (posts.length > 10 || posts.length === 0) return;
-            pushPosts(posts);
-            scrollFlag = 1;
+        let PostH = $('.grid-news-item').height();
+        let scrollFlag = 1;
+        postPage = 1;
+        $(window).scroll(function () {
+            if (scrollFlag && $(window).scrollTop() + $(window).height() >= $(document).height() - (PostH * 3)) {
+                console.log("load posts!");
+                scrollFlag = 0;
+                let q = postsQuery();
+                console.log(q);
+                $.ajax(q).then(function (res) {
+                    console.log(res);
+                    let posts = res;
+                    console.log(posts);
+                    if (posts.length > 10 || posts.length === 0) return;
+                    pushPosts(posts);
+                    scrollFlag = 1;
 
+                });
+
+            }
         });
-
-    }
-});
 
 
         </script>
+
     </main>
     <footer><?php include_once 'main_layout/footer.php' ?></footer>
 </div>
