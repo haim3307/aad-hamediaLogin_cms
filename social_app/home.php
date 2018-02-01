@@ -7,7 +7,7 @@ defined('app') or die(header('HTTP/1.0 403 Forbidden'));
  * Time: 12:11
  */
 ?>
-<?php if(isset($_SESSION['front_user_id'])): ?>
+<?php if($is_logged): ?>
     <?php include 'social_app/components/publish_post.php'?>
 <?php endif; ?>
 <div class="allReportsWrapperBig">
@@ -21,7 +21,7 @@ defined('app') or die(header('HTTP/1.0 403 Forbidden'));
             <?php foreach ($posts as $post): ?>
                 <?php include 'social_app/components/post_item_instance.php'; ?>
             <?php endforeach; ?>
-            <?php if(!Login::isLoggedIn()): ?>
+            <?php if(!$is_logged): ?>
                 <h3 style="padding-bottom: 20px;">עלייך <a href="#">להתחבר</a> על מנת לראות פוסטים נוספים</h3>
             <?php endif; ?>
         </div>

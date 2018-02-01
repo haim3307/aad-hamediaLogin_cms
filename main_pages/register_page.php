@@ -15,11 +15,15 @@ $page_title = 'הרשמה';
 $level = isset($_SESSION['reg_level']) ? $_SESSION['reg_level'] : 1;
 if (isset($_POST['reg_level_1'])) {
     //var_dump($_POST);
-    $err = Register::is_empty($_POST);
+    $user_name = filter_input('user_name',FILTER_SANITIZE_STRING);
+    $user_email = filter_input('new_email',FILTER_VALIDATE_EMAIL);
+    $user_pass = filter_input('password',FILTER_SANITIZE_STRING);
+    $user_pass1 = filter_input('password1',FILTER_SANITIZE_STRING);
+    $user = ['user_name'=>trim($user_name),'password' => trim($user_pass), 'new_email' => trim($user_email),'password1'=>trim($user_pass1)];
+    $err = Register::is_empty($user);
     $errors = $err ? $err : [];
     if (!sizeof($errors)) {
-
-        $insert = Register::insertRegStat($_POST['user_name'], $_POST['new_email'], $_POST['password']);
+        $insert = Register::insertRegStat($user_name, $user_email, $user_pass);
         if(!is_array($insert) && $insert){
             $_SESSION['reg_level'] = 2;
         }

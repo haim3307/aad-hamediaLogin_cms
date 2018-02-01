@@ -5,9 +5,9 @@
  * Date: 21/01/2018
  * Time: 15:59
  */
-require_once 'Connection.php';
+require_once 'Login.php';
 
-class Social_web extends Connection
+class Social_web extends Login
 {
     static function add_new_post($content,$posted_to = null)
     {
@@ -58,7 +58,7 @@ class Social_web extends Connection
         $limit = 5;
         $start = (int)$page * $limit;
         if(!isset($user_id)){
-            $if_not_logged = isset($_SESSION['front_user_id'])?'':'WHERE official = 1';
+            $if_not_logged = !self::isLoggedIn()?'':'WHERE official = 1';
             $q = $pdo->query("SELECT p.*,f.profile_img, f.name FROM posts p LEFT JOIN front_users f ON p.uid = f.id $if_not_logged ORDER BY added_date DESC LIMIT $start,$limit");
         }else{
             $q = $pdo->query(

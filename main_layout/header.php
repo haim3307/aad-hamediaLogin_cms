@@ -1,10 +1,12 @@
 <?php
-
 if (isset($_POST['site_login'])) {
     //if(Login::login()) header('location:'.$_SERVER['PHP_SELF']);
     Login::login();
 }else{
     Login::set_session();
+    echo '<pre style="direction: ltr;">';
+    var_dump($_SESSION);
+    echo '</pre>';
 }
 ?>
 <nav class="nMenu">
@@ -64,11 +66,11 @@ if (isset($_POST['site_login'])) {
     }
 
 </style>
-<?php if(!isset($_SESSION['loggedInBlog'])):?>
+<?php if(!$is_logged):?>
 <div style="direction: ltr">
     <form style="direction: rtl;" action="" id="loginForm" method="POST" novalidate>
         <input type="text" name="user_name" class="logInput" placeholder="שם המשתמש">
-        <input type="text" name="user_pass" class="logInput" placeholder="סיסמא">
+        <input type="password" name="user_pass" class="logInput" placeholder="סיסמא">
         <input type="submit" name="site_login" id="submitLogin" value="התחבר">
     </form>
     <div class="forgotPass" style="direction: rtl;">
@@ -84,7 +86,7 @@ if (isset($_POST['site_login'])) {
 </div>
 <?php else:?>
     <div class="userNav" style="float: left; text-align: left; padding: 20px">
-        <div> שלום  <strong><?= $_SESSION['front_user_name'] ?></strong></div>
+        <div> שלום  <strong><?= htmlentities($_SESSION['front_user_name']); ?></strong></div>
         <style>
             #logoutMenu{
                 display: none;

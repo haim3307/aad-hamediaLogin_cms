@@ -1,6 +1,8 @@
 <?php
+require_once 'class/Login.php';
 define('app', true);
-
+$is_logged = Login::isLoggedIn();
+var_dump($is_logged);
 $app_pages = ['home','profile','friends'];
 if(isset($_GET['app-page']) && in_array($_GET['app-page'],$app_pages)){
     $app_page = $_GET['app-page'];
@@ -125,7 +127,7 @@ switch ($app_page){
         </header>
         <hr>
         <hr>
-        <?php if(Login::isLoggedIn()): ?>
+        <?php if($is_logged): ?>
         <?php
         switch ($app_page) {
             case 'home':

@@ -6,11 +6,14 @@
  * Time: 12:13
  */
 require_once 'Login.php';
+setcookie('SNID', '1', time() - 3600, PATH_FOLDER);
+var_dump(DOMAIN);
+
 class Logout extends Login {
     static function kill_cookies(){
-        setcookie('SNID', '1', time() - 3600, DOMAIN);
-        setcookie('SNID_', '1', time() - 3600, DOMAIN);
-        setcookie(session_name(), '1', time() - 3600, DOMAIN);
+        setcookie('SNID', '1', time() - 3600, PATH_FOLDER);
+        setcookie('SNID_', '1', time() - 3600, PATH_FOLDER);
+        setcookie(session_name(), '1', time() - 3600, PATH_FOLDER);
     }
     static  function execute()
     {

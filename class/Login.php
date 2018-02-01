@@ -62,15 +62,17 @@ class Login extends Connection
     static public function login()
     {
         self::set_session();
-        if (!isset($_POST['user_name'])) {
+        $uname = filter_input(INPUT_POST,'user_name',FILTER_SANITIZE_STRING);
+        $uname = trim($uname);
+        $upass = filter_input(INPUT_POST,'user_pass',FILTER_SANITIZE_STRING);
+        $upass = trim($upass);
+        if (!$uname) {
             return;
         }
-        if (!isset($_POST['user_pass'])) {
+        if (!$upass) {
             return;
         }
         //session_id();
-        $uname = $_POST['user_name'];
-        $upass = $_POST['user_pass'];
         if($get_pass = $stmt = self::query(
             "SELECT password FROM front_users WHERE name=:name",
             [':name' => $uname]
