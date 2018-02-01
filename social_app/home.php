@@ -15,14 +15,15 @@ defined('app') or die(header('HTTP/1.0 403 Forbidden'));
                 <div class="allReportsWrapperR"></div>-->
     <div class="allReportsWrapper">
         <div class="news-home" id="postsFeed">
-
-
             <?php
             $posts = Social_web::get_posts(0);
             ?>
             <?php foreach ($posts as $post): ?>
                 <?php include 'social_app/components/post_item_instance.php'; ?>
             <?php endforeach; ?>
+            <?php if(!Login::isLoggedIn()): ?>
+                <h3 style="padding-bottom: 20px;">עלייך <a href="#">להתחבר</a> על מנת לראות פוסטים נוספים</h3>
+            <?php endif; ?>
         </div>
 
     </div>

@@ -1,13 +1,10 @@
 <?php
 
 if (isset($_POST['site_login'])) {
-    Login::login();
+    if(Login::login()) header('location:'.$_SERVER['PHP_SELF']);
+
 }else{
     Login::set_session();
-}
-if (isset($_GET['act']) && $_GET['act'] === 'logout') {
-    $out = Login::logout();
-    header('location:index.php');
 }
 ?>
 <nav class="nMenu">
@@ -88,7 +85,10 @@ if (isset($_GET['act']) && $_GET['act'] === 'logout') {
 <?php else:?>
     <div class="userNav" style="float: left; text-align: left; padding: 20px">
         <div> שלום  <strong><?= $_SESSION['front_user_name'] ?></strong></div>
-        <a href="<?= DOMAIN ?>index.php?act=logout">התנתק</a>
+        <form action="<?= DOMAIN.'class/logout.php' ?>" method="post">
+            <input type="submit" name="logout" id="logoutI" style="display: none;">
+            <label for="logoutI"><a>התנתק</a></label>
+        </form>
     </div>
 <?php endif;?>
 

@@ -18,9 +18,9 @@ if ($follower_id = (int)Login::isLoggedIn()) {
             echo '<pre style="direction: ltr;">';
             var_dump($user_id);
             var_dump($follower_id);
-
-            $is_following = Social_web::is_following($follower_id,$user_id);
             echo '</pre>';
+            $is_following = Social_web::is_following($follower_id,$user_id);
+
 
         }
     }else{

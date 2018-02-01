@@ -21,7 +21,7 @@ switch ($app_page){
         break;
     case $app_pages[2]:
         $app_title = 'חברים';
-        $app_title_link = 'index.php?app-page=home';
+        $app_title_link = 'in dex.php?app-page=home';
         break;
 }
 

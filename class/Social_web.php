@@ -58,7 +58,8 @@ class Social_web extends Connection
         $limit = 5;
         $start = (int)$page * $limit;
         if(!isset($user_id)){
-            $q = $pdo->query("SELECT p.*,f.profile_img, f.name FROM posts p LEFT JOIN front_users f ON p.uid = f.id ORDER BY added_date DESC LIMIT $start,$limit");
+            $if_not_logged = isset($_SESSION['front_user_id'])?'':'WHERE official = 1';
+            $q = $pdo->query("SELECT p.*,f.profile_img, f.name FROM posts p LEFT JOIN front_users f ON p.uid = f.id $if_not_logged ORDER BY added_date DESC LIMIT $start,$limit");
         }else{
             $q = $pdo->query(
             "SELECT p.*,fu.name name,fu.profile_img,f.name _to,po.to 
@@ -73,9 +74,12 @@ class Social_web extends Connection
         if($q){
             $res = [];
             while ($row = $q->fetch(PDO::FETCH_ASSOC)){
-                $liked_post_q = $pdo->query('SELECT * FROM liked_posts WHERE pid='.$row['id'].' AND uid='.$_SESSION['front_user_id']);
-
-                $row['liked'] = $liked_post_q->fetch()?true:null;
+                if(isset($_SESSION['front_user_id'])){
+                    $liked_post_q = $pdo->query('SELECT * FROM liked_posts WHERE pid='.$row['id'].' AND uid='.$_SESSION['front_user_id']);
+                    $row['liked'] = $liked_post_q->fetch()?true:null;
+                }else{
+                    $row['liked'] = null;
+                }
                 $row['title'] = htmlspecialchars($row['title']);
                 $res[] = $row;
             }
