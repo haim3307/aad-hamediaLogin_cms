@@ -5,6 +5,7 @@
  * Date: 31/01/2018
  * Time: 14:27
  */
+/*;*/
 ?>
 <post-item
     post-id="<?= $post['id'] ?>"
@@ -17,8 +18,8 @@
     front-img="<?= $post['front_img']; ?>"
     post-show="true"
     posted-liked="<?= $post['liked']; ?>"
-    likes = "<?= $post['likes']; ?>"
-    likers-list = "<?= $post['likers_list']; ?>"
+    likers-list = '<?= $post['likers_list']; ?>'
+    likes-count = '<?= $post['likes_count']; ?>'
     <?php if($app_page === 'profile'): ?>
     posted-to="<?= $post['to'] ?>"
     posted-to-name="<?= $post['_to'] ?>"

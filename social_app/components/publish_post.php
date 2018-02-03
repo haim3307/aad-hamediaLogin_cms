@@ -1,43 +1,4 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: HT
- * Date: 31/01/2018
- * Time: 14:38
- */
-?>
 <section class="uploadPost">
-    <style>
-        .uploadPost{
-            background-color: #fff;
-        }
-        .uploadPost .publishPost input[type=button]{
-            width: 20%;
-            height: 40px;
-        }
-        .ltr{
-            direction: ltr;
-        }
-        .row{
-            display: flex;
-        }
-        .post textarea{
-            flex: 1;
-            margin-top: 30px;
-            border-radius: 3%;
-            border: 0;
-        }
-
-        .publishPost input[type="button"]{
-            background: linear-gradient(to bottom, #a90329 0%, #8f0222 44%, #6d0019 100%);
-            color: white;
-            border-radius: 10px;
-        }
-        #postsFeed{
-            width: 100%;
-            margin: 0 auto; max-width: 900px;
-        }
-    </style>
     <div class="row post">
         <div class="profileFrame all-centered">
             <?php if(isset($_SESSION['front_profile_img']) && !empty($_SESSION['front_profile_img'])): ?>
@@ -81,12 +42,18 @@
 				}
 			}).then((res) => {
 				console.log('add_post:', res);
-				let post = res;
-				const $post = postTpl(post);
-				const $feed = $('#postsFeed');
-				$feed.prepend($post);
-				PS.fadeInPost($post);
-				$('#postContent')[0].value = '';
+				console.log(res.post && res.msg === 'added');
+				if(res.post && res.msg === 'added'){
+                    let post = res.post;
+                    const $post = PS.postTpl(post);
+                    const $feed = $('#postsFeed');
+                    $feed.prepend($post);
+                    PS.fadeInPost($post);
+                    $('#postContent')[0].value = '';
+				}else if(res.msg === 'empty'){
+					console.log('empty post');
+                }
+
 
 			});
 

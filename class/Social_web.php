@@ -11,13 +11,12 @@ class Social_web extends Login
 {
     static function add_new_post($content,$posted_to = null)
     {
-
-        $content = htmlentities($content);
-
+        $content = trim($content);
+        if(!$content) return null;
         $insert = self::query('INSERT INTO posts(title, front_img, activated, official, uid) 
         VALUES(:title,:front_img,:activated,:official,:uid)',
             [
-                ':title' => $content,
+                ':title' => filter_var($content,FILTER_SANITIZE_STRING,FILTER_FLAG_NO_ENCODE_QUOTES),
                 ':front_img' => '',
                 ':activated' => 1,
                 ':official' => 0,
@@ -39,49 +38,67 @@ class Social_web extends Login
         if(!$posted_to){
             $st = 'SELECT p.* ,f.profile_img FROM posts p LEFT JOIN front_users f ON p.uid = f.id WHERE p.id=:pid';
             $args = [];
-        }else{
+        }else if($posted_to = filter_var($posted_to,FILTER_VALIDATE_INT)){
             $st = 'SELECT p.*,f.name,po.to,f2.name _to,po.by FROM posts p JOIN posted po ON p.id = po.po_id JOIN front_users f ON p.uid = f.id JOIN front_users f2 ON po.to = f2.id
-            WHERE p.id=:pid AND po.to=:po_to';
+                WHERE p.id=:pid AND po.to=:po_to';
             $args = [':po_to'=>$posted_to];
         }
-        $args[':pid'] = $post_id;
-        $post_q = self::query($st,$args);
-        if ($post = $post_q->fetch(PDO::FETCH_ASSOC)) {
-            $post['title'] = htmlentities($post['title']);
-            $post['name'] = $_SESSION['front_user_name'];
-            return $post;
-        }else return false;
+        if($post_id = filter_var($post_id,FILTER_VALIDATE_INT)){
+            $args[':pid'] = $post_id;
+            $post_q = self::query($st,$args);
+            if ($post = $post_q->fetch(PDO::FETCH_ASSOC)) {
+                $post['title'] = htmlentities($post['title']);
+                $post['name'] = $_SESSION['front_user_name'];
+                return $post;
+            }
+        }
+        return false;
     }
     static function get_posts($page,$user_id = null)
     {
-        $pdo = self::connect();
-        $limit = 5;
-        $start = (int)$page * $limit;
-        if(!isset($user_id)){
-            $if_not_logged = !self::isLoggedIn()?'':'WHERE official = 1';
-            $q = $pdo->query("SELECT p.*,f.profile_img, f.name FROM posts p LEFT JOIN front_users f ON p.uid = f.id $if_not_logged ORDER BY added_date DESC LIMIT $start,$limit");
-        }else{
-            $q = $pdo->query(
-            "SELECT p.*,fu.name name,fu.profile_img,f.name _to,po.to 
-            FROM posted po LEFT JOIN front_users f ON po.to = f.id
-            RIGHT JOIN posts p ON po.po_id = p.id 
-            LEFT JOIN front_users fu ON p.uid = fu.id 
-            WHERE p.uid =  $user_id OR po.to = $user_id 
-            ORDER BY added_date DESC LIMIT $start,$limit"
-            );
+        if(filter_var($page,FILTER_VALIDATE_INT)){
+            $pdo = self::connect();
+            $limit = 5;
+            $start = ((int)$page-1) * $limit;
+            if(!isset($user_id)){
+                $if_not_logged = self::isLoggedIn()?'':'WHERE official = 1';
+                $q = $pdo->query("SELECT p.*,f.profile_img, f.name FROM posts p LEFT JOIN front_users f ON p.uid = f.id $if_not_logged ORDER BY added_date DESC LIMIT $start,$limit");
+            }else{
+                $q = $pdo->query(
+                    "SELECT p.*,fu.name name,fu.profile_img,f.name _to,po.to 
+                              FROM posted po LEFT JOIN front_users f ON po.to = f.id
+                              RIGHT JOIN posts p ON po.po_id = p.id 
+                              LEFT JOIN front_users fu ON p.uid = fu.id 
+                              WHERE p.uid =  $user_id OR po.to = $user_id 
+                              ORDER BY added_date DESC LIMIT $start,$limit"
+                );
 
-        }
-        if($q){
-            $res = [];
-            while ($row = $q->fetch(PDO::FETCH_ASSOC)){
-                if(isset($_SESSION['front_user_id'])){
-                    $liked_post_q = $pdo->query('SELECT * FROM liked_posts WHERE pid='.$row['id'].' AND uid='.$_SESSION['front_user_id']);
-                    $row['liked'] = $liked_post_q->fetch()?true:null;
-                }else{
-                    $row['liked'] = null;
+            }
+            if($q){
+                $res = [];
+                while ($row = $q->fetch(PDO::FETCH_ASSOC)){
+                    if(self::isLoggedIn()){
+                        $all_likes_post_count_q = $pdo->query('SELECT COUNT(*) likes_of_post FROM liked_posts WHERE pid='.$row['id']);
+                        $liked_by_you_q = $pdo->query('SELECT * FROM liked_posts WHERE pid='.$row['id'].' AND uid='.$_SESSION['front_user_id']);
+                        $all_likes_post_q = $pdo->query('SELECT lp.*,u.name FROM liked_posts lp JOIN front_users u ON lp.uid = u.id WHERE lp.pid='.$row['id'].' AND u.id !='. $_SESSION['front_user_id'] .' LIMIT 10');
+                        ;
+                        //$all_likes_post_q = $pdo->query('SELECT * likes_of_post FROM liked_posts WHERE pid='.$row['id'].' LIMIT 10');
+/*                        while ($row1 = $all_likes_post_q->fetch()){
+                            $likers_id_list[] = $row1['uid'];
+                            $likers_name_list[] = $row1['name'];
+                        }*/
+                        $row['likes_count'] = ($likes_count = $all_likes_post_count_q->fetch()) && $likes_count[0]?$likes_count[0]:0;
+                        $row['liked'] = $liked_by_you_q->fetch()?true:null;
+                        $row['likers_list'] = ($likers_list = $all_likes_post_q->fetchAll(PDO::FETCH_ASSOC))?json_encode($likers_list):json_encode([]);
+/*                        echo '<pre style="direction: ltr;">';
+                                                var_dump($row);
+                        echo '</pre>';*/
+                    }else{
+                        $row['liked'] = null;
+                    }
+                    $row['title'] = htmlspecialchars($row['title']);
+                    $res[] = $row;
                 }
-                $row['title'] = htmlspecialchars($row['title']);
-                $res[] = $row;
             }
         }
 
@@ -90,6 +107,16 @@ class Social_web extends Login
     static function delete_post($post_id){
         $q = self::query("DELETE FROM posts WHERE id =:post_id",[':post_id'=>((int)$post_id)]);
         return $q && $q->rowCount()?'deleted':'error';
+    }
+    static function update_post($post_id, $post_title){
+        if(isset($post_title)){
+            $post_title = trim($post_title);
+            $post_title = filter_var($post_title,FILTER_SANITIZE_STRING,FILTER_FLAG_NO_ENCODE_QUOTES);
+            if($post_title){
+                $q = self::query("UPDATE posts SET title=:title WHERE id =:post_id AND uid=:uid",[':post_id'=>((int)$post_id),':title'=>$post_title,':uid'=>$_SESSION['front_user_id']]);
+            }
+        }
+        return isset($q) && $q && $q->rowCount()?$post_title:'error';
     }
     static function is_following($follower_id,$user_id){
         $q = self::query('SELECT fid FROM followers WHERE uid=:uid AND fid=:fid', [':uid' => $user_id, ':fid' => $follower_id]);

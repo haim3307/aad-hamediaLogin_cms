@@ -1,12 +1,15 @@
 <?php
+if(!isset($is_logged)){
+    $is_logged = Login::isLoggedIn();
+}
 if (isset($_POST['site_login'])) {
-    //if(Login::login()) header('location:'.$_SERVER['PHP_SELF']);
-    Login::login();
+    if(Login::login()) header('location:'.$_SERVER['PHP_SELF']);
+    //Login::login();
 }else{
     Login::set_session();
-    echo '<pre style="direction: ltr;">';
+/*    echo '<pre style="direction: ltr;">';
     var_dump($_SESSION);
-    echo '</pre>';
+    echo '</pre>';*/
 }
 ?>
 <nav class="nMenu">
@@ -138,10 +141,10 @@ if (isset($_POST['site_login'])) {
     </div>
 <?php endif;?>
 
-<div class="menuBanner">
+<!--<div class="menuBanner">
     <div class="exitButton"><a href="#">X</a></div>
-    <img class="menuBannerImg" style="max-height: 200px" src="<?= DOMAIN ?>_img/layout/menuBanner.png">
-</div>
+    <img class="menuBannerImg" style="max-height: 200px" src="<?/*= DOMAIN */?>_img/layout/menuBanner.png">
+</div>-->
 <marquee class="minutesReports" scrollamount="5" onmouseover="this.stop()" onmouseout="this.start()">2017 !ברוכים הבאים
     ל-עד המדינה
 </marquee>

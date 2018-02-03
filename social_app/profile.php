@@ -6,32 +6,37 @@ defined('app') or die(header('HTTP/1.0 403 Forbidden'));
  * Date: 25/01/2018
  * Time: 22:06
  */
-if ($follower_id = (int)Login::isLoggedIn()) {
+if ($follower_id = Login::isLoggedIn()) {
 
     if (isset($_GET['username']) || isset($_GET['userid'])) {
-        $_GET['username'] = isset($_GET['username'])?$_GET['username']:null;
-        $_GET['userid'] = isset($_GET['username'])?$_GET['username']:null;
-        if ($userIdQ = Login::query('SELECT name,id FROM front_users WHERE name=:username OR id=:userid', [':username' => $_GET['username'],':userid'=>$_GET['userid']])) {
-            $res_user = $userIdQ->fetch(PDO::FETCH_ASSOC);
-            $user_name = $res_user['name'];
-            $user_id = (int)$res_user['id'];
-            echo '<pre style="direction: ltr;">';
-            var_dump($user_id);
-            var_dump($follower_id);
-            echo '</pre>';
-            $is_following = Social_web::is_following($follower_id,$user_id);
-
-
+        $user_name = filter_input(INPUT_GET,'username',FILTER_SANITIZE_STRING);
+        $user_id = filter_input(INPUT_GET,'userid',FILTER_VALIDATE_INT);
+        if($user_name || $user_id){
+            $userIdQ = Login::connect()->prepare('SELECT name,id FROM front_users WHERE '.($user_name?'name=:username':'id=:userid'));
+            if($user_name) $userIdQ->bindParam(':username',$user_name,PDO::PARAM_STR);
+            else $userIdQ->bindParam(':userid',$user_id,PDO::PARAM_INT);
+            $userIdQ->execute();
+            if ($userIdQ) {
+                $res_user = $userIdQ->fetch(PDO::FETCH_ASSOC);
+                $user_name = $res_user['name'];
+                $user_id = $res_user['id'];
+                echo '<pre style="direction: ltr;">';
+                var_dump($user_id);
+                var_dump($follower_id);
+                echo '</pre>';
+                $is_following = Social_web::is_following($follower_id,$user_id);
+            }
         }
+
     }else{
         $user_name = $_SESSION['front_user_name'];
         $user_id = $_SESSION['front_user_id'];
     }
-    if (isset($_POST['post'])) {
-        $post_body = $_POST['postbody'];
+/*    if (isset($_POST['post'])) {
+        $post_body = filter_input(INPUT_POST,'post',FILTER_SANITIZE_STRING);
         Login::query('INSERT INTO posts VALUES("",:post_body,NOW(),:user_id,0)', [':post_body' => $post_body, ':user_id' => $follower_id]);
-    }
-    $user_posts = Social_web::get_posts(0,$user_id);
+    }*/
+    $user_posts = Social_web::get_posts(1,$user_id);
 } else {
     header('location:login.php');
 }

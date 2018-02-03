@@ -1,7 +1,11 @@
 //const currentDocument = document.currentScript.ownerDocument;
 class PostItem extends HTMLElement{
+	notNull(val){
+		return val && val != 'null' && val != 'undefined'
+	}
 	constructor(){
 		super();
+		let _class = this;
 /*
 		this._complete = 0;
 */
@@ -9,6 +13,9 @@ class PostItem extends HTMLElement{
 		this.show = this.getAttribute('post-show');
 		let spt = this.getAttribute('show-posted-to');
 		this.showPostedTo = spt?spt:false;
+		let likers_list = this.getAttribute('likers-list');
+		let likes_count = this.getAttribute('likes-count');
+		console.log(likers_list);
 		this.post = {
 			id: this.getAttribute('post-id'),
 			title: this.getAttribute('title'),
@@ -20,11 +27,16 @@ class PostItem extends HTMLElement{
 			posted_to: this.getAttribute('posted-to'),
 			posted_to_name: this.getAttribute('posted-to-name'),
 			liked_post: this.getAttribute('posted-liked'),
+			likers_list: JSON.parse(_class.notNull(likers_list)?likers_list:'[]'),
+			likes_count: this.notNull(likes_count)?likes_count:0
 		};
-		console.log(typeof this.getAttribute('posted-to'));
+/*		console.log(typeof this.getAttribute('posted-to'));
 		console.log(this.post.posted_to,this.post.uid);
 		console.log(this.getAttribute('posted-to') === this.getAttribute('user-id'));
-		console.log(this.post.liked_post);
+		console.log(this.post.liked_post);*/
+/*	console.log('from item:');
+	console.log(this.getAttribute('likers-list'));
+	console.log(JSON.parse(this.getAttribute('likers-list')));*/
 	}
 	get complete(){
 		return this._complete;
@@ -39,7 +51,8 @@ class PostItem extends HTMLElement{
 		return this.setAttribute('post_liked',val);
 	}
 	static get observedAttributes(){
-		return ['posted-liked'];
+		/*'posted-liked'*/
+		return ['title'];
 	}
 	attributeChangedCallback(name, oldVal, newVal){
 		console.log(name);
@@ -56,12 +69,50 @@ class PostItem extends HTMLElement{
 				break;
 			case 'posted-liked':
 				console.log('liked-change');
-
+				break;
+			case 'title':
+				this.post.title = newVal;
+				$(this).find('.artTitle').html(newVal);
+				break;
 		}
 
 	}
+	likeTpl(post){
+		console.log(post.liked_post);
+		console.log(this.notNull(post.liked_post));
+		return `
+				<span class="likesStatus">
+				${this.notNull(post.likes_count) && post.likes_count != '0'?
+			`
+				<a href="">
+				<i class="fa fa-thumbs-up" ></i>
+					${this.notNull(post.liked_post)?
+				`את/ה${post.likes_count && post.likes_count > 1?` ועוד ${post.likes_count-1}`
+					:''}`
+				:post.likes_count
+				}
+					
+				
+				</a>
+				${post.likers_list.length?
+				`
+					<ul class="likersList">
+					${post.likers_list.map(liker =>
+					`<li><a href="index.php?app-page=profile&username=${liker.name}">${liker.name}</a></li>`
+				).join()
+					}
+					</ul>
+					`:''
+				}
+				`:''
+			}
+				</span>
+		`;
+	}
 	connectedCallback(){
+		let _class = this;
 		const post = this.post;
+		let likeTpl = this.likeTpl(this.post);
 		this.innerHTML = `
 
 			<div class="grid-news-item" data-post-id="${post.id}">
@@ -122,22 +173,27 @@ class PostItem extends HTMLElement{
 					</a>
 					`:''}
 					<div class="postActions d-flex">
-							<div class="cool postAction"><i class="fas fa-thumbs-up fa-2x 
-							${post.liked_post && post.liked_post != 'null' && post.liked_post != 'undefined'
+							<div class="cool postAction"><i class="fa fa-thumbs-up fa-2x 
+							${_class.notNull(post.liked_post)
 							?'liked':'unliked'}" style="padding-left: 10px;"></i><span>אהבתי</span></div>
 							<div class="speak postAction"><i class="fas fa-comment fa-2x" style="padding-left: 10px;"></i><span>הגב</span></div>
 							<div class="share postAction"><i class="fas fa-share fa-2x" style="padding-left: 10px;"></i><span>שתף</span></div>
 					</div>
+					<div class="postLikers">
+						${likeTpl}
+					
+					</div>
       </div>
 		
 		`;
-		$(this).find('.postSettings').on('click',function () {
+		let $el = $(this);
+		$el.find('.postSettings').on('click',function () {
 			$(this).find('.pSetsDropDown').toggleClass('postSetShow');
 		});
-		$(this).find('.modifyPost').on('click',function () {
+		$el.find('.modifyPost').on('click',function () {
 			PS.toggleEditPostPop(post);
 		});
-		$(this).find('.cool i').on('click',function () {
+		$el.find('.cool i').on('click',function () {
 			$.ajax({
 				url: 'api/index.php',
 				method: 'post',
@@ -147,15 +203,19 @@ class PostItem extends HTMLElement{
 					'already_liked':post.liked_post
 				}
 			}).then((res)=>{
+				console.log(_class.post);
+				console.log(_class.likeTpl(_class.post));
 				if(res === 'liked'){
-					this.post_liked = '1';
+					_class.post.liked_post = true;
+					_class.post.likes_count++;
 					$(this).addClass('liked');
+					$el.find('.postLikers').html(_class.likeTpl(_class.post));
 				}else if('unliked'){
-					this.post_liked = '';
+					_class.post.liked_post = undefined;
+					_class.post.likes_count--;
 					$(this).removeClass('liked');
-
+					$el.find('.postLikers').html(_class.likeTpl(_class.post));
 				}
-				//$(this).css('transform','rotate(0deg)');
 
 			});
 		});

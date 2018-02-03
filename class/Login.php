@@ -47,12 +47,24 @@ class Login extends Connection
                 [':token' => sha1($_COOKIE['SNID'])])->fetch(PDO::FETCH_ASSOC)
             ) {
                 $userId = $query['uid'];
-                if (!isset($_COOKIE['SNID_'])) {
-                    if(!self::create_login_cookies(null, $userId)){
-                        echo 'לא ניתן להכנס לאותו משתמש ביותר ממכשיר אחד בו זמנית';
+                if($uname_q = parent::query(
+                    'SELECT name,profile_img FROM front_users WHERE id=:id',
+                    [':id' => $userId])){
+                    if($uname = $uname_q->fetch()){
+                        if (!isset($_COOKIE['SNID_'])) {
+                            if(!self::create_login_cookies(null, $userId)){
+                                echo 'לא ניתן להכנס לאותו משתמש ביותר ממכשיר אחד בו זמנית';
+                            }
+                        }
+                        if(!isset($_SESSION)) self::set_session();
+                        $_SESSION['front_user_name'] = $uname['name'];
+                        $_SESSION['front_user_id'] = $userId;
+                        $_SESSION['front_profile_img'] = $uname['profile_img'];
+                        return $userId;
                     }
+
                 }
-                return $userId;
+
             }
         }else if(isset($_SESSION['front_user_id'])){
             return $_SESSION['front_user_id'];

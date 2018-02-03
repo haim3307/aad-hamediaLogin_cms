@@ -16,7 +16,7 @@ defined('app') or die(header('HTTP/1.0 403 Forbidden'));
     <div class="allReportsWrapper">
         <div class="news-home" id="postsFeed">
             <?php
-            $posts = Social_web::get_posts(0);
+            $posts = Social_web::get_posts(1);
             ?>
             <?php foreach ($posts as $post): ?>
                 <?php include 'social_app/components/post_item_instance.php'; ?>
