@@ -3,7 +3,7 @@ require_once 'class/Login.php';
 define('app', true);
 $is_logged = Login::isLoggedIn();
 //var_dump($is_logged);
-$app_pages = ['home', 'profile', 'friends'];
+$app_pages = ['home', 'profile', 'friends','settings'];
 if (isset($_GET['app-page']) && in_array($_GET['app-page'], $app_pages)) {
     $app_page = $_GET['app-page'];
 } else {
@@ -23,7 +23,11 @@ switch ($app_page) {
         break;
     case $app_pages[2]:
         $app_title = 'חברים';
-        $app_title_link = 'in dex.php?app-page=home';
+        $app_title_link = 'index.php?app-page=home';
+        break;
+    case $app_pages[3]:
+        $app_title = 'הגדרות';
+        $app_title_link = 'index.php?app-page=settings';
         break;
 }
 
@@ -60,7 +64,9 @@ switch ($app_page) {
                     <li><a href="index.php?app-page=friends"><i
                                     class="fa fa-users fa-2x <?= $app_page == $app_pages[2] ? 'active_app_page' : '' ?>"
                                     title="חברים"></i></a></li>
-                    <li><a href="#"></a></li>
+                    <li><a href="index.php?app-page=settings"><i
+                                    class="fa fa-cog fa-2x <?= $app_page == $app_pages[3] ? 'active_app_page' : '' ?>"
+                                    title="הגדרות"></i></a></li>
                 </ul>
             </nav>
         </header>
@@ -77,6 +83,9 @@ switch ($app_page) {
                     break;
                 case 'friends':
                     include 'social_app/friends.php';
+                    break;
+                case 'settings':
+                    include 'social_app/settings.php';
                     break;
                 default :
                     include 'social_app/home.php';

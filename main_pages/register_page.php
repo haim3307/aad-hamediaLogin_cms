@@ -31,14 +31,14 @@ if (isset($_POST['reg_level_1'])) {
 }
 if (isset($_POST['reg_level_2']) && isset($_SESSION['user_id'])) {
     if($profile_img_name = Register::check_image('profile_img')){
-       if( move_uploaded_file($_FILES['profile_img']['tmp_name'],'../_img/users/profiles/'.$profile_img_name)){
-           $_SESSION['profile_img_name'] = $profile_img_name;
+        if( move_uploaded_file($_FILES['profile_img']['tmp_name'],'../_img/users/profiles/'.$profile_img_name)){
+            $_SESSION['profile_img_name'] = $profile_img_name;
 
-           $q = Register::connect()->query("UPDATE front_users SET profile_img='".$profile_img_name."' WHERE id=".$_SESSION['user_id']);
-           if($q->rowCount() == 1){
-               $_SESSION['reg_level'] = 3;
-           }
-       }
+            $q = Register::connect()->query("UPDATE front_users SET profile_img='".$profile_img_name."' WHERE id=".$_SESSION['user_id']);
+            if($q->rowCount() == 1){
+                $_SESSION['reg_level'] = 3;
+            }
+        }
     }
     //$_SESSION['reg_level'] = 3;
 }
@@ -188,14 +188,6 @@ if(isset($_POST['reg_level_3']) && isset($_SESSION['user_id'])){
 
                     if (input.files && input.files[0]) {
                         input.setAttribute("data-title", input.files[0].name);
-
-                    //let reader = new FileReader();
-                    /*reader.onload = (e) => {
-                    //let imgData = e.target.result;
-
-                    //console.log(e.target.result);
-                    };*/
-                    //reader.readAsDataURL(input.files[0]);
                     }
 
                 }
