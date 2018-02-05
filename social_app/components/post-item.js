@@ -99,7 +99,7 @@ class PostItem extends HTMLElement{
 					<ul class="likersList">
 					${post.likers_list.map(liker =>
 					`<li><a href="index.php?app-page=profile&username=${liker.name}">${liker.name}</a></li>`
-				).join()
+				).join('')
 					}
 					</ul>
 					`:''
@@ -115,7 +115,8 @@ class PostItem extends HTMLElement{
 		let likeTpl = this.likeTpl(this.post);
 		this.innerHTML = `
 
-			<div class="grid-news-item" data-post-id="${post.id}">
+			<div class="innerPost" data-post-id="${post.id}">
+					<div class="grid-news-item">
 					<div class="postSettings">
 							<a title="הגדרות" class="expendPostSets">
 									<i class="fa fa-caret-down" aria-hidden="true"></i>
@@ -172,6 +173,12 @@ class PostItem extends HTMLElement{
 							<img src="_img/report/postFront/${post.front_img}" alt="">
 					</a>
 					`:''}
+
+					<div class="postLikers">
+						${likeTpl}
+					
+					</div>
+					</div>
 					<div class="postActions d-flex">
 							<div class="cool postAction"><i class="fa fa-thumbs-up fa-2x 
 							${_class.notNull(post.liked_post)
@@ -179,12 +186,11 @@ class PostItem extends HTMLElement{
 							<div class="speak postAction"><i class="fas fa-comment fa-2x" style="padding-left: 10px;"></i><span>הגב</span></div>
 							<div class="share postAction"><i class="fas fa-share fa-2x" style="padding-left: 10px;"></i><span>שתף</span></div>
 					</div>
-					<div class="postLikers">
-						${likeTpl}
-					
+					<div class="postComments">
+						
 					</div>
-      </div>
-		
+					</div>
+
 		`;
 		let $el = $(this);
 		$el.find('.postSettings').on('click',function () {
@@ -193,7 +199,7 @@ class PostItem extends HTMLElement{
 		$el.find('.modifyPost').on('click',function () {
 			PS.toggleEditPostPop(post);
 		});
-		$el.find('.cool i').on('click',function () {
+		$el.find('.cool').on('click',function () {
 			$.ajax({
 				url: 'api/index.php',
 				method: 'post',
@@ -210,7 +216,7 @@ class PostItem extends HTMLElement{
 					_class.post.likes_count++;
 					$(this).addClass('liked');
 					$el.find('.postLikers').html(_class.likeTpl(_class.post));
-				}else if('unliked'){
+				}else if(res === 'unliked'){
 					_class.post.liked_post = undefined;
 					_class.post.likes_count--;
 					$(this).removeClass('liked');
@@ -219,6 +225,50 @@ class PostItem extends HTMLElement{
 
 			});
 		});
+		$el.find('.speak').on('click',function () {
+			$.ajax({
+				url: 'api/index.php',
+				method: 'get',
+				data: {
+					'action':'get_comments',
+					'post_id': post.id,
+				}
+			}).then((res)=> {
+				console.log(res);
+				let $commentsCont = $el.find('.postComments');
+				$commentsCont.html(_class.postCommentsTpl(res));
+				$commentsCont.slideToggle(500);
+			});
+		});
+		/*			let comment = '';
+			$el.find('');
+			$.ajax({
+				url: 'api/index.php',
+				method: 'post',
+				data: {
+					'action':'add_comment',
+					'post_id': post.id,
+					'post_comment': comment
+				}
+			}).then((res)=> {
+
+			});*/
+	}
+	postCommentsTpl(comments){
+/*
+		if(comments.isArray())
+*/
+		return comments.map((comment)=>`
+		<post-comment 
+		comment-id="${comment.id}"
+		content="${comment.content}"
+		added-date="${comment.added_date}"
+		user-id="${comment.uid}"
+		profile-img="${comment.profile_img}"
+		></post-comment>
+		`
+		).join('\n');
+
 	}
 }
 window.customElements.define('post-item', PostItem);

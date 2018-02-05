@@ -350,12 +350,31 @@ post-item::shadow.fadeInPost {
 post-item::shadow {
   opacity: 0; }
 
+.postActions {
+  display: flex;
+  justify-content: space-between;
+  color: lightslategrey;
+  /*
+  grid-area: postActions;
+  */ }
+
+.postAction {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+  transition: 0.7s all;
+  background-color: #eeeeee; }
+  .postAction:hover {
+    background-color: #6e88a2;
+    color: #eee; }
+
 .grid-news-item {
   display: grid;
   grid-template-areas: "artAuth artAuth" "artDate artDate" "artTitle artTitle" "postImage postImage" "postDesc postDesc" "postActions postActions" "postComments postComments";
   grid-template-rows: 50px 50px 50px 1fr auto;
   background-color: whitesmoke;
-  border: 1px solid #3f4c6b;
   border-radius: 3px;
   margin: 10px auto;
   padding: 20px 0; }
@@ -382,22 +401,12 @@ post-item::shadow {
     align-items: flex-start; }
   .grid-news-item .artTitle {
     grid-area: artTitle; }
-  .grid-news-item .postActions {
-    display: flex;
-    justify-content: space-between;
-    grid-area: postActions;
-    padding: 20px 0; }
-  .grid-news-item .postAction {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center; }
   .grid-news-item .postComments {
     grid-area: postComments; }
   @media (min-width: 810px) {
     .grid-news-item {
-      margin: 30px auto 50px auto;
-      padding: 50px;
+      margin: 30px auto 0 auto;
+      padding: 50px 50px 22px;
       grid-template-rows: minmax(115px, auto) 50px;
       grid-template-areas: 'artAuth artDate' 'artTitle artTitle' 'postImage postImage' 'postDesc postDesc' 'postActions postActions' 'postComments postComments'; } }
 

@@ -1,6 +1,8 @@
 #postsFeed{
     width: 100%;
-    margin: 0 auto; max-width: 900px;
+    margin: 44px auto 0 auto;
+    max-width: 849px;
+
 }
 /*app header*/
 .app-header{
@@ -95,18 +97,30 @@
     background-color: #eeeeee;
     margin-bottom: 5px;
 }
+post-item{
+}
+.innerPost{
+    margin-bottom: 75px;
+    border: 1px solid #3f4c6b;
+    border-radius: 0 0 14px 14px;
+    overflow: hidden;
+}
 post-item .cool i{
     transition: 0.7s all;
 }
-post-item .cool i.liked{
+post-item .cool.liked  i{
     color: blue;
-    transform: rotate(-20deg) translateY(-10px);
+    transform: rotate(-20deg) translateY(-8px);
 
+}
+post-item .postLikers{
+    padding: 13px 0 19px;
 }
 post-item .likesStatus{
     position: relative;
 }
 post-item .likersList{
+    z-index: 10;
     display: none;
     position: absolute;
     background-color: #fff;
@@ -115,6 +129,42 @@ post-item .likersList{
 }
 post-item .likesStatus:hover .likersList{
     display: block;
+}
+.postComments{
+    display: none;
+    padding: 10px;
+    margin-top: 17px;
+}
+.innerComment{
+    display: grid;
+    grid-template-areas:
+    "comDate comDate"
+    "profileFrame comContent"
+    "profileFrame comContent"
+    ". commentActions"
+    ;
+    grid-row-gap: 5px;
+    margin-bottom: 30px;
+}
+.innerComment .profileFrame{
+    grid-area: profileFrame;
+}
+.innerComment .comContent{
+    grid-area: comContent;
+    background-color: #d6d6d6;
+    border-radius: 10px;
+    color: black;
+    padding: 10px;
+}
+.innerComment .comDate{
+    grid-area: comDate;
+    direction: ltr;
+}
+.innerComment .commentActions{
+    grid-area: commentActions;
+}
+.innerComment .commentActions span{
+    padding: 5px;
 }
 /*upload post*/
 .uploadPost{

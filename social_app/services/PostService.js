@@ -29,11 +29,11 @@ class PostService {
 
 
 	fadeInPost($post) {
-		return $post.children('.grid-news-item').hide().fadeIn(1000);
+		return $post.find('.innerPost').hide().fadeIn(1000);
 	}
 
 	fadeOutPost($post) {
-		return $post.children('.grid-news-item').fadeOut(1000);
+		return $post.children('.innerPost').fadeOut(1000);
 	}
 
 	postTpl(post) {

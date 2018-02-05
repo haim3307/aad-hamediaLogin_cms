@@ -19,7 +19,7 @@ if(isset($_POST['update_new_profile_img'])){
 
     <div class="ft g-col-12 g-col-lg-6 profileImgSec" style="">
         <div class="g-col-12" style="display: grid; grid-template-columns: 1fr 1fr;">
-            <div class="form-group inputDnD" style="height: 416px;">
+            <div class="form-group inputDnD" style="height: 416px; padding: 0 10px">
                 <label class="sr-only" for="inputFile">File Upload</label>
                 <input type="file" name="new_profile_img"
                        class="form-control-file text-primary font-weight-bold" id="inputFile"

@@ -80,6 +80,10 @@ class AadFeed extends Social_web
             case 'like_post':
                 $this->reply(self::like_post($this->request->post_id));
                 break;
+            case 'get_comments':
+                $to_id = isset($this->request->post_id)?filter_input(INPUT_GET,'post_id',FILTER_VALIDATE_INT):null;
+                $this->reply(self::get_comments($to_id));
+                break;
         }
         // get the action
         /*

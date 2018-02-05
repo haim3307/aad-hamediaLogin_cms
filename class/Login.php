@@ -57,9 +57,8 @@ class Login extends Connection
                             }
                         }
                         if(!isset($_SESSION)) self::set_session();
-                        $_SESSION['front_user_name'] = $uname['name'];
-                        $_SESSION['front_user_id'] = $userId;
-                        $_SESSION['front_profile_img'] = $uname['profile_img'];
+                        self::set_session_user_verify($uname['name'],$userId,$uname['profile_img']);
+
                         return $userId;
                     }
 
@@ -101,10 +100,7 @@ class Login extends Connection
                         echo 'לא ניתן להכנס לאותו משתמש ביותר ממכשיר אחד בו זמנית';
                         return false;
                     }else{
-                        $_SESSION['front_user_name'] = $uname;
-                        $_SESSION['front_user_id'] = $user['id'];
-                        $_SESSION['front_profile_img'] = $user['profile_img'];
-                        $_SESSION['loggedInBlog'] = 1;
+                        self::set_session_user_verify($uname,$user['id'],$user['profile_img']);
                     }
                     return true;
                 }
@@ -112,5 +108,14 @@ class Login extends Connection
         }
 
 
+    }
+    static private function set_session_user_verify($uname,$uid,$u_img){
+        if(isset($_SESSION)){
+            $_SESSION['front_user_name'] = $uname;
+            $_SESSION['front_user_id'] = $uid;
+            $_SESSION['front_profile_img'] = $u_img;
+            $_SESSION['loggedInBlog'] = 1;
+            return true;
+        }else return false;
     }
 }

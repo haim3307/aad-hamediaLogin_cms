@@ -13,10 +13,11 @@ class Social_web extends Login
     {
         $content = trim($content);
         if(!$content) return null;
+        $content = filter_var($content,FILTER_SANITIZE_STRING,FILTER_FLAG_NO_ENCODE_QUOTES);
         $insert = self::query('INSERT INTO posts(title, front_img, activated, official, uid) 
         VALUES(:title,:front_img,:activated,:official,:uid)',
             [
-                ':title' => filter_var($content,FILTER_SANITIZE_STRING,FILTER_FLAG_NO_ENCODE_QUOTES),
+                ':title' => $content,
                 ':front_img' => '',
                 ':activated' => 1,
                 ':official' => 0,
@@ -143,6 +144,23 @@ class Social_web extends Login
         }else{
             $q = self::query('DELETE FROM liked_posts WHERE pid=:pid AND uid=:uid', [':uid' => $_SESSION['front_user_id'], ':pid' => $post_id]);
             return $q->rowCount()?'unliked':'error';
+        }
+    }
+    static private function whoPosted($post_id){
+        $q = self::query('SELECT uid FROM posts WHERE id=:pid',[':pid' => $post_id]);
+    }
+    static function get_comments($post_id){
+        if(filter_var($post_id,FILTER_VALIDATE_INT)) {
+            if($q = self::query('SELECT pc.*,fu.profile_img, fu.name FROM posts_comments pc JOIN front_users fu ON fu.id = pc.uid WHERE pid=:pid',[':pid' => $post_id])){
+                return ($res = $q->fetchAll(PDO::FETCH_ASSOC))?$res:[];
+            }
+
+        }
+        return false;
+    }
+    static function add_comment($post_id){
+        if(self::is_following($_SESSION['front_user_id'],self::whoPosted($post_id))){
+
         }
     }
 }

@@ -14,9 +14,9 @@ if($_SERVER['HTTP_HOST'] === 'localhost'){
 }
 $is_local = $_SERVER['HTTP_HOST'] == 'localhost';
 if($is_local){
-    define('DOMAIN','http://localhost/aad-hamediaLogin_cms/');
+    define('DOMAIN','https://localhost/aad-hamediaLogin_cms/');
 
 }else{
-    define('DOMAIN','http://'.$_SERVER['HTTP_HOST'].'/');
+    define('DOMAIN','https://'.$_SERVER['HTTP_HOST'].'/');
 
 }

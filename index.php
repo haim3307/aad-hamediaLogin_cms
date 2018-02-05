@@ -39,6 +39,8 @@ switch ($app_page) {
     <title>דף הבית - עד המדינה!</title>
     <?php include_once 'main_layout/head.php' ?>
     <script src="https://use.fontawesome.com/3c576bb39d.js"></script>
+    <script src="social_app/lib/moment.js"></script>
+    <script>moment.locale('he');</script>
     <link rel="stylesheet" href="styles/social_app.css">
 <!--    <script src="social_app/lib/webcomponents-hi-sd-ce.js"></script>-->
 </head>
@@ -101,6 +103,7 @@ switch ($app_page) {
           const PS = new PostService();
         </script>
         <script src="<?= DOMAIN ?>social_app/components/post-item.js"></script>
+        <script src="<?= DOMAIN ?>social_app/components/post-comment.js"></script>
         <script type="module" src="social_app/main.js"></script>
     </main>
     <footer><?php include_once 'main_layout/footer.php' ?></footer>

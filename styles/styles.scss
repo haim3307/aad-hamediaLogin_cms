@@ -186,6 +186,28 @@ post-item::shadow.fadeInPost{
 post-item::shadow{
   opacity: 0;
 }
+  .postActions{
+    display: flex;
+    justify-content: space-between;
+    color: lightslategrey;
+
+    /*
+    grid-area: postActions;
+    */
+  }
+  .postAction{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    transition: 0.7s all;
+    background-color: #eeeeee;
+    &:hover{
+      background-color: #6e88a2;
+      color: #eee;
+    }
+  }
 .grid-news-item{
   display: grid;
   grid-template-areas:
@@ -199,7 +221,6 @@ post-item::shadow{
 ;
   grid-template-rows: 50px 50px 50px 1fr auto;
   background-color: whitesmoke;
-  border: 1px solid #3f4c6b;
   border-radius: 3px;
   margin: 10px auto;
   padding: 20px 0;
@@ -235,25 +256,14 @@ post-item::shadow{
     align-items: flex-start;
   }
   .artTitle{grid-area: artTitle }
-  .postActions{
-    display: flex;
-    justify-content: space-between;
-    grid-area: postActions;
-    padding: 20px 0;
-  }
-  .postAction{
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+
   .postComments{
     grid-area: postComments;
   }
   @media (min-width: 810px) {
     //min-height: 700px;
-    margin: 30px auto 50px auto;
-    padding: 50px;
+    margin: 30px auto 0 auto;
+    padding: 50px 50px 22px;
     grid-template-rows: minmax(115px,auto) 50px;
 
     grid-template-areas:
