@@ -38,22 +38,52 @@ class AadFeed extends Social_web
         $action = $this->request->action;
         switch ($action){
             case 'get_posts':
-                if(isset($this->request->feed_page)){
-                    $this->reply(self::get_posts($this->request->feed_page));
+                if($feed_page = filter_input(INPUT_GET,'feed_page',FILTER_VALIDATE_INT)){
+                    if(!isset($this->request->posted_by))
+                        $posts = self::get_posts($feed_page);
+                    else
+                        $posts = self::get_posts($feed_page,$this->request->posted_by);
+                    $this->reply($posts);
                 }
                 break;
             case 'delete_post':
-                if(isset($this->request->post_id)){
+                if($post_id = filter_input(INPUT_POST,'post_id',FILTER_VALIDATE_INT)){
                     $if_own_post_q = self::query(
                         'SELECT uid FROM posts WHERE id=:post_id AND uid=:uid',
-                        [':post_id'=>$this->request->post_id, ':uid'=>$_SESSION['front_user_id']]
+                        [':post_id'=>$post_id, ':uid'=>$_SESSION['front_user_id']]
                     );
                     if($if_own_post_q && $if_own_post_q->rowCount()){
-                        $this->reply(self::delete_post($this->request->post_id));
+                        $this->reply(self::delete_post($post_id));
                     }
                 }
                 break;
-
+            case 'add_post':
+                $to_id = isset($this->request->to_id)?filter_input(INPUT_POST,'to_id',FILTER_VALIDATE_INT):null;
+                $new_post = self::add_new_post($this->request->content,$to_id);
+                $this->reply(['post'=>$new_post,'msg'=>($new_post === null?'empty':'added')]);
+                break;
+            case 'update_post':
+                $to_id = isset($this->request->post_id)?filter_input(INPUT_POST,'post_id',FILTER_VALIDATE_INT):null;
+                $post_title= isset($this->request->post_title)?filter_input(INPUT_POST,'post_title',FILTER_SANITIZE_STRING,FILTER_FLAG_NO_ENCODE_QUOTES):null;
+                if($to_id && $post_title){
+                    $new_post = ['title'=>self::update_post($to_id,$post_title)];
+                    $this->reply(['post'=>$new_post,'msg'=>($new_post === null?'fail':'updated')]);
+                }else{
+                    $this->reply(['post'=>[],'msg'=>'fail']);
+                }
+                break;
+            case 'follow':
+                $user_id = $this->request->uid;
+                $follower_id = $_SESSION['front_user_id'];
+                $this->reply(self::follow($follower_id,$user_id)?'true':'false');
+                break;
+            case 'like_post':
+                $this->reply(self::like_post($this->request->post_id));
+                break;
+            case 'get_comments':
+                $to_id = isset($this->request->post_id)?filter_input(INPUT_GET,'post_id',FILTER_VALIDATE_INT):null;
+                $this->reply(self::get_comments($to_id));
+                break;
         }
         // get the action
         /*
@@ -95,8 +125,7 @@ class AadFeed extends Social_web
      */
     private function _isAuthenticated()
     {
-        parent::set_session();
-        return isset($_SESSION['front_user_id']);
+        return parent::isLoggedIn();
     }
 
     /**

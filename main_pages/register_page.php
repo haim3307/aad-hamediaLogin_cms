@@ -15,11 +15,15 @@ $page_title = 'הרשמה';
 $level = isset($_SESSION['reg_level']) ? $_SESSION['reg_level'] : 1;
 if (isset($_POST['reg_level_1'])) {
     //var_dump($_POST);
-    $err = Register::is_empty($_POST);
+    $user_name = filter_input(INPUT_POST,'user_name',FILTER_SANITIZE_STRING);
+    $user_email = filter_input(INPUT_POST,'new_email',FILTER_VALIDATE_EMAIL);
+    $user_pass = filter_input(INPUT_POST,'password',FILTER_SANITIZE_STRING);
+    $user_pass1 = filter_input(INPUT_POST,'password1',FILTER_SANITIZE_STRING);
+    $user = ['user_name'=>trim($user_name),'password' => trim($user_pass), 'new_email' => trim($user_email),'password1'=>trim($user_pass1)];
+    $err = Register::is_empty($user);
     $errors = $err ? $err : [];
     if (!sizeof($errors)) {
-
-        $insert = Register::insertRegStat($_POST['user_name'], $_POST['new_email'], $_POST['password']);
+        $insert = Register::insertRegStat($user_name, $user_email, $user_pass);
         if(!is_array($insert) && $insert){
             $_SESSION['reg_level'] = 2;
         }
@@ -27,14 +31,14 @@ if (isset($_POST['reg_level_1'])) {
 }
 if (isset($_POST['reg_level_2']) && isset($_SESSION['user_id'])) {
     if($profile_img_name = Register::check_image('profile_img')){
-       if( move_uploaded_file($_FILES['profile_img']['tmp_name'],'../_img/users/profiles/'.$profile_img_name)){
-           $_SESSION['profile_img_name'] = $profile_img_name;
+        if( move_uploaded_file($_FILES['profile_img']['tmp_name'],'../_img/users/profiles/'.$profile_img_name)){
+            $_SESSION['profile_img_name'] = $profile_img_name;
 
-           $q = Register::connect()->query("UPDATE front_users SET profile_img='".$profile_img_name."' WHERE id=".$_SESSION['user_id']);
-           if($q->rowCount() == 1){
-               $_SESSION['reg_level'] = 3;
-           }
-       }
+            $q = Register::connect()->query("UPDATE front_users SET profile_img='".$profile_img_name."' WHERE id=".$_SESSION['user_id']);
+            if($q->rowCount() == 1){
+                $_SESSION['reg_level'] = 3;
+            }
+        }
     }
     //$_SESSION['reg_level'] = 3;
 }
@@ -184,14 +188,6 @@ if(isset($_POST['reg_level_3']) && isset($_SESSION['user_id'])){
 
                     if (input.files && input.files[0]) {
                         input.setAttribute("data-title", input.files[0].name);
-
-                    //let reader = new FileReader();
-                    /*reader.onload = (e) => {
-                    //let imgData = e.target.result;
-
-                    //console.log(e.target.result);
-                    };*/
-                    //reader.readAsDataURL(input.files[0]);
                     }
 
                 }

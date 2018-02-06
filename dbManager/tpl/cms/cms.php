@@ -1,5 +1,6 @@
 <?php
-session_start();
+require_once '../../real_path.inc.php';
+require $root.'/dbManager/session.php';
 ?>
 <div class="container-fluid display-table">
     <div class="row flex-nowrap display-table-row">

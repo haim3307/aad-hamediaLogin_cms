@@ -1,13 +1,15 @@
 <?php
-
+if(!isset($is_logged)){
+    $is_logged = Login::isLoggedIn();
+}
 if (isset($_POST['site_login'])) {
-    Login::login();
+    if(Login::login()) header('location:'.$_SERVER['PHP_SELF']);
+    //Login::login();
 }else{
     Login::set_session();
-}
-if (isset($_GET['act']) && $_GET['act'] === 'logout') {
-    $out = Login::logout();
-    header('location:index.php');
+/*    echo '<pre style="direction: ltr;">';
+    var_dump($_SESSION);
+    echo '</pre>';*/
 }
 ?>
 <nav class="nMenu">
@@ -67,11 +69,11 @@ if (isset($_GET['act']) && $_GET['act'] === 'logout') {
     }
 
 </style>
-<?php if(!isset($_SESSION['loggedInBlog'])):?>
+<?php if(!$is_logged):?>
 <div style="direction: ltr">
     <form style="direction: rtl;" action="" id="loginForm" method="POST" novalidate>
         <input type="text" name="user_name" class="logInput" placeholder="שם המשתמש">
-        <input type="text" name="user_pass" class="logInput" placeholder="סיסמא">
+        <input type="password" name="user_pass" class="logInput" placeholder="סיסמא">
         <input type="submit" name="site_login" id="submitLogin" value="התחבר">
     </form>
     <div class="forgotPass" style="direction: rtl;">
@@ -87,15 +89,62 @@ if (isset($_GET['act']) && $_GET['act'] === 'logout') {
 </div>
 <?php else:?>
     <div class="userNav" style="float: left; text-align: left; padding: 20px">
-        <div> שלום  <strong><?= $_SESSION['front_user_name'] ?></strong></div>
-        <a href="<?= DOMAIN ?>index.php?act=logout">התנתק</a>
+        <div> שלום  <strong><?= htmlentities($_SESSION['front_user_name']); ?></strong></div>
+        <style>
+            #logoutMenu{
+                display: none;
+                position: absolute;
+                left: 0;
+                top:30px;
+                background-color: #fff;
+            }
+            #logoutMTrigger a{
+                text-decoration: none;
+            }
+            #logoutMTrigger a{
+                text-decoration: none;
+            }
+            #logoutMenu {
+                list-style: none;
+            }
+            #logoutMenu li{
+                padding: 10px 2px;
+                text-align: center;
+            }
+            #logoutMenu li:hover{
+                background-color: silver;
+                color: white;
+            }
+            #logoutMenu input{
+            }
+
+        </style>
+        <form id="logoutForm" action="<?= DOMAIN.'class/Logout.php' ?>" method="post" style="position: relative;">
+            <input type="submit" name="logout" id="logoutI" style="display: none;">
+            <label for="logoutI"><a>התנתק</a></label>
+            <i class="fa fa-angle-down" id="logoutMTrigger">
+
+            </i>
+            <span id="logoutMenu" style="width: 200px">
+                <ul>
+                    <li><input type="radio" id="alldevicesN" name="alldevices" value="0"><label for="alldevicesN">ממכשיר זה</label></li>
+                    <li><label for="alldevicesY"><input type="radio" id="alldevicesY" name="alldevices" value="1">מכל המכשירים</label></li>
+
+                </ul>
+            </span>
+        </form>
+        <script>
+            $('#logoutMTrigger').on('click',function () {
+                $(this).siblings('#logoutMenu').slideToggle(100);
+			});
+        </script>
     </div>
 <?php endif;?>
 
-<div class="menuBanner">
+<!--<div class="menuBanner">
     <div class="exitButton"><a href="#">X</a></div>
-    <img class="menuBannerImg" style="max-height: 200px" src="<?= DOMAIN ?>_img/layout/menuBanner.png">
-</div>
+    <img class="menuBannerImg" style="max-height: 200px" src="<?/*= DOMAIN */?>_img/layout/menuBanner.png">
+</div>-->
 <marquee class="minutesReports" scrollamount="5" onmouseover="this.stop()" onmouseout="this.start()">2017 !ברוכים הבאים
     ל-עד המדינה
 </marquee>

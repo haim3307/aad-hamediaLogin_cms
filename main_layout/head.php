@@ -1,11 +1,18 @@
 <?php
-$is_local = $_SERVER['HTTP_HOST'] == 'localhost';
-if($is_local){
-    define('DOMAIN','http://localhost/aad-hamediaLogin_cms/');
-}else{
-    define('DOMAIN','http://'.$_SERVER['HTTP_HOST'].'/');
+$root = realpath($_SERVER["DOCUMENT_ROOT"]);
+if($_SERVER['HTTP_HOST'] === 'localhost'){
+    $root.= '/aad-hamediaLogin_cms';
 }
+require_once $root.'/includes/domain.php';
+require_once $root.'/class/Social_web.php';
+require_once $root.'/class/Login.php';
+if($follower_id = Login::isLoggedIn()){
+    $con = Social_web::connect();
 
+}else if(isset($_GET['app-page']) && $_GET['app-page'] !== 'home'){
+    header('location:'.DOMAIN);
+
+}
 
 ?>
 <meta charset="UTF-8">

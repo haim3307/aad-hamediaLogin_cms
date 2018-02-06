@@ -1,5 +1,9 @@
 <?php
-require '../../class/Connection.php';
+$root = realpath($_SERVER["DOCUMENT_ROOT"]);
+if($_SERVER['HTTP_HOST'] === 'localhost'){
+    $root.= '/aad-hamediaLogin_cms';
+}
+require $root.'/class/Connection.php';
 class CMS_forms extends  Connection{
     public function getUsers($query){
         $query = $query || 'SELECT * FROM users';

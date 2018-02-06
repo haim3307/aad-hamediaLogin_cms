@@ -6,6 +6,12 @@
  * Time: 00:16
  */
 require_once 'hosts.php';
+$root = realpath($_SERVER["DOCUMENT_ROOT"]);
+if($_SERVER['HTTP_HOST'] === 'localhost'){
+    $root.= '/aad-hamediaLogin_cms';
+}
+require_once $root.'/includes/domain.php';
+
 class Connection
 {
     static public $con;
@@ -32,12 +38,14 @@ class Connection
         return self::$con;
     }
     static public function set_session(){
-        $path = '/';
-        if($_SERVER['HTTP_HOST'] == 'localhost'){
-            $path='/aad-hamediaLogin_cms';
+        if(!isset($_SESSION)){
+            $path = '/';
+            if($_SERVER['HTTP_HOST'] == 'localhost'){
+                $path='/aad-hamediaLogin_cms';
+            }
+            session_set_cookie_params(null,$path);
+            session_start();
         }
-        session_set_cookie_params(60*60*24*7,$path);
-        session_start();
     }
 
 }

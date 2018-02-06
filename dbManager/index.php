@@ -1,8 +1,12 @@
 <?php
+require_once 'real_path.inc.php';
+$is_local = $_SERVER['HTTP_HOST'] === 'localhost';
+$path = $is_local?'/aad-hamediaLogin_cms/dbManager':'/dbManager';
 if (!isset($_GET['act'])) {
     //echo 'yes';
-    if (isset($_POST['user_remember'])) session_set_cookie_params(60 * 60 * 24 * 7);
+    if (isset($_POST['user_remember'])) session_set_cookie_params(60 * 60 * 24 * 7,$path);
 }
+session_set_cookie_params(null,$path);
 session_start();
 if (!isset($_SESSION['loggedIN']) || $_SESSION['loggedIN'] !== 1) {
     header('location: start.php');
@@ -65,7 +69,7 @@ $localLinks = 'css/';
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>פאנל אדמין</title>
-    <?php if($_SERVER['HTTP_HOST'] !== 'localhost'): ?>
+    <?php if(!$is_local): ?>
         <script src="<?= $mainCDN ?>angular.js/1.6.8/angular.min.js"></script>
         <script src="<?= $mainCDN ?>angular-ui-router/1.0.3/angular-ui-router.js"></script>
         <script src="<?= $localScripts ?>ng-file-model.js"> </script>
