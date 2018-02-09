@@ -1,15 +1,16 @@
 <?php
+if ( $_SERVER['REQUEST_METHOD']=='GET' && realpath(__FILE__) == realpath( $_SERVER['SCRIPT_FILENAME'] ) ) {
+    die (header( 'HTTP/1.0 403 Forbidden', TRUE, 403 ));
+}
 if(!isset($is_logged)){
     $is_logged = Login::isLoggedIn();
 }
 if (isset($_POST['site_login'])) {
     if(Login::login()) header('location:'.$_SERVER['PHP_SELF']);
-    //Login::login();
-}else{
+    else $_SESSION['token'] = Login::csrf_token();
+}else {
     Login::set_session();
-/*    echo '<pre style="direction: ltr;">';
-    var_dump($_SESSION);
-    echo '</pre>';*/
+    $_SESSION['token'] = Login::csrf_token();
 }
 ?>
 <nav class="nMenu">
@@ -67,18 +68,50 @@ if (isset($_POST['site_login'])) {
             height: auto;
         }
     }
-
+    .toRegister{
+        padding: 0 20px; display: flex; justify-content: space-between; flex-direction:row-reverse;
+    }
+    #logoutMenu{
+        display: none;
+        position: absolute;
+        left: 0;
+        top:30px;
+        background-color: #fff;
+    }
+    #logoutMTrigger a{
+        text-decoration: none;
+    }
+    #logoutMTrigger a{
+        text-decoration: none;
+    }
+    #logoutMenu {
+        list-style: none;
+    }
+    #logoutMenu li{
+        padding: 10px 2px;
+        text-align: center;
+    }
+    #logoutMenu li:hover{
+        background-color: silver;
+        color: white;
+    }
+    #logoutMenu input{
+    }
+    .userNav{
+        float: left; text-align: left; padding: 20px;
+    }
 </style>
 <?php if(!$is_logged):?>
 <div style="direction: ltr">
     <form style="direction: rtl;" action="" id="loginForm" method="POST" novalidate>
         <input type="text" name="user_name" class="logInput" placeholder="שם המשתמש">
         <input type="password" name="user_pass" class="logInput" placeholder="סיסמא">
+        <input type="hidden" name="token" value="<?= $_SESSION['token']; ?>">
         <input type="submit" name="site_login" id="submitLogin" value="התחבר">
     </form>
     <div class="forgotPass" style="direction: rtl;">
     </div>
-    <div class="toRegister" style="padding: 0 20px; display: flex; justify-content: space-between; flex-direction:row-reverse ">
+    <div class="toRegister" style="">
         <a href="<?= DOMAIN ?>settings/forgot-password.php">שכחתי את הסיסמא</a>
 
         <div>
@@ -88,37 +121,8 @@ if (isset($_POST['site_login'])) {
     </div>
 </div>
 <?php else:?>
-    <div class="userNav" style="float: left; text-align: left; padding: 20px">
+    <div class="userNav" style="">
         <div> שלום  <strong><?= htmlentities($_SESSION['front_user_name']); ?></strong></div>
-        <style>
-            #logoutMenu{
-                display: none;
-                position: absolute;
-                left: 0;
-                top:30px;
-                background-color: #fff;
-            }
-            #logoutMTrigger a{
-                text-decoration: none;
-            }
-            #logoutMTrigger a{
-                text-decoration: none;
-            }
-            #logoutMenu {
-                list-style: none;
-            }
-            #logoutMenu li{
-                padding: 10px 2px;
-                text-align: center;
-            }
-            #logoutMenu li:hover{
-                background-color: silver;
-                color: white;
-            }
-            #logoutMenu input{
-            }
-
-        </style>
         <form id="logoutForm" action="<?= DOMAIN.'class/Logout.php' ?>" method="post" style="position: relative;">
             <input type="submit" name="logout" id="logoutI" style="display: none;">
             <label for="logoutI"><a>התנתק</a></label>

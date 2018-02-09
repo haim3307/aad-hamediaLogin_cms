@@ -1,4 +1,7 @@
 <?php
+if ( $_SERVER['REQUEST_METHOD']=='GET' && realpath(__FILE__) == realpath( $_SERVER['SCRIPT_FILENAME'] ) ) {
+    die (header( 'HTTP/1.0 403 Forbidden', TRUE, 403 ));
+}
 $root = realpath($_SERVER["DOCUMENT_ROOT"]);
 if($_SERVER['HTTP_HOST'] === 'localhost'){
     $root.= '/aad-hamediaLogin_cms';

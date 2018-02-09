@@ -1,8 +1,8 @@
 <?php
 require_once 'class/Login.php';
 define('app', true);
+Login::set_session();
 $is_logged = Login::isLoggedIn();
-//var_dump($is_logged);
 $app_pages = ['home', 'profile', 'friends','settings'];
 if (isset($_GET['app-page']) && in_array($_GET['app-page'], $app_pages)) {
     $app_page = $_GET['app-page'];
@@ -75,6 +75,8 @@ switch ($app_page) {
         <hr>
         <hr>
         <?php if ($is_logged): ?>
+            <script>var profile_img = '<?= $_SESSION['front_profile_img']; ?>';console.log(profile_img);</script>
+
             <?php
             switch ($app_page) {
                 case 'home':

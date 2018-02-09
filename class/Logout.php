@@ -11,13 +11,18 @@ var_dump(DOMAIN);*/
 
 class Logout extends Login
 {
-
+    static private function kill_cookies(){
+        setcookie('SNID', 1, time() - 3600, '/', NULL, NULL, true);
+        setcookie('SNID_', 1, time() - 3600, '/', NULL, NULL, true);
+    }
     static function execute()
     {
         echo '<pre style="direction: ltr;">';
         var_dump($_POST);
         var_dump(isset($_POST['alldevices']) && $_POST['alldevices']);
         var_dump(Login::isLoggedIn());
+        echo "<br>";
+        var_dump(filter_input(INPUT_POST,'alldevices',FILTER_VALIDATE_INT));
         echo 'err';
         echo '</pre>';
         if (filter_input(INPUT_POST,'alldevices',FILTER_VALIDATE_INT)) {
@@ -38,4 +43,4 @@ class Logout extends Login
     }
 }
 
-if (isset($_POST['logout'])) Logout::execute();
+Logout::execute();

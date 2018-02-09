@@ -3,12 +3,10 @@
     <properties>
       <sourceFilesUrls>
         <item url="file://$PROJECT_DIR$/dist/dbManager/lib/http_code.jquery.com_ui_1.12.1_jquery-ui.js" />
-        <item url="file://$PROJECT_DIR$/dist/dbManager/lib/jquery-3.2.1.js" />
       </sourceFilesUrls>
     </properties>
     <CLASSES>
       <root url="file://$PROJECT_DIR$/dist/dbManager/lib/http_code.jquery.com_ui_1.12.1_jquery-ui.js" />
-      <root url="file://$PROJECT_DIR$/dist/dbManager/lib/jquery-3.2.1.js" />
     </CLASSES>
     <SOURCES />
   </library>

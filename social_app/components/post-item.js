@@ -9,6 +9,8 @@ class PostItem extends HTMLElement{
 /*
 		this._complete = 0;
 */
+		this.commentPage = 0;
+		this.firstCommentsPush = true;
 		this.mainUserId = this.getAttribute('main-user-id');
 		this.show = this.getAttribute('post-show');
 		let spt = this.getAttribute('show-posted-to');
@@ -140,7 +142,7 @@ class PostItem extends HTMLElement{
 							`<img src="_img/users/profiles/${post.profile_img}" alt="">`
 							}
 							</div>
-							<strong style="margin-top: 25px;">${post.author}</strong>
+							<strong style="margin-top: 25px;"><a href="index.php?app-page=profile&username=${post.author}">${post.author}</a></strong>
 							${this.showPostedTo?
 								`
 								<span style="margin-top: 25px; margin-right: 10px;">
@@ -163,7 +165,7 @@ class PostItem extends HTMLElement{
 					<div class="artDate">
 							<div style="display: flex; align-items: center;">
 									<i style="padding: 7px;" class="far fa-clock"></i>
-											${post.added_date}
+											${moment(post.added_date, "YYYY-MM-DD").fromNow()}
 							</div>
 					</div>
 
@@ -187,7 +189,19 @@ class PostItem extends HTMLElement{
 							<div class="share postAction"><i class="fas fa-share fa-2x" style="padding-left: 10px;"></i><span>שתף</span></div>
 					</div>
 					<div class="postComments">
+						<div class="commentsContStatus">
 						
+						</div>
+						<div class="postCommentsList" style="margin-bottom: 20px;">
+	
+	
+						</div>
+						<div class="checkNewComments"><i class="fa fa-refresh" title="טען תגובות נוספות"></i><span class="noNewComments">אין תגובות חדשות</span><span></span></div>
+						<div class="yourComment" style="display: flex; align-items: center; height: 50px;">
+							<div class="profileFrame all-centered yourProfileImg" style="height: 50px; width: 50px;"><img style="height: 100%" src="_img/users/profiles/${profile_img}" alt=""></div>
+							<textarea class="yourCommentText" style="flex:1; border-radius: 47px; font-family: alef;
+							padding: 14px 14px 1px; height: 50px;" placeholder="הקלד תגובתך כאן.."></textarea>
+						</div>	
 					</div>
 					</div>
 
@@ -225,50 +239,153 @@ class PostItem extends HTMLElement{
 
 			});
 		});
+
 		$el.find('.speak').on('click',function () {
-			$.ajax({
-				url: 'api/index.php',
-				method: 'get',
-				data: {
-					'action':'get_comments',
-					'post_id': post.id,
-				}
-			}).then((res)=> {
+			_class.commentPage = 0;
+			_class.getComments(post).then((res)=> {
 				console.log(res);
 				let $commentsCont = $el.find('.postComments');
-				$commentsCont.html(_class.postCommentsTpl(res));
+				let $commentsList = $commentsCont.find('.postCommentsList');
+				$commentsList.html(_class.postCommentsTpl(res));
+				console.log(res[res.length-1]);
+				if(res.length) {
+					_class.firstCommentDate = res[0]['added_date'];
+					_class.lastCommentDate = res[res.length-1]['added_date'];
+				}				let $commentsContStatus = $commentsCont.find('.commentsContStatus');
+				console.log(_class.postCommentsContStatusTpl(res));
+				$commentsContStatus.html(_class.postCommentsContStatusTpl(res));
+				function clickPrevComments() {
+					console.log('click');
+					++_class.commentPage;
+					console.log(_class.commentPage);
+					_class.firstCommentsPush = false;
+					$.ajax({
+						url: 'api/index.php?action=get_comments&post_id='+post.id+'&post_comments_page='+_class.commentPage+'&first_comment_added_date='+_class.firstCommentDate,
+						method: 'get',
+/*						data: {
+							'action':'get_comments',
+							'post_id': post.id,
+							'post_comments_page': this.commentPage
+						},*/
+						success: function (res2) {
+							console.log('res:',res2);
+							$commentsContStatus.html(_class.postCommentsContStatusTpl(res2));
+							$commentsCont.find('.prevComments').on('click',clickPrevComments);
+							$commentsList.prepend(_class.postCommentsTpl(res2));
+							console.log(_class.commentPage);
+						},
+						error: function (err) {
+							console.log(err);
+						}
+					});
+
+				}
+				$commentsCont.find('.prevComments').on('click',clickPrevComments);
+				$commentsCont.find('.checkNewComments').on('click',function () {
+					console.log(_class.lastCommentDate);
+					$.ajax({
+						//&post_comments_page='+_class.commentPage
+						url: 'api/index.php?action=get_new_comments&post_id='+post.id+'&last_comment_date='+_class.lastCommentDate,
+						method: 'get',
+						success: (res) => {
+							console.log(res);
+							if(res.length) {
+								_class.firstCommentDate = res[0]['added_date'];
+								_class.lastCommentDate = res[res.length-1]['added_date'];
+							}else {
+								$(this).find('.noNewComments').fadeIn(500).delay(500).fadeOut(500);
+							}
+
+							$commentsList.append(_class.postCommentsTpl(res));
+						},
+						error: function (err) {
+							console.log(err);
+						}
+					})
+				});
+				let $yourComment = $commentsCont.find('.yourComment');
+
+				$yourComment.on('keydown',function (e) {
+					let comment = e.target.value;
+					if(comment){
+						if(e.key == 'Enter' && !e.shiftKey){
+							e.preventDefault();
+							$.ajax({
+								url: 'api/index.php',
+								method: 'post',
+								data: {
+									'action':'add_comment',
+									'post_id': post.id,
+									'post_comment': comment
+								}
+							}).then((res)=> {
+									console.log(res);
+									let newComment = res;
+									if(_class.notNull(newComment)){
+										$commentsList.append(_class.postCommentTpl(newComment));
+										$(this)[0].value = '';
+									}
+							});
+						}
+					}
+
+				});
+				//$commentsList.find('')
 				$commentsCont.slideToggle(500);
 			});
 		});
-		/*			let comment = '';
-			$el.find('');
-			$.ajax({
-				url: 'api/index.php',
-				method: 'post',
-				data: {
-					'action':'add_comment',
-					'post_id': post.id,
-					'post_comment': comment
-				}
-			}).then((res)=> {
-
-			});*/
-	}
-	postCommentsTpl(comments){
-/*
-		if(comments.isArray())
-*/
-		return comments.map((comment)=>`
-		<post-comment 
-		comment-id="${comment.id}"
-		content="${comment.content}"
-		added-date="${comment.added_date}"
-		user-id="${comment.uid}"
-		profile-img="${comment.profile_img}"
-		></post-comment>
-		`
-		).join('\n');
 
 	}
+	postCommentTpl(comment){
+		return `			
+			<post-comment 
+			comment-id="${comment.id}"
+			content="${comment.content}"
+			added-date="${comment.added_date}"
+			user-id="${comment.uid}"
+			profile-img="${comment.profile_img}"
+			commenter-name="${comment.commenter_name}"
+			></post-comment>
+		`;
+	}
+	postCommentsTpl(comments) {
+		return `${comments.length ?
+			comments.reverse().map((comment) => this.postCommentTpl(comment)).join('\n') :
+			''
+			}`;
+	}
+	getComments(post) {
+		console.log(this.commentPage);
+		return $.ajax({
+			url: 'api/index.php',
+			method: 'get',
+			data: {
+				'action':'get_comments',
+				'post_id': post.id,
+				'post_comments_page': this.commentPage
+			}
+		});
+	}
+	postCommentsContStatusTpl(res){
+		console.log(res);
+		console.log(res.length);
+		if(res.length){
+			this.commentsStatus = 'part';
+		}else {
+			this.commentsStatus = 'empty';
+			this.noCommentsStat = this.commentPage > 1?'more':'none';
+		}
+		console.log(this.commentsStatus);
+		let hr = `<hr style="width: 90%; margin: 0 auto;">`;
+		if(this.firstCommentsPush){
+			return res.length?`<a class="prevComments">טען תגובות קודמות</a>`+hr:
+				`<p style="padding-right: 14px; display: flex; justify-content: space-between;">אין תגובות להצגה </p>`+hr;
+		}
+		else {
+			return res.length?`<a class="prevComments">טען תגובות קודמות</a>`+hr:'';
+		}
+
+	}
+
 }
 window.customElements.define('post-item', PostItem);

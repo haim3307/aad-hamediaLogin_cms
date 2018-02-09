@@ -211,19 +211,19 @@ post-item::shadow{
 .grid-news-item{
   display: grid;
   grid-template-areas:
-          'artAuth artAuth'
-          'artDate artDate'
+          'artAuth artDate'
           'artTitle artTitle'
           'postImage postImage'
           'postDesc postDesc'
           'postActions postActions'
           'postComments postComments'
 ;
-  grid-template-rows: 50px 50px 50px 1fr auto;
+  grid-template-rows: auto 50px 50px 1fr auto;
   background-color: whitesmoke;
   border-radius: 3px;
   margin: 10px auto;
-  padding: 20px 0;
+  padding: 20px 10px;
+  grid-row-gap: 10px;
   .addComment{
     display: flex;
   }
@@ -255,7 +255,7 @@ post-item::shadow{
     justify-content: flex-end;
     align-items: flex-start;
   }
-  .artTitle{grid-area: artTitle }
+  .artTitle{grid-area: artTitle; padding-top: 10px; }
 
   .postComments{
     grid-area: postComments;

@@ -372,12 +372,13 @@ post-item::shadow {
 
 .grid-news-item {
   display: grid;
-  grid-template-areas: "artAuth artAuth" "artDate artDate" "artTitle artTitle" "postImage postImage" "postDesc postDesc" "postActions postActions" "postComments postComments";
-  grid-template-rows: 50px 50px 50px 1fr auto;
+  grid-template-areas: "artAuth artDate" "artTitle artTitle" "postImage postImage" "postDesc postDesc" "postActions postActions" "postComments postComments";
+  grid-template-rows: auto 50px 50px 1fr auto;
   background-color: whitesmoke;
   border-radius: 3px;
   margin: 10px auto;
-  padding: 20px 0; }
+  padding: 20px 10px;
+  grid-row-gap: 10px; }
   .grid-news-item .addComment {
     display: flex; }
   .grid-news-item .postDesc {
@@ -400,7 +401,8 @@ post-item::shadow {
     justify-content: flex-end;
     align-items: flex-start; }
   .grid-news-item .artTitle {
-    grid-area: artTitle; }
+    grid-area: artTitle;
+    padding-top: 10px; }
   .grid-news-item .postComments {
     grid-area: postComments; }
   @media (min-width: 810px) {

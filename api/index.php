@@ -82,7 +82,18 @@ class AadFeed extends Social_web
                 break;
             case 'get_comments':
                 $to_id = isset($this->request->post_id)?filter_input(INPUT_GET,'post_id',FILTER_VALIDATE_INT):null;
-                $this->reply(self::get_comments($to_id));
+                $page = isset($this->request->post_comments_page)?filter_input(INPUT_GET,'post_comments_page',FILTER_VALIDATE_INT):null;
+                $first_comment_date = isset($this->request->first_comment_added_date)?filter_input(INPUT_GET,'first_comment_added_date',FILTER_SANITIZE_STRING):null;
+                $this->reply(self::get_comments($to_id,$page,null,$first_comment_date));
+                break;
+            case 'get_new_comments':
+                $to_id = isset($this->request->post_id)?filter_input(INPUT_GET,'post_id',FILTER_VALIDATE_INT):null;
+                $last_date = isset($this->request->last_comment_date)?filter_input(INPUT_GET,'last_comment_date',FILTER_SANITIZE_STRING):null;
+                //var_dump($last_date);
+                $this->reply(self::get_comments($to_id,null,$last_date));
+            case 'add_comment':
+                $to_id = isset($this->request->post_id)?filter_input(INPUT_POST,'post_id',FILTER_VALIDATE_INT):null;
+                $this->reply(self::add_comment($to_id,$this->request->post_comment));
                 break;
         }
         // get the action
@@ -125,6 +136,7 @@ class AadFeed extends Social_web
      */
     private function _isAuthenticated()
     {
+        //parent::set_session();
         return parent::isLoggedIn();
     }
 
@@ -162,5 +174,4 @@ class AadFeed extends Social_web
         $this->reply(true);
     }
 }
-
 $MyApi = new AadFeed();

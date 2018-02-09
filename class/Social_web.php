@@ -149,19 +149,51 @@ class Social_web extends Login
     static private function whoPosted($post_id){
         $q = self::query('SELECT uid FROM posts WHERE id=:pid',[':pid' => $post_id]);
     }
-    static function get_comments($post_id){
+    static function get_comments($post_id,$page = 0,$last_date = null,$first_date = null){
+        $limit = 3;
+        $start = $limit * $page;
+        if(isset($last_date)){
+            $if_last_date = " AND pc.added_date > '$last_date' ORDER BY pc.added_date DESC ";
+        }elseif (isset($first_date)){
+            $start = $limit * ($page-1);
+            $if_last_date = " AND pc.added_date < '$first_date' ORDER BY pc.added_date DESC LIMIT $start,$limit";
+        }else{
+            $if_last_date = " ORDER BY pc.added_date DESC LIMIT $start,$limit";
+        }
+        //if($page !== 0) var_dump($if_last_date);
         if(filter_var($post_id,FILTER_VALIDATE_INT)) {
-            if($q = self::query('SELECT pc.*,fu.profile_img, fu.name FROM posts_comments pc JOIN front_users fu ON fu.id = pc.uid WHERE pid=:pid',[':pid' => $post_id])){
+            $q = "SELECT pc.*,fu.profile_img, fu.name commenter_name FROM posts_comments pc JOIN front_users fu ON fu.id = pc.uid WHERE pc.pid=:pid $if_last_date";
+            //var_dump($q);
+            if($q = self::query($q,[':pid' => $post_id])){
                 return ($res = $q->fetchAll(PDO::FETCH_ASSOC))?$res:[];
             }
-
         }
         return false;
     }
-    static function add_comment($post_id){
-        if(self::is_following($_SESSION['front_user_id'],self::whoPosted($post_id))){
+    static function add_comment($post_id,$content){
+        if(filter_var($post_id,FILTER_VALIDATE_INT)){
+            if($content = filter_var($content,FILTER_SANITIZE_STRING,FILTER_FLAG_NO_ENCODE_QUOTES)){
+                //self::is_following($_SESSION['front_user_id'],self::whoPosted($post_id))
+                if(true){
+                    if($insert = self::query('INSERT INTO posts_comments VALUES(\'\',:content,:pid,:uid,NOW())',
+                        [':content'=>$content,':pid'=>$post_id,':uid'=>$_SESSION['front_user_id']]
+                    )){
+                        $con = self::connect();
+                        $last_id = $con->lastInsertId();
 
+                        if($get_new_comm_q = $con->query("SELECT * FROM posts_comments pc WHERE id=$last_id")){
+                            $get_new_comm = $get_new_comm_q->fetch(PDO::FETCH_ASSOC);
+                            $get_new_comm['profile_img'] = $_SESSION['front_profile_img'];
+                            $get_new_comm['commenter_name'] = $_SESSION['front_user_name'];
+                            return $get_new_comm;
+                        }
+
+                    }
+                }
+            }
         }
+        return false;
+
     }
 }
 
