@@ -59,26 +59,28 @@ class AadFeed extends Social_web
                 break;
             case 'add_post':
                 $to_id = isset($this->request->to_id)?filter_input(INPUT_POST,'to_id',FILTER_VALIDATE_INT):null;
-                $new_post = self::add_new_post($this->request->content,$to_id);
+                $content = isset($this->request->content)?filter_input(INPUT_POST,'content',FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES):null;
+                $new_post = self::add_new_post($content,$to_id);
                 $this->reply(['post'=>$new_post,'msg'=>($new_post === null?'empty':'added')]);
                 break;
             case 'update_post':
                 $to_id = isset($this->request->post_id)?filter_input(INPUT_POST,'post_id',FILTER_VALIDATE_INT):null;
-                $post_title= isset($this->request->post_title)?filter_input(INPUT_POST,'post_title',FILTER_SANITIZE_STRING,FILTER_FLAG_NO_ENCODE_QUOTES):null;
-                if($to_id && $post_title){
-                    $new_post = ['title'=>self::update_post($to_id,$post_title)];
+                $content= isset($this->request->post_title)?filter_input(INPUT_POST,'post_title',FILTER_SANITIZE_STRING,FILTER_FLAG_NO_ENCODE_QUOTES):null;
+                if($to_id && $content){
+                    $new_post = ['title'=>self::update_post($to_id,$content)];
                     $this->reply(['post'=>$new_post,'msg'=>($new_post === null?'fail':'updated')]);
                 }else{
                     $this->reply(['post'=>[],'msg'=>'fail']);
                 }
                 break;
             case 'follow':
-                $user_id = $this->request->uid;
+                $user_id = isset($this->request->uid)?filter_input(INPUT_POST,'uid',FILTER_VALIDATE_INT):null;
                 $follower_id = $_SESSION['front_user_id'];
                 $this->reply(self::follow($follower_id,$user_id)?'true':'false');
                 break;
             case 'like_post':
-                $this->reply(self::like_post($this->request->post_id));
+                $to_id = isset($this->request->post_id)?filter_input(INPUT_POST,'post_id',FILTER_VALIDATE_INT):null;
+                $this->reply(self::like_post($to_id));
                 break;
             case 'get_comments':
                 $to_id = isset($this->request->post_id)?filter_input(INPUT_GET,'post_id',FILTER_VALIDATE_INT):null;
@@ -89,11 +91,20 @@ class AadFeed extends Social_web
             case 'get_new_comments':
                 $to_id = isset($this->request->post_id)?filter_input(INPUT_GET,'post_id',FILTER_VALIDATE_INT):null;
                 $last_date = isset($this->request->last_comment_date)?filter_input(INPUT_GET,'last_comment_date',FILTER_SANITIZE_STRING):null;
-                //var_dump($last_date);
                 $this->reply(self::get_comments($to_id,null,$last_date));
+                break;
             case 'add_comment':
                 $to_id = isset($this->request->post_id)?filter_input(INPUT_POST,'post_id',FILTER_VALIDATE_INT):null;
                 $this->reply(self::add_comment($to_id,$this->request->post_comment));
+                break;
+            case 'delete_comment':
+                $to_id = isset($this->request->comment_id)?filter_input(INPUT_POST,'comment_id',FILTER_VALIDATE_INT):null;
+                $this->reply(self::delete_comment($to_id)?'deleted':'error');
+                break;
+            case 'edit_comment':
+                $to_id = isset($this->request->comment_id)?filter_input(INPUT_POST,'comment_id',FILTER_VALIDATE_INT):null;
+                $comment_content= isset($this->request->comment_content)?filter_input(INPUT_POST,'comment_content',FILTER_SANITIZE_STRING,FILTER_FLAG_NO_ENCODE_QUOTES):null;
+                $this->reply(($content = self::edit_comment($to_id,$comment_content))?$content:'error');
                 break;
         }
         // get the action

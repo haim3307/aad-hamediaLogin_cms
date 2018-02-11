@@ -135,6 +135,7 @@ post-item .likesStatus:hover .likersList{
     padding: 10px;
 }
 .innerComment{
+    position: relative;
     display: grid;
     grid-template-areas:
     ". comDate"
@@ -186,7 +187,14 @@ post-item .likesStatus:hover .likersList{
     align-items: center;
    padding-bottom: 3px;
 }
-
+.commentActions button{
+    padding: 4px 11px;
+    border-radius: 39px;
+}
+.editedComment{
+    border-radius: 40px;
+    margin: 10px 0;
+}
 /*upload post*/
 .uploadPost{
     background-color: #fff;

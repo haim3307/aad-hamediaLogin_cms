@@ -1,7 +1,0 @@
-<ul class="pagination p-0"><!--ng-click="crud.getComments(this ,actID,i+1)"-->
-    <li ng-if="pageNum != 1" class="page-item" ng-click="crud.movePage(this ,pageNum-1)"><a class="page-link">הקודם</a></li>
-    <li class="page-item" ng-click="crud.movePage(this ,1)" ng-class="{active:pageNum == 1}"><a class="page-link">1</a></li>
-    <li ng-repeat="i in rangeArr" ng-click="crud.movePage(this,i+1)" ng-class="{active:pageNum == i+1}"  class="page-item"><a class="page-link">{{i+1}}</a></li>
-
-    <li ng-if="pageNum != pagesLen" class="page-item" ng-click="crud.movePage(this ,pageNum+1)"><a class="page-link">הבא</a></li>
-</ul>

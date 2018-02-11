@@ -2,11 +2,11 @@
 define('DB_CONNECTION', 'mysql');
 define('DB_HOST', 'mysql');
 define('DB_PORT', '3306');
-define('DB_DATABASE', 'aadhamedina');
+define('DB_DATABASE', 'social_network');
 if ($_SERVER['HTTP_HOST'] == 'localhost') {
     define('DB_USERNAME', 'root');
     define('DB_PASSWORD', '');
-    define('PATH_FOLDER', '/aad-hamediaLogin_cms');
+    define('PATH_FOLDER', '/social_network');
 } else {
     define('DB_USERNAME', 'haimt');
     define('DB_PASSWORD', '957846213Ha');

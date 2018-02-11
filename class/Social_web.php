@@ -14,13 +14,12 @@ class Social_web extends Login
         $content = trim($content);
         if(!$content) return null;
         $content = filter_var($content,FILTER_SANITIZE_STRING,FILTER_FLAG_NO_ENCODE_QUOTES);
-        $insert = self::query('INSERT INTO posts(title, front_img, activated, official, uid) 
-        VALUES(:title,:front_img,:activated,:official,:uid)',
+        $insert = self::query('INSERT INTO posts(title, front_img, activated, uid) 
+        VALUES(:title,:front_img,:activated,:uid)',
             [
                 ':title' => $content,
                 ':front_img' => '',
                 ':activated' => 1,
-                ':official' => 0,
                 ':uid' => $_SESSION['front_user_id']
             ]
         );
@@ -32,7 +31,7 @@ class Social_web extends Login
         }
         if ($insert->rowCount()) {
             return self::get_post($last_id,$posted_to);
-        } else var_dump($insert);
+        }
         return false;
     }
     static function get_post($post_id,$posted_to = null){
@@ -62,8 +61,7 @@ class Social_web extends Login
             $limit = 5;
             $start = ((int)$page-1) * $limit;
             if(!isset($user_id)){
-                $if_not_logged = self::isLoggedIn()?'':'WHERE official = 1';
-                $q = $pdo->query("SELECT p.*,f.profile_img, f.name FROM posts p LEFT JOIN front_users f ON p.uid = f.id $if_not_logged ORDER BY added_date DESC LIMIT $start,$limit");
+                $q = $pdo->query("SELECT p.*,f.profile_img, f.name FROM posts p LEFT JOIN front_users f ON p.uid = f.id ORDER BY added_date DESC LIMIT $start,$limit");
             }else{
                 $q = $pdo->query(
                     "SELECT p.*,fu.name name,fu.profile_img,f.name _to,po.to 
@@ -110,7 +108,7 @@ class Social_web extends Login
         return $q && $q->rowCount()?'deleted':'error';
     }
     static function update_post($post_id, $post_title){
-        if(isset($post_title)){
+        if(isset($post_title) && filter_var($post_id,FILTER_VALIDATE_INT)){
             $post_title = trim($post_title);
             $post_title = filter_var($post_title,FILTER_SANITIZE_STRING,FILTER_FLAG_NO_ENCODE_QUOTES);
             if($post_title){
@@ -119,8 +117,8 @@ class Social_web extends Login
         }
         return isset($q) && $q && $q->rowCount()?$post_title:'error';
     }
-    static function is_following($follower_id,$user_id){
-        $q = self::query('SELECT fid FROM followers WHERE uid=:uid AND fid=:fid', [':uid' => $user_id, ':fid' => $follower_id]);
+    static function is_following($follower_id,$followed_id){
+        $q = self::query('SELECT fid FROM followers WHERE uid=:uid AND fid=:fid', [':uid' => $followed_id, ':fid' => $follower_id]);
         return $q?$q->fetch():false;
     }
     static function follow($follower_id,$user_id){
@@ -148,6 +146,9 @@ class Social_web extends Login
     }
     static private function whoPosted($post_id){
         $q = self::query('SELECT uid FROM posts WHERE id=:pid',[':pid' => $post_id]);
+    }
+    static private function yourComment($commenter_id,$comment_id){
+       return self::query('SELECT uid FROM posts_comments WHERE id=:cid AND uid=:uid',[':cid' => $comment_id,':uid'=>$commenter_id]);
     }
     static function get_comments($post_id,$page = 0,$last_date = null,$first_date = null){
         $limit = 3;
@@ -194,6 +195,26 @@ class Social_web extends Login
         }
         return false;
 
+    }
+    static function delete_comment($comment_id){
+        if(self::yourComment($_SESSION['front_user_id'],$comment_id)){
+            $delete = self::query('DELETE FROM posts_comments WHERE id=:cid AND uid=:uid',[':cid' => $comment_id,':uid'=>$_SESSION['front_user_id']]);
+            return $delete && $delete->rowCount();
+        }
+    }
+    static function edit_comment($comment_id,$new_content){
+        if(self::yourComment($_SESSION['front_user_id'],$comment_id)){
+            $edit = self::query('UPDATE posts_comments SET content=:content WHERE id=:cid AND uid=:uid',
+                [':cid' => $comment_id,':uid'=>$_SESSION['front_user_id'], ':content'=>$new_content]);
+            if($edit && $edit->rowCount()){
+                $get_new_content_q = self::query('SELECT content FROM posts_comments WHERE id=:cid AND uid=:uid',[':cid' => $comment_id,':uid'=>$_SESSION['front_user_id']]);
+                if($get_new_content_q){
+                    $get_new_content_r = $get_new_content_q->fetch();
+                    if(isset($get_new_content_r['content'])) return $get_new_content_r['content'];
+                }
+            }
+        }
+        return false;
     }
 }
 

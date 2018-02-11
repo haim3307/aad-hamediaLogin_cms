@@ -129,10 +129,10 @@ class Register extends Forms
                 ':password' => password_hash($newUP,PASSWORD_BCRYPT)
             ];
             if(self::query('INSERT INTO front_users(name, password, email) VALUES(:user_name,:password,:email)',$user)){
-                $_SESSION['user_id'] = self::connect()->lastInsertId();
-                $_SESSION['user_name'] = $newUN;
-                $_SESSION['email'] = $newUE;
-                $_SESSION['password'] = $newUP;
+                $_SESSION['new_user_id'] = self::connect()->lastInsertId();
+                $_SESSION['new_user_name'] = $newUN;
+                $_SESSION['new_email'] = $newUE;
+                $_SESSION['new_pass'] = $newUP;
             }
 
 
@@ -141,7 +141,7 @@ class Register extends Forms
 
     }
     static function check_register_session(){
-        return isset($_SESSION['user_name']) && isset($_SESSION['email']) && isset($_SESSION['password']);
+        return isset($_SESSION['new_user_name']) && isset($_SESSION['new_email']) && isset($_SESSION['new_pass']);
     }
     static function upload_profile_image()
     {

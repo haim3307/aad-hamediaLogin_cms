@@ -10,11 +10,11 @@ var_export($_SERVER);
 echo '</pre>';*/
 $root = realpath($_SERVER["DOCUMENT_ROOT"]);
 if($_SERVER['HTTP_HOST'] === 'localhost'){
-    $root.= '/aad-hamediaLogin_cms';
+    $root.= '/social_network';
 }
 $is_local = $_SERVER['HTTP_HOST'] == 'localhost';
 if($is_local){
-    define('DOMAIN','http://localhost/aad-hamediaLogin_cms/');
+    define('DOMAIN','http://localhost/social_network/');
 
 }else{
     define('DOMAIN','https://'.$_SERVER['HTTP_HOST'].'/');

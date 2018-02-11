@@ -3,30 +3,36 @@
 require '../class/Login.php';
 $tokenValid = false;
 if($userId = Login::isLoggedIn()){
-    if(isset($_POST['changepassword'])){
-        if(isset($_POST['oldpassword']) && isset($_POST['newpassword']) && isset($_POST['newpassword2'])){
-            $old_password = $_POST['oldpassword'];
-            $new_password = $_POST['newpassword'];
-            $new_password2 = $_POST['newpassword2'];
-            $if = Login::query('SELECT password FROM users WHERE id=:userid', [':userid'=>$userId])->fetch(PDO::FETCH_ASSOC);
-            if(password_verify($old_password,$if['password'])){
-                if($new_password === $new_password2){
-                    if(strlen($new_password) >= 6 && strlen($new_password) <= 60){
-                        Login::query('UPDATE users SET password=:newpassword WHERE id=:userid',[':userid'=>$userId,':newpassword'=>password_hash($new_password, PASSWORD_BCRYPT)]);
-                        echo "password changed!";
+    if(isset($_POST['change_password'])){
+        if(isset($_POST['old_password']) && isset($_POST['new_password']) && isset($_POST['new_password2'])){
+            $old_password = filter_input(INPUT_POST,'old_password',FILTER_SANITIZE_STRING);
+            if(!($old_password = trim($old_password))) exit;
+            $new_password = filter_input(INPUT_POST,'new_password',FILTER_SANITIZE_STRING);
+            if(!($new_password = trim($new_password))) exit;
+            if($new_password !== $_POST['new_password2']) exit;
+            if(strlen($new_password) < 6){
+                $error = 'סיסמא קצרה מידי';
+            }
+            if(!isset($error)){
+                $if_q = Login::query('SELECT password FROM front_users WHERE id=:userid', [':userid'=>$userId]);
+                if($if_q && ($if = $if_q->fetch(PDO::FETCH_ASSOC))){
+                    if(password_verify($old_password,$if['password'])){
+                        Login::query('UPDATE front_users SET password=:new_password WHERE id=:userid',[':userid'=>$userId,':new_password'=>password_hash($new_password, PASSWORD_BCRYPT)]);
+                        echo "סיסמא שונתה בהצלחה!";
+                    }else {
+                        $error = 'סיסמך שגויה או שאינה תקינה';
                     }
                 }
-            }else {
-                echo "incorrect password";
             }
+
+
         }else {
-            echo "please insert all fields0";
+            $error = '0אנא מלא את כל השדות';
         }
     }
 
 }else{
-    if(isset($_GET['token'])){
-        $token = $_GET['token'];
+    if($token = filter_input(INPUT_GET,'token',FILTER_SANITIZE_STRING)){
         $hashed_token = sha1($token);
         $stmt = Login::connect()->prepare('SELECT * FROM forget_tokens WHERE token=?');
         $stmt->bindParam(1,$hashed_token,PDO::PARAM_STR);
@@ -35,24 +41,24 @@ if($userId = Login::isLoggedIn()){
         if($userId){
             $tokenValid = true;
             $userId = $userId['uid'];
-            if(isset($_POST['changepassword'])){
-                if(isset($_POST['newpassword']) && isset($_POST['newpassword2'])){
-                    $new_password = $_POST['newpassword'];
-                    $new_password2 = $_POST['newpassword2'];
-                    if($new_password === $new_password2){
-                        if(strlen($new_password) >= 6 && strlen($new_password) <= 60){
-                            Login::query('UPDATE front_users SET password=:newpassword WHERE id=:userid',[':userid'=>$userId,':newpassword'=>password_hash($new_password, PASSWORD_BCRYPT)]);
-                            echo "password changed1!";
-                            Login::query('DELETE FROM forget_tokens WHERE uid=:userid',[':userid'=>$userId]);
-                        }else{
-                            echo "password too short";
-                        }
+            if(isset($_POST['change_password'])){
+                if(isset($_POST['new_password']) && isset($_POST['new_password2'])){
+                    $new_password = filter_input(INPUT_POST,'new_password',FILTER_SANITIZE_STRING);
+                    if(!($new_password = trim($new_password))) exit;
+                    if($new_password !== $_POST['new_password2']) exit;
+                    if(strlen($new_password) < 6){
+                        $error = 'סיסמא קצרה מידי';
+                    }
+                    if(!isset($error)){
+                        Login::query('UPDATE front_users SET password=:new_password WHERE id=:userid',[':userid'=>$userId,':new_password'=>password_hash($new_password, PASSWORD_BCRYPT)]);
+                        echo 'סיסמא שונתה בהצלחה!';
+                        Login::query('DELETE FROM forget_tokens WHERE uid=:userid',[':userid'=>$userId]);
                     }
                 }else {
-                    echo "please insert all fields1";
+                    $error = 'אנא מלא את כל השדות';
                 }
             }
-        }else exit ("token invalid!");
+        }else exit;
 
 
     }else header('location:login.php');
@@ -72,12 +78,13 @@ if($userId = Login::isLoggedIn()){
         <?php include_once '../main_layout/header.php' ?>
     </header>
     <main class="main">
-        <h1>Change Your Password</h1>
+        <h1>החלפת סיסמה</h1>
         <form action="<?= !$tokenValid?'changing-password.php':'changing-password.php?token='.$token?>" method="post">
-            <?= !$tokenValid ? '<input type="password" name="oldpassword" placeholder="Current Password"><p />' : ''?>
-            <input type="password" name="newpassword" placeholder="New Password ..."> <p />
-            <input type="password" name="newpassword2" placeholder="Repeat Password ..."> <p />
-            <input type="submit" name="changepassword" value="Change Password"> <p />
+            <?= !$tokenValid ? '<input type="password" name="old_password" placeholder="סיסמא נוכחית"><p />' : ''?>
+            <input type="password" name="new_password" placeholder="סיסמה חדשה ..."> <p />
+            <input type="password" name="new_password2" placeholder="חזור על הסיסמה ..."> <p />
+            <input type="submit" name="change_password" value="שנה סיסמא"> <p />
+            <?= isset($error)?$error:'' ?>
         </form>
     </main>
     <footer><?php include_once '../main_layout/footer.php' ?></footer>

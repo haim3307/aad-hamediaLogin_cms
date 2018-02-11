@@ -1,7 +1,7 @@
 <?php
-if ( $_SERVER['REQUEST_METHOD']=='GET' && realpath(__FILE__) == realpath( $_SERVER['SCRIPT_FILENAME'] ) ) {
+/*if ( $_SERVER['REQUEST_METHOD']=='GET' && realpath(__FILE__) == realpath( $_SERVER['SCRIPT_FILENAME'] ) ) {
     die (header( 'HTTP/1.0 403 Forbidden', TRUE, 403 ));
-}
+}*/
 if(!isset($is_logged)){
     $is_logged = Login::isLoggedIn();
 }
@@ -23,13 +23,8 @@ if (isset($_POST['site_login'])) {
     <ul class="navButtons">
 
         <li><a href="<?= DOMAIN ?>">דף הבית</a></li>
-        <li><a href="<?= DOMAIN ?>main_pages/titles.php"> כותרות </a></li>
-        <li><a href="#"> פוליטיקה </a></li>
-        <li><a href="#"> כלכלה </a></li>
-        <li><a href="#"> טכנולוגיה </a></li>
-        <li><a href="#"> העולם </a></li>
-        <li><a href="#"> רכב </a></li>
         <li><a href="#"> צרו קשר </a></li>
+        <li><a href="#"> אודות </a></li>
 
     </ul>
 

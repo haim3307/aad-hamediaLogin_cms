@@ -3,6 +3,11 @@ require_once 'class/Login.php';
 define('app', true);
 Login::set_session();
 $is_logged = Login::isLoggedIn();
+if(!function_exists('old')){
+    function old($val){
+        return isset($_REQUEST[$val]) && $_REQUEST[$val]?$_REQUEST[$val]:'';
+    }
+}
 $app_pages = ['home', 'profile', 'friends','settings'];
 if (isset($_GET['app-page']) && in_array($_GET['app-page'], $app_pages)) {
     $app_page = $_GET['app-page'];
@@ -39,7 +44,7 @@ switch ($app_page) {
     <title>דף הבית - עד המדינה!</title>
     <?php include_once 'main_layout/head.php' ?>
     <script src="https://use.fontawesome.com/3c576bb39d.js"></script>
-    <script src="social_app/lib/moment.js"></script>
+    <script src="app/lib/moment.js"></script>
     <script>moment.locale('he');</script>
     <link rel="stylesheet" href="styles/social_app.css">
 <!--    <script src="social_app/lib/webcomponents-hi-sd-ce.js"></script>-->
@@ -75,38 +80,41 @@ switch ($app_page) {
         <hr>
         <hr>
         <?php if ($is_logged): ?>
-            <script>var profile_img = '<?= $_SESSION['front_profile_img']; ?>';console.log(profile_img);</script>
+            <script>
+              let profile_img = '<?= $_SESSION['front_profile_img']; ?>';
+              let mainUserId = <?= isset($_SESSION['front_user_id']) ? $_SESSION['front_user_id'] : 'undefined' ?>;
+            </script>
 
             <?php
             switch ($app_page) {
                 case 'home':
-                    include 'social_app/home.php';
+                    include 'app/home.php';
                     break;
                 case 'profile':
-                    include 'social_app/profile.php';
+                    include 'app/profile.php';
                     break;
                 case 'friends':
-                    include 'social_app/friends.php';
+                    include 'app/friends.php';
                     break;
                 case 'settings':
-                    include 'social_app/settings.php';
+                    include 'app/settings.php';
                     break;
                 default :
-                    include 'social_app/home.php';
+                    include 'app/home.php';
                     break;
             }
         else:
-            include 'social_app/home.php';
+            include 'app/home.php';
             ?>
         <?php endif; ?>
-        <script src="social_app/services/PostService.js"></script>
+        <script src="app/services/PostService.js"></script>
         <script>
-          let mainUserId = <?= isset($_SESSION['front_user_id']) ? $_SESSION['front_user_id'] : 'undefined' ?>;
           const PS = new PostService();
+          const COMMS = new CommentService();
         </script>
-        <script src="<?= DOMAIN ?>social_app/components/post-item.js"></script>
-        <script src="<?= DOMAIN ?>social_app/components/post-comment.js"></script>
-        <script type="module" src="social_app/main.js"></script>
+        <script src="<?= DOMAIN ?>app/components/post-item.js"></script>
+        <script src="<?= DOMAIN ?>app/components/post-comment.js"></script>
+        <script type="module" src="app/main.js"></script>
     </main>
     <footer><?php include_once 'main_layout/footer.php' ?></footer>
 </div>

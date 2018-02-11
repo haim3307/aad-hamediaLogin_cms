@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: HT
- * Date: 20/01/2018
- * Time: 16:35
- */
 require_once 'Connection.php';
 class Login extends Connection
 {
@@ -20,7 +14,7 @@ class Login extends Connection
         return !$hash ? $token : sha1($token);
     }
     static function csrf_token(){
-        return sha1('AadHamedina'.rand(1,1000).date('H.m.s'));
+        return sha1('social_network'.rand(1,1000).date('H.m.s'));
     }
     static function generate_c_name_id($name){
         return $name.sha1(rand(1,1000));
@@ -83,7 +77,7 @@ class Login extends Connection
                             }
                         }
                         //if all user data is ok add it to the session
-                        self::set_session_user_verify($uname['name'],$userId,$uname['profile_img']);
+                        self::set_session_user_verify($uname['name'],$userId,isset($uname['profile_img'])&& $uname['profile_img'] ?$uname['profile_img']:'default_profile.jpg');
 
                         return $userId;
                     }
@@ -102,10 +96,6 @@ class Login extends Connection
     static public function login()
     {
         self::set_session();
-        var_dump($_SESSION['token']);
-        echo "<br>";
-
-        var_dump($_POST['token']);
         if(isset($_POST['token'])){
             if($_SESSION['token'] !== $_POST['token']) return false;
         }else return false;
@@ -137,7 +127,7 @@ class Login extends Connection
                         echo 'לא ניתן להכנס לאותו משתמש ביותר ממכשיר אחד בו זמנית';
                         return false;
                     }else{
-                        self::set_session_user_verify($uname,$user['id'],$user['profile_img']);
+                        self::set_session_user_verify($uname,$user['id'],isset($user['profile_img'])&& $user['profile_img'] ?$user['profile_img']:'default_profile.jpg');
                     }
                     return true;
                 }

@@ -8,7 +8,7 @@
 require_once 'hosts.php';
 $root = realpath($_SERVER["DOCUMENT_ROOT"]);
 if($_SERVER['HTTP_HOST'] === 'localhost'){
-    $root.= '/aad-hamediaLogin_cms';
+    $root.= '/social_network';
 }
 require_once $root.'/includes/domain.php';
 
@@ -41,7 +41,7 @@ class Connection
         if(!isset($_SESSION)){
             $path = '/';
             if($_SERVER['HTTP_HOST'] == 'localhost'){
-                $path='/aad-hamediaLogin_cms';
+                $path='/social_network';
             }
             //$time = 60*60*24*7;
             $time = null;
