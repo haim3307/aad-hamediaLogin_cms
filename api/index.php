@@ -1,6 +1,6 @@
 <?php
-require_once '../class/Social_web.php';
-class AadFeed extends Social_web
+require_once '../class/SocialWeb.php';
+class AadFeed extends SocialWeb
 {
     /**
      * Object containing all incoming request params
@@ -40,9 +40,9 @@ class AadFeed extends Social_web
             case 'get_posts':
                 if($feed_page = filter_input(INPUT_GET,'feed_page',FILTER_VALIDATE_INT)){
                     if(!isset($this->request->posted_by))
-                        $posts = self::get_posts($feed_page);
+                        $posts = self::getPosts($feed_page);
                     else
-                        $posts = self::get_posts($feed_page,$this->request->posted_by);
+                        $posts = self::getPosts($feed_page,$this->request->posted_by);
                     $this->reply($posts);
                 }
                 break;
@@ -53,21 +53,21 @@ class AadFeed extends Social_web
                         [':post_id'=>$post_id, ':uid'=>$_SESSION['front_user_id']]
                     );
                     if($if_own_post_q && $if_own_post_q->rowCount()){
-                        $this->reply(self::delete_post($post_id));
+                        $this->reply(self::deletePost($post_id));
                     }
                 }
                 break;
             case 'add_post':
                 $to_id = isset($this->request->to_id)?filter_input(INPUT_POST,'to_id',FILTER_VALIDATE_INT):null;
                 $content = isset($this->request->content)?filter_input(INPUT_POST,'content',FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES):null;
-                $new_post = self::add_new_post($content,$to_id);
+                $new_post = self::addNewPost($content,$to_id);
                 $this->reply(['post'=>$new_post,'msg'=>($new_post === null?'empty':'added')]);
                 break;
             case 'update_post':
                 $to_id = isset($this->request->post_id)?filter_input(INPUT_POST,'post_id',FILTER_VALIDATE_INT):null;
                 $content= isset($this->request->post_title)?filter_input(INPUT_POST,'post_title',FILTER_SANITIZE_STRING,FILTER_FLAG_NO_ENCODE_QUOTES):null;
                 if($to_id && $content){
-                    $new_post = ['title'=>self::update_post($to_id,$content)];
+                    $new_post = ['title'=>self::updatePost($to_id,$content)];
                     $this->reply(['post'=>$new_post,'msg'=>($new_post === null?'fail':'updated')]);
                 }else{
                     $this->reply(['post'=>[],'msg'=>'fail']);
@@ -80,31 +80,31 @@ class AadFeed extends Social_web
                 break;
             case 'like_post':
                 $to_id = isset($this->request->post_id)?filter_input(INPUT_POST,'post_id',FILTER_VALIDATE_INT):null;
-                $this->reply(self::like_post($to_id));
+                $this->reply(self::likePost($to_id));
                 break;
             case 'get_comments':
                 $to_id = isset($this->request->post_id)?filter_input(INPUT_GET,'post_id',FILTER_VALIDATE_INT):null;
                 $page = isset($this->request->post_comments_page)?filter_input(INPUT_GET,'post_comments_page',FILTER_VALIDATE_INT):null;
                 $first_comment_date = isset($this->request->first_comment_added_date)?filter_input(INPUT_GET,'first_comment_added_date',FILTER_SANITIZE_STRING):null;
-                $this->reply(self::get_comments($to_id,$page,null,$first_comment_date));
+                $this->reply(self::getComments($to_id,$page,null,$first_comment_date));
                 break;
             case 'get_new_comments':
                 $to_id = isset($this->request->post_id)?filter_input(INPUT_GET,'post_id',FILTER_VALIDATE_INT):null;
                 $last_date = isset($this->request->last_comment_date)?filter_input(INPUT_GET,'last_comment_date',FILTER_SANITIZE_STRING):null;
-                $this->reply(self::get_comments($to_id,null,$last_date));
+                $this->reply(self::getComments($to_id,null,$last_date));
                 break;
             case 'add_comment':
                 $to_id = isset($this->request->post_id)?filter_input(INPUT_POST,'post_id',FILTER_VALIDATE_INT):null;
-                $this->reply(self::add_comment($to_id,$this->request->post_comment));
+                $this->reply(self::addComment($to_id,$this->request->post_comment));
                 break;
             case 'delete_comment':
                 $to_id = isset($this->request->comment_id)?filter_input(INPUT_POST,'comment_id',FILTER_VALIDATE_INT):null;
-                $this->reply(self::delete_comment($to_id)?'deleted':'error');
+                $this->reply(self::deleteComment($to_id)?'deleted':'error');
                 break;
             case 'edit_comment':
                 $to_id = isset($this->request->comment_id)?filter_input(INPUT_POST,'comment_id',FILTER_VALIDATE_INT):null;
                 $comment_content= isset($this->request->comment_content)?filter_input(INPUT_POST,'comment_content',FILTER_SANITIZE_STRING,FILTER_FLAG_NO_ENCODE_QUOTES):null;
-                $this->reply(($content = self::edit_comment($to_id,$comment_content))?$content:'error');
+                $this->reply(($content = self::editComment($to_id,$comment_content))?$content:'error');
                 break;
         }
         // get the action

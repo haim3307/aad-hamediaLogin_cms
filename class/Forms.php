@@ -14,7 +14,7 @@ class Forms extends Connection
         parent::__construct();
     }
 
-    static function check_image($input_n){
+    static function checkImage($input_n){
         $ex = ['png','jpeg','jpg','gif','bmp'];
         if(isset($_FILES[$input_n]['error']) && $_FILES[$input_n]['error'] == 0){
             if(isset($_FILES[$input_n]['size']) && $_FILES[$input_n]['size'] <= self::MAX_FILE_SIZE){
@@ -32,7 +32,7 @@ class Forms extends Connection
         }
         return false;
     }
-    protected function clean_userData($uname, $upass){
+    protected function cleanUserData($uname, $upass){
         $uname = parent::$con->quote($uname);
         $upass = md5(md5(parent::$con->quote($upass)));
         $arr = ["userName" => $uname , "userPassword" => $upass];

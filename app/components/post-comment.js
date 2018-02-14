@@ -6,12 +6,13 @@ class PostComment extends HTMLElement{
 	constructor(){
 		super();
 		let _class = this;
+		let profile_img = this.getAttribute('profile-img');
 		this.comment = {
 			id: this.getAttribute('comment-id'),
 			content: this.getAttribute('content'),
 			added_date: this.getAttribute('added-date'),
 			uid: this.getAttribute('user-id'),
-			profile_img: this.getAttribute('profile-img'),
+			profile_img: this.notNull(profile_img)?profile_img:'default_profile.jpg',
 			commenter_name: this.getAttribute('commenter-name')
 		};
 	}
@@ -90,8 +91,8 @@ class PostComment extends HTMLElement{
 					</p>
 					<small class="comDate">${date}</small>
 					<div class="commentActions">
-						<span><a href="">אהבתי</a></span>
-						<span><a href="">הגב</a></span>
+<!--						<span><a href="">אהבתי</a></span>
+						<span><a href="">הגב</a></span>-->
 					</div>
 				</div>
 		`;

@@ -37,7 +37,7 @@ class Connection
         }
         return self::$con;
     }
-    static public function set_session(){
+    static public function setSession($name = 'mysess'){
         if(!isset($_SESSION)){
             $path = '/';
             if($_SERVER['HTTP_HOST'] == 'localhost'){
@@ -46,6 +46,7 @@ class Connection
             //$time = 60*60*24*7;
             $time = null;
             session_set_cookie_params($time,$path);
+            session_name($name);
             session_start();
             session_regenerate_id();
 

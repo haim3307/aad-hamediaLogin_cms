@@ -7,19 +7,16 @@ class Login extends Connection
         parent::__construct();
     }
 
-    static function generate_token($hash = false)
+    static function generateToken($hash = false)
     {
         $csstrong = true;
         $token = bin2hex(openssl_random_pseudo_bytes(64, $csstrong));
         return !$hash ? $token : sha1($token);
     }
-    static function csrf_token(){
+    static function csrfToken(){
         return sha1('social_network'.rand(1,1000).date('H.m.s'));
     }
-    static function generate_c_name_id($name){
-        return $name.sha1(rand(1,1000));
-    }
-    static function create_login_cookies($username = null, $userId = null)
+    static function createLoginCookies($username = null, $userId = null)
     {
         if (isset($username)) $userId = parent::query('SELECT id FROM front_users WHERE name=:username',
             [':username' => $username])->fetchAll()[0]['id'];
@@ -27,7 +24,7 @@ class Login extends Connection
                 'SELECT token FROM login_tokens WHERE uid=:uid',[':uid'=>$userId])) && $if_there->rowCount() <= 5) {
             //var_dump($if_there);
             //var_dump($if_there->rowCount());
-            $token = self::generate_token();
+            $token = self::generateToken();
             parent::query('INSERT INTO login_tokens VALUES(\'\',:token,:user_id,:c_name,NOW())',
                 [':token' => sha1($token), ':user_id' => $userId,':c_name'=>'SNID']);
             setcookie('SNID', $token, time() + 60 * 60 * 24 * 7, '/', NULL, NULL, true);
@@ -37,14 +34,14 @@ class Login extends Connection
             return false;
         }
     }
-    static function regenerate_cookie(){
+    static function regenerateCookie(){
 
         if(isset($_COOKIE['SNID'])){
 /*                        var_dump($_COOKIE['SNID']);
                         echo "<br>";
 
                         var_dump(DOMAIN);*/
-            $token = self::generate_token();
+            $token = self::generateToken();
             setcookie('SNID', 1, time() - 3600, '/', NULL, NULL, true);
             if(parent::query('UPDATE login_tokens SET token = :new_token WHERE token = :token',
                 [':token' => sha1($_COOKIE['SNID']),':new_token' => sha1($token)])){
@@ -60,24 +57,24 @@ class Login extends Connection
                 'SELECT uid FROM login_tokens WHERE token=:token',
                 [':token' => sha1($_COOKIE['SNID'])])->fetch(PDO::FETCH_ASSOC)
             ) {//check if the cookie token is inside DB and bring user id
-                if(!isset($_POST['logout']))self::regenerate_cookie();
+                if(!isset($_POST['logout']))self::regenerateCookie();
                 $userId = $query['uid'];
 
-                if(!isset($_SESSION)) self::set_session();//if session haven't started yet do it now
+                if(!isset($_SESSION)) self::setSession();//if session haven't started yet do it now
                 else {//if its already set - verify the client
-                    self::verify_user_ip_and_agent();
+                    self::verifyUserIpAndAgent();
                 }
                 if($uname_q = parent::query(
                     'SELECT name,profile_img FROM front_users WHERE id=:id',
                     [':id' => $userId])){//query user data
                     if($uname = $uname_q->fetch()){
                         if (!isset($_COOKIE['SNID_'])) {//if second cookie isn't set, it means 3 days passed since last login
-                            if(!self::create_login_cookies(null, $userId)){//so create new cookies to long expire time
+                            if(!self::createLoginCookies(null, $userId)){//so create new cookies to long expire time
                                 echo 'לא ניתן להכנס לאותו משתמש ביותר ממכשיר אחד בו זמנית';//if it failed's it means user is connected on to many devices
                             }
                         }
                         //if all user data is ok add it to the session
-                        self::set_session_user_verify($uname['name'],$userId,isset($uname['profile_img'])&& $uname['profile_img'] ?$uname['profile_img']:'default_profile.jpg');
+                        self::setSessionUserVerify($uname['name'],$userId,isset($uname['profile_img'])&& $uname['profile_img'] ?$uname['profile_img']:'default_profile.jpg');
 
                         return $userId;
                     }
@@ -87,7 +84,7 @@ class Login extends Connection
             }
         }else if(isset($_SESSION['front_user_id']) && isset($_COOKIE['SNID']))
         {//else if your is all ready logged in return me the id
-            if(self::verify_user_ip_and_agent()){
+            if(self::verifyUserIpAndAgent()){
                 return $_SESSION['front_user_id'];
             }
         }
@@ -95,7 +92,7 @@ class Login extends Connection
     }
     static public function login()
     {
-        self::set_session();
+        self::setSession();
         if(isset($_POST['token'])){
             if($_SESSION['token'] !== $_POST['token']) return false;
         }else return false;
@@ -123,11 +120,11 @@ class Login extends Connection
                 if ($stmt && $stmt->rowCount() == 1) {
                     $user = $stmt->fetch(PDO::FETCH_ASSOC);
 /*                    $_SESSION['c_name'] = self::generate_c_name_id('SNID');*/
-                    if(!self::create_login_cookies($uname,$user['id'])){
+                    if(!self::createLoginCookies($uname,$user['id'])){
                         echo 'לא ניתן להכנס לאותו משתמש ביותר ממכשיר אחד בו זמנית';
                         return false;
                     }else{
-                        self::set_session_user_verify($uname,$user['id'],isset($user['profile_img'])&& $user['profile_img'] ?$user['profile_img']:'default_profile.jpg');
+                        self::setSessionUserVerify($uname,$user['id'],isset($user['profile_img'])&& $user['profile_img'] ?$user['profile_img']:'default_profile.jpg');
                     }
                     return true;
                 }
@@ -165,7 +162,7 @@ class Login extends Connection
             }
         }
         */
-        if(!isset($_SESSION)) self::set_session();
+        if(!isset($_SESSION)) self::setSession();
         if(isset($_SESSION['front_user_id'])){
             return $_SESSION['front_user_id'];
         }
@@ -173,7 +170,7 @@ class Login extends Connection
     }
     static public function login1Old()
     {
-        self::set_session();
+        self::setSession();
         $uname = filter_input(INPUT_POST,'user_name',FILTER_SANITIZE_STRING);
         $uname = trim($uname);
         $upass = filter_input(INPUT_POST,'user_pass',FILTER_SANITIZE_STRING);
@@ -202,7 +199,7 @@ class Login extends Connection
                         return false;
                     }else{
                     }*/
-                    self::set_session_user_verify($uname,$user['id'],$user['profile_img']);
+                    self::setSessionUserVerify($uname,$user['id'],$user['profile_img']);
                     return true;
                 }
             }else return false;
@@ -210,7 +207,7 @@ class Login extends Connection
 
 
     }
-    static private function set_session_user_verify($uname,$uid,$u_img){
+    static private function setSessionUserVerify($uname, $uid, $u_img){
         if(isset($_SESSION)){
             $_SESSION['front_user_name'] = $uname;
             $_SESSION['front_user_id'] = $uid;
@@ -221,7 +218,7 @@ class Login extends Connection
             return true;
         }else return false;
     }
-    static private function verify_user_ip_and_agent(){
+    static private function verifyUserIpAndAgent(){
         $verify = false;
         if(isset($_SESSION['front_user_ip']) && $_SESSION['front_user_ip'] == $_SERVER['REMOTE_ADDR'] ){
             if(isset($_SESSION['front_user_agent']) && $_SESSION['front_user_agent'] == $_SERVER['HTTP_USER_AGENT']){

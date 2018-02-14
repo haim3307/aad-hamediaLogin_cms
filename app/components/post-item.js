@@ -17,7 +17,6 @@ class PostItem extends HTMLElement{
 		this.showPostedTo = spt?spt:false;
 		let likers_list = this.getAttribute('likers-list');
 		let likes_count = this.getAttribute('likes-count');
-		console.log(likers_list);
 		this.post = {
 			id: this.getAttribute('post-id'),
 			title: this.getAttribute('title'),
@@ -80,8 +79,6 @@ class PostItem extends HTMLElement{
 
 	}
 	likeTpl(post){
-		console.log(post.liked_post);
-		console.log(this.notNull(post.liked_post));
 		return `
 				<span class="likesStatus">
 				${this.notNull(post.likes_count) && post.likes_count != '0'?
@@ -181,9 +178,8 @@ class PostItem extends HTMLElement{
 					</div>
 					</div>
 					<div class="postActions d-flex">
-							<div class="cool postAction"><i class="fa fa-thumbs-up fa-2x 
-							${_class.notNull(post.liked_post)
-							?'liked':'unliked'}" style="padding-left: 10px;"></i><span>אהבתי</span></div>
+							<div class="cool postAction ${_class.notNull(post.liked_post)
+			?'liked':'unliked'}"><i class="fa fa-thumbs-up fa-2x" style="padding-left: 10px;"></i><span>אהבתי</span></div>
 							<div class="speak postAction"><i class="fas fa-comment fa-2x" style="padding-left: 10px;"></i><span>הגב</span></div>
 							<div class="share postAction"><i class="fas fa-share fa-2x" style="padding-left: 10px;"></i><span>שתף</span></div>
 					</div>
