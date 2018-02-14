@@ -1,1 +1,2 @@
 /.idea
+/includes/mailer.config.php

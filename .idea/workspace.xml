@@ -6,33 +6,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dcaee23b-8a9f-4e1d-bdb2-91f529ade547" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/components/user-item.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/main_pages/about.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/main_pages/contact.php" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/075d56fc-73ca-43f5-9ebc-f3915178f679.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/075d56fc-73ca-43f5-9ebc-f3915178f679.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/api/index.php" afterPath="$PROJECT_DIR$/api/index.php" />
-      <change beforePath="$PROJECT_DIR$/app/components/post-comment.js" afterPath="$PROJECT_DIR$/app/components/post-comment.js" />
-      <change beforePath="$PROJECT_DIR$/app/components/post-item.js" afterPath="$PROJECT_DIR$/app/components/post-item.js" />
-      <change beforePath="$PROJECT_DIR$/app/components/progress-bar.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/components/publish_post.php" afterPath="$PROJECT_DIR$/app/components/publish_post.php" />
-      <change beforePath="$PROJECT_DIR$/app/friends.php" afterPath="$PROJECT_DIR$/app/friends.php" />
-      <change beforePath="$PROJECT_DIR$/app/home.php" afterPath="$PROJECT_DIR$/app/home.php" />
-      <change beforePath="$PROJECT_DIR$/app/profile.php" afterPath="$PROJECT_DIR$/app/profile.php" />
-      <change beforePath="$PROJECT_DIR$/app/settings.php" afterPath="$PROJECT_DIR$/app/settings.php" />
-      <change beforePath="$PROJECT_DIR$/class/Connection.php" afterPath="$PROJECT_DIR$/class/Connection.php" />
-      <change beforePath="$PROJECT_DIR$/class/Forms.php" afterPath="$PROJECT_DIR$/class/Forms.php" />
-      <change beforePath="$PROJECT_DIR$/class/Login.php" afterPath="$PROJECT_DIR$/class/Login.php" />
-      <change beforePath="$PROJECT_DIR$/class/Logout.php" afterPath="$PROJECT_DIR$/class/Logout.php" />
-      <change beforePath="$PROJECT_DIR$/class/Register.php" afterPath="$PROJECT_DIR$/class/Register.php" />
-      <change beforePath="$PROJECT_DIR$/class/Social_web.php" afterPath="$PROJECT_DIR$/class/SocialWeb.php" />
-      <change beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
-      <change beforePath="$PROJECT_DIR$/main_layout/head.php" afterPath="$PROJECT_DIR$/main_layout/head.php" />
-      <change beforePath="$PROJECT_DIR$/main_layout/header.php" afterPath="$PROJECT_DIR$/main_layout/header.php" />
-      <change beforePath="$PROJECT_DIR$/main_pages/register_page.php" afterPath="$PROJECT_DIR$/main_pages/register_page.php" />
+      <change beforePath="$PROJECT_DIR$/gitignore.txt" afterPath="$PROJECT_DIR$/gitignore.txt" />
       <change beforePath="$PROJECT_DIR$/settings/changing-password.php" afterPath="$PROJECT_DIR$/settings/changing-password.php" />
       <change beforePath="$PROJECT_DIR$/settings/forgot-password.php" afterPath="$PROJECT_DIR$/settings/forgot-password.php" />
-      <change beforePath="$PROJECT_DIR$/styles/social_app.css" afterPath="$PROJECT_DIR$/styles/social_app.css" />
     </list>
     <ignored path=".idea/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -82,16 +59,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="contact.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main_pages/contact.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="settings.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/settings.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -121,41 +88,61 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="forgot-password.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/settings/forgot-password.php">
+      <file leaf-file-name="changing-password.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/settings/changing-password.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="576">
-              <caret line="39" column="56" lean-forward="false" selection-start-line="39" selection-start-column="56" selection-end-line="39" selection-end-column="56" />
+            <state relative-caret-position="1152">
+              <caret line="60" column="21" lean-forward="true" selection-start-line="60" selection-start-column="21" selection-end-line="60" selection-end-column="21" />
               <folding>
-                <element signature="e#36#70#0#PHP" expanded="true" />
-                <marker date="1518626532814" expanded="true" signature="473:518" ph="SELECT id FR... front_users" />
-                <marker date="1518626532814" expanded="true" signature="689:737" ph="SELECT * FRO... forget_tokens" />
-                <marker date="1518626532814" expanded="true" signature="847:901" ph="INSERT INTO forget_tokens... " />
-                <marker date="1518626532814" expanded="true" signature="2352:2383" ph="..." />
-                <marker date="1518626532814" expanded="true" signature="2359:2383" ph="..." />
-                <marker date="1518626532814" expanded="true" signature="2426:2438" ph="..." />
-                <marker date="1518626532814" expanded="true" signature="2426:2496" ph="..." />
-                <marker date="1518626532814" expanded="true" signature="2455:2496" ph="..." />
-                <marker date="1518626532814" expanded="true" signature="2468:2496" ph="..." />
-                <marker date="1518626532814" expanded="true" signature="2564:2889" ph="..." />
-                <marker date="1518626532814" expanded="true" signature="2633:2889" ph="..." />
+                <marker date="1518628992619" expanded="true" signature="813:862" ph="SELECT passw... front_users" />
+                <marker date="1518628992619" expanded="true" signature="1067:1129" ph="UPDATE front_users... " />
+                <marker date="1518628992619" expanded="true" signature="1655:1698" ph="SELECT * FRO... forget_tokens" />
+                <marker date="1518628992619" expanded="true" signature="2490:2552" ph="UPDATE front_users... " />
+                <marker date="1518628992619" expanded="true" signature="2733:2776" ph="DELETE FROM forget_tokens... " />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="changing-password.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/settings/changing-password.php">
+      <file leaf-file-name="forgot-password.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/settings/forgot-password.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="216">
-              <caret line="45" column="46" lean-forward="true" selection-start-line="45" selection-start-column="46" selection-end-line="45" selection-end-column="46" />
+              <caret line="27" column="38" lean-forward="true" selection-start-line="27" selection-start-column="38" selection-end-line="27" selection-end-column="38" />
               <folding>
-                <marker date="1518626769584" expanded="true" signature="813:862" ph="SELECT passw... front_users" />
-                <marker date="1518626769584" expanded="true" signature="1067:1129" ph="UPDATE front_users... " />
-                <marker date="1518626769584" expanded="true" signature="1655:1698" ph="SELECT * FRO... forget_tokens" />
-                <marker date="1518626769584" expanded="true" signature="2490:2552" ph="UPDATE front_users... " />
-                <marker date="1518626769584" expanded="true" signature="2733:2776" ph="DELETE FROM forget_tokens... " />
+                <element signature="e#36#70#0#PHP" expanded="true" />
+                <marker date="1518629396929" expanded="true" signature="514:559" ph="SELECT id FR... front_users" />
+                <marker date="1518629396929" expanded="true" signature="730:778" ph="SELECT * FRO... forget_tokens" />
+                <marker date="1518629396929" expanded="true" signature="888:942" ph="INSERT INTO forget_tokens... " />
+                <marker date="1518629396929" expanded="true" signature="2374:2405" ph="..." />
+                <marker date="1518629396929" expanded="true" signature="2381:2405" ph="..." />
+                <marker date="1518629396929" expanded="true" signature="2448:2460" ph="..." />
+                <marker date="1518629396929" expanded="true" signature="2448:2518" ph="..." />
+                <marker date="1518629396929" expanded="true" signature="2477:2518" ph="..." />
+                <marker date="1518629396929" expanded="true" signature="2490:2518" ph="..." />
+                <marker date="1518629396929" expanded="true" signature="2586:2911" ph="..." />
+                <marker date="1518629396929" expanded="true" signature="2655:2911" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="gitignore.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gitignore.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="24">
+              <caret line="1" column="20" lean-forward="true" selection-start-line="1" selection-start-column="20" selection-end-line="1" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mailer.config.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/includes/mailer.config.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="5" lean-forward="true" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -170,7 +157,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="publish_post.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="publish_post.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/components/publish_post.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="384">
@@ -188,28 +175,6 @@
           <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
             <state>
               <filtering enabled="true" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Login.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/class/Login.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="9" column="33" lean-forward="false" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="33" />
-              <folding>
-                <element signature="n#login1Old#0;n#Login#0;n#!!top" expanded="false" />
-                <marker date="1518472918910" expanded="true" signature="584:631" ph="SELECT id FR... front_users" />
-                <marker date="1518472918910" expanded="true" signature="771:816" ph="SELECT token... login_tokens" />
-                <marker date="1518472918910" expanded="true" signature="1024:1085" ph="INSERT INTO login_tokens... " />
-                <marker date="1518472918910" expanded="true" signature="1024:1091" ph="INSERT INTO login_tokens... " />
-                <marker date="1518472918910" expanded="true" signature="1797:1860" ph="UPDATE login_tokens... " />
-                <marker date="1518472918910" expanded="true" signature="2303:2350" ph="SELECT uid F... login_tokens" />
-                <marker date="1518472918910" expanded="true" signature="2915:2968" ph="SELECT name,... front_users" />
-                <marker date="1518472918910" expanded="true" signature="4776:4825" ph="SELECT passw... front_users" />
-                <marker date="1518472918910" expanded="true" signature="5052:5112" ph="SELECT id,na... front_users" />
-                <marker date="1518472918910" expanded="true" signature="9105:9110" ph="..." />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -295,8 +260,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/dbManager/start.php" />
-        <option value="$PROJECT_DIR$/dbManager/tpl/login/logout.php" />
         <option value="$PROJECT_DIR$/components/post-item.js" />
         <option value="$PROJECT_DIR$/components/post_item_instance.php" />
         <option value="$PROJECT_DIR$/includes/Domain.php" />
@@ -343,9 +306,11 @@
         <option value="$PROJECT_DIR$/main_pages/about.php" />
         <option value="$PROJECT_DIR$/main_pages/contact.php" />
         <option value="$PROJECT_DIR$/app/settings.php" />
-        <option value="$PROJECT_DIR$/settings/forgot-password.php" />
-        <option value="$PROJECT_DIR$/settings/changing-password.php" />
         <option value="$PROJECT_DIR$/app/components/publish_post.php" />
+        <option value="$PROJECT_DIR$/settings/changing-password.php" />
+        <option value="$PROJECT_DIR$/settings/forgot-password.php" />
+        <option value="$PROJECT_DIR$/gitignore.txt" />
+        <option value="$PROJECT_DIR$/includes/mailer.config.php" />
       </list>
     </option>
   </component>
@@ -607,7 +572,7 @@
       <workItem from="1518267787948" duration="12064000" />
       <workItem from="1518351984688" duration="30897000" />
       <workItem from="1518449240126" duration="3433000" />
-      <workItem from="1518472833423" duration="24605000" />
+      <workItem from="1518472833423" duration="26635000" />
     </task>
     <task id="LOCAL-00001" summary="project start">
       <created>1516383693831</created>
@@ -805,11 +770,18 @@
       <option name="project" value="LOCAL" />
       <updated>1518390008819</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="users can now reset password and real email message will be sent using PHPMailer!&#10;users can search for other users and find more friends to follow">
+      <created>1518627295970</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1518627295970</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="928991000" />
+    <option name="totallyTimeSpent" value="931021000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -824,16 +796,17 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32826087" sideWeight="0.49573562" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16204691" sideWeight="0.49342105" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.49573562" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3338816" sideWeight="0.510661" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26545843" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3206522" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3223684" sideWeight="0.4914712" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33223686" sideWeight="0.48933902" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32826087" sideWeight="0.49573562" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16204691" sideWeight="0.49342105" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26545843" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17397882" sideWeight="0.5065789" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39956093" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -843,7 +816,6 @@
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="92" y="92" width="1182" height="544" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3206522" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3223684" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -934,7 +906,8 @@
     <MESSAGE value="Merge branch 'social_app'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;class/Login.php&#10;#&#9;class/Logout.php&#10;#&#9;includes/domain.php&#10;#&#9;social_app/components/post-comment.js" />
     <MESSAGE value="fixed logut and login is working with token to prevent csrf attacks as well as going back to use cookies with session to improve security" />
     <MESSAGE value="*users can now change passwords&#10;*users can search for new friends &#10;*adding userItem Component and custom el" />
-    <option name="LAST_COMMIT_MESSAGE" value="*users can now change passwords&#10;*users can search for new friends &#10;*adding userItem Component and custom el" />
+    <MESSAGE value="users can now reset password and real email message will be sent using PHPMailer!&#10;users can search for other users and find more friends to follow" />
+    <option name="LAST_COMMIT_MESSAGE" value="users can now reset password and real email message will be sent using PHPMailer!&#10;users can search for other users and find more friends to follow" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -947,21 +920,6 @@
     <find-history />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/superglobals/_superglobals.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="466">
-          <caret line="219" column="29" lean-forward="false" selection-start-line="219" selection-start-column="24" selection-end-line="219" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/class/Logout.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="618">
-          <caret line="41" column="8" lean-forward="false" selection-start-line="41" selection-start-column="8" selection-end-line="41" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/standard/standard_4.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="298">
@@ -1387,27 +1345,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/settings/forgot-password.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="39" column="56" lean-forward="false" selection-start-line="39" selection-start-column="56" selection-end-line="39" selection-end-column="56" />
-          <folding>
-            <element signature="e#36#70#0#PHP" expanded="true" />
-            <marker date="1518626532814" expanded="true" signature="473:518" ph="SELECT id FR... front_users" />
-            <marker date="1518626532814" expanded="true" signature="689:737" ph="SELECT * FRO... forget_tokens" />
-            <marker date="1518626532814" expanded="true" signature="847:901" ph="INSERT INTO forget_tokens... " />
-            <marker date="1518626532814" expanded="true" signature="2352:2383" ph="..." />
-            <marker date="1518626532814" expanded="true" signature="2359:2383" ph="..." />
-            <marker date="1518626532814" expanded="true" signature="2426:2438" ph="..." />
-            <marker date="1518626532814" expanded="true" signature="2426:2496" ph="..." />
-            <marker date="1518626532814" expanded="true" signature="2455:2496" ph="..." />
-            <marker date="1518626532814" expanded="true" signature="2468:2496" ph="..." />
-            <marker date="1518626532814" expanded="true" signature="2564:2889" ph="..." />
-            <marker date="1518626532814" expanded="true" signature="2633:2889" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="das://table:/77324254/075d56fc-73ca-43f5-9ebc-f3915178f679/social_network.forget_tokens">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -1419,20 +1356,6 @@
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/settings/changing-password.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="45" column="46" lean-forward="true" selection-start-line="45" selection-start-column="46" selection-end-line="45" selection-end-column="46" />
-          <folding>
-            <marker date="1518626769584" expanded="true" signature="813:862" ph="SELECT passw... front_users" />
-            <marker date="1518626769584" expanded="true" signature="1067:1129" ph="UPDATE front_users... " />
-            <marker date="1518626769584" expanded="true" signature="1655:1698" ph="SELECT * FRO... forget_tokens" />
-            <marker date="1518626769584" expanded="true" signature="2490:2552" ph="UPDATE front_users... " />
-            <marker date="1518626769584" expanded="true" signature="2733:2776" ph="DELETE FROM forget_tokens... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1452,6 +1375,57 @@
             <marker date="1518627125950" expanded="false" signature="948:967" ph="..." />
             <marker date="1518627125950" expanded="false" signature="1078:1092" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/settings/changing-password.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1152">
+          <caret line="60" column="21" lean-forward="true" selection-start-line="60" selection-start-column="21" selection-end-line="60" selection-end-column="21" />
+          <folding>
+            <marker date="1518628992619" expanded="true" signature="813:862" ph="SELECT passw... front_users" />
+            <marker date="1518628992619" expanded="true" signature="1067:1129" ph="UPDATE front_users... " />
+            <marker date="1518628992619" expanded="true" signature="1655:1698" ph="SELECT * FRO... forget_tokens" />
+            <marker date="1518628992619" expanded="true" signature="2490:2552" ph="UPDATE front_users... " />
+            <marker date="1518628992619" expanded="true" signature="2733:2776" ph="DELETE FROM forget_tokens... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gitignore.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24">
+          <caret line="1" column="20" lean-forward="true" selection-start-line="1" selection-start-column="20" selection-end-line="1" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/settings/forgot-password.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="27" column="38" lean-forward="true" selection-start-line="27" selection-start-column="38" selection-end-line="27" selection-end-column="38" />
+          <folding>
+            <element signature="e#36#70#0#PHP" expanded="true" />
+            <marker date="1518629396929" expanded="true" signature="514:559" ph="SELECT id FR... front_users" />
+            <marker date="1518629396929" expanded="true" signature="730:778" ph="SELECT * FRO... forget_tokens" />
+            <marker date="1518629396929" expanded="true" signature="888:942" ph="INSERT INTO forget_tokens... " />
+            <marker date="1518629396929" expanded="true" signature="2374:2405" ph="..." />
+            <marker date="1518629396929" expanded="true" signature="2381:2405" ph="..." />
+            <marker date="1518629396929" expanded="true" signature="2448:2460" ph="..." />
+            <marker date="1518629396929" expanded="true" signature="2448:2518" ph="..." />
+            <marker date="1518629396929" expanded="true" signature="2477:2518" ph="..." />
+            <marker date="1518629396929" expanded="true" signature="2490:2518" ph="..." />
+            <marker date="1518629396929" expanded="true" signature="2586:2911" ph="..." />
+            <marker date="1518629396929" expanded="true" signature="2655:2911" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/mailer.config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="5" lean-forward="true" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>

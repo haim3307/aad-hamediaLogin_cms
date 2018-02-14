@@ -6,6 +6,7 @@ use PHPMailer\PHPMailer\Exception;
 require '../includes/PHPMailer/src/Exception.php';
 require '../includes/PHPMailer/src/PHPMailer.php';
 require '../includes/PHPMailer/src/SMTP.php';
+require '../includes/mailer.config.php';
 $msg = '';
 if($submit = isset($_POST['reset_password'])){
     $email = filter_input(INPUT_POST,'email',FILTER_VALIDATE_EMAIL);
@@ -24,8 +25,8 @@ if($submit = isset($_POST['reset_password'])){
                     $mail->Host = 'smtp.gmail.com';
                     $mail->SMTPSecure = 'tls';
                     $mail->SMTPAuth = true;
-                    $mail->Username = "haim3307@gmail.com";
-                    $mail->Password = "4c17ebe3cd84";
+                    $mail->Username = $user_name;
+                    $mail->Password = $pass;
                     $mail->Port = 587;
 
                     $mail->setFrom('haim3307@aadhamedina.com', 'Aadhamedina');

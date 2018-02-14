@@ -61,7 +61,7 @@ if($userId = Login::isLoggedIn()){
         }else header('location:../index.php');
 
 
-    }else header('location:login.php');
+    }else header('location:../index.php');
 }
 
 
