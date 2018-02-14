@@ -7,5 +7,5 @@
  */
 $root = realpath($_SERVER["DOCUMENT_ROOT"]);
 if($_SERVER['HTTP_HOST'] === 'localhost'){
-    $root.= '/aad-hamediaLogin_cms';
+    $root.= '/social_network';
 }

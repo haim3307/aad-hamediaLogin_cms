@@ -39,8 +39,10 @@ if(isset($_POST['save_profile_info'])){
 $profile_info_q = Connection::query('SELECT * FROM profiles_info WHERE uid = :uid', [':uid'=>$_SESSION['front_user_id']]);
 if($profile_info_q){
     $profile_info = $profile_info_q->fetch(PDO::FETCH_ASSOC);
-    foreach ($profile_info as $key => $val){
-        $_REQUEST[$key] = $val;
+    if($profile_info){
+        foreach ($profile_info as $key => $val){
+            $_REQUEST[$key] = $val;
+        }
     }
 }
 ?>

@@ -1,12 +1,16 @@
 <?php
-require '../class/login.php';
-require '../includes/mailer.config.php';
+$root = realpath($_SERVER["DOCUMENT_ROOT"]);
+if($_SERVER['HTTP_HOST'] === 'localhost'){
+    $root.= '/social_network';
+}
+require_once $root.'/class/Login.php';
+require $root.'/includes/mailer.config.php';
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require '../includes/PHPMailer/src/Exception.php';
-require '../includes/PHPMailer/src/PHPMailer.php';
-require '../includes/PHPMailer/src/SMTP.php';
+require $root.'/includes/PHPMailer/src/Exception.php';
+require $root.'/includes/PHPMailer/src/PHPMailer.php';
+require $root.'/includes/PHPMailer/src/SMTP.php';
 $msg = '';
 if($submit = isset($_POST['reset_password'])){
     $email = filter_input(INPUT_POST,'email',FILTER_VALIDATE_EMAIL);

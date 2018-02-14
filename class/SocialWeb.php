@@ -7,9 +7,9 @@
  */
 require_once 'Login.php';
 
-class Social_web extends Login
+class SocialWeb extends Login
 {
-    static function add_new_post($content,$posted_to = null)
+    static function addNewPost($content, $posted_to = null)
     {
         $content = trim($content);
         if(!$content) return null;
@@ -30,11 +30,11 @@ class Social_web extends Login
            );
         }
         if ($insert->rowCount()) {
-            return self::get_post($last_id,$posted_to);
+            return self::getPost($last_id,$posted_to);
         }
         return false;
     }
-    static function get_post($post_id,$posted_to = null){
+    static function getPost($post_id, $posted_to = null){
         if(!$posted_to){
             $st = 'SELECT p.* ,f.profile_img FROM posts p LEFT JOIN front_users f ON p.uid = f.id WHERE p.id=:pid';
             $args = [];
@@ -54,7 +54,7 @@ class Social_web extends Login
         }
         return false;
     }
-    static function get_posts($page,$user_id = null)
+    static function getPosts($page, $user_id = null)
     {
         if(filter_var($page,FILTER_VALIDATE_INT)){
             $pdo = self::connect();
@@ -81,17 +81,9 @@ class Social_web extends Login
                         $liked_by_you_q = $pdo->query('SELECT * FROM liked_posts WHERE pid='.$row['id'].' AND uid='.$_SESSION['front_user_id']);
                         $all_likes_post_q = $pdo->query('SELECT lp.*,u.name FROM liked_posts lp JOIN front_users u ON lp.uid = u.id WHERE lp.pid='.$row['id'].' AND u.id !='. $_SESSION['front_user_id'] .' LIMIT 10');
                         ;
-                        //$all_likes_post_q = $pdo->query('SELECT * likes_of_post FROM liked_posts WHERE pid='.$row['id'].' LIMIT 10');
-/*                        while ($row1 = $all_likes_post_q->fetch()){
-                            $likers_id_list[] = $row1['uid'];
-                            $likers_name_list[] = $row1['name'];
-                        }*/
                         $row['likes_count'] = ($likes_count = $all_likes_post_count_q->fetch()) && $likes_count[0]?$likes_count[0]:0;
                         $row['liked'] = $liked_by_you_q->fetch()?true:null;
                         $row['likers_list'] = ($likers_list = $all_likes_post_q->fetchAll(PDO::FETCH_ASSOC))?json_encode($likers_list):json_encode([]);
-/*                        echo '<pre style="direction: ltr;">';
-                                                var_dump($row);
-                        echo '</pre>';*/
                     }else{
                         $row['liked'] = null;
                     }
@@ -103,11 +95,11 @@ class Social_web extends Login
 
         return isset($res)?$res:[];
     }
-    static function delete_post($post_id){
+    static function deletePost($post_id){
         $q = self::query("DELETE FROM posts WHERE id =:post_id",[':post_id'=>((int)$post_id)]);
         return $q && $q->rowCount()?'deleted':'error';
     }
-    static function update_post($post_id, $post_title){
+    static function updatePost($post_id, $post_title){
         if(isset($post_title) && filter_var($post_id,FILTER_VALIDATE_INT)){
             $post_title = trim($post_title);
             $post_title = filter_var($post_title,FILTER_SANITIZE_STRING,FILTER_FLAG_NO_ENCODE_QUOTES);
@@ -130,12 +122,12 @@ class Social_web extends Login
             return !self::query('DELETE FROM followers WHERE uid=:uid AND fid=:fid', [':uid' => $user_id, 'fid' => $follower_id]);
         }
     }
-    static function already_liked($post_id){
+    static function alreadyLiked($post_id){
         $q = self::query('SELECT * FROM liked_posts WHERE pid=:pid AND uid=:uid', [':uid' => $_SESSION['front_user_id'], ':pid' => $post_id]);
         return $q->fetch()?true:false;
     }
-    static function like_post($post_id){
-        $liked = self::already_liked($post_id);
+    static function likePost($post_id){
+        $liked = self::alreadyLiked($post_id);
         if(!$liked){
             $q = self::query('INSERT INTO liked_posts VALUES(\'\',:pid,:uid)', [':uid' => $_SESSION['front_user_id'], ':pid' => $post_id]);
             return $q->rowCount()?'liked':'error';
@@ -150,7 +142,7 @@ class Social_web extends Login
     static private function yourComment($commenter_id,$comment_id){
        return self::query('SELECT uid FROM posts_comments WHERE id=:cid AND uid=:uid',[':cid' => $comment_id,':uid'=>$commenter_id]);
     }
-    static function get_comments($post_id,$page = 0,$last_date = null,$first_date = null){
+    static function getComments($post_id, $page = 0, $last_date = null, $first_date = null){
         $limit = 3;
         $start = $limit * $page;
         if(isset($last_date)){
@@ -171,7 +163,7 @@ class Social_web extends Login
         }
         return false;
     }
-    static function add_comment($post_id,$content){
+    static function addComment($post_id, $content){
         if(filter_var($post_id,FILTER_VALIDATE_INT)){
             if($content = filter_var($content,FILTER_SANITIZE_STRING,FILTER_FLAG_NO_ENCODE_QUOTES)){
                 //self::is_following($_SESSION['front_user_id'],self::whoPosted($post_id))
@@ -196,13 +188,13 @@ class Social_web extends Login
         return false;
 
     }
-    static function delete_comment($comment_id){
+    static function deleteComment($comment_id){
         if(self::yourComment($_SESSION['front_user_id'],$comment_id)){
             $delete = self::query('DELETE FROM posts_comments WHERE id=:cid AND uid=:uid',[':cid' => $comment_id,':uid'=>$_SESSION['front_user_id']]);
             return $delete && $delete->rowCount();
         }
     }
-    static function edit_comment($comment_id,$new_content){
+    static function editComment($comment_id, $new_content){
         if(self::yourComment($_SESSION['front_user_id'],$comment_id)){
             $edit = self::query('UPDATE posts_comments SET content=:content WHERE id=:cid AND uid=:uid',
                 [':cid' => $comment_id,':uid'=>$_SESSION['front_user_id'], ':content'=>$new_content]);
@@ -219,7 +211,7 @@ class Social_web extends Login
 }
 
 if (isset($_POST['act'])) {
-    Social_web::set_session();
+    SocialWeb::setSession();
 /*    if (isset($_SESSION['front_user_id'])) {
         switch ($_POST['act']) {
             case 'new_post':
@@ -234,11 +226,11 @@ if (isset($_POST['act'])) {
 
 }
 if(isset($_GET['act'])){
-    Social_web::set_session();
+    SocialWeb::setSession();
     if (isset($_SESSION['front_user_id'])) {
         switch ($_GET['act']) {
             case 'get_posts':
-                echo json_encode(Social_web::get_posts($_GET['feed_page']));
+                echo json_encode(SocialWeb::getPosts($_GET['feed_page']));
                 break;
         }
     }
