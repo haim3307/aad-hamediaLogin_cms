@@ -24,7 +24,7 @@ if ($follower_id = Login::isLoggedIn()) {
                 var_dump($user_id);
                 var_dump($follower_id);
                 echo '</pre>';*/
-                $is_following = Social_web::is_following($follower_id,$user_id);
+                $is_following = SocialWeb::is_following($follower_id,$user_id);
             }
         }
 
@@ -36,7 +36,7 @@ if ($follower_id = Login::isLoggedIn()) {
         $post_body = filter_input(INPUT_POST,'post',FILTER_SANITIZE_STRING);
         Login::query('INSERT INTO posts VALUES("",:post_body,NOW(),:user_id,0)', [':post_body' => $post_body, ':user_id' => $follower_id]);
     }*/
-    $user_posts = Social_web::get_posts(1,$user_id);
+    $user_posts = SocialWeb::getPosts(1,$user_id);
 } else {
     header('location:login.php');
 }
@@ -69,10 +69,16 @@ if ($follower_id = Login::isLoggedIn()) {
 <?php endif; ?>
 <?php include 'app/components/publish_post.php'?>
 <div id="postsFeed" style="background: #eeeeee">
-
-<?php foreach ($user_posts as $post): ?>
-    <?php include 'app/components/post_item_instance.php'; ?>
-<?php endforeach; ?>
+    <?php if (isset($user_posts) && $user_posts): ?>
+        <?php foreach ($user_posts as $post): ?>
+            <?php include 'app/components/post_item_instance.php'; ?>
+        <?php endforeach; ?>
+    <?php else: ?>
+    <div id="firstPostAlert">
+        <h2>עדיין לא פרסמת פוסטים</h2>
+        <p>נשמח לראות הפוסט הראשון שלך!</p>
+    </div>
+    <?php endif; ?>
 </div>
 <script>
 	postPage = 1;

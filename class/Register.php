@@ -23,12 +23,6 @@ class Register extends Forms
         return !empty($this->userName) && !empty($this->userEmail) && !empty($this->userPass);
     }
 
-    /*    static private function validate_userUEP($newUN, $newUE, $newUP): array
-        {
-            $parentArr = parent::clean_userData($newUN,$newUP);
-            $parentArr["newUserEmail"] = self::$con->quote($newUE);
-            return $parentArr;
-        }*/
     static function RegExpCheck($para, $val)
     {
 
@@ -44,9 +38,7 @@ class Register extends Forms
 
     static function isUsed($para, $val)
     {
-        //echo $para,$val;
-        //var_dump(self::validate_reg($val,$para));
-        if (self::validate_reg($val, $para)) {
+        if (self::validateReg($val, $para)) {
             if ($para === 'userName') {
                 $column = 'name';
             }
@@ -65,55 +57,7 @@ class Register extends Forms
                 return 'used';
             } else return 'not used';
         }
-        //return isset($res)?$res->fetch()?'1':'0':'fail2';
         return false;
-    }
-
-    function insertReg($newUN, $newUE, $newUP)
-    {
-        $con = self::$con;
-        $arr = $this->validate_userUEP($newUN, $newUE, $newUP);
-        $newUserName = $arr["userName"];
-        $newUserEmail = $arr["newUserEmail"];
-        $newUserPass = $arr["userPassword"];
-        $response = ["warnings" => []];
-        if (self::isUsed('userName', $newUserName)) $response['warnings'][] = $newUserName . ' is already used';
-        if (self::isUsed('email', $newUserEmail)) $response['warnings'][] = $newUserEmail . ' is already used';
-        if (count($response['warnings']) > 0) {
-            $response['mes'] = 'false';
-            exit(json_encode($response));
-        } else {
-            if ($file_name = self::check_image('profile_img')) {
-                echo 'true3';
-                $imgName = move_uploaded_file($_FILES['profile_img']['tmp_name'], 'assets/img/profiles/' . $file_name) ? $file_name : '';
-            }
-            $imgName = isset($imgName) ? $imgName : '';
-            $con->query("INSERT INTO users(userName,email,password) VALUES('$newUserName','$newUserEmail','$newUserPass')");
-            $regQuery = self::$con->query("SELECT id,userName,email FROM users WHERE userName = '$newUserName'");
-            if ($row = $regQuery->fetch(PDO::FETCH_ASSOC)) {
-                echo 'row-is-here';
-                $id = $row['id'];
-                foreach ($_POST['optionals'] as $opt_key => $opt_val) {
-                    $_POST['optionals'][$opt_key] = !isset($_POST['optionals'][$opt_key]) ? 'לא זמין' : self::$con->quote($_POST['optionals'][$opt_key]);
-                    $$opt_key = $opt_val;
-                    echo 'in-each';
-                }
-                $rQue = "INSERT INTO reporters(user_id,first_name,last_name,age,city,private_phone,public_phone,profile_img) 
-                                       VALUES($id,$first_name,$last_name,$age,$city,$private_phone,$public_phone,$imgName)";
-                $sets = $con->query("INSERT INTO userssettings(feedPostsNum,user_id) VALUES(10,$id)");
-                $rept = $con->query($rQue);
-                /*                    echo '<pre>';
-                                    var_dump($sets);
-                                    echo '</pre>';
-                                    echo '<pre>';
-                                    var_dump($rept);
-                                    echo '</pre>';
-                                    echo '<pre>';
-                                    var_dump($rQue);
-                                    echo '</pre>';
-                                    echo json_encode($response);*/
-            }
-        }
     }
 
     static function insertRegStat($newUN, $newUE, $newUP)
@@ -140,30 +84,24 @@ class Register extends Forms
         } else return $response['warnings'];
 
     }
-    static function check_register_session(){
+    static function checkRegisterSession(){
         return isset($_SESSION['new_user_name']) && isset($_SESSION['new_email']) && isset($_SESSION['new_pass']);
     }
-    static function upload_profile_image()
-    {
-        if(self::check_register_session()){
 
-        }
-    }
-
-    static function is_empty(array $params)
+    static function isEmpty(array $params)
     {
         if (empty($params['user_name'])) $errors['user_name']['empty'] = 'אנא מלא את שם המשתמש';
-        elseif (!self::validate_reg($params['user_name'], 'user_name')) $errors['user_name']['invalid'] = 'שם המשתמש אינו תקין';
+        elseif (!self::validateReg($params['user_name'], 'user_name')) $errors['user_name']['invalid'] = 'שם המשתמש אינו תקין';
         if (empty($params['new_email'])) $errors['new_email']['empty'] = 'אנא מלא אמייל';
-        elseif (!self::validate_reg($params['new_email'], 'new_email')) $errors['new_email']['invalid'] = 'אמייל זה אינו תקין';
+        elseif (!self::validateReg($params['new_email'], 'new_email')) $errors['new_email']['invalid'] = 'אמייל זה אינו תקין';
         if (empty($params['password'])) $errors['password']['empty'] = 'אנא מלא סיסמא';
-        elseif (!self::validate_reg($params['password'], 'password')) $errors['password']['invalid'] = 'הסיסמא אינה תקינה';
+        elseif (!self::validateReg($params['password'], 'password')) $errors['password']['invalid'] = 'הסיסמא אינה תקינה';
         if (empty($params['password1'])) $errors['password1']['empty'] = 'אנא מלא סיסמא בשנית';
         if ($params['password1'] !== $params['password']) $errors['password1']['invalid'] = "הסיסמאות אינם תואמות";
         return isset($errors) ? $errors : false;
     }
 
-    static function validate_reg($param, $type)
+    static function validateReg($param, $type)
     {
         $reg_preg = [
             'user_name' => '/^(?=.{8,20}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+$/',
@@ -189,10 +127,6 @@ class Register extends Forms
 
 }
 
-/*if (isset($_POST['check_uname']) || isset($_POST['check_email'])) {
-    if(isset($_POST['check_uname'])) echo Register::isUsed('userName',$_POST['check_uname']);
-    if(isset($_POST['check_email'])) echo Register::isUsed('email',$_POST['check_email']);
-}*/
 if (isset($_POST['act'])) {
     if ($_POST['act'] === 'check_user_name') {
         echo Register::isUsed('userName', $_POST['check_user_name']);
@@ -201,10 +135,5 @@ if (isset($_POST['act'])) {
         echo Register::isUsed('email', $_POST['check_new_email']);
     }
 }
-/*
-if(isset($_POST['reg'])){
-    $regRequest = new Register();
-    if($regRequest->issetFullReg())$regRequest->insertReg($regRequest->userName, $regRequest->userEmail, $regRequest->userPass);
-}
-*/
+
 

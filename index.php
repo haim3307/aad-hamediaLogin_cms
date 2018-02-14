@@ -1,7 +1,7 @@
 <?php
 require_once 'class/Login.php';
 define('app', true);
-Login::set_session();
+Login::setSession();
 $is_logged = Login::isLoggedIn();
 if(!function_exists('old')){
     function old($val){

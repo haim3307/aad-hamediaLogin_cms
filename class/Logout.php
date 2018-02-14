@@ -36,7 +36,7 @@ class Logout extends Login
             }
 
         }
-        parent::set_session();
+        parent::setSession();
         session_destroy();
         self::kill_cookies();
         header('location:'.DOMAIN);

@@ -34,7 +34,7 @@ if($userId = Login::isLoggedIn()){
 }else{
     if($token = filter_input(INPUT_GET,'token',FILTER_SANITIZE_STRING)){
         $hashed_token = sha1($token);
-        $stmt = Login::connect()->prepare('SELECT * FROM forget_tokens WHERE token=?');
+        $stmt = Login::connect()->prepare('SELECT uid FROM forget_tokens WHERE token=?');
         $stmt->bindParam(1,$hashed_token,PDO::PARAM_STR);
         $stmt->execute();
         $userId = $stmt->fetch();
@@ -51,14 +51,14 @@ if($userId = Login::isLoggedIn()){
                     }
                     if(!isset($error)){
                         Login::query('UPDATE front_users SET password=:new_password WHERE id=:userid',[':userid'=>$userId,':new_password'=>password_hash($new_password, PASSWORD_BCRYPT)]);
-                        echo 'סיסמא שונתה בהצלחה!';
+                        $msg =  'סיסמא שונתה בהצלחה!';
                         Login::query('DELETE FROM forget_tokens WHERE uid=:userid',[':userid'=>$userId]);
                     }
                 }else {
                     $error = 'אנא מלא את כל השדות';
                 }
             }
-        }else exit;
+        }else header('location:../index.php');
 
 
     }else header('location:login.php');
@@ -85,6 +85,7 @@ if($userId = Login::isLoggedIn()){
             <input type="password" name="new_password2" placeholder="חזור על הסיסמה ..."> <p />
             <input type="submit" name="change_password" value="שנה סיסמא"> <p />
             <?= isset($error)?$error:'' ?>
+            <?= isset($msg)?$msg:'' ?>
         </form>
     </main>
     <footer><?php include_once '../main_layout/footer.php' ?></footer>

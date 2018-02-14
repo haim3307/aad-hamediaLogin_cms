@@ -7,10 +7,10 @@ if($_SERVER['HTTP_HOST'] === 'localhost'){
     $root.= '/social_network';
 }
 require_once $root.'/includes/domain.php';
-require_once $root.'/class/Social_web.php';
+require_once $root.'/class/SocialWeb.php';
 require_once $root.'/class/Login.php';
 if($follower_id = Login::isLoggedIn()){
-    $con = Social_web::connect();
+    $con = SocialWeb::connect();
 
 }else if(isset($_GET['app-page']) && $_GET['app-page'] !== 'home'){
     header('location:'.DOMAIN);

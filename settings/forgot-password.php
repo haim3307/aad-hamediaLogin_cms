@@ -1,19 +1,47 @@
 <?php
 require '../class/login.php';
+require '../includes/mailer.config.php';
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require '../includes/PHPMailer/src/Exception.php';
+require '../includes/PHPMailer/src/PHPMailer.php';
+require '../includes/PHPMailer/src/SMTP.php';
 $msg = '';
 if($submit = isset($_POST['reset_password'])){
     $email = filter_input(INPUT_POST,'email',FILTER_VALIDATE_EMAIL);
     if($email){
-        $token = Login::generate_token();
+        $token = Login::generateToken();
         $id_query = Login::query('SELECT id FROM front_users WHERE email=:email',[':email'=>$email]);
         if($id_query && ($userId = $id_query->fetch(PDO::FETCH_ASSOC))){
             $userId = $userId['id'];
-            $exist_id = Login::query('SELECT * FROM forget_tokens WHERE uid=:user_id',[':user_id'=>$userId])->fetch(PDO::FETCH_ASSOC);
-            echo "<br>$token<br>";
+            $exist_id = Login::query('SELECT uid FROM forget_tokens WHERE uid=:user_id',[':user_id'=>$userId])->fetch(PDO::FETCH_ASSOC);
             if(!$exist_id) {
                 Login::query('INSERT INTO forget_tokens VALUES(\'\',:token,:user_id)',[':token'=>sha1($token),':user_id'=>$userId]);
-                $msg = "נשלח איפוס לאימייל שציינת!";
-                $msg.= "<a href='./changing-password.php?token=$token'>כנס לאיפוס</a>";
+                try{
+                $mail = new PHPMailer(true);
+                    //Server settings
+                    $mail->isSMTP();
+                    $mail->Host = 'smtp.gmail.com';
+                    $mail->SMTPSecure = 'tls';
+                    $mail->SMTPAuth = true;
+                    $mail->Username = $user_name;
+                    $mail->Password = $pass;
+                    $mail->Port = 587;
+
+                    $mail->setFrom('haim3307@aadhamedina.com', 'Aadhamedina');
+                    $mail->addAddress($email, 'עד המדינה');
+
+                    //Content
+                    $mail->isHTML(true);                                  // Set email format to HTML
+                    $mail->Subject = 'aad-hamedina - reset password';
+                    $msg1 = "<a href='".DOMAIN."settings/changing-password.php?token=$token'>". DOMAIN."settings/changing-password.php?token=$token</a><br>";
+                    $mail->Body = ' אנא גש לקישור הבא על מנת לאפס את סיסמתך: '. $msg1;
+                    $mail->send();
+                    $msg = "נשלח איפוס לאימייל שציינת!";
+                } catch (Exception $e) {
+                    echo 'שליחה נכשלה:', $mail->ErrorInfo;
+                }
             }else {
                 $msg = "שליחה נכשלה";
             }

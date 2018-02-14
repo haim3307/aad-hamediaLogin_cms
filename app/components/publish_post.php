@@ -11,10 +11,10 @@
     </div>
     <div class="ltr publishPost" style="display: flex; align-items: center; ">
         <input id="publishPostI" type="button" value="פרסם">
-        <div style="flex: 1; direction: rtl; padding: 0 50px; display: grid; grid-column-gap: 1em; grid-template-columns: repeat(5,1fr)">
+<!--        <div style="flex: 1; direction: rtl; padding: 0 50px; display: grid; grid-column-gap: 1em; grid-template-columns: repeat(5,1fr)">
             <label for="post_image" style="text-align: center;"><i class="fa fa-image" title="העלה תמונה"></i></label>
             <input type="file" id="post_image" style="display: none;">
-        </div>
+        </div>-->
     </div>
 </section>
 <script>
@@ -47,6 +47,7 @@
                     let post = res.post;
                     const $post = PS.postTpl(post);
                     const $feed = $('#postsFeed');
+                    if(!$('postItem')[1]) $feed.find('#firstPostAlert').fadeOut(500);
                     $feed.prepend($post);
                     PS.fadeInPost($post);
                     $('#postContent')[0].value = '';

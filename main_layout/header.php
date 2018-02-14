@@ -7,10 +7,10 @@ if(!isset($is_logged)){
 }
 if (isset($_POST['site_login'])) {
     if(Login::login()) header('location:'.$_SERVER['PHP_SELF']);
-    else $_SESSION['token'] = Login::csrf_token();
+    else $_SESSION['token'] = Login::csrfToken();
 }else {
-    Login::set_session();
-    $_SESSION['token'] = Login::csrf_token();
+    Login::setSession();
+    $_SESSION['token'] = Login::csrfToken();
 }
 ?>
 <nav class="nMenu">
@@ -23,8 +23,8 @@ if (isset($_POST['site_login'])) {
     <ul class="navButtons">
 
         <li><a href="<?= DOMAIN ?>">דף הבית</a></li>
-        <li><a href="#"> צרו קשר </a></li>
-        <li><a href="#"> אודות </a></li>
+        <li><a href="<?= DOMAIN ?>/main_pages/contact.php"> צרו קשר </a></li>
+        <li><a href="<?= DOMAIN ?>/main_pages/about.php"> אודות </a></li>
 
     </ul>
 

@@ -22,7 +22,7 @@ if (isset($_POST['reg_level_1'])) {
     $user_pass = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
     $user_pass1 = filter_input(INPUT_POST, 'password1', FILTER_SANITIZE_STRING);
     $user = ['user_name' => trim($user_name), 'password' => trim($user_pass), 'new_email' => trim($user_email), 'password1' => trim($user_pass1)];
-    $err = Register::is_empty($user);
+    $err = Register::isEmpty($user);
     $errors = $err ? $err : [];
     if (!sizeof($errors)) {
         $insert = Register::insertRegStat($user_name, $user_email, $user_pass);
@@ -38,7 +38,7 @@ echo '<pre style="direction: ltr;">';
 
 echo '</pre>';
     if(isset($_FILES['profile_img']) && $_FILES['profile_img']['error'] != 4){
-        if ($profile_img_name = Register::check_image('profile_img')) {
+        if ($profile_img_name = Register::checkImage('profile_img')) {
             if (move_uploaded_file($_FILES['profile_img']['tmp_name'], '../_img/users/profiles/' . $profile_img_name)) {
                 $_SESSION['profile_img_name'] = $profile_img_name;
 
@@ -108,6 +108,7 @@ if (isset($_POST['reg_level_3']) && isset($_SESSION['new_user_id'])) {
                 <li class="<?= $level === 1 ? 'active' : '' ?>">1</li>
                 <li class="<?= $level === 2 ? 'active' : '' ?>">2</li>
                 <li class="<?= $level === 3 ? 'active' : '' ?>">3</li>
+                <li class="<?= $level === 4 ? 'active' : '' ?>">סיום</li>
             </ul>
         </div>
         <style>
@@ -263,23 +264,23 @@ if (isset($_POST['reg_level_3']) && isset($_SESSION['new_user_id'])) {
             </form>
 
         <?php elseif ($level === 3): ?>
+
             <form action="" method="post" name="front_reg_form3" enctype="application/x-www-form-urlencoded" novalidate>
 
                 <section class="regLev m-auto-0" id="regLev3">
                     <h2 align="center">שלב ג' פרטי פרופיל</h2>
-                    <input type="text" name="first_name" placeholder="שם פרטי">
-                    <input type="text" name="last_name" placeholder="שם משפחה">
-                    <input type="number" name="birth_date" placeholder="גיל">
-                    <input type="text" name="city" placeholder="עיר מגורים">
+                    <input type="text" name="first_name" placeholder="שם פרטי" value="<?= old('first_name')?>">
+                    <input type="text" name="last_name" placeholder="שם משפחה" value="<?= old('last_name') ?>">
+                    <input type="date" name="birth_date" placeholder="תאריך לידה" value="<?= old('birth_date') ?>">
+                    <input type="text" name="city" placeholder="עיר מגורים" value="<?= old('city') ?>">
+                    <?php $select_sex_val = old('sex')?>
                     <select name="sex" id="">
-                        <option value="">בחר מין</option>
-                        <option value="male">זכר</option>
-                        <option value="female">נקבה</option>
-                        <option value="unset">לא מוגדר</option>
+                        <option value="male" <?=$select_sex_val == 'null' ? ' selected="selected"' : '';?>>בחר מין</option>
+                        <option value="male" <?=$select_sex_val == 'male' ? ' selected="selected"' : '';?>>זכר</option>
+                        <option value="female" <?=$select_sex_val == 'female' ? ' selected="selected"' : '';?>>נקבה</option>
+                        <option value="unset" <?=$select_sex_val == 'unset' ? ' selected="selected"' : '';?>>לא מוגדר</option>
                     </select>
-                    <textarea name="desc" id="" placeholder="ספר קצת על עצמך" cols="30" rows="10">
-
-                </textarea>
+                    <textarea name="desc" id="" placeholder="ספר קצת על עצמך" cols="30" rows="10"><?= old('description') ?></textarea>
                     <input type="submit" name="reg_level_3">
                 </section>
 
