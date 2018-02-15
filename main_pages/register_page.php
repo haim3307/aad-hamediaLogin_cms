@@ -163,7 +163,7 @@ if (isset($_POST['reg_level_3']) &&isset($_SESSION['new_user_id'])) {
                     <?= isset($errors['password']['empty']) ? '<span class="alert-span">' . $errors['password']['empty'] . '</span>' : ''; ?>
                     <input type="password" placeholder="סיסמא" name="password">
                     <?= isset($errors['password']['invalid']) ? '<span class="alert-span">' . $errors['password']['invalid'] . '</span>' : ''; ?>
-                    <span class="inputNote">*חייב להכיל לפחות אות אחד גדולה ומעל ל7 תווים</span>
+                    <span class="inputNote">*חייב להכיל לפחות אות אחת גדולה,אותה קטנה,מספר אחד ומעל ל8 תווים</span>
                     <?= isset($errors['password1']['empty']) ? '<span class="alert-span">' . $errors['password1']['empty'] . '</span>' : ''; ?>
                     <input type="password" placeholder="חזור שנית על הסיסמא" name="password1">
                     <?= isset($errors['password1']['invalid']) ? '<span class="alert-span">' . $errors['password1']['invalid'] . '</span>' : ''; ?>
@@ -289,7 +289,7 @@ if (isset($_POST['reg_level_3']) &&isset($_SESSION['new_user_id'])) {
 		let reg_preg = {
 			'user_name': /^[A-Za-z][A-Za-z0-9]{5,31}$/,
 			'new_email': /^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/i,
-			'password': /^[a-zA-Z0-9]+([_ -]?[a-zA-Z0-9])*$/,
+			'password': /^\S*(?=\S{8,})(?=\S*[a-z])(?=\S*[A-Z])(?=\S*[\d])\S*$/,
 		};
 		let prev_user_name = '';
 		let submit1 = true;

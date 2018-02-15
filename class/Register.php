@@ -106,7 +106,7 @@ class Register extends Forms
         $reg_preg = [
             'user_name' => '/^[A-Za-z][A-Za-z0-9]{5,31}$/',
             'new_email' => '/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/i',
-            'password' => '/^[a-zA-Z0-9]+([_ -]?[a-zA-Z0-9])*$/',
+            'password' => '/^\S*(?=\S{8,})(?=\S*[a-z])(?=\S*[A-Z])(?=\S*[\d])\S*$/',
         ];
         //echo $param,$type;
         switch ($type) {

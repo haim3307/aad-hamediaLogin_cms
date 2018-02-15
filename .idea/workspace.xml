@@ -7,12 +7,6 @@
   <component name="ChangeListManager">
     <list default="true" id="dcaee23b-8a9f-4e1d-bdb2-91f529ade547" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/home.php" afterPath="$PROJECT_DIR$/app/home.php" />
-      <change beforePath="$PROJECT_DIR$/app/main.js" afterPath="$PROJECT_DIR$/app/main.js" />
-      <change beforePath="$PROJECT_DIR$/class/Connection.php" afterPath="$PROJECT_DIR$/class/Connection.php" />
-      <change beforePath="$PROJECT_DIR$/class/Forms.php" afterPath="$PROJECT_DIR$/class/Forms.php" />
-      <change beforePath="$PROJECT_DIR$/class/Login.php" afterPath="$PROJECT_DIR$/class/Login.php" />
-      <change beforePath="$PROJECT_DIR$/class/Logout.php" afterPath="$PROJECT_DIR$/class/Logout.php" />
       <change beforePath="$PROJECT_DIR$/class/Register.php" afterPath="$PROJECT_DIR$/class/Register.php" />
       <change beforePath="$PROJECT_DIR$/main_pages/register_page.php" afterPath="$PROJECT_DIR$/main_pages/register_page.php" />
     </list>
@@ -152,28 +146,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Register.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Register.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/class/Register.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="80" column="0" lean-forward="true" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
+            <state relative-caret-position="60">
+              <caret line="101" column="5" lean-forward="true" selection-start-line="101" selection-start-column="5" selection-end-line="101" selection-end-column="5" />
               <folding>
-                <marker date="1518721940179" expanded="true" signature="1332:1375" ph="SELECT * FRO... front_users" />
-                <marker date="1518721940179" expanded="true" signature="2289:2371" ph="INSERT INTO front_users... " />
+                <marker date="1518729752513" expanded="true" signature="1332:1375" ph="SELECT * FRO... front_users" />
+                <marker date="1518729752513" expanded="true" signature="2289:2371" ph="INSERT INTO front_users... " />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="register_page.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="register_page.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main_pages/register_page.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4620">
-              <caret line="154" column="59" lean-forward="false" selection-start-line="154" selection-start-column="59" selection-end-line="154" selection-end-column="59" />
+            <state relative-caret-position="270">
+              <caret line="165" column="43" lean-forward="true" selection-start-line="165" selection-start-column="43" selection-end-line="165" selection-end-column="43" />
               <folding>
-                <marker date="1518722132249" expanded="true" signature="1656:1728" ph="UPDATE front_users... " />
-                <marker date="1518722132249" expanded="true" signature="2806:2846" ph="SELECT uid F... profiles_info" />
-                <marker date="1518722132249" expanded="true" signature="2943:3042" ph="INSERT INTO profiles_info... " />
+                <marker date="1518730002239" expanded="true" signature="1656:1728" ph="UPDATE front_users... " />
+                <marker date="1518730002239" expanded="true" signature="2806:2846" ph="SELECT uid F... profiles_info" />
+                <marker date="1518730002239" expanded="true" signature="2943:3042" ph="INSERT INTO profiles_info... " />
               </folding>
             </state>
           </provider>
@@ -389,7 +383,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" interpreter_name="PHP 7.2" />
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="36" />
     <option name="y" value="171" />
     <option name="width" value="1382" />
@@ -643,7 +637,7 @@
       <workItem from="1518678907877" duration="1848000" />
       <workItem from="1518700107887" duration="2463000" />
       <workItem from="1518713575037" duration="8523000" />
-      <workItem from="1518726553251" duration="782000" />
+      <workItem from="1518726553251" duration="2360000" />
     </task>
     <task id="LOCAL-00001" summary="project start">
       <created>1516383693831</created>
@@ -862,11 +856,18 @@
       <option name="project" value="LOCAL" />
       <updated>1518700688858</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="*clean code">
+      <created>1518727338982</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1518727338982</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="922174000" />
+    <option name="totallyTimeSpent" value="923752000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -878,19 +879,20 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32826087" sideWeight="0.49573562" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.10927505" sideWeight="0.49342105" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.49573562" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3338816" sideWeight="0.510661" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2563966" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31823203" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3223684" sideWeight="0.4914712" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33223686" sideWeight="0.48933902" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32826087" sideWeight="0.49573562" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.10927505" sideWeight="0.49342105" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2563966" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17397882" sideWeight="0.5065789" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39956093" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -900,7 +902,6 @@
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="92" y="92" width="1182" height="544" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31871837" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32391304" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1409,25 +1410,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main_pages/register_page.php">
+    <entry file="file://$PROJECT_DIR$/class/Register.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4620">
-          <caret line="154" column="59" lean-forward="false" selection-start-line="154" selection-start-column="59" selection-end-line="154" selection-end-column="59" />
+        <state relative-caret-position="60">
+          <caret line="101" column="5" lean-forward="true" selection-start-line="101" selection-start-column="5" selection-end-line="101" selection-end-column="5" />
           <folding>
-            <marker date="1518722132249" expanded="true" signature="1656:1728" ph="UPDATE front_users... " />
-            <marker date="1518722132249" expanded="true" signature="2806:2846" ph="SELECT uid F... profiles_info" />
-            <marker date="1518722132249" expanded="true" signature="2943:3042" ph="INSERT INTO profiles_info... " />
+            <marker date="1518729752513" expanded="true" signature="1332:1375" ph="SELECT * FRO... front_users" />
+            <marker date="1518729752513" expanded="true" signature="2289:2371" ph="INSERT INTO front_users... " />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/class/Register.php">
+    <entry file="file://$PROJECT_DIR$/main_pages/register_page.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="80" column="0" lean-forward="true" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
+        <state relative-caret-position="270">
+          <caret line="165" column="43" lean-forward="true" selection-start-line="165" selection-start-column="43" selection-end-line="165" selection-end-column="43" />
           <folding>
-            <marker date="1518721940179" expanded="true" signature="1332:1375" ph="SELECT * FRO... front_users" />
-            <marker date="1518721940179" expanded="true" signature="2289:2371" ph="INSERT INTO front_users... " />
+            <marker date="1518730002239" expanded="true" signature="1656:1728" ph="UPDATE front_users... " />
+            <marker date="1518730002239" expanded="true" signature="2806:2846" ph="SELECT uid F... profiles_info" />
+            <marker date="1518730002239" expanded="true" signature="2943:3042" ph="INSERT INTO profiles_info... " />
           </folding>
         </state>
       </provider>
