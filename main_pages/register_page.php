@@ -33,16 +33,12 @@ if (isset($_POST['reg_level_1'])) {
     }
 }
 if (isset($_POST['reg_level_2']) && isset($_SESSION['new_user_id'])) {
-echo '<pre style="direction: ltr;">';
-    var_dump($_FILES['profile_img']);
-
-echo '</pre>';
     if(isset($_FILES['profile_img']) && $_FILES['profile_img']['error'] != 4){
         if ($profile_img_name = Register::checkImage('profile_img')) {
             if (move_uploaded_file($_FILES['profile_img']['tmp_name'], '../_img/users/profiles/' . $profile_img_name)) {
                 $_SESSION['profile_img_name'] = $profile_img_name;
 
-                $q = Register::connect()->query("UPDATE front_users SET profile_img='" . $profile_img_name . "' WHERE id=" . $_SESSION['user_id']);
+                $q = Register::connect()->query("UPDATE front_users SET profile_img='" . $profile_img_name . "' WHERE id=" . $_SESSION['new_user_id']);
                 if ($q->rowCount() == 1) {
                     $_SESSION['reg_level'] = 3;
                     header('location:register_page.php');
@@ -54,20 +50,21 @@ echo '</pre>';
         header('location:register_page.php');
     }
 }
-if (isset($_POST['reg_level_3']) && isset($_SESSION['new_user_id'])) {
+if (isset($_POST['reg_level_3']) &&isset($_SESSION['new_user_id'])) {
     $optionals = ['first_name', 'last_name', 'birth_date', 'city', 'sex', 'desc'];
+    $user_info = [];
     foreach ($optionals as $optional) {
-        $_POST[$optional] = isset($_POST[$optional]) ? $_POST[$optional] : '';
+        $user_info[$optional] = isset($_POST[$optional]) ? filter_input(INPUT_POST,$optional,FILTER_SANITIZE_STRING,FILTER_FLAG_NO_ENCODE_QUOTES) : '';
     }
 
     $profile_info = [
         ':uid' => $_SESSION['new_user_id'],
-        ':first_name' => $_POST['first_name'],
-        ':last_name' => $_POST['last_name'],
-        ':birth_date' => $_POST['birth_date'],
-        ':city' => $_POST['city'],
-        ':sex' => $_POST['sex'],
-        ':des' => $_POST['desc'],
+        ':first_name' => $user_info['first_name'],
+        ':last_name' => $user_info['last_name'],
+        ':birth_date' => $user_info['birth_date'],
+        ':city' => $user_info['city'],
+        ':sex' => $user_info['sex'],
+        ':des' => $user_info['desc'],
     ];
     $if_exist = Register::connect()->query('SELECT uid FROM profiles_info WHERE uid=' . $_SESSION['new_user_id']);
     if (!$if_exist->fetch()) {
@@ -82,13 +79,6 @@ if (isset($_POST['reg_level_3']) && isset($_SESSION['new_user_id'])) {
 ?>
 <!DOCTYPE html>
 <html>
-<style>
-    .menuBanner .menuBannerImg {
-        height: 100%;
-        width: 100%;
-        max-height: 183px;
-    }
-</style>
 <head>
     <title><?= $page_title ?> - עד המדינה!</title>
     <?php include_once '../main_layout/head.php' ?>
@@ -158,7 +148,7 @@ if (isset($_POST['reg_level_3']) && isset($_SESSION['new_user_id'])) {
                         <span id="empty" class="all-centered" style="color: red">ריק</span>
                     </div>
                     <?= isset($errors['user_name']['invalid']) ? '<span class="alert-span">' . $errors['user_name']['invalid'] . '</span>' : '' ?>
-                    <span class="inputNote">*חייב להכיל לפחות אות אחד גדולה ואחת קטנה</span>
+                    <span class="inputNote">חייב להתחיל באות , מינימום 5 תויים עד 32</span>
                     <?= isset($errors['new_email']['invalid']) ? '<span class="alert-span">' . $errors['new_email']['empty'] . '</span>' : ''; ?>
                     <div class="userNameGroup">
                         <span id="emptyA" class="alert-span hide <?= isset($errors['new_email']['empty'])?'show':'' ?>"> שדה זה אינו יכול להשאר ריק </span>
@@ -297,7 +287,7 @@ if (isset($_POST['reg_level_3']) && isset($_SESSION['new_user_id'])) {
 
 	(function () {
 		let reg_preg = {
-			'user_name': /^(?=.{8,20}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+$/,
+			'user_name': /^[A-Za-z][A-Za-z0-9]{5,31}$/,
 			'new_email': /^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/i,
 			'password': /^[a-zA-Z0-9]+([_ -]?[a-zA-Z0-9])*$/,
 		};

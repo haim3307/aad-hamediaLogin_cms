@@ -22,8 +22,6 @@ class Login extends Connection
             [':username' => $username])->fetchAll()[0]['id'];
         if (isset($userId) && ($if_there = parent::query(
                 'SELECT token FROM login_tokens WHERE uid=:uid',[':uid'=>$userId])) && $if_there->rowCount() <= 5) {
-            //var_dump($if_there);
-            //var_dump($if_there->rowCount());
             $token = self::generateToken();
             parent::query('INSERT INTO login_tokens VALUES(\'\',:token,:user_id,:c_name,NOW())',
                 [':token' => sha1($token), ':user_id' => $userId,':c_name'=>'SNID']);
@@ -37,10 +35,6 @@ class Login extends Connection
     static function regenerateCookie(){
 
         if(isset($_COOKIE['SNID'])){
-/*                        var_dump($_COOKIE['SNID']);
-                        echo "<br>";
-
-                        var_dump(DOMAIN);*/
             $token = self::generateToken();
             setcookie('SNID', 1, time() - 3600, '/', NULL, NULL, true);
             if(parent::query('UPDATE login_tokens SET token = :new_token WHERE token = :token',

@@ -17,21 +17,10 @@ class Logout extends Login
     }
     static function execute()
     {
-        echo '<pre style="direction: ltr;">';
-        var_dump($_POST);
-        var_dump(isset($_POST['alldevices']) && $_POST['alldevices']);
-        var_dump(Login::isLoggedIn());
-        echo "<br>";
-        var_dump(filter_input(INPUT_POST,'alldevices',FILTER_VALIDATE_INT));
-        echo 'err';
-        echo '</pre>';
         if (filter_input(INPUT_POST,'alldevices',FILTER_VALIDATE_INT)) {
             $d_all = self::query('DELETE FROM login_tokens WHERE uid=:userid', [':userid' => Login::isLoggedIn()]);
-            var_dump($d_all);
-            var_dump($d_all->rowCount());
         } else {
             if (isset($_COOKIE['SNID'])) {
-                echo '1';
                 $q = self::query('DELETE FROM login_tokens WHERE token=:token', [':token' => sha1($_COOKIE['SNID'])]);
             }
 

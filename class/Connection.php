@@ -14,7 +14,7 @@ require_once $root.'/includes/domain.php';
 
 class Connection
 {
-    static public $con;
+    static protected $con;
     public $host;
     function __construct()
     {
@@ -33,7 +33,6 @@ class Connection
             }catch (Exception $e){
                 echo $e->getMessage();
             }
-            //echo 'con';
         }
         return self::$con;
     }
@@ -43,7 +42,6 @@ class Connection
             if($_SERVER['HTTP_HOST'] == 'localhost'){
                 $path='/social_network';
             }
-            //$time = 60*60*24*7;
             $time = null;
             session_set_cookie_params($time,$path);
             session_name($name);

@@ -32,10 +32,4 @@ class Forms extends Connection
         }
         return false;
     }
-    protected function cleanUserData($uname, $upass){
-        $uname = parent::$con->quote($uname);
-        $upass = md5(md5(parent::$con->quote($upass)));
-        $arr = ["userName" => $uname , "userPassword" => $upass];
-        return $arr;
-    }
 }

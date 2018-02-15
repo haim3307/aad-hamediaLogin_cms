@@ -16,14 +16,15 @@ defined('app') or die(header('HTTP/1.0 403 Forbidden'));
     <div class="allReportsWrapper" style="background: #eeeeee">
         <div class="news-home" id="postsFeed">
             <?php
-            $posts = SocialWeb::getPosts(1);
+            if($is_logged){
+                $posts = SocialWeb::getPosts(1);
+                foreach ($posts as $post){
+                    include 'app/components/post_item_instance.php';
+                }
+            }else{
+                echo '<h3 style="padding-bottom: 20px;">עלייך <a href="#">להתחבר</a> על מנת לראות פוסטים </h3>';
+            }
             ?>
-            <?php foreach ($posts as $post): ?>
-                <?php include 'app/components/post_item_instance.php'; ?>
-            <?php endforeach; ?>
-            <?php if(!$is_logged): ?>
-                <h3 style="padding-bottom: 20px;">עלייך <a href="#">להתחבר</a> על מנת לראות פוסטים </h3>
-            <?php endif; ?>
         </div>
 
     </div>

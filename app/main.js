@@ -6,7 +6,6 @@ $(window).scroll(function () {
 		console.log("load posts!");
 		scrollFlag = 0;
 		let q = postsQuery();
-		console.log(q);
 		$.ajax(q).then(function (res) {
 			let posts = res;
 			if (posts.length > 10 || posts.length === 0) return;
