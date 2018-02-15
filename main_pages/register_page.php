@@ -163,7 +163,7 @@ if (isset($_POST['reg_level_3']) &&isset($_SESSION['new_user_id'])) {
                     <?= isset($errors['password']['empty']) ? '<span class="alert-span">' . $errors['password']['empty'] . '</span>' : ''; ?>
                     <input type="password" placeholder="סיסמא" name="password">
                     <?= isset($errors['password']['invalid']) ? '<span class="alert-span">' . $errors['password']['invalid'] . '</span>' : ''; ?>
-                    <span class="inputNote">*חייב להכיל לפחות אות אחת גדולה,אותה קטנה,מספר אחד ומעל ל8 תווים</span>
+                    <span class="inputNote">*חייבת להכיל לפחות אות אחת גדולה,אותה קטנה,מספר אחד ומעל ל7 תווים</span>
                     <?= isset($errors['password1']['empty']) ? '<span class="alert-span">' . $errors['password1']['empty'] . '</span>' : ''; ?>
                     <input type="password" placeholder="חזור שנית על הסיסמא" name="password1">
                     <?= isset($errors['password1']['invalid']) ? '<span class="alert-span">' . $errors['password1']['invalid'] . '</span>' : ''; ?>
@@ -264,13 +264,13 @@ if (isset($_POST['reg_level_3']) &&isset($_SESSION['new_user_id'])) {
                     <input type="date" name="birth_date" placeholder="תאריך לידה" value="<?= old('birth_date') ?>">
                     <input type="text" name="city" placeholder="עיר מגורים" value="<?= old('city') ?>">
                     <?php $select_sex_val = old('sex')?>
-                    <select name="sex" id="">
+                    <select name="sex" id="sex"">
                         <option value="male" <?=$select_sex_val == 'null' ? ' selected="selected"' : '';?>>בחר מין</option>
                         <option value="male" <?=$select_sex_val == 'male' ? ' selected="selected"' : '';?>>זכר</option>
                         <option value="female" <?=$select_sex_val == 'female' ? ' selected="selected"' : '';?>>נקבה</option>
                         <option value="unset" <?=$select_sex_val == 'unset' ? ' selected="selected"' : '';?>>לא מוגדר</option>
                     </select>
-                    <textarea name="desc" id="" placeholder="ספר קצת על עצמך" cols="30" rows="10"><?= old('description') ?></textarea>
+                    <textarea name="desc" id="desc" placeholder="ספר קצת על עצמך" cols="30" rows="10"><?= old('description') ?></textarea>
                     <input type="submit" name="reg_level_3">
                 </section>
 

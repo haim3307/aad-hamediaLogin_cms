@@ -2,6 +2,8 @@
 //require 'classes/DB.php';
 require '../class/Login.php';
 $tokenValid = false;
+$pass_exp = '/^\S*(?=\S{8,})(?=\S*[a-z])(?=\S*[A-Z])(?=\S*[\d])\S*$/';
+
 if($userId = Login::isLoggedIn()){
     if(isset($_POST['change_password'])){
         if(isset($_POST['old_password']) && isset($_POST['new_password']) && isset($_POST['new_password2'])){
@@ -10,8 +12,8 @@ if($userId = Login::isLoggedIn()){
             $new_password = filter_input(INPUT_POST,'new_password',FILTER_SANITIZE_STRING);
             if(!($new_password = trim($new_password))) exit;
             if($new_password !== $_POST['new_password2']) exit;
-            if(strlen($new_password) < 6){
-                $error = 'סיסמא קצרה מידי';
+            if(!preg_match($pass_exp,$new_password)){
+                $error = 'הסיסמה החדשה אינה תקינה';
             }
             if(!isset($error)){
                 $if_q = Login::query('SELECT password FROM front_users WHERE id=:userid', [':userid'=>$userId]);
@@ -46,8 +48,8 @@ if($userId = Login::isLoggedIn()){
                     $new_password = filter_input(INPUT_POST,'new_password',FILTER_SANITIZE_STRING);
                     if(!($new_password = trim($new_password))) exit;
                     if($new_password !== $_POST['new_password2']) exit;
-                    if(strlen($new_password) < 6){
-                        $error = 'סיסמא קצרה מידי';
+                    if(!preg_match($pass_exp,$new_password)){
+                        $error = 'הסיסמה החדשה אינה תקינה';
                     }
                     if(!isset($error)){
                         Login::query('UPDATE front_users SET password=:new_password WHERE id=:userid',[':userid'=>$userId,':new_password'=>password_hash($new_password, PASSWORD_BCRYPT)]);
@@ -82,6 +84,7 @@ if($userId = Login::isLoggedIn()){
         <form action="<?= !$tokenValid?'changing-password.php':'changing-password.php?token='.$token?>" method="post">
             <?= !$tokenValid ? '<input type="password" name="old_password" placeholder="סיסמא נוכחית"><p />' : ''?>
             <input type="password" name="new_password" placeholder="סיסמה חדשה ..."> <p />
+            <span class="inputNote">*חייבת להכיל לפחות אות אחת גדולה,אותה קטנה,מספר אחד ומעל ל7 תווים</span><p />
             <input type="password" name="new_password2" placeholder="חזור על הסיסמה ..."> <p />
             <input type="submit" name="change_password" value="שנה סיסמא"> <p />
             <?= isset($error)?$error:'' ?>

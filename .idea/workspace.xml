@@ -7,8 +7,8 @@
   <component name="ChangeListManager">
     <list default="true" id="dcaee23b-8a9f-4e1d-bdb2-91f529ade547" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/class/Register.php" afterPath="$PROJECT_DIR$/class/Register.php" />
       <change beforePath="$PROJECT_DIR$/main_pages/register_page.php" afterPath="$PROJECT_DIR$/main_pages/register_page.php" />
+      <change beforePath="$PROJECT_DIR$/settings/changing-password.php" afterPath="$PROJECT_DIR$/settings/changing-password.php" />
     </list>
     <ignored path=".idea/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -51,16 +51,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Forms.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/class/Forms.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="8" column="30" lean-forward="false" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="post-item.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/components/post-item.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -149,8 +139,8 @@
       <file leaf-file-name="Register.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/class/Register.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="101" column="5" lean-forward="true" selection-start-line="101" selection-start-column="5" selection-end-line="101" selection-end-column="5" />
+            <state relative-caret-position="270">
+              <caret line="108" column="82" lean-forward="false" selection-start-line="108" selection-start-column="27" selection-end-line="108" selection-end-column="82" />
               <folding>
                 <marker date="1518729752513" expanded="true" signature="1332:1375" ph="SELECT * FRO... front_users" />
                 <marker date="1518729752513" expanded="true" signature="2289:2371" ph="INSERT INTO front_users... " />
@@ -159,15 +149,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="register_page.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="register_page.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main_pages/register_page.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="165" column="43" lean-forward="true" selection-start-line="165" selection-start-column="43" selection-end-line="165" selection-end-column="43" />
+            <state relative-caret-position="357">
+              <caret line="165" column="58" lean-forward="true" selection-start-line="165" selection-start-column="0" selection-end-line="166" selection-end-column="0" />
               <folding>
-                <marker date="1518730002239" expanded="true" signature="1656:1728" ph="UPDATE front_users... " />
-                <marker date="1518730002239" expanded="true" signature="2806:2846" ph="SELECT uid F... profiles_info" />
-                <marker date="1518730002239" expanded="true" signature="2943:3042" ph="INSERT INTO profiles_info... " />
+                <marker date="1518731143764" expanded="true" signature="1656:1728" ph="UPDATE front_users... " />
+                <marker date="1518731143764" expanded="true" signature="2806:2846" ph="SELECT uid F... profiles_info" />
+                <marker date="1518731143764" expanded="true" signature="2943:3042" ph="INSERT INTO profiles_info... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="changing-password.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/settings/changing-password.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="91" column="15" lean-forward="true" selection-start-line="91" selection-start-column="15" selection-end-line="91" selection-end-column="15" />
+              <folding>
+                <marker date="1518731204860" expanded="true" signature="904:953" ph="SELECT passw... front_users" />
+                <marker date="1518731204860" expanded="true" signature="1158:1220" ph="UPDATE front_users... " />
+                <marker date="1518731204860" expanded="true" signature="1746:1789" ph="SELECT uid F... forget_tokens" />
+                <marker date="1518731204860" expanded="true" signature="2600:2662" ph="UPDATE front_users... " />
+                <marker date="1518731204860" expanded="true" signature="2843:2886" ph="DELETE FROM forget_tokens... " />
               </folding>
             </state>
           </provider>
@@ -338,7 +344,6 @@
         <option value="$PROJECT_DIR$/main_layout/header.php" />
         <option value="$PROJECT_DIR$/api/index.php" />
         <option value="$PROJECT_DIR$/app/components/post_item_instance.php" />
-        <option value="$PROJECT_DIR$/settings/changing-password.php" />
         <option value="$PROJECT_DIR$/app/profile.php" />
         <option value="$PROJECT_DIR$/class/Social_web.php" />
         <option value="$PROJECT_DIR$/app/friends.php" />
@@ -362,6 +367,7 @@
         <option value="$PROJECT_DIR$/app/main.js" />
         <option value="$PROJECT_DIR$/class/Register.php" />
         <option value="$PROJECT_DIR$/main_pages/register_page.php" />
+        <option value="$PROJECT_DIR$/settings/changing-password.php" />
       </list>
     </option>
   </component>
@@ -637,7 +643,7 @@
       <workItem from="1518678907877" duration="1848000" />
       <workItem from="1518700107887" duration="2463000" />
       <workItem from="1518713575037" duration="8523000" />
-      <workItem from="1518726553251" duration="2360000" />
+      <workItem from="1518726553251" duration="3545000" />
     </task>
     <task id="LOCAL-00001" summary="project start">
       <created>1516383693831</created>
@@ -863,11 +869,18 @@
       <option name="project" value="LOCAL" />
       <updated>1518727338982</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="*fix register regexp">
+      <created>1518730069766</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1518730069766</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="923752000" />
+    <option name="totallyTimeSpent" value="924937000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -968,7 +981,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="ready for uploading to server1" />
     <MESSAGE value="connect success" />
     <MESSAGE value="added hosts.php file" />
     <MESSAGE value="use constant DOMAIN and separate classes of dbManager from front-end" />
@@ -993,7 +1005,8 @@
     <MESSAGE value="*users that forget password can receive a reset to email.&#10;*users can now search for new friends" />
     <MESSAGE value="added DB backup at social_network.sql" />
     <MESSAGE value="*clean code" />
-    <option name="LAST_COMMIT_MESSAGE" value="*clean code" />
+    <MESSAGE value="*fix register regexp" />
+    <option name="LAST_COMMIT_MESSAGE" value="*fix register regexp" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1085,13 +1098,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="28" lean-forward="false" selection-start-line="0" selection-start-column="28" selection-end-line="0" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/settings/changing-password.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="45" column="46" lean-forward="false" selection-start-line="45" selection-start-column="46" selection-end-line="45" selection-end-column="46" />
         </state>
       </provider>
     </entry>
@@ -1412,8 +1418,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/class/Register.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="101" column="5" lean-forward="true" selection-start-line="101" selection-start-column="5" selection-end-line="101" selection-end-column="5" />
+        <state relative-caret-position="270">
+          <caret line="108" column="82" lean-forward="false" selection-start-line="108" selection-start-column="27" selection-end-line="108" selection-end-column="82" />
           <folding>
             <marker date="1518729752513" expanded="true" signature="1332:1375" ph="SELECT * FRO... front_users" />
             <marker date="1518729752513" expanded="true" signature="2289:2371" ph="INSERT INTO front_users... " />
@@ -1423,12 +1429,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main_pages/register_page.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="165" column="43" lean-forward="true" selection-start-line="165" selection-start-column="43" selection-end-line="165" selection-end-column="43" />
+        <state relative-caret-position="357">
+          <caret line="165" column="58" lean-forward="true" selection-start-line="165" selection-start-column="0" selection-end-line="166" selection-end-column="0" />
           <folding>
-            <marker date="1518730002239" expanded="true" signature="1656:1728" ph="UPDATE front_users... " />
-            <marker date="1518730002239" expanded="true" signature="2806:2846" ph="SELECT uid F... profiles_info" />
-            <marker date="1518730002239" expanded="true" signature="2943:3042" ph="INSERT INTO profiles_info... " />
+            <marker date="1518731143764" expanded="true" signature="1656:1728" ph="UPDATE front_users... " />
+            <marker date="1518731143764" expanded="true" signature="2806:2846" ph="SELECT uid F... profiles_info" />
+            <marker date="1518731143764" expanded="true" signature="2943:3042" ph="INSERT INTO profiles_info... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/settings/changing-password.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="91" column="15" lean-forward="true" selection-start-line="91" selection-start-column="15" selection-end-line="91" selection-end-column="15" />
+          <folding>
+            <marker date="1518731204860" expanded="true" signature="904:953" ph="SELECT passw... front_users" />
+            <marker date="1518731204860" expanded="true" signature="1158:1220" ph="UPDATE front_users... " />
+            <marker date="1518731204860" expanded="true" signature="1746:1789" ph="SELECT uid F... forget_tokens" />
+            <marker date="1518731204860" expanded="true" signature="2600:2662" ph="UPDATE front_users... " />
+            <marker date="1518731204860" expanded="true" signature="2843:2886" ph="DELETE FROM forget_tokens... " />
           </folding>
         </state>
       </provider>
