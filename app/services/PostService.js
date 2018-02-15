@@ -1,8 +1,4 @@
 class PostService {
-	deleteListener() {
-		$('.deletePost').on('click', this.askToEditPost);
-	}
-
 	askToDeletePost(id) {
 		$.ajax({
 			method: "POST",
@@ -22,12 +18,6 @@ class PostService {
 		$post.remove();
 	}
 
-	editPost(e) {
-
-	}
-
-
-
 	fadeInPost($post) {
 		return $post.find('.innerPost').hide().fadeIn(1000);
 	}
@@ -37,13 +27,6 @@ class PostService {
 	}
 
 	postTpl(post) {
-/*		console.log(post.likers_list);
-		let likersIds = [],likersNames = [];
-		for(let liker of post.likers_list){
-			likersIds.push(liker.uid);
-			likersNames.push(liker.name);
-		}
-		console.log(likersIds,likersNames);*/
 		return $(`
 			<post-item
 				post-id="${post.id}"
@@ -68,22 +51,22 @@ class PostService {
 			></post-item>
 		`)
 	}
-	askToEditPost(e,id) {
-		console.log(id);
+	askToEditPost(e,post) {
+		console.log(post.id);
 		console.log($(e.target.parentElement));
 		let newTitle = $(e.target.parentElement).find('#editedContent').val();
+		if(post.title === newTitle) return;
 		$.ajax({
 			method: "POST",
 			url: "api/index.php?action=update_post",
 			data: {
-				post_id: id,
+				post_id: post.id,
 				post_title:newTitle
 			}
 		}).then((res) => {
 			console.log(res);
 			if(res.msg === 'updated'){
-				$(`*[post-id=${id}]`).attr('title',res.post.title);
-				console.log(res.post.title);
+				$(`*[post-id=${post.id}]`).attr('title',res.post.title);
 			}
 			//if (res === 'deleted') this.deletePost(id);
 		});
@@ -107,7 +90,7 @@ class PostService {
 			$(this).parent().slideUp(500);
 		});
 		$('#saveEditBtn').on('click',function (e) {
-			_class.askToEditPost(e,post.id);
+			_class.askToEditPost(e,post);
 			$(this).parent().slideUp(500);
 		});
 	}

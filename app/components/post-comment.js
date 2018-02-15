@@ -98,8 +98,6 @@ class PostComment extends HTMLElement{
 		`;
 		let $el = $(this);
 		$el.find('.expendCommSets').on('click',function () {
-			console.log('hihihi');
-			console.log($(this).children('.cSetsDropDown'));
 			$(this).children('.cSetsDropDown').toggleClass('postSetShow');
 		});
 		$el.find('.modifyComm').on('click',function () {
@@ -120,13 +118,12 @@ class PostComment extends HTMLElement{
 				}else {
 					if(!_class.comment.prevContent == _class.comment.content){
 						COMMS.askToEditComm(_class.comment).then((res)=>{
-							console.log(res);
 							if(res) {
 								_class.comment.content = res;
 								_class.editMode = false;
 								$main.html( _class.contentTpl(_class.comment));
 							}else {
-								console.log('error',res);
+								//console.log('error',res);
 							}
 						},(err)=>console.log(err));
 					}else {

@@ -1,4 +1,3 @@
-//const currentDocument = document.currentScript.ownerDocument;
 class PostItem extends HTMLElement{
 	notNull(val){
 		return val && val != 'null' && val != 'undefined'
@@ -73,7 +72,7 @@ class PostItem extends HTMLElement{
 				break;
 			case 'title':
 				this.post.title = newVal;
-				$(this).find('.artTitle').html(newVal);
+				$(this).find('.artTitle').html(newVal.replace("\n",'<br>'));
 				break;
 		}
 

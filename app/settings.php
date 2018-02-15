@@ -7,7 +7,7 @@ if(isset($_POST['update_new_profile_img'])){
 
             $q = Register::connect()->query("UPDATE front_users SET profile_img='".$profile_img_name."' WHERE id=".$_SESSION['front_user_id']);
             if($q->rowCount() == 1){
-                $_SESSION['profile_img_name'] = $profile_img_name;
+                $_SESSION['front_profile_img'] = $profile_img_name;
             }
         }
     }
@@ -38,56 +38,18 @@ if(isset($_POST['save_profile_info'])){
 }
 $profile_info_q = Connection::query('SELECT * FROM profiles_info WHERE uid = :uid', [':uid'=>$_SESSION['front_user_id']]);
 if($profile_info_q){
-    $profile_info = $profile_info_q->fetch(PDO::FETCH_ASSOC);
-    if($profile_info){
+    if($profile_info = $profile_info_q->fetch(PDO::FETCH_ASSOC)){
         foreach ($profile_info as $key => $val){
             $_REQUEST[$key] = $val;
         }
     }
 }
 ?>
-<style>
-    .settingsPage{
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-areas:
-                'updateProfileImg updateProfileImg'
-                'updateUserInfo updateUserInfo'
-                'switchPass switchPass'
-        ;
-    }
-
-
-    .updateProfileImg{
-        grid-area: updateProfileImg;
-    }
-    .switchPass{
-        grid-area: switchPass;
-        padding: 10px;
-    }
-    .updateUserInfo{
-        grid-area: updateUserInfo;
-        padding: 10px;
-    }
-    .settingsPage input{
-        border-radius: 5px;
-        padding: 5px 10px;
-    }
-    .settingsPage input[type="button"], .settingsPage input[type="submit"]{
-        padding: 5px 10px;
-        margin: 10px 0;
-        background-color: #8f0222;
-        color: #ffffff;
-    }
-    .g-col-2{
-        grid-column: span 2;
-    }
-</style>
 <div class="settingsPage">
     <form class="updateProfileImg" style="grid-column: span 2" action="" method="post" enctype="multipart/form-data">
         <h2>עדכן תמונת פרופיל</h2>
         <div class="ft g-col-12 g-col-lg-6 profileImgSec" style="">
-            <div class="g-col-12" style="display: grid; grid-template-columns: 1fr 1fr;">
+            <div class="g-col-12 profileZone">
                 <div class="form-group inputDnD" style="height: 416px; padding: 0 10px">
                     <label class="sr-only" for="inputFile">File Upload</label>
                     <input type="file" name="new_profile_img"
@@ -172,7 +134,7 @@ if($profile_info_q){
         <h2 class="g-col-3">החלף סיסמה</h2>
         <a href="<?= DOMAIN.'settings/changing-password.php' ?>"><input type="button" value="לדף ההחלפה"></a>
     </div>
-    <form action="" class="updateUserInfo" method="post" style="display: grid; grid-template-columns: repeat(3,1fr); grid-gap: 30px; max-width: 600px;">
+    <form action="" class="updateUserInfo" method="post">
         <h2 class="g-col-3">פרטים אישים</h2>
         <div class="inputGroup">
             <label for="">שם פרטי:</label>
@@ -199,7 +161,7 @@ if($profile_info_q){
                 <option value="unset" <?=$select_sex_val == 'unset' ? ' selected="selected"' : '';?>>לא מוגדר</option>
             </select>
         </div>
-        <div class="inputGroup" style="grid-column: span 3; display: grid;">
+        <div class="inputGroup" id="descArea" style="display: grid;">
             <label for="">קצת על עצמך:</label>
             <textarea name="description" id="" rows="10"><?= old('description') ?></textarea>
         </div>

@@ -22,7 +22,7 @@ defined('app') or die(header('HTTP/1.0 403 Forbidden'));
                 <?php include 'app/components/post_item_instance.php'; ?>
             <?php endforeach; ?>
             <?php if(!$is_logged): ?>
-                <h3 style="padding-bottom: 20px;">עלייך <a href="#">להתחבר</a> על מנת לראות פוסטים נוספים</h3>
+                <h3 style="padding-bottom: 20px;">עלייך <a href="#">להתחבר</a> על מנת לראות פוסטים </h3>
             <?php endif; ?>
         </div>
 

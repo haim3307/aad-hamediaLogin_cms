@@ -6,8 +6,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dcaee23b-8a9f-4e1d-bdb2-91f529ade547" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/social_network.sql" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/app/components/post-comment.js" afterPath="$PROJECT_DIR$/app/components/post-comment.js" />
+      <change beforePath="$PROJECT_DIR$/app/components/post-item.js" afterPath="$PROJECT_DIR$/app/components/post-item.js" />
+      <change beforePath="$PROJECT_DIR$/app/home.php" afterPath="$PROJECT_DIR$/app/home.php" />
+      <change beforePath="$PROJECT_DIR$/app/main.js" afterPath="$PROJECT_DIR$/app/main.js" />
+      <change beforePath="$PROJECT_DIR$/app/services/PostService.js" afterPath="$PROJECT_DIR$/app/services/PostService.js" />
+      <change beforePath="$PROJECT_DIR$/app/settings.php" afterPath="$PROJECT_DIR$/app/settings.php" />
+      <change beforePath="$PROJECT_DIR$/class/Login.php" afterPath="$PROJECT_DIR$/class/Login.php" />
+      <change beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
+      <change beforePath="$PROJECT_DIR$/main_layout/head.php" afterPath="$PROJECT_DIR$/main_layout/head.php" />
+      <change beforePath="$PROJECT_DIR$/styles/social_app.css" afterPath="$PROJECT_DIR$/styles/social_app.css" />
     </list>
     <ignored path=".idea/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -50,38 +60,117 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="settings.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/settings.php">
+      <file leaf-file-name="social_app.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/styles/social_app.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1260">
-              <caret line="42" column="12" lean-forward="false" selection-start-line="42" selection-start-column="12" selection-end-line="42" selection-end-column="12" />
+            <state relative-caret-position="270">
+              <caret line="9" column="17" lean-forward="true" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="home.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/home.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="4" column="11" lean-forward="false" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="post-item.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/components/post-item.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="59" column="23" lean-forward="false" selection-start-line="59" selection-start-column="23" selection-end-line="59" selection-end-column="23" />
               <folding>
-                <element signature="n#style#1;n#form#0;n#div#0;n#!!top" expanded="false" />
-                <marker date="1518640452562" expanded="true" signature="376:444" ph="UPDATE front_users... " />
-                <marker date="1518640452562" expanded="true" signature="767:791" ph="UPDATE profiles_info... " />
-                <marker date="1518640452562" expanded="true" signature="1512:1556" ph="SELECT * FRO... profiles_info" />
+                <element signature="n#!!block;n#notNull#0;n#PostItem#0" expanded="false" />
+                <element signature="n#!!block;n#constructor#0;n#PostItem#0" expanded="false" />
+                <element signature="e#154#181#0" expanded="false" />
+                <element signature="e#548#1132#0" expanded="false" />
+                <element signature="e#1134#1358#0" expanded="false" />
+                <element signature="e#1359#1498#0" expanded="false" />
+                <element signature="n#!!block;n#complete#0;n#PostItem#0" expanded="false" />
+                <element signature="n#!!block;n#complete#1;n#PostItem#0" expanded="false" />
+                <element signature="n#!!block;n#post_liked#0;n#PostItem#0" expanded="false" />
+                <element signature="n#!!block;n#post_liked#1;n#PostItem#0" expanded="false" />
+                <element signature="n#!!block;n#observedAttributes#0;n#PostItem#0" expanded="false" />
+                <element signature="e#1765#1783#0" expanded="false" />
+                <element signature="e#1987#2054#0" expanded="false" />
+                <element signature="e#2059#2100#0" expanded="false" />
+                <element signature="n#!!block;n#likeTpl#0;n#PostItem#0" expanded="false" />
+                <element signature="e#3063#3106#0" expanded="false" />
+                <element signature="e#6543#6610#0" expanded="false" />
+                <element signature="e#6662#6698#0" expanded="false" />
+                <element signature="e#6744#7418#0" expanded="false" />
+                <element signature="e#6756#6915#0" expanded="false" />
+                <element signature="e#6814#6910#0" expanded="false" />
+                <element signature="e#6929#7412#0" expanded="false" />
+                <element signature="e#7030#7201#0" expanded="false" />
+                <element signature="e#7227#7406#0" expanded="false" />
+                <element signature="e#7466#10591#0" expanded="false" />
+                <element signature="e#7536#10585#0" expanded="false" />
+                <element signature="e#7784#7907#0" expanded="false" />
+                <element signature="e#8138#8998#0" expanded="false" />
+                <element signature="e#8283#8989#0" expanded="false" />
+                <element signature="e#8466#8597#0" expanded="false" />
+                <element signature="e#8629#8918#0" expanded="false" />
+                <element signature="e#8948#8982#0" expanded="false" />
+                <element signature="e#9137#9820#0" expanded="false" />
+                <element signature="e#9193#9813#0" expanded="false" />
+                <element signature="e#9403#9742#0" expanded="false" />
+                <element signature="e#9452#9584#0" expanded="false" />
+                <element signature="e#9589#9675#0" expanded="false" />
+                <element signature="e#9772#9806#0" expanded="false" />
+                <element signature="e#9930#10513#0" expanded="false" />
+                <element signature="e#9983#10506#0" expanded="false" />
+                <element signature="e#10026#10499#0" expanded="false" />
+                <element signature="e#10069#10254#0" expanded="false" />
+                <element signature="e#10139#10245#0" expanded="false" />
+                <element signature="e#10269#10489#0" expanded="false" />
+                <element signature="e#10368#10480#0" expanded="false" />
+                <element signature="n#!!block;n#postCommentTpl#0;n#PostItem#0" expanded="false" />
+                <element signature="n#!!block;n#postCommentsTpl#0;n#PostItem#0" expanded="false" />
+                <element signature="n#!!block;n#getComments#0;n#PostItem#0" expanded="false" />
+                <element signature="e#11125#11285#0" expanded="false" />
+                <element signature="e#11179#11281#0" expanded="false" />
+                <element signature="n#!!block;n#postCommentsContStatusTpl#0;n#PostItem#0" expanded="false" />
+                <element signature="e#11387#11425#0" expanded="false" />
+                <element signature="e#11430#11530#0" expanded="false" />
+                <element signature="e#11650#11839#0" expanded="false" />
+                <element signature="e#11847#11928#0" expanded="false" />
+                <marker date="1518679192926" expanded="true" signature="3180:6463" ph="..." />
+                <marker date="1518679192926" expanded="true" signature="3214:5157" ph="..." />
+                <marker date="1518679192926" expanded="false" signature="3290:3660" ph="..." />
+                <marker date="1518679192926" expanded="false" signature="3704:4598" ph="..." />
+                <marker date="1518679192926" expanded="false" signature="4626:4840" ph="..." />
+                <marker date="1518679192926" expanded="false" signature="4992:5068" ph="..." />
+                <marker date="1518679192926" expanded="false" signature="5110:5145" ph="..." />
+                <marker date="1518679192926" expanded="false" signature="5195:5636" ph="..." />
+                <marker date="1518679192926" expanded="false" signature="5668:6451" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="front_users" pinned="false" current-in-tab="false">
-        <entry file="das://table:/77324254/075d56fc-73ca-43f5-9ebc-f3915178f679/social_network.front_users">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
+      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/main.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="6" column="19" lean-forward="false" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/api/index.php">
+      <file leaf-file-name="moment.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/lib/moment.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="7" column="7" lean-forward="false" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
-              <folding>
-                <marker date="1518461858823" expanded="true" signature="1688:1740" ph="SELECT uid F... posts" />
-              </folding>
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -89,117 +178,77 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="8" column="3" lean-forward="false" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
+            <state relative-caret-position="1410">
+              <caret line="47" column="48" lean-forward="false" selection-start-line="47" selection-start-column="48" selection-end-line="47" selection-end-column="48" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="social_network.sql" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/social_network.sql">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <marker date="1518643677509" expanded="true" signature="303:367" ph="/*!40101 SET... " />
-                <marker date="1518643677509" expanded="true" signature="369:435" ph="/*!40101 SET... " />
-                <marker date="1518643677509" expanded="true" signature="437:501" ph="/*!40101 SET... " />
-                <marker date="1518643677509" expanded="true" signature="503:532" ph="/*!40101 SET... " />
-                <marker date="1518643677509" expanded="true" signature="681:830" ph="CREATE TABLE... followers" />
-                <marker date="1518643677509" expanded="true" signature="878:1231" ph="INSERT INTO `followers`... " />
-                <marker date="1518643677509" expanded="true" signature="1347:1507" ph="CREATE TABLE... forget_tokens" />
-                <marker date="1518643677509" expanded="true" signature="1621:1864" ph="CREATE TABLE... front_users" />
-                <marker date="1518643677509" expanded="true" signature="1914:4184" ph="INSERT INTO `front_users`... " />
-                <marker date="1518643677509" expanded="true" signature="4298:4449" ph="CREATE TABLE... liked_posts" />
-                <marker date="1518643677509" expanded="true" signature="4499:6085" ph="INSERT INTO `liked_posts`... " />
-                <marker date="1518643677509" expanded="true" signature="6200:6429" ph="CREATE TABLE... login_tokens" />
-                <marker date="1518643677509" expanded="true" signature="6480:6727" ph="INSERT INTO `login_tokens`... " />
-                <marker date="1518643677509" expanded="true" signature="6836:7012" ph="CREATE TABLE... posted" />
-                <marker date="1518643677509" expanded="true" signature="7057:8460" ph="INSERT INTO `posted`... " />
-                <marker date="1518643677509" expanded="true" signature="8568:8858" ph="CREATE TABLE... posts" />
-                <marker date="1518643677509" expanded="true" signature="8902:13214" ph="INSERT INTO `posts`... " />
-              </folding>
+      <file leaf-file-name="posts" pinned="false" current-in-tab="false">
+        <entry file="das://table:/77324254/075d56fc-73ca-43f5-9ebc-f3915178f679/social_network.posts">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="forgot-password.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/settings/forgot-password.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="10" column="54" lean-forward="false" selection-start-line="10" selection-start-column="54" selection-end-line="10" selection-end-column="54" />
-              <folding>
-                <element signature="e#211#245#0#PHP" expanded="true" />
-                <marker date="1518640020407" expanded="true" signature="660:705" ph="SELECT id FR... front_users" />
-                <marker date="1518640020407" expanded="true" signature="876:924" ph="SELECT uid F... forget_tokens" />
-                <marker date="1518640020407" expanded="true" signature="1034:1088" ph="INSERT INTO forget_tokens... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mailer.config.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/includes/mailer.config.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="2" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="gitignore.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gitignore.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="6" lean-forward="false" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="6" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SocialWeb.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/class/SocialWeb.php">
+      <file leaf-file-name="PostService.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/services/PostService.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="270">
-              <caret line="9" column="29" lean-forward="false" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
+              <caret line="9" column="23" lean-forward="true" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
               <folding>
-                <marker date="1518461949258" expanded="true" signature="404:506" ph="INSERT INTO posts... " />
-                <marker date="1518461949258" expanded="true" signature="821:893" ph="INSERT INTO posted... " />
-                <marker date="1518461949258" expanded="true" signature="1269:1363" ph="SELECT p.* ,... posts" />
-                <marker date="1518461949258" expanded="true" signature="1484:1693" ph="SELECT p.*,f... " />
-                <marker date="1518461949258" expanded="true" signature="2450:2574" ph="SELECT p.*,f... posts" />
-                <marker date="1518461949258" expanded="true" signature="2658:3085" ph="SELECT p.*,f... " />
-                <marker date="1518461949258" expanded="true" signature="3341:3398" ph="SELECT COUNT... liked_posts" />
-                <marker date="1518461949258" expanded="true" signature="3468:3527" ph="SELECT * FRO... liked_posts" />
-                <marker date="1518461949258" expanded="true" signature="3615:3770" ph="SELECT lp.*,... liked_posts" />
-                <marker date="1518461949258" expanded="true" signature="4514:4550" ph="DELETE FROM posts... " />
-                <marker date="1518461949258" expanded="true" signature="4987:5048" ph="UPDATE posts... " />
-                <marker date="1518461949258" expanded="true" signature="5326:5379" ph="SELECT fid F... followers" />
-                <marker date="1518461949258" expanded="true" signature="5658:5703" ph="INSERT INTO followers... " />
-                <marker date="1518461949258" expanded="true" signature="5803:5852" ph="DELETE FROM followers... " />
-                <marker date="1518461949258" expanded="true" signature="5987:6040" ph="SELECT * FRO... liked_posts" />
-                <marker date="1518461949258" expanded="true" signature="6287:6333" ph="INSERT INTO liked_posts... " />
-                <marker date="1518461949258" expanded="true" signature="6493:6544" ph="DELETE FROM liked_posts... " />
-                <marker date="1518461949258" expanded="true" signature="6752:6787" ph="SELECT uid F... posts" />
-                <marker date="1518461949258" expanded="true" signature="6913:6970" ph="SELECT uid F... posts_comments" />
-                <marker date="1518461949258" expanded="true" signature="7719:7849" ph="SELECT pc.*,... posts_comments" />
-                <marker date="1518461949258" expanded="true" signature="8446:8510" ph="INSERT INTO posts_comments... " />
-                <marker date="1518461949258" expanded="true" signature="8800:8841" ph="SELECT * FRO... posts_comments" />
-                <marker date="1518461949258" expanded="true" signature="9447:9500" ph="DELETE FROM posts_comments... " />
-                <marker date="1518461949258" expanded="true" signature="9794:9863" ph="UPDATE posts_comments... " />
-                <marker date="1518461949258" expanded="true" signature="10063:10124" ph="SELECT conte... posts_comments" />
+                <marker date="1518679093580" expanded="true" signature="558:1095" ph="..." />
+                <marker date="1518679093580" expanded="true" signature="2345:2892" ph="..." />
+                <marker date="1518679093580" expanded="false" signature="2364:2391" ph="..." />
+                <marker date="1518679093580" expanded="true" signature="2392:2733" ph="..." />
+                <marker date="1518679093580" expanded="false" signature="2448:2473" ph="..." />
+                <marker date="1518679093580" expanded="true" signature="2474:2608" ph="..." />
+                <marker date="1518679093580" expanded="false" signature="2543:2586" ph="..." />
+                <marker date="1518679093580" expanded="false" signature="2653:2696" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
+      <file leaf-file-name="post-comment.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/components/post-comment.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+            <state relative-caret-position="3750">
+              <caret line="125" column="18" lean-forward="true" selection-start-line="125" selection-start-column="18" selection-end-line="125" selection-end-column="18" />
+              <folding>
+                <marker date="1518646823568" expanded="true" signature="1196:1238" ph="..." />
+                <marker date="1518646823568" expanded="true" signature="1299:1479" ph="..." />
+                <marker date="1518646823568" expanded="true" signature="1337:1367" ph="..." />
+                <marker date="1518646823568" expanded="true" signature="1418:1456" ph="..." />
+                <marker date="1518646823568" expanded="true" signature="1706:1792" ph="..." />
+                <marker date="1518646823568" expanded="true" signature="1726:1733" ph="{...}" />
+                <marker date="1518646823568" expanded="true" signature="1754:1780" ph="{...}" />
+                <marker date="1518646823568" expanded="true" signature="1855:2995" ph="..." />
+                <marker date="1518646823568" expanded="true" signature="1944:2350" ph="..." />
+                <marker date="1518646823568" expanded="true" signature="2008:2338" ph="..." />
+                <marker date="1518646823568" expanded="true" signature="2119:2326" ph="..." />
+                <marker date="1518646823568" expanded="true" signature="2201:2239" ph="..." />
+                <marker date="1518646823568" expanded="true" signature="2274:2311" ph="..." />
+                <marker date="1518646823568" expanded="true" signature="2502:2809" ph="..." />
+                <marker date="1518646823568" expanded="false" signature="2547:2559" ph="..." />
+                <marker date="1518646823568" expanded="true" signature="2560:2716" ph="..." />
+                <marker date="1518646823568" expanded="false" signature="2579:2601" ph="..." />
+                <marker date="1518646823568" expanded="true" signature="2749:2799" ph="..." />
+                <marker date="1518646823568" expanded="true" signature="2887:2984" ph="..." />
+                <marker date="1518646823568" expanded="true" signature="2893:2970" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="head.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main_layout/head.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="990">
+              <caret line="33" column="70" lean-forward="false" selection-start-line="33" selection-start-column="70" selection-end-line="33" selection-end-column="70" />
               <folding />
             </state>
           </provider>
@@ -218,8 +267,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>DB</find>
-      <find>$oldpassword</find>
       <find>username</find>
       <find>$newpassword</find>
       <find>user_id=</find>
@@ -248,6 +295,8 @@
       <find>var</find>
       <find>editedComment</find>
       <find>changepassword</find>
+      <find>console</find>
+      <find>settings</find>
     </findStrings>
     <replaceStrings>
       <replace>$user_pass</replace>
@@ -277,7 +326,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/dbManager/tpl/login/session.php" />
         <option value="$PROJECT_DIR$/dbManager/real_path.inc.php" />
         <option value="$PROJECT_DIR$/dbManager/index.php" />
         <option value="$PROJECT_DIR$/dbManager/tpl/cms/cms.php" />
@@ -301,33 +349,34 @@
         <option value="$PROJECT_DIR$/social_app/components/publish_post.php" />
         <option value="$PROJECT_DIR$/social_app/components/post-item.js" />
         <option value="$PROJECT_DIR$/social_app/services/PostService.js" />
-        <option value="$PROJECT_DIR$/styles/social_app.css" />
         <option value="$PROJECT_DIR$/social_app/components/post-comment.js" />
         <option value="$PROJECT_DIR$/toTodo.html" />
-        <option value="$PROJECT_DIR$/class/Login.php" />
         <option value="$PROJECT_DIR$/class/hosts.php" />
         <option value="$PROJECT_DIR$/social_app/home.php" />
-        <option value="$PROJECT_DIR$/main_layout/head.php" />
         <option value="$PROJECT_DIR$/includes/domain.php" />
         <option value="$PROJECT_DIR$/class/Connection.php" />
         <option value="$PROJECT_DIR$/main_layout/header.php" />
         <option value="$PROJECT_DIR$/api/index.php" />
-        <option value="$PROJECT_DIR$/app/home.php" />
         <option value="$PROJECT_DIR$/app/components/post_item_instance.php" />
-        <option value="$PROJECT_DIR$/app/components/post-comment.js" />
-        <option value="$PROJECT_DIR$/app/components/post-item.js" />
         <option value="$PROJECT_DIR$/settings/changing-password.php" />
-        <option value="$PROJECT_DIR$/app/services/PostService.js" />
         <option value="$PROJECT_DIR$/app/profile.php" />
         <option value="$PROJECT_DIR$/class/Social_web.php" />
-        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/app/friends.php" />
         <option value="$PROJECT_DIR$/includes/mailer.config.php" />
         <option value="$PROJECT_DIR$/main_pages/about.php" />
         <option value="$PROJECT_DIR$/includes/root_path.php" />
         <option value="$PROJECT_DIR$/settings/forgot-password.php" />
-        <option value="$PROJECT_DIR$/app/settings.php" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/app/home.php" />
+        <option value="$PROJECT_DIR$/app/components/post-comment.js" />
+        <option value="$PROJECT_DIR$/class/Login.php" />
+        <option value="$PROJECT_DIR$/styles/social_app.css" />
+        <option value="$PROJECT_DIR$/app/settings.php" />
+        <option value="$PROJECT_DIR$/app/services/PostService.js" />
+        <option value="$PROJECT_DIR$/app/components/post-item.js" />
+        <option value="$PROJECT_DIR$/app/main.js" />
+        <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/main_layout/head.php" />
       </list>
     </option>
   </component>
@@ -393,7 +442,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -406,6 +454,24 @@
               <item name="social_network" type="b2602c69:ProjectViewProjectNode" />
               <item name="social_network" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="social_network" type="b2602c69:ProjectViewProjectNode" />
+              <item name="social_network" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="components" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="social_network" type="b2602c69:ProjectViewProjectNode" />
+              <item name="social_network" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="lib" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="social_network" type="b2602c69:ProjectViewProjectNode" />
+              <item name="social_network" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="services" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="social_network" type="b2602c69:ProjectViewProjectNode" />
@@ -437,10 +503,17 @@
               <item name="social_network" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="styles" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
+            <path>
+              <item name="social_network" type="b2602c69:ProjectViewProjectNode" />
+              <item name="social_network" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="styles" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="_css" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -461,6 +534,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="jsx.switch.disabled" value="true" />
+    <property name="add_unversioned_files" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -581,7 +655,9 @@
       <workItem from="1518211876051" duration="4213000" />
       <workItem from="1518267787948" duration="12064000" />
       <workItem from="1518351984688" duration="26990000" />
-      <workItem from="1518638792810" duration="3773000" />
+      <workItem from="1518638792810" duration="8009000" />
+      <workItem from="1518678907877" duration="1848000" />
+      <workItem from="1518700107887" duration="509000" />
     </task>
     <task id="LOCAL-00001" summary="project start">
       <created>1516383693831</created>
@@ -786,11 +862,18 @@
       <option name="project" value="LOCAL" />
       <updated>1518643255728</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="added DB backup at social_network.sql">
+      <created>1518643830843</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1518643830843</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="904322000" />
+    <option name="totallyTimeSpent" value="910915000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -802,19 +885,19 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1873" height="1096" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
+      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32826087" sideWeight="0.49573562" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1580938" sideWeight="0.49342105" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.49573562" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3338816" sideWeight="0.510661" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3068783" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2563966" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3223684" sideWeight="0.4914712" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33223686" sideWeight="0.48933902" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32826087" sideWeight="0.49573562" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15995587" sideWeight="0.49342105" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26530612" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33223686" sideWeight="0.48933902" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17397882" sideWeight="0.5065789" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39956093" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -824,6 +907,7 @@
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="92" y="92" width="1182" height="544" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.320442" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32391304" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -890,7 +974,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="test 3" />
     <MESSAGE value="ready for uploading to server" />
     <MESSAGE value="ready for uploading to server1" />
     <MESSAGE value="connect success" />
@@ -915,7 +998,8 @@
     <MESSAGE value="*users can now change passwords&#10;*users can search for new friends &#10;*adding userItem Component and custom el" />
     <MESSAGE value="*users can now change passwords&#10;*users can search for new friends &#10;*adding userItem Component and custom el4" />
     <MESSAGE value="*users that forget password can receive a reset to email.&#10;*users can now search for new friends" />
-    <option name="LAST_COMMIT_MESSAGE" value="*users that forget password can receive a reset to email.&#10;*users can now search for new friends" />
+    <MESSAGE value="added DB backup at social_network.sql" />
+    <option name="LAST_COMMIT_MESSAGE" value="added DB backup at social_network.sql" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -928,31 +1012,8 @@
     <find-history />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/class/Logout.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="618">
-          <caret line="41" column="8" lean-forward="false" selection-start-line="41" selection-start-column="8" selection-end-line="41" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/standard/standard_4.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="660" column="9" lean-forward="false" selection-start-line="660" selection-start-column="9" selection-end-line="660" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://index:/17a3e489/075d56fc-73ca-43f5-9ebc-f3915178f679/aadhamedina.liked_posts.liked_posts_posts_id_fk" />
     <entry file="das://table:/17a3e489/075d56fc-73ca-43f5-9ebc-f3915178f679/aadhamedina.login_tokens" />
-    <entry file="file://$PROJECT_DIR$/app/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="10" column="41" lean-forward="false" selection-start-line="10" selection-start-column="41" selection-end-line="10" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://table:/17a3e489/075d56fc-73ca-43f5-9ebc-f3915178f679/aadhamedina.users" />
     <entry file="das://table:/17a3e489/075d56fc-73ca-43f5-9ebc-f3915178f679/aadhamedina.followers" />
     <entry file="das://table:/17a3e489/075d56fc-73ca-43f5-9ebc-f3915178f679/aadhamedina.front_users" />
@@ -983,13 +1044,6 @@
     </entry>
     <entry file="das://table:/17a3e489/075d56fc-73ca-43f5-9ebc-f3915178f679/aadhamedina.posts" />
     <entry file="das://table:/17a3e489/075d56fc-73ca-43f5-9ebc-f3915178f679/aadhamedina.posts_comments" />
-    <entry file="file://$PROJECT_DIR$/styles/social_app.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4680">
-          <caret line="195" column="18" lean-forward="false" selection-start-line="195" selection-start-column="18" selection-end-line="195" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/newpage.html" />
     <entry file="file://$PROJECT_DIR$/toTodo.html" />
     <entry file="file://$PROJECT_DIR$/_config.yml">
@@ -1011,6 +1065,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="152">
           <caret line="10" column="19" lean-forward="true" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="26" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1018,14 +1073,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1032">
           <caret line="43" column="38" lean-forward="false" selection-start-line="43" selection-start-column="38" selection-end-line="43" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main_layout/head.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="30" column="30" lean-forward="false" selection-start-line="30" selection-start-column="30" selection-end-line="30" selection-end-column="30" />
         </state>
       </provider>
     </entry>
@@ -1050,41 +1097,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/components/post-comment.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1800">
-          <caret line="81" column="50" lean-forward="false" selection-start-line="81" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/77324254/075d56fc-73ca-43f5-9ebc-f3915178f679/social_network.posts">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/includes/domain.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
           <caret line="19" column="12" lean-forward="false" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/services/PostService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="704">
-          <caret line="174" column="5" lean-forward="false" selection-start-line="174" selection-start-column="5" selection-end-line="174" selection-end-column="5" />
-          <folding>
-            <marker date="1518366506962" expanded="true" signature="875:1412" ph="..." />
-            <marker date="1518366506962" expanded="true" signature="2643:3190" ph="..." />
-            <marker date="1518366506962" expanded="false" signature="2662:2689" ph="..." />
-            <marker date="1518366506962" expanded="true" signature="2690:3031" ph="..." />
-            <marker date="1518366506962" expanded="false" signature="2746:2771" ph="..." />
-            <marker date="1518366506962" expanded="true" signature="2772:2906" ph="..." />
-            <marker date="1518366506962" expanded="false" signature="2841:2884" ph="..." />
-            <marker date="1518366506962" expanded="false" signature="2951:2994" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1102,20 +1118,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/home.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="26" column="14" lean-forward="true" selection-start-line="26" selection-start-column="14" selection-end-line="26" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/components/post-item.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1608">
-          <caret line="20" column="17" lean-forward="true" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/friends.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="602">
@@ -1127,7 +1129,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="28" lean-forward="false" selection-start-line="0" selection-start-column="28" selection-end-line="0" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1135,14 +1136,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="45" column="46" lean-forward="false" selection-start-line="45" selection-start-column="46" selection-end-line="45" selection-end-column="46" />
-          <folding>
-            <marker date="1518632040915" expanded="true" signature="813:862" ph="SELECT passw... front_users" />
-            <marker date="1518632040915" expanded="true" signature="1067:1129" ph="UPDATE front_users... " />
-            <marker date="1518632040915" expanded="true" signature="1655:1662" ph="SELECT * FRO... forget_tokens" />
-            <marker date="1518632040915" expanded="true" signature="1655:1698" ph="SELECT uid F... forget_tokens" />
-            <marker date="1518632040915" expanded="true" signature="2490:2552" ph="UPDATE front_users... " />
-            <marker date="1518632040915" expanded="true" signature="2733:2776" ph="DELETE FROM forget_tokens... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1157,7 +1150,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="11" column="6" lean-forward="false" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1165,68 +1157,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="5" column="14" lean-forward="true" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/class/Login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="93" column="5" lean-forward="true" selection-start-line="93" selection-start-column="5" selection-end-line="93" selection-end-column="5" />
-          <folding>
-            <marker date="1518472918910" expanded="true" signature="584:631" ph="SELECT id FR... front_users" />
-            <marker date="1518472918910" expanded="true" signature="771:816" ph="SELECT token... login_tokens" />
-            <marker date="1518472918910" expanded="true" signature="1024:1091" ph="INSERT INTO login_tokens... " />
-            <marker date="1518472918910" expanded="true" signature="1797:1860" ph="UPDATE login_tokens... " />
-            <marker date="1518472918910" expanded="true" signature="2303:2350" ph="SELECT uid F... login_tokens" />
-            <marker date="1518472918910" expanded="true" signature="2915:2968" ph="SELECT name,... front_users" />
-            <marker date="1518472918910" expanded="true" signature="4776:4825" ph="SELECT passw... front_users" />
-            <marker date="1518472918910" expanded="true" signature="5052:5112" ph="SELECT id,na... front_users" />
-            <marker date="1518472918910" expanded="true" signature="7667:7716" ph="SELECT passw... front_users" />
-            <marker date="1518472918910" expanded="true" signature="7943:8003" ph="SELECT id,na... front_users" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/class/Social_web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="119" column="60" lean-forward="true" selection-start-line="119" selection-start-column="60" selection-end-line="119" selection-end-column="60" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/class/Social_web.php" />
     <entry file="file://$PROJECT_DIR$/class/SocialWeb.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="9" column="29" lean-forward="false" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
-          <folding>
-            <marker date="1518461949258" expanded="true" signature="404:506" ph="INSERT INTO posts... " />
-            <marker date="1518461949258" expanded="true" signature="821:893" ph="INSERT INTO posted... " />
-            <marker date="1518461949258" expanded="true" signature="1269:1363" ph="SELECT p.* ,... posts" />
-            <marker date="1518461949258" expanded="true" signature="1484:1693" ph="SELECT p.*,f... " />
-            <marker date="1518461949258" expanded="true" signature="2450:2574" ph="SELECT p.*,f... posts" />
-            <marker date="1518461949258" expanded="true" signature="2658:3085" ph="SELECT p.*,f... " />
-            <marker date="1518461949258" expanded="true" signature="3341:3398" ph="SELECT COUNT... liked_posts" />
-            <marker date="1518461949258" expanded="true" signature="3468:3527" ph="SELECT * FRO... liked_posts" />
-            <marker date="1518461949258" expanded="true" signature="3615:3770" ph="SELECT lp.*,... liked_posts" />
-            <marker date="1518461949258" expanded="true" signature="4514:4550" ph="DELETE FROM posts... " />
-            <marker date="1518461949258" expanded="true" signature="4987:5048" ph="UPDATE posts... " />
-            <marker date="1518461949258" expanded="true" signature="5326:5379" ph="SELECT fid F... followers" />
-            <marker date="1518461949258" expanded="true" signature="5658:5703" ph="INSERT INTO followers... " />
-            <marker date="1518461949258" expanded="true" signature="5803:5852" ph="DELETE FROM followers... " />
-            <marker date="1518461949258" expanded="true" signature="5987:6040" ph="SELECT * FRO... liked_posts" />
-            <marker date="1518461949258" expanded="true" signature="6287:6333" ph="INSERT INTO liked_posts... " />
-            <marker date="1518461949258" expanded="true" signature="6493:6544" ph="DELETE FROM liked_posts... " />
-            <marker date="1518461949258" expanded="true" signature="6752:6787" ph="SELECT uid F... posts" />
-            <marker date="1518461949258" expanded="true" signature="6913:6970" ph="SELECT uid F... posts_comments" />
-            <marker date="1518461949258" expanded="true" signature="7719:7849" ph="SELECT pc.*,... posts_comments" />
-            <marker date="1518461949258" expanded="true" signature="8446:8510" ph="INSERT INTO posts_comments... " />
-            <marker date="1518461949258" expanded="true" signature="8800:8841" ph="SELECT * FRO... posts_comments" />
-            <marker date="1518461949258" expanded="true" signature="9447:9500" ph="DELETE FROM posts_comments... " />
-            <marker date="1518461949258" expanded="true" signature="9794:9863" ph="UPDATE posts_comments... " />
-            <marker date="1518461949258" expanded="true" signature="10063:10124" ph="SELECT conte... posts_comments" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1234,9 +1172,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="7" column="7" lean-forward="false" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
-          <folding>
-            <marker date="1518461858823" expanded="true" signature="1688:1740" ph="SELECT uid F... posts" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1244,25 +1179,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="10" column="54" lean-forward="false" selection-start-line="10" selection-start-column="54" selection-end-line="10" selection-end-column="54" />
-          <folding>
-            <element signature="e#211#245#0#PHP" expanded="true" />
-            <marker date="1518640020407" expanded="true" signature="660:705" ph="SELECT id FR... front_users" />
-            <marker date="1518640020407" expanded="true" signature="876:924" ph="SELECT uid F... forget_tokens" />
-            <marker date="1518640020407" expanded="true" signature="1034:1088" ph="INSERT INTO forget_tokens... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/settings.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1260">
-          <caret line="42" column="12" lean-forward="false" selection-start-line="42" selection-start-column="12" selection-end-line="42" selection-end-column="12" />
-          <folding>
-            <element signature="n#style#1;n#form#0;n#div#0;n#!!top" expanded="false" />
-            <marker date="1518640452562" expanded="true" signature="376:444" ph="UPDATE front_users... " />
-            <marker date="1518640452562" expanded="true" signature="767:791" ph="UPDATE profiles_info... " />
-            <marker date="1518640452562" expanded="true" signature="1512:1556" ph="SELECT * FRO... profiles_info" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1270,7 +1186,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="2" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1278,15 +1193,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="6" lean-forward="false" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1297,11 +1203,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
+    <entry file="file://$PROJECT_DIR$/app/settings.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="8" column="3" lean-forward="false" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
-          <folding />
+        <state relative-caret-position="1440">
+          <caret line="48" column="15" lean-forward="false" selection-start-line="48" selection-start-column="15" selection-end-line="48" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/class/Login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="139" column="40" lean-forward="false" selection-start-line="139" selection-start-column="23" selection-end-line="139" selection-end-column="40" />
         </state>
       </provider>
     </entry>
@@ -1309,25 +1221,194 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/77324254/075d56fc-73ca-43f5-9ebc-f3915178f679/social_network.posts">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/components/post-comment.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3750">
+          <caret line="125" column="18" lean-forward="true" selection-start-line="125" selection-start-column="18" selection-end-line="125" selection-end-column="18" />
           <folding>
-            <marker date="1518643677509" expanded="true" signature="303:367" ph="/*!40101 SET... " />
-            <marker date="1518643677509" expanded="true" signature="369:435" ph="/*!40101 SET... " />
-            <marker date="1518643677509" expanded="true" signature="437:501" ph="/*!40101 SET... " />
-            <marker date="1518643677509" expanded="true" signature="503:532" ph="/*!40101 SET... " />
-            <marker date="1518643677509" expanded="true" signature="681:830" ph="CREATE TABLE... followers" />
-            <marker date="1518643677509" expanded="true" signature="878:1231" ph="INSERT INTO `followers`... " />
-            <marker date="1518643677509" expanded="true" signature="1347:1507" ph="CREATE TABLE... forget_tokens" />
-            <marker date="1518643677509" expanded="true" signature="1621:1864" ph="CREATE TABLE... front_users" />
-            <marker date="1518643677509" expanded="true" signature="1914:4184" ph="INSERT INTO `front_users`... " />
-            <marker date="1518643677509" expanded="true" signature="4298:4449" ph="CREATE TABLE... liked_posts" />
-            <marker date="1518643677509" expanded="true" signature="4499:6085" ph="INSERT INTO `liked_posts`... " />
-            <marker date="1518643677509" expanded="true" signature="6200:6429" ph="CREATE TABLE... login_tokens" />
-            <marker date="1518643677509" expanded="true" signature="6480:6727" ph="INSERT INTO `login_tokens`... " />
-            <marker date="1518643677509" expanded="true" signature="6836:7012" ph="CREATE TABLE... posted" />
-            <marker date="1518643677509" expanded="true" signature="7057:8460" ph="INSERT INTO `posted`... " />
-            <marker date="1518643677509" expanded="true" signature="8568:8858" ph="CREATE TABLE... posts" />
-            <marker date="1518643677509" expanded="true" signature="8902:13214" ph="INSERT INTO `posts`... " />
+            <marker date="1518646823568" expanded="true" signature="1196:1238" ph="..." />
+            <marker date="1518646823568" expanded="true" signature="1299:1479" ph="..." />
+            <marker date="1518646823568" expanded="true" signature="1337:1367" ph="..." />
+            <marker date="1518646823568" expanded="true" signature="1418:1456" ph="..." />
+            <marker date="1518646823568" expanded="true" signature="1706:1792" ph="..." />
+            <marker date="1518646823568" expanded="true" signature="1726:1733" ph="{...}" />
+            <marker date="1518646823568" expanded="true" signature="1754:1780" ph="{...}" />
+            <marker date="1518646823568" expanded="true" signature="1855:2995" ph="..." />
+            <marker date="1518646823568" expanded="true" signature="1944:2350" ph="..." />
+            <marker date="1518646823568" expanded="true" signature="2008:2338" ph="..." />
+            <marker date="1518646823568" expanded="true" signature="2119:2326" ph="..." />
+            <marker date="1518646823568" expanded="true" signature="2201:2239" ph="..." />
+            <marker date="1518646823568" expanded="true" signature="2274:2311" ph="..." />
+            <marker date="1518646823568" expanded="true" signature="2502:2809" ph="..." />
+            <marker date="1518646823568" expanded="false" signature="2547:2559" ph="..." />
+            <marker date="1518646823568" expanded="true" signature="2560:2716" ph="..." />
+            <marker date="1518646823568" expanded="false" signature="2579:2601" ph="..." />
+            <marker date="1518646823568" expanded="true" signature="2749:2799" ph="..." />
+            <marker date="1518646823568" expanded="true" signature="2887:2984" ph="..." />
+            <marker date="1518646823568" expanded="true" signature="2893:2970" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/components/progress-bar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/services/PostService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="9" column="23" lean-forward="true" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
+          <folding>
+            <marker date="1518679093580" expanded="true" signature="558:1095" ph="..." />
+            <marker date="1518679093580" expanded="true" signature="2345:2892" ph="..." />
+            <marker date="1518679093580" expanded="false" signature="2364:2391" ph="..." />
+            <marker date="1518679093580" expanded="true" signature="2392:2733" ph="..." />
+            <marker date="1518679093580" expanded="false" signature="2448:2473" ph="..." />
+            <marker date="1518679093580" expanded="true" signature="2474:2608" ph="..." />
+            <marker date="1518679093580" expanded="false" signature="2543:2586" ph="..." />
+            <marker date="1518679093580" expanded="false" signature="2653:2696" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/components/post-item.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="59" column="23" lean-forward="false" selection-start-line="59" selection-start-column="23" selection-end-line="59" selection-end-column="23" />
+          <folding>
+            <element signature="n#!!block;n#notNull#0;n#PostItem#0" expanded="false" />
+            <element signature="n#!!block;n#constructor#0;n#PostItem#0" expanded="false" />
+            <element signature="e#154#181#0" expanded="false" />
+            <element signature="e#548#1132#0" expanded="false" />
+            <element signature="e#1134#1358#0" expanded="false" />
+            <element signature="e#1359#1498#0" expanded="false" />
+            <element signature="n#!!block;n#complete#0;n#PostItem#0" expanded="false" />
+            <element signature="n#!!block;n#complete#1;n#PostItem#0" expanded="false" />
+            <element signature="n#!!block;n#post_liked#0;n#PostItem#0" expanded="false" />
+            <element signature="n#!!block;n#post_liked#1;n#PostItem#0" expanded="false" />
+            <element signature="n#!!block;n#observedAttributes#0;n#PostItem#0" expanded="false" />
+            <element signature="e#1765#1783#0" expanded="false" />
+            <element signature="e#1987#2054#0" expanded="false" />
+            <element signature="e#2059#2100#0" expanded="false" />
+            <element signature="n#!!block;n#likeTpl#0;n#PostItem#0" expanded="false" />
+            <element signature="e#3063#3106#0" expanded="false" />
+            <element signature="e#6543#6610#0" expanded="false" />
+            <element signature="e#6662#6698#0" expanded="false" />
+            <element signature="e#6744#7418#0" expanded="false" />
+            <element signature="e#6756#6915#0" expanded="false" />
+            <element signature="e#6814#6910#0" expanded="false" />
+            <element signature="e#6929#7412#0" expanded="false" />
+            <element signature="e#7030#7201#0" expanded="false" />
+            <element signature="e#7227#7406#0" expanded="false" />
+            <element signature="e#7466#10591#0" expanded="false" />
+            <element signature="e#7536#10585#0" expanded="false" />
+            <element signature="e#7784#7907#0" expanded="false" />
+            <element signature="e#8138#8998#0" expanded="false" />
+            <element signature="e#8283#8989#0" expanded="false" />
+            <element signature="e#8466#8597#0" expanded="false" />
+            <element signature="e#8629#8918#0" expanded="false" />
+            <element signature="e#8948#8982#0" expanded="false" />
+            <element signature="e#9137#9820#0" expanded="false" />
+            <element signature="e#9193#9813#0" expanded="false" />
+            <element signature="e#9403#9742#0" expanded="false" />
+            <element signature="e#9452#9584#0" expanded="false" />
+            <element signature="e#9589#9675#0" expanded="false" />
+            <element signature="e#9772#9806#0" expanded="false" />
+            <element signature="e#9930#10513#0" expanded="false" />
+            <element signature="e#9983#10506#0" expanded="false" />
+            <element signature="e#10026#10499#0" expanded="false" />
+            <element signature="e#10069#10254#0" expanded="false" />
+            <element signature="e#10139#10245#0" expanded="false" />
+            <element signature="e#10269#10489#0" expanded="false" />
+            <element signature="e#10368#10480#0" expanded="false" />
+            <element signature="n#!!block;n#postCommentTpl#0;n#PostItem#0" expanded="false" />
+            <element signature="n#!!block;n#postCommentsTpl#0;n#PostItem#0" expanded="false" />
+            <element signature="n#!!block;n#getComments#0;n#PostItem#0" expanded="false" />
+            <element signature="e#11125#11285#0" expanded="false" />
+            <element signature="e#11179#11281#0" expanded="false" />
+            <element signature="n#!!block;n#postCommentsContStatusTpl#0;n#PostItem#0" expanded="false" />
+            <element signature="e#11387#11425#0" expanded="false" />
+            <element signature="e#11430#11530#0" expanded="false" />
+            <element signature="e#11650#11839#0" expanded="false" />
+            <element signature="e#11847#11928#0" expanded="false" />
+            <marker date="1518679192926" expanded="true" signature="3180:6463" ph="..." />
+            <marker date="1518679192926" expanded="true" signature="3214:5157" ph="..." />
+            <marker date="1518679192926" expanded="false" signature="3290:3660" ph="..." />
+            <marker date="1518679192926" expanded="false" signature="3704:4598" ph="..." />
+            <marker date="1518679192926" expanded="false" signature="4626:4840" ph="..." />
+            <marker date="1518679192926" expanded="false" signature="4992:5068" ph="..." />
+            <marker date="1518679192926" expanded="false" signature="5110:5145" ph="..." />
+            <marker date="1518679192926" expanded="false" signature="5195:5636" ph="..." />
+            <marker date="1518679192926" expanded="false" signature="5668:6451" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/lib/moment.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="6" column="19" lean-forward="false" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/home.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="4" column="11" lean-forward="false" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main_layout/head.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="990">
+          <caret line="33" column="70" lean-forward="false" selection-start-line="33" selection-start-column="70" selection-end-line="33" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1410">
+          <caret line="47" column="48" lean-forward="false" selection-start-line="47" selection-start-column="48" selection-end-line="47" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/styles/social_app.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="9" column="17" lean-forward="true" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>
