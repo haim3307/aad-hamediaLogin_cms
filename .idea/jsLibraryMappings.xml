@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="JavaScriptLibraryMappings">
-    <file url="PROJECT" libraries="{3c576bb39d, angular, angular-ui-router, bootstrap, jquery, jquery-ui, popper, summernote-bs4, toastr}" />
+    <file url="PROJECT" libraries="{3c576bb39d, angular, angular-ui-router, bootstrap, he, jquery, jquery-ui, moment, popper, summernote-bs4, toastr}" />
   </component>
 </project>

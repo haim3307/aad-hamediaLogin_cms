@@ -6,7 +6,7 @@ if(!isset($is_logged)){
     $is_logged = Login::isLoggedIn();
 }
 if (isset($_POST['site_login'])) {
-    if(Login::login()) header('location:'.$_SERVER['PHP_SELF']);
+    if(Login::execute()) header('location:'.$_SERVER['PHP_SELF']);
     else $_SESSION['token'] = Login::csrfToken();
 }else {
     Login::setSession();

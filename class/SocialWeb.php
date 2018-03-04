@@ -13,9 +13,10 @@ class SocialWeb extends Login
     {
         $content = trim($content);
         if(!$content) return null;
+        $date = gmdate('Y-m-d H:i:s');
         $content = filter_var($content,FILTER_SANITIZE_STRING,FILTER_FLAG_NO_ENCODE_QUOTES);
-        $insert = self::query('INSERT INTO posts(title, front_img, activated, uid) 
-        VALUES(:title,:front_img,:activated,:uid)',
+        $insert = self::query("INSERT INTO posts(title, front_img, activated, uid, added_date) 
+        VALUES(:title,:front_img,:activated,:uid , '$date')",
             [
                 ':title' => $content,
                 ':front_img' => '',
@@ -192,7 +193,7 @@ class SocialWeb extends Login
         if(self::yourComment($_SESSION['front_user_id'],$comment_id)){
             $delete = self::query('DELETE FROM posts_comments WHERE id=:cid AND uid=:uid',[':cid' => $comment_id,':uid'=>$_SESSION['front_user_id']]);
             return $delete && $delete->rowCount();
-        }
+        }else return false;
     }
     static function editComment($comment_id, $new_content){
         if(self::yourComment($_SESSION['front_user_id'],$comment_id)){
@@ -208,22 +209,6 @@ class SocialWeb extends Login
         }
         return false;
     }
-}
-
-if (isset($_POST['act'])) {
-    SocialWeb::setSession();
-/*    if (isset($_SESSION['front_user_id'])) {
-        switch ($_POST['act']) {
-            case 'new_post':
-                if (isset($_POST['content'])) {
-                    if ($res = Social_web::add_new_post($_POST['content'])) {
-                        echo json_encode($res);
-                    }
-                }
-                break;
-        }
-    }*/
-
 }
 if(isset($_GET['act'])){
     SocialWeb::setSession();

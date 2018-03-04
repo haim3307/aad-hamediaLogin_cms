@@ -3,7 +3,12 @@ define('DB_CONNECTION', 'mysql');
 define('DB_HOST', 'mysql');
 define('DB_PORT', '3306');
 define('DB_DATABASE', 'social_network');
-if ($_SERVER['HTTP_HOST'] == 'localhost') {
+echo '<pre style="direction: ltr;">';
+var_dump($_SERVER);
+
+echo '</pre>';
+var_dump($_SERVER['HTTP_HOST']);
+if (preg_match('/^localhost/',$_SERVER['HTTP_HOST'])) {
     define('DB_USERNAME', 'root');
     define('DB_PASSWORD', '');
     define('PATH_FOLDER', '/social_network');

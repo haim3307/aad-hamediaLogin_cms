@@ -2,11 +2,6 @@
 require_once 'Connection.php';
 class Login extends Connection
 {
-    function __construct()
-    {
-        parent::__construct();
-    }
-
     static function generateToken($hash = false)
     {
         $csstrong = true;
@@ -84,7 +79,7 @@ class Login extends Connection
         }
         return false;
     }
-    static public function login()
+    static function execute()
     {
         self::setSession();
         if(isset($_POST['token'])){
@@ -94,11 +89,8 @@ class Login extends Connection
         $uname = trim($uname);
         $upass = filter_input(INPUT_POST,'user_pass',FILTER_SANITIZE_STRING);
         $upass = trim($upass);
-        if (!$uname) {
-            return;
-        }
-        if (!$upass) {
-            return;
+        if (!$uname || !$upass) {
+            return false;
         }
         //session_id();
         if($get_pass = $stmt = self::query(
@@ -113,7 +105,6 @@ class Login extends Connection
                 );
                 if ($stmt && $stmt->rowCount() == 1) {
                     $user = $stmt->fetch(PDO::FETCH_ASSOC);
-/*                    $_SESSION['c_name'] = self::generate_c_name_id('SNID');*/
                     if(!self::createLoginCookies($uname,$user['id'])){
                         echo 'לא ניתן להכנס לאותו משתמש ביותר ממכשיר אחד בו זמנית';
                         return false;

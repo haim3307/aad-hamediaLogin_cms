@@ -1054,7 +1054,7 @@
     </column>
     <column id="265" parent="250" name="token">
       <Position>2</Position>
-      <DataType>int(11)|0</DataType>
+      <DataType>varchar(200)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="266" parent="250" name="uid">
@@ -1268,9 +1268,8 @@
     </column>
     <column id="307" parent="255" name="added_date">
       <Position>5</Position>
-      <DataType>timestamp|0</DataType>
+      <DataType>datetime|0</DataType>
       <NotNull>1</NotNull>
-      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="308" parent="255" name="uid">

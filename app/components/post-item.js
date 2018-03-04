@@ -111,92 +111,101 @@ class PostItem extends HTMLElement{
 		let _class = this;
 		const post = this.post;
 		let likeTpl = this.likeTpl(this.post);
-		/*									<li class="hidePost">הסתר</li>*/
+		let date = moment(post.added_date, "YYYY-MM-DD hh:mm:ss");
+		let offset = new Date().getTimezoneOffset();
+		if(Math.sign(offset) === 1){
+			date = date.subtract(offset,'m').subtract(1,'s');
+		}else {
+			date = date.add(Math.abs(offset),'m').subtract(1,'s');
+		}
+	console.log(date);
+		/*									<li class="hidePost">הסתר</li>*/`hello my title is ${post.title}`;
 		this.innerHTML = `
 
 			<div class="innerPost" data-post-id="${post.id}">
-					<div class="grid-news-item">
-					
-					${this.mainUserId === post.uid?`
-					<div class="postSettings">
-							<a title="הגדרות" class="expendPostSets">
-									<i class="fa fa-caret-down" aria-hidden="true"></i>
-									<ul class="pSetsDropDown">
-											<li class="deletePost" onclick="PS.askToDeletePost(${post.id})">
-											מחק פוסט
-											</li>
-											<li class="modifyPost">
-											שנה תוכן
-											</li>
-									</ul>
-							</a>
-					</div>
-					`:''}
-					
-					<div class="artAuth">
-							<div class="profileFrame all-centered">
-							<img src="_img/users/profiles/${post.profile_img?post.profile_img:'default_profile.jpg'}" alt="">
-							</div>
-							<strong style="margin-top: 25px;"><a href="index.php?app-page=profile&username=${post.author}">${post.author}</a></strong>
-							${this.showPostedTo?
-								`
-								<span style="margin-top: 25px; margin-right: 10px;">
-											<span><i class="fa fa-angle-left"></i></span>
-											<span>
-												<a href="${post.posted_to && post.posted_to != 'null'?'index.php?app-page=profile&username='+post.posted_to_name:'index.php'}">
-												${post.posted_to != this.mainUserId
-													?
-													post.posted_to && post.posted_to != 'null'?post.posted_to_name:'פיד'
-													:
-													'הציר שלי'
-												}
-												</a>
-											</span>
-								</span>
-								`:''
-							}
-					</div>
+						<div class="grid-news-item">
+						
+						${this.mainUserId === post.uid?`
+						<div class="postSettings">
+								<a title="הגדרות" class="expendPostSets">
+										<i class="fa fa-caret-down" aria-hidden="true"></i>
+										<ul class="pSetsDropDown">
+												<li class="deletePost" onclick="PS.askToDeletePost(${post.id})">
+												מחק פוסט
+												</li>
+												<li class="modifyPost">
+												שנה תוכן
+												</li>
+										</ul>
+								</a>
+						</div>
+						`:''}
+						
+						<div class="artAuth">
+								<div class="profileFrame all-centered">
+								<img src="_img/users/profiles/${post.profile_img?post.profile_img:'default_profile.jpg'}" alt="">
+								</div>
+								<strong style="margin-top: 25px;"><a href="index.php?app-page=profile&username=${post.author}">${post.author}</a></strong>
+								${this.showPostedTo?
+									`
+									<span style="margin-top: 25px; margin-right: 10px;">
+												<span><i class="fa fa-angle-left"></i></span>
+												<span>
+													<a href="${post.posted_to && post.posted_to != 'null'?'index.php?app-page=profile&username='+post.posted_to_name:'index.php'}">
+													${post.posted_to != this.mainUserId
+														?
+														post.posted_to && post.posted_to != 'null'?post.posted_to_name:'פיד'
+														:
+														'הציר שלי'
+													}
+													</a>
+												</span>
+									</span>
+									`:''
+								}
+						</div>
+	
+						<div class="artDate">
+								<div style="display: flex; align-items: center;">
+										<i style="padding: 7px;" class="far fa-clock"></i>
+												${date.fromNow()}
+								</div>
+						</div>
 
-					<div class="artDate">
-							<div style="display: flex; align-items: center;">
-									<i style="padding: 7px;" class="far fa-clock"></i>
-											${moment(post.added_date, "YYYY-MM-DD hh:mm:ss").fromNow()}
-							</div>
-					</div>
-
-					<h4 class="artTitle"> ${post.title.replace("\n",'<br>')} </h4>
-					${post.front_img?`
-					<a class="toArt" href="article.php?artId=${post.id}">
-							<img src="_img/report/postFront/${post.front_img}" alt="">
-					</a>
-					`:''}
-
-					<div class="postLikers">
-						${likeTpl}
-					
-					</div>
-					</div>
-					<div class="postActions d-flex">
-							<div class="cool postAction ${_class.notNull(post.liked_post)
-			?'liked':'unliked'}"><i class="fa fa-thumbs-up fa-2x" style="padding-left: 10px;"></i><span>אהבתי</span></div>
-							<div class="speak postAction"><i class="fas fa-comment fa-2x" style="padding-left: 10px;"></i><span>הגב</span></div>
-							<div class="share postAction"><i class="fas fa-share fa-2x" style="padding-left: 10px;"></i><span>שתף</span></div>
-					</div>
-					<div class="postComments">
-						<div class="commentsContStatus">
+						<h4 class="artTitle"> ${post.title.replace("\n",'<br>')} </h4>
+						${post.front_img?`
+						<a class="toArt" href="article.php?artId=${post.id}">
+								<img src="_img/report/postFront/${post.front_img}" alt="">
+						</a>
+						`:''}
+	
+						<div class="postLikers">
+							${likeTpl}
 						
 						</div>
-						<div class="postCommentsList" style="margin-bottom: 20px;">
-	
-	
 						</div>
-						<div class="checkNewComments"><i class="fa fa-refresh" title="טען תגובות נוספות"></i><span class="noNewComments">אין תגובות חדשות</span><span></span></div>
-						<div class="yourComment" style="display: flex; align-items: center; height: 50px;">
-							<div class="profileFrame all-centered yourProfileImg" style="height: 50px; width: 50px;"><img style="height: 100%" src="_img/users/profiles/${profile_img}" alt=""></div>
-							<textarea class="yourCommentText" style="flex:1; border-radius: 47px; font-family: alef;
-							padding: 14px 14px 1px; height: 50px;" placeholder="הקלד תגובתך כאן.."></textarea>
-						</div>	
-					</div>
+						<div class="postActions d-flex">
+								<div class="cool postAction ${_class.notNull(post.liked_post)
+				?'liked':'unliked'}"><i class="fa fa-thumbs-up fa-2x" style="padding-left: 10px;"></i><span>אהבתי</span></div>
+								<div class="speak postAction"><i class="fas fa-comment fa-2x" style="padding-left: 10px;"></i><span>הגב</span></div>
+								<div class="share postAction"><i class="fas fa-share fa-2x" style="padding-left: 10px;"></i><span>שתף</span></div>
+						</div>
+						<div class="postComments">
+							<div class="commentsContStatus">
+							
+							</div>
+							<div class="postCommentsList" style="margin-bottom: 20px;">
+		
+		
+							</div>
+							<div class="checkNewComments"><i class="fa fa-refresh" title="טען תגובות נוספות"></i><span class="noNewComments">אין תגובות חדשות</span><span></span></div>
+							<div class="yourComment" style="display: flex; align-items: center; height: 50px;">
+								<div class="profileFrame all-centered yourProfileImg" style="height: 50px; width: 50px;"><img style="height: 100%" src="_img/users/profiles/${profile_img}" alt=""></div>
+								<textarea class="yourCommentText" style="flex:1; border-radius: 47px; font-family: alef;
+								padding: 14px 14px 1px; height: 50px;" placeholder="הקלד תגובתך כאן.."></textarea>
+							</div>	
+						</div>
+						
 					</div>
 
 		`;

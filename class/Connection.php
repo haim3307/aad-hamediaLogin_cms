@@ -6,6 +6,7 @@
  * Time: 00:16
  */
 require_once 'hosts.php';
+date_default_timezone_set('Asia/Jerusalem');
 $root = realpath($_SERVER["DOCUMENT_ROOT"]);
 if($_SERVER['HTTP_HOST'] === 'localhost'){
     $root.= '/social_network';
