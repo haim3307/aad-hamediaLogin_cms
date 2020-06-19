@@ -291,3 +291,63 @@ post-item .likesStatus:hover .likersList{
 
 }
 /*!friends page*/
+/*settings page*/
+.settingsPage{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+            'updateProfileImg updateProfileImg'
+            'updateUserInfo updateUserInfo'
+            'switchPass switchPass'
+;
+}
+
+
+.updateProfileImg{
+    grid-area: updateProfileImg;
+}
+.switchPass{
+    grid-area: switchPass;
+    padding: 10px;
+}
+.updateUserInfo{
+    display: grid;
+    grid-gap: 30px;
+    max-width: 600px;
+    grid-area: updateUserInfo;
+    padding: 10px;
+}
+.profileZone{
+    display: grid;
+}
+@media (min-width: 810px) {
+    .updateUserInfo {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    #descArea{grid-column: span 3;}
+    .profileZone{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 810px) {
+    .inputGroup{
+        display: grid;
+    }
+
+
+}
+.settingsPage input{
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+.settingsPage input[type="button"], .settingsPage input[type="submit"]{
+    padding: 5px 10px;
+    margin: 10px 0;
+    background-color: #8f0222;
+    color: #ffffff;
+}
+.g-col-2{
+    grid-column: span 2;
+}
+/*!settings page*/

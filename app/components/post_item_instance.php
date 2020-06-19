@@ -5,7 +5,6 @@
  * Date: 31/01/2018
  * Time: 14:27
  */
-/*;*/
 ?>
 <post-item
     main-user-id="<?= isset($_SESSION['front_user_id'])?$_SESSION['front_user_id']:'undefined' ?>"
@@ -18,12 +17,12 @@
     front-img="<?= $post['front_img']; ?>"
     post-show="true"
     posted-liked="<?= $post['liked']; ?>"
-    likers-list = '<?= $post['likers_list']; ?>'
-    likes-count = '<?= $post['likes_count']; ?>'
+    likers-list='<?= $post['likers_list']; ?>'
+    likes-count='<?= $post['likes_count']; ?>'
     <?php if($app_page === 'profile'): ?>
     posted-to="<?= $post['to'] ?>"
     posted-to-name="<?= $post['_to'] ?>"
-    show-posted-to = "true"
+    show-posted-to="true"
     <?php endif; ?>
 ></post-item>
 <?php

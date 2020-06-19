@@ -9,11 +9,6 @@ require_once 'Connection.php';
 class Forms extends Connection
 {
     const MAX_FILE_SIZE = 1024*1024*20;
-    function __construct()
-    {
-        parent::__construct();
-    }
-
     static function checkImage($input_n){
         $ex = ['png','jpeg','jpg','gif','bmp'];
         if(isset($_FILES[$input_n]['error']) && $_FILES[$input_n]['error'] == 0){
@@ -35,7 +30,6 @@ class Forms extends Connection
     protected function cleanUserData($uname, $upass){
         $uname = parent::$con->quote($uname);
         $upass = md5(md5(parent::$con->quote($upass)));
-        $arr = ["userName" => $uname , "userPassword" => $upass];
-        return $arr;
+        return ["userName" => $uname , "userPassword" => $upass];
     }
 }

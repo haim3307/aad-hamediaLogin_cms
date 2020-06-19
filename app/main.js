@@ -6,11 +6,8 @@ $(window).scroll(function () {
 		console.log("load posts!");
 		scrollFlag = 0;
 		let q = postsQuery();
-		console.log(q);
 		$.ajax(q).then(function (res) {
-			console.log('get posts api:', res);
 			let posts = res;
-			console.log(posts);
 			if (posts.length > 10 || posts.length === 0) return;
 			PS.pushPosts(posts);
 			scrollFlag = 1;

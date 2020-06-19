@@ -35,17 +35,26 @@ switch ($app_page) {
         $app_title_link = 'index.php?app-page=settings';
         break;
 }
-
+if(!isset($is_logged)){
+    $is_logged = Login::isLoggedIn();
+}
+if (isset($_POST['site_login'])) {
+    if(Login::execute()) header('location:'.$_SERVER['PHP_SELF']);
+    else $_SESSION['token'] = Login::csrfToken();
+}else {
+    Login::setSession();
+    $_SESSION['token'] = Login::csrfToken();
+}
 ?>
 <!DOCTYPE html>
 <html>
 
 <head>
     <title>דף הבית - עד המדינה!</title>
-    <?php include_once 'main_layout/head.php' ?>
-    <script src="https://use.fontawesome.com/3c576bb39d.js"></script>
-    <script src="app/lib/moment.js"></script>
-    <script>moment.locale('he');</script>
+    <?php include_once 'main_layout/head.php'?>
+
+<!--
+--> <script>moment.locale('he');</script>
     <link rel="stylesheet" href="styles/social_app.css">
 <!--    <script src="social_app/lib/webcomponents-hi-sd-ce.js"></script>-->
 </head>

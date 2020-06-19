@@ -4,7 +4,7 @@ require 'Forms.php';
 class Register extends Forms
 {
     public $userName, $userEmail, $userPass;
-    static public $unameRegExp = '/^(?=.{8,20}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+$/';
+    static public $unameRegExp = '/^[A-Za-z][A-Za-z0-9]{5,31}$/';
     static public $emailRegExp = '/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/i';
 
     function __construct()
@@ -104,9 +104,9 @@ class Register extends Forms
     static function validateReg($param, $type)
     {
         $reg_preg = [
-            'user_name' => '/^(?=.{8,20}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+$/',
+            'user_name' => '/^[A-Za-z][A-Za-z0-9]{5,31}$/',
             'new_email' => '/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/i',
-            'password' => '/^[a-zA-Z0-9]+([_ -]?[a-zA-Z0-9])*$/',
+            'password' => '/^\S*(?=\S{8,})(?=\S*[a-z])(?=\S*[A-Z])(?=\S*[\d])\S*$/',
         ];
         //echo $param,$type;
         switch ($type) {
@@ -129,10 +129,10 @@ class Register extends Forms
 
 if (isset($_POST['act'])) {
     if ($_POST['act'] === 'check_user_name') {
-        echo Register::isUsed('userName', $_POST['check_user_name']);
+        echo Register::isUsed('userName', filter_input(INPUT_POST,'check_user_name',FILTER_SANITIZE_STRING));
     }
     if ($_POST['act'] === 'check_new_email') {
-        echo Register::isUsed('email', $_POST['check_new_email']);
+        echo Register::isUsed('email', filter_input(INPUT_POST,'check_new_email',FILTER_SANITIZE_STRING));
     }
 }
 
