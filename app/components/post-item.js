@@ -30,13 +30,7 @@ class PostItem extends HTMLElement{
 			likers_list: JSON.parse(_class.notNull(likers_list)?likers_list:'[]'),
 			likes_count: this.notNull(likes_count)?likes_count:0
 		};
-/*		console.log(typeof this.getAttribute('posted-to'));
-		console.log(this.post.posted_to,this.post.uid);
-		console.log(this.getAttribute('posted-to') === this.getAttribute('user-id'));
-		console.log(this.post.liked_post);*/
-/*	console.log('from item:');
-	console.log(this.getAttribute('likers-list'));
-	console.log(JSON.parse(this.getAttribute('likers-list')));*/
+
 	}
 	get complete(){
 		return this._complete;
@@ -168,7 +162,7 @@ class PostItem extends HTMLElement{
 						<div class="artDate">
 								<div style="display: flex; align-items: center;">
 										<i style="padding: 7px;" class="far fa-clock"></i>
-												${date.fromNow()}
+												${date.local().fromNow()}
 								</div>
 						</div>
 

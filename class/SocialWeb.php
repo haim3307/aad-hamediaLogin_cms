@@ -9,11 +9,17 @@ require_once 'Login.php';
 
 class SocialWeb extends Login
 {
+    static function getNowDate(){
+        $timezone = new DateTimeZone('UTC');
+        $datetime = new DateTime('NOW', $timezone);
+        return $datetime->format('Y-m-d H:i:s');
+    }
     static function addNewPost($content, $posted_to = null)
     {
         $content = trim($content);
         if(!$content) return null;
-        $date = gmdate('Y-m-d H:i:s');
+        //$date = gmdate('Y-m-d H:i:s');
+        $date = self::getNowDate();
         $content = filter_var($content,FILTER_SANITIZE_STRING,FILTER_FLAG_NO_ENCODE_QUOTES);
         $insert = self::query("INSERT INTO posts(title, front_img, activated, uid, added_date) 
         VALUES(:title,:front_img,:activated,:uid , '$date')",
@@ -169,8 +175,8 @@ class SocialWeb extends Login
             if($content = filter_var($content,FILTER_SANITIZE_STRING,FILTER_FLAG_NO_ENCODE_QUOTES)){
                 //self::is_following($_SESSION['front_user_id'],self::whoPosted($post_id))
                 if(true){
-                    if($insert = self::query('INSERT INTO posts_comments VALUES(\'\',:content,:pid,:uid,NOW())',
-                        [':content'=>$content,':pid'=>$post_id,':uid'=>$_SESSION['front_user_id']]
+                    if($insert = self::query('INSERT INTO posts_comments VALUES(\'\',:content,:pid,:uid,:added_date)',
+                        [':content'=>$content,':pid'=>$post_id,':uid'=>$_SESSION['front_user_id'],':added_date'=>self::getNowDate()]
                     )){
                         $con = self::connect();
                         $last_id = $con->lastInsertId();

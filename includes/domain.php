@@ -11,12 +11,13 @@ echo '</pre>';*/
 $root = realpath($_SERVER["DOCUMENT_ROOT"]);
 if($_SERVER['HTTP_HOST'] === 'localhost'){
     $root.= '/social_network';
-}
+}else  $root.= '/fakebook/';
 $is_local = $_SERVER['HTTP_HOST'] == 'localhost';
 if($is_local){
     define('DOMAIN','http://localhost/social_network/');
 
 }else{
-    define('DOMAIN','https://'.$_SERVER['HTTP_HOST'].'/');
+    //define('DOMAIN','http://'.$_SERVER['HTTP_HOST'].'/');
+    define('DOMAIN','//haim-taragano.tk/fakebook/');
 
 }

@@ -71,7 +71,8 @@ class Login extends Connection
                 }
 
             }
-        }else if(isset($_SESSION['front_user_id']) && isset($_COOKIE['SNID']))
+        }
+        else if(isset($_SESSION['front_user_id']) && isset($_COOKIE['SNID']))
         {//else if your is all ready logged in return me the id
             if(self::verifyUserIpAndAgent()){
                 return $_SESSION['front_user_id'];
@@ -84,7 +85,8 @@ class Login extends Connection
         self::setSession();
         if(isset($_POST['token'])){
             if($_SESSION['token'] !== $_POST['token']) return false;
-        }else return false;
+        }
+        else return false;
         $uname = filter_input(INPUT_POST,'user_name',FILTER_SANITIZE_STRING);
         $uname = trim($uname);
         $upass = filter_input(INPUT_POST,'user_pass',FILTER_SANITIZE_STRING);

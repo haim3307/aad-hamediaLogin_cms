@@ -1,30 +1,16 @@
-<?php
-/*if ( $_SERVER['REQUEST_METHOD']=='GET' && realpath(__FILE__) == realpath( $_SERVER['SCRIPT_FILENAME'] ) ) {
-    die (header( 'HTTP/1.0 403 Forbidden', TRUE, 403 ));
-}*/
-if(!isset($is_logged)){
-    $is_logged = Login::isLoggedIn();
-}
-if (isset($_POST['site_login'])) {
-    if(Login::execute()) header('location:'.$_SERVER['PHP_SELF']);
-    else $_SESSION['token'] = Login::csrfToken();
-}else {
-    Login::setSession();
-    $_SESSION['token'] = Login::csrfToken();
-}
-?>
 <nav class="nMenu">
     <div class="logoN">
         <div class="mobileB">
             <i class="fa fa-bars" style="color: white; font-size: 2em;" aria-hidden="true"></i>
         </div>
-        <div class="logoNI"><img src="<?= DOMAIN ?>_img/layout/logo3.png"></div>
+        <div class="logoNI" style="text-align:center;font-size: 2em; color: white;font-family: 'Suez One', serif;
+">הרשת החברתית</div>
     </div>
     <ul class="navButtons">
 
         <li><a href="<?= DOMAIN ?>">דף הבית</a></li>
-        <li><a href="<?= DOMAIN ?>/main_pages/contact.php"> צרו קשר </a></li>
-        <li><a href="<?= DOMAIN ?>/main_pages/about.php"> אודות </a></li>
+        <li><a href="<?= DOMAIN ?>main_pages/contact.php"> צרו קשר </a></li>
+        <li><a href="<?= DOMAIN ?>main_pages/about.php"> אודות </a></li>
 
     </ul>
 

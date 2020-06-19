@@ -51,9 +51,14 @@ class PostComment extends HTMLElement{
 	connectedCallback(){
 		let _class = this;
 		const comment = this.comment;
+        let date = moment(comment.added_date, "YYYY-MM-DD hh:mm:ss");
+        let offset = new Date().getTimezoneOffset();
+        if(Math.sign(offset) === 1){
+            date = date.subtract(offset,'m').subtract(1,'s');
+        }else {
+            date = date.add(Math.abs(offset),'m').subtract(1,'s');
+        }
 
-		let date = moment(comment.added_date, "YYYY-MM-DD hh:mm:ss").fromNow();
-		/*<li class="hideComm">הסתר</li>*/
 		this.innerHTML = `
 				<style>
 				.cSetsDropDown{
@@ -89,7 +94,7 @@ class PostComment extends HTMLElement{
 						${this.contentTpl(comment)}		
 						</span>
 					</p>
-					<small class="comDate">${date}</small>
+					<small class="comDate">${date.local().fromNow()}</small>
 					<div class="commentActions">
 <!--						<span><a href="">אהבתי</a></span>
 						<span><a href="">הגב</a></span>-->

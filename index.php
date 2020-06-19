@@ -35,6 +35,16 @@ switch ($app_page) {
         $app_title_link = 'index.php?app-page=settings';
         break;
 }
+if(!isset($is_logged)){
+    $is_logged = Login::isLoggedIn();
+}
+if (isset($_POST['site_login'])) {
+    if(Login::execute()) header('location:'.$_SERVER['PHP_SELF']);
+    else $_SESSION['token'] = Login::csrfToken();
+}else {
+    Login::setSession();
+    $_SESSION['token'] = Login::csrfToken();
+}
 ?>
 <!DOCTYPE html>
 <html>
